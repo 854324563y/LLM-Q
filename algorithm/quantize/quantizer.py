@@ -120,6 +120,9 @@ class UniformAffineQuantizer(nn.Module):
         x_int = round_ste(x / scale)
         if round_zero_point is not None:
             x_int = x_int.add(round_zero_point)
+
+        print('x_int max', x_int.max(), 'x_int min', x_int.min())
+        
         x_int = x_int.clamp(self.qmin, self.qmax)
         x_dequant = x_int
         if round_zero_point is not None:
@@ -179,6 +182,7 @@ class UniformAffineQuantizer(nn.Module):
             self.round_zero_point = zero_point.clamp(min=-1e4, max=1e4).round()
         
     def register_scales_and_zeros(self):
+        # 之后直接self.scales和self.zeros即可
         self.register_buffer('scales', self.scale)
         self.register_buffer('zeros', self.round_zero_point)
         del self.scale

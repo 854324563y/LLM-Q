@@ -1,0 +1,60 @@
+import torch
+
+model = torch.load('log/Llama-2-7b-chat-hf-w4a4-117/abq_parameters.pth')
+for name, layer in model.items():
+    print(name)
+    for name, param in layer.items():
+        print(name, param.shape)
+'''
+没有compensation
+
+0
+qkt_smooth_scale torch.Size([4096])
+qkv_smooth_shift torch.Size([4096])
+qkv_smooth_scale torch.Size([4096])
+out_smooth_shift torch.Size([4096])
+out_smooth_scale torch.Size([4096])
+fc2_smooth_shift torch.Size([11008])
+fc2_smooth_scale torch.Size([11008])
+fc1_smooth_shift torch.Size([4096])
+fc1_smooth_scale torch.Size([4096])
+self_attn.k_proj.weight_quantizer.upbound_factor torch.Size([4096, 1])
+self_attn.k_proj.weight_quantizer.lowbound_factor torch.Size([4096, 1])
+self_attn.v_proj.weight_quantizer.upbound_factor torch.Size([4096, 1])
+self_attn.v_proj.weight_quantizer.lowbound_factor torch.Size([4096, 1])
+self_attn.q_proj.weight_quantizer.upbound_factor torch.Size([4096, 1])
+self_attn.q_proj.weight_quantizer.lowbound_factor torch.Size([4096, 1])
+self_attn.o_proj.weight_quantizer.upbound_factor torch.Size([4096, 1])
+self_attn.o_proj.weight_quantizer.lowbound_factor torch.Size([4096, 1])
+mlp.gate_proj.weight_quantizer.upbound_factor torch.Size([11008, 1])
+mlp.gate_proj.weight_quantizer.lowbound_factor torch.Size([11008, 1])
+mlp.down_proj.weight_quantizer.upbound_factor torch.Size([4096, 1])
+mlp.down_proj.weight_quantizer.lowbound_factor torch.Size([4096, 1])
+mlp.up_proj.weight_quantizer.upbound_factor torch.Size([11008, 1])
+mlp.up_proj.weight_quantizer.lowbound_factor torch.Size([11008, 1])
+
+4
+qkt_smooth_scale torch.Size([4096])
+qkv_smooth_shift torch.Size([4096])
+qkv_smooth_scale torch.Size([4096])
+out_smooth_shift torch.Size([4096])
+out_smooth_scale torch.Size([4096])
+fc2_smooth_shift torch.Size([11008])
+fc2_smooth_scale torch.Size([11008])
+fc1_smooth_shift torch.Size([4096])
+fc1_smooth_scale torch.Size([4096])
+self_attn.k_proj.weight_quantizer.upbound_factor torch.Size([4096, 1])
+self_attn.k_proj.weight_quantizer.lowbound_factor torch.Size([4096, 1])
+self_attn.v_proj.weight_quantizer.upbound_factor torch.Size([4096, 1])
+self_attn.v_proj.weight_quantizer.lowbound_factor torch.Size([4096, 1])
+self_attn.q_proj.weight_quantizer.upbound_factor torch.Size([4096, 1])
+self_attn.q_proj.weight_quantizer.lowbound_factor torch.Size([4096, 1])
+self_attn.o_proj.weight_quantizer.upbound_factor torch.Size([4096, 1])
+self_attn.o_proj.weight_quantizer.lowbound_factor torch.Size([4096, 1])
+mlp.gate_proj.weight_quantizer.upbound_factor torch.Size([11008, 1])
+mlp.gate_proj.weight_quantizer.lowbound_factor torch.Size([11008, 1])
+mlp.down_proj.weight_quantizer.upbound_factor torch.Size([4096, 1])
+mlp.down_proj.weight_quantizer.lowbound_factor torch.Size([4096, 1])
+mlp.up_proj.weight_quantizer.upbound_factor torch.Size([11008, 1])
+mlp.up_proj.weight_quantizer.lowbound_factor torch.Size([11008, 1])
+'''

@@ -20,7 +20,7 @@ cu_srcs = glob(os.path.join("ABQ", "csrc", "mma_any", "**","*.cu"), recursive=Tr
 
 # TODO: auto detect GPU ARCH
 nvcc_args = [
-    '-gencode=arch=compute_80,code=\\\"sm_80,compute_80\\\"'
+    '-gencode=arch=compute_80,code=\"sm_80,compute_80\"'
 ]
 cxx_args = ['-std=c++14']
 

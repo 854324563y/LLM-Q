@@ -120,6 +120,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', type=str,
                         default='/PATH/TO/LLaMA/Llama-2-7b', help='model name')
+    parser.add_argument("--cache_dir", default="./cache", type=str, help="cache dir of dataset, leading to faster debug")
     parser.add_argument('--scales-output-path', type=str, default='./act_scales/',
                         help='where to save the act scales')
     parser.add_argument('--shifts-output-path', type=str, default='./act_shifts/',
@@ -138,15 +139,22 @@ def parse_args():
 def main():
     args = parse_args()
     model, tokenizer = build_model_and_tokenizer(args.model)
-    dataloader, _ = get_loaders(
-    args.calib_dataset,
-    nsamples=args.num_samples,
-    seed=args.seed,
-    model=args.model,
-    seqlen=args.seq_len,
-    )
-    
+
     args.net = args.model.split('/')[-1]
+    args.model_family = args.net.split('-')[0]
+    cache_dataloader = f'{args.cache_dir}/dataloader_{args.model_family}_{args.calib_dataset}_{args.num_samples}.cache'
+    if os.path.exists(cache_dataloader):
+        dataloader = torch.load(cache_dataloader)
+    else:
+        dataloader, _ = get_loaders(
+            args.calib_dataset,
+            nsamples=args.num_samples,
+            seed=args.seed,
+            model=args.model,
+            seqlen=args.seq_len,
+        )
+        torch.save(dataloader, cache_dataloader)
+    
     act_scales = get_act_scales(model, dataloader,args.num_samples)
     save_path = os.path.join(args.scales_output_path,f'{args.net}.pt')
     os.makedirs(os.path.dirname(save_path), exist_ok=True)

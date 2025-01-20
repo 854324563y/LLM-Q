@@ -1,0 +1,44 @@
+cmake_minimum_required(VERSION 3.18)
+project(int_kernel CUDA CXX)
+
+find_package(CUDA REQUIRED)
+find_package(Torch REQUIRED)
+
+# 获取 Python 路径
+execute_process(
+    COMMAND python -c "import torch; print(torch.__path__[0])"
+    OUTPUT_VARIABLE TORCH_PATH
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CUDA_STANDARD 17)
+
+include_directories(
+    ${CUDA_INCLUDE_DIRS}
+    ${TORCH_INCLUDE_DIRS}
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${TORCH_PATH}/include
+    ${TORCH_PATH}/include/torch/csrc/api/include
+    ${CUTLASS_PATH}/include
+    ${CUTLASS_PATH}/tools/util/include
+)
+
+# 添加编译选项
+add_compile_options(
+    -D_GLIBCXX_USE_CXX11_ABI=0
+    -DTORCH_API_INCLUDE_EXTENSION_H
+    -DTORCH_EXTENSION_NAME=int_kernel
+)
+
+# CUDA 特定选项
+set(CUDA_NVCC_FLAGS
+    ${CUDA_NVCC_FLAGS}
+    -O3
+    -gencode=arch=compute_80,code=sm_80
+    --expt-relaxed-constexpr
+    --use_fast_math
+    -U__CUDA_NO_HALF_OPERATORS__
+    -U__CUDA_NO_HALF_CONVERSIONS__
+    -U__CUDA_NO_HALF2_OPERATORS__
+) 

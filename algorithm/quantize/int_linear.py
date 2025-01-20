@@ -81,3 +81,10 @@ class QuantLinear(nn.Module):
     def set_quant_state(self, weight_quant: bool = False, act_quant: bool = False):
         self.use_weight_quant = weight_quant
         self.use_act_quant = act_quant
+
+    def change_n_bits(self, wbits, abits):
+        self.wbits = wbits
+        self.abits = abits
+        self.weight_quantizer.change_n_bits(wbits)
+        if not self.disable_input_quant:
+            self.act_quantizer.change_n_bits(abits)

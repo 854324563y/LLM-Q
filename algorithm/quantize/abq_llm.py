@@ -152,6 +152,10 @@ def abqllm(
             except ValueError:
                 pass
     
+    # # save inps
+    # with open('/workspace/volume/yangzhe/ABQ-LLM/algorithm/cache/inps.pt', 'wb') as f:
+    #     torch.save(inps, f)
+
     # move embedding layer and first layer to cpu
     layers[0] = layers[0].module
     layers[0] = layers[0].cpu()
@@ -173,9 +177,9 @@ def abqllm(
 
     
     # same input of first layer for fp model and quant model
-    quant_inps = inps
-    fp_inps = copy.deepcopy(inps)   # take output of fp model as input
-    fp_inps_2 = copy.deepcopy(inps) # take output of quantization model as input
+    quant_inps = inps                                                               # 量化模型输入输出
+    fp_inps = copy.deepcopy(inps)   # take output of fp model as input              # 输入输出使用fp模型
+    fp_inps_2 = copy.deepcopy(inps) # take output of quantization model as input    # 输入上一层的量化输出，fp模型的输出
     attn_fp = torch.zeros([args.nsamples, 2048, 2048]).to(fp_inps.device)
     attention_mask = cache["attention_mask"]
 
@@ -225,9 +229,11 @@ def abqllm(
             with torch.no_grad():
                 with torch.cuda.amp.autocast():
                     for j in range(args.nsamples):
+                        # 此时设置了False, False，所以不量化weight和act
                         fp_inps[j], attn_fp[j] = qlayer(fp_inps[j].unsqueeze(0), attention_mask=attention_mask,position_ids=position_ids, output_attentions= True)
                         fp_inps_2[j] = qlayer(quant_inps[j].unsqueeze(0), attention_mask=attention_mask,position_ids=position_ids)[0]
         # init smooth parameters
+        # 在smooth_and_quant_temporary和smooth_and_quant_inplace里会量化weight
         set_quant_state(qlayer, weight_quant=False, act_quant=True)  # weight will be manually quantized before forward
         qlayer.let = args.let
         use_shift = True 
@@ -286,6 +292,7 @@ def abqllm(
                     # obtain output of quantization model
                     with traincast():
                         smooth_and_quant_temporary(qlayer, args, is_llama)
+                        # print('quant_inps', quant_inps[index:index+args.batch_size,].dtype) # torch.float32
                         quant_out,  attn_out = qlayer(quant_inps[index:index+args.batch_size,], attention_mask=attention_mask_batch,position_ids=position_ids, output_attentions= True)
                         
                         # attention map loss

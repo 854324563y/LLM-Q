@@ -36,8 +36,13 @@ torch.backends.cudnn.benchmark = True
 def llama_eval(model, testenc, dev,  dataset: str, log_wandb: bool = False):
     print("Evaluating ...")
 
-    testenc = testenc.input_ids
+    if "c4" in dataset:
+        testenc = testenc
+    else:
+        testenc = testenc.input_ids
+
     nsamples = testenc.numel() // model.seqlen
+    print('nsamples', nsamples)
 
     use_cache = model.config.use_cache
     model.config.use_cache = False
@@ -120,6 +125,7 @@ def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", type=str, help="model name of model path")
+    parser.add_argument("--cache_dir", default="./cache", type=str, help="cache dir of dataset, leading to faster debug")
     parser.add_argument("--seed", type=int, default=2, help="Seed for sampling the calibration data.")
     parser.add_argument("--wbits", type=int, default=4)
     parser.add_argument("--abits", type=int, default=16)
@@ -132,6 +138,10 @@ def main():
     torch.cuda.manual_seed(args.seed)
     DEV = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
     args.deactive_amp = True
+
+    net = args.model.split('/')[-1]
+    # assert args.net in net_choices
+    args.model_family = net.split('-')[0]
         
     args.weight_quant_params = {
         "n_bits": args.wbits,
@@ -193,9 +203,21 @@ def main():
     print("Loading pre-computed quantized weights Successfully")
 
     for dataset in ["wikitext2", "c4" , "ptb"]:
-        dataloader, testloader = get_loaders(
-            dataset, seed=args.seed, model=args.model, seqlen=model.seqlen
-        )
+        cache_testloader = f'{args.cache_dir}/testloader_{args.model_family}_{dataset}_all.cache'
+        if os.path.exists(cache_testloader):
+            testloader = torch.load(cache_testloader)
+            print(f"load calibration from {cache_testloader}")
+        else:
+            dataloader, testloader = get_loaders(
+                dataset,
+                seed=args.seed,
+                model=args.model,
+                seqlen=model.seqlen,
+            )
+            torch.save(testloader, cache_testloader)
+        # dataloader, testloader = get_loaders(
+        #     dataset, seed=args.seed, model=args.model, seqlen=model.seqlen
+        # )
         print("Dataset:", dataset)
         llama_eval(model, testloader, DEV, dataset, False)
 

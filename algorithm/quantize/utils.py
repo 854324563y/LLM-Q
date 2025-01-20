@@ -62,6 +62,7 @@ def register_scales_and_zeros(model):
         if isinstance(module, QuantLinear):
             module.weight_quantizer.register_scales_and_zeros()
 
+# abs最小值
 class TruncateFunction(torch.autograd.Function):
     @staticmethod
     def forward(ctx, input, threshold):
@@ -115,6 +116,7 @@ def smooth_and_quant_temporary(model, args, isllama):
     # quant
     for name, module in model.named_modules():
         if isinstance(module, QuantLinear):
+            #print(name)
             # if hasattr(module, "temp_weight"):
             #     module.temp_weight = module.weight_quantizer(module.temp_weight)
             # else:
@@ -181,5 +183,6 @@ def set_quant_state(self, weight_quant: bool = False, act_quant: bool = False):
     self.use_weight_quant = weight_quant
     self.use_act_quant = act_quant
     for m in self.modules():
+        # 实际QuantMatMul不会用到weight_quant、act_quant
         if isinstance(m, (QuantLinear, QuantMatMul)):
             m.set_quant_state(weight_quant, act_quant)

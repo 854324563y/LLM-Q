@@ -290,6 +290,7 @@ def main():
         "n_bits":  args.abits,
         "per_channel_axes": [],
         "symmetric": False,
+        #"symmetric": args.symmetric,
         "dynamic_method": args.a_dynamic_method,
     }
     args.q_quant_params = {

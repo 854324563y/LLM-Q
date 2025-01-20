@@ -1,0 +1,63 @@
+from setuptools import setup
+from torch.utils import cpp_extension
+import torch
+from pathlib import Path
+
+CUTLASS_PATH = "/workspace/volume/yangzhe/cutlass"  # 请替换为您的CUTLASS安装路径
+CUDA_PATH = cpp_extension.CUDA_HOME
+TORCH_PATH = Path(torch.__file__).parent
+
+setup(
+    name='int_kernel',
+    ext_modules=[
+        cpp_extension.CUDAExtension(
+            name='int_kernel._CUDA',
+            sources=[
+                'int_kernel/kernels/int_kernel.cpp',
+                'int_kernel/kernels/int_kernel.cu',
+            ],
+            extra_compile_args={
+                'cxx': [
+                    '-O3',
+                    f'-I{CUDA_PATH}/include',
+                    f'-I{TORCH_PATH}/include',
+                    f'-I{TORCH_PATH}/include/torch/csrc/api/include',
+                    f'-I{CUTLASS_PATH}/include',
+                    f'-I{CUTLASS_PATH}/tools/util/include',
+                    '-std=c++17'
+                ],
+                'nvcc': [
+                    '-O3',
+                    f'-I{CUDA_PATH}/include',
+                    f'-I{TORCH_PATH}/include',
+                    f'-I{TORCH_PATH}/include/torch/csrc/api/include',
+                    f'-I{CUTLASS_PATH}/include',
+                    f'-I{CUTLASS_PATH}/tools/util/include',
+                    '-std=c++17',
+                    '-U__CUDA_NO_HALF_OPERATORS__',
+                    '-U__CUDA_NO_HALF_CONVERSIONS__',
+                    '-U__CUDA_NO_HALF2_OPERATORS__',
+                    '--expt-relaxed-constexpr',
+                    '--use_fast_math',
+                    '-gencode=arch=compute_80,code=sm_80'  # 为A100优化
+                ]
+            },
+            include_dirs=[
+                'int_kernel/kernels/include',  # 项目头文件目录
+                'int_kernel/kernels',          # 源文件目录
+                f'{CUDA_PATH}/include',
+                f'{TORCH_PATH}/include',
+                f'{TORCH_PATH}/include/torch/csrc/api/include',
+                f'{CUTLASS_PATH}/include',
+                f'{CUTLASS_PATH}/tools/util/include'
+            ],
+            library_dirs=[
+                f'{CUDA_PATH}/lib64',
+                f'{TORCH_PATH}/lib'
+            ],
+            libraries=['cudart', 'c10', 'torch', 'torch_cpu', 'torch_python']
+        )
+    ],
+    cmdclass={
+        'build_ext': cpp_extension.BuildExtension.with_options(use_ninja=False)
+    }) 

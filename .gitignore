@@ -26,3 +26,4 @@ results
 dist
 bin
 engine/bin
+*.pyc
