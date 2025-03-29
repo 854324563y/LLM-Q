@@ -143,12 +143,14 @@ def main():
     # assert args.net in net_choices
     args.model_family = net.split('-')[0]
         
+    ## abq_llm在进行完校准准后已经实现let了，这里无需再设置
     args.weight_quant_params = {
         "n_bits": args.wbits,
         "per_channel_axes": [0],
         "symmetric": False,
         "dynamic_method": "per_channel",
         "group_size": args.group_size,
+        ## 这里为什么lwc设置False
         "lwc":False,
         "disable_zero_point": False
     }
@@ -193,6 +195,9 @@ def main():
     layers = model.model.layers
     for i in tqdm(range(len(layers))):
         layers[i] = QuantLlamaDecoderLayer(config, layers[i], args)
+        ### 推理的时候在QuantLinear.forward中，use_weight_quant=False，不会量化weight
+        ### 因weight之前已经fake_quant了
+        ### 推理的时候act_quant=True，会量化activation
         set_quant_state(layers[i], weight_quant=False, act_quant=True)
     torch.cuda.empty_cache()
     gc.collect()

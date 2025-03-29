@@ -1,0 +1,18 @@
+[2025-03-14 07:10:05 root] (main_divide_blocks.py 276): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-hf', cache_dir='./cache', output_dir='./log-divide/Llama-2-7b-hf-w4a4', save_dir=None, resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='', eval_ppl=False, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=10, let=False, lwc=False, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, error_threshold=0.2, similarity_threshold=0.999, sensitivity_threshold=0.05, max_block_size=3, reload=True)
+[2025-03-14 07:10:05 quantize.utils_divide] (utils_divide.py 110): INFO Block 0-1: size=1, error_sum=0.0002, min_similarity=1.0000, max_sensitivity_diff=0.0000
+[2025-03-14 07:10:05 quantize.utils_divide] (utils_divide.py 110): INFO Block 1-2: size=1, error_sum=0.0292, min_similarity=0.9360, max_sensitivity_diff=0.7228
+[2025-03-14 07:10:05 quantize.utils_divide] (utils_divide.py 110): INFO Block 2-3: size=1, error_sum=0.0020, min_similarity=0.9444, max_sensitivity_diff=0.2538
+[2025-03-14 07:10:05 quantize.utils_divide] (utils_divide.py 110): INFO Block 3-4: size=1, error_sum=0.0022, min_similarity=0.9980, max_sensitivity_diff=0.0800
+[2025-03-14 07:10:05 quantize.utils_divide] (utils_divide.py 110): INFO Block 4-5: size=1, error_sum=0.0016, min_similarity=0.9986, max_sensitivity_diff=0.0706
+[2025-03-14 07:10:05 quantize.utils_divide] (utils_divide.py 110): INFO Block 5-8: size=3, error_sum=0.0172, min_similarity=0.9971, max_sensitivity_diff=0.1698
+[2025-03-14 07:10:05 quantize.utils_divide] (utils_divide.py 110): INFO Block 8-11: size=3, error_sum=0.0279, min_similarity=0.9996, max_sensitivity_diff=0.0125
+[2025-03-14 07:10:05 quantize.utils_divide] (utils_divide.py 110): INFO Block 11-14: size=3, error_sum=0.0304, min_similarity=0.9991, max_sensitivity_diff=0.0429
+[2025-03-14 07:10:05 quantize.utils_divide] (utils_divide.py 110): INFO Block 14-17: size=3, error_sum=0.0487, min_similarity=0.9994, max_sensitivity_diff=0.0429
+[2025-03-14 07:10:05 quantize.utils_divide] (utils_divide.py 110): INFO Block 17-20: size=3, error_sum=0.0654, min_similarity=0.9994, max_sensitivity_diff=0.0021
+[2025-03-14 07:10:05 quantize.utils_divide] (utils_divide.py 110): INFO Block 20-23: size=3, error_sum=0.0704, min_similarity=0.9996, max_sensitivity_diff=0.0191
+[2025-03-14 07:10:05 quantize.utils_divide] (utils_divide.py 110): INFO Block 23-25: size=2, error_sum=0.0499, min_similarity=0.9993, max_sensitivity_diff=0.0289
+[2025-03-14 07:10:05 quantize.utils_divide] (utils_divide.py 110): INFO Block 25-27: size=2, error_sum=0.0738, min_similarity=0.9997, max_sensitivity_diff=0.0013
+[2025-03-14 07:10:05 quantize.utils_divide] (utils_divide.py 110): INFO Block 27-30: size=3, error_sum=0.1866, min_similarity=0.9995, max_sensitivity_diff=0.0119
+[2025-03-14 07:10:05 quantize.utils_divide] (utils_divide.py 110): INFO Block 30-31: size=1, error_sum=0.2876, min_similarity=0.9996, max_sensitivity_diff=0.0958
+[2025-03-14 07:10:05 quantize.utils_divide] (utils_divide.py 110): INFO Block 31-32: size=1, error_sum=1.0893, min_similarity=0.9965, max_sensitivity_diff=0.0162
+[2025-03-14 07:10:05 root] (main_divide_blocks.py 293): INFO blocks: [(0, 1), (1, 2), (2, 3), (3, 4), (4, 5), (5, 8), (8, 11), (11, 14), (14, 17), (17, 20), (20, 23), (23, 25), (25, 27), (27, 30), (30, 31), (31, 32)]

@@ -1,0 +1,192 @@
+
+Layer 0 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.072992
+Cosine Similarity: 0.995406
+--------------------------------------------------
+
+Layer 1 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.117744
+Cosine Similarity: 0.992860
+--------------------------------------------------
+
+Layer 2 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.093090
+Cosine Similarity: 0.994183
+--------------------------------------------------
+
+Layer 3 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.094228
+Cosine Similarity: 0.994119
+--------------------------------------------------
+
+Layer 4 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.085248
+Cosine Similarity: 0.994608
+--------------------------------------------------
+
+Layer 5 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.087698
+Cosine Similarity: 0.994437
+--------------------------------------------------
+
+Layer 6 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.078992
+Cosine Similarity: 0.994966
+--------------------------------------------------
+
+Layer 7 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.070651
+Cosine Similarity: 0.995520
+--------------------------------------------------
+
+Layer 8 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.059270
+Cosine Similarity: 0.996221
+--------------------------------------------------
+
+Layer 9 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.054822
+Cosine Similarity: 0.996501
+--------------------------------------------------
+
+Layer 10 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.055945
+Cosine Similarity: 0.996430
+--------------------------------------------------
+
+Layer 11 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.053319
+Cosine Similarity: 0.996599
+--------------------------------------------------
+
+Layer 12 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.051677
+Cosine Similarity: 0.996693
+--------------------------------------------------
+
+Layer 13 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.064201
+Cosine Similarity: 0.995888
+--------------------------------------------------
+
+Layer 14 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.064143
+Cosine Similarity: 0.995885
+--------------------------------------------------
+
+Layer 15 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.077134
+Cosine Similarity: 0.995054
+--------------------------------------------------
+
+Layer 16 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.094970
+Cosine Similarity: 0.993906
+--------------------------------------------------
+
+Layer 17 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.091759
+Cosine Similarity: 0.994104
+--------------------------------------------------
+
+Layer 18 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.104247
+Cosine Similarity: 0.993268
+--------------------------------------------------
+
+Layer 19 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.103285
+Cosine Similarity: 0.993322
+--------------------------------------------------
+
+Layer 20 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.105632
+Cosine Similarity: 0.993165
+--------------------------------------------------
+
+Layer 21 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.093114
+Cosine Similarity: 0.993976
+--------------------------------------------------
+
+Layer 22 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.094295
+Cosine Similarity: 0.993903
+--------------------------------------------------
+
+Layer 23 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.088761
+Cosine Similarity: 0.994262
+--------------------------------------------------
+
+Layer 24 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.081323
+Cosine Similarity: 0.994751
+--------------------------------------------------
+
+Layer 25 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.087342
+Cosine Similarity: 0.994367
+--------------------------------------------------
+
+Layer 26 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.083249
+Cosine Similarity: 0.994642
+--------------------------------------------------
+
+Layer 27 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.090757
+Cosine Similarity: 0.994166
+--------------------------------------------------
+
+Layer 28 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.110717
+Cosine Similarity: 0.992966
+--------------------------------------------------
+
+Layer 29 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.355589
+Cosine Similarity: 0.977966
+--------------------------------------------------
+
+Layer 30 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.874553
+Cosine Similarity: 0.950978
+--------------------------------------------------
+
+Layer 31 Results:
+Look-ahead layers: 0
+End-to-End MSE: 0.224531
+Cosine Similarity: 0.985880
+--------------------------------------------------

@@ -48,12 +48,14 @@ torch::Tensor s8t_s4n_f16t_gemm(
         ElementAccumulator,
         cutlass::arch::OpClassTensorOp,
         cutlass::arch::Sm80,
-        cutlass::gemm::GemmShape<128, 128, 64>,
+        // cutlass::gemm::GemmShape<128, 128, 64>,
+        cutlass::gemm::GemmShape<256, 128, 64>,
         cutlass::gemm::GemmShape<64, 64, 64>,
         cutlass::gemm::GemmShape<16, 8, 32>,
         EpilogueOp,
         cutlass::gemm::threadblock::GemmIdentityThreadblockSwizzle<>,
-        4,    // Stages
+        // 4,    // Stages
+        3,      
         16,   // AlignmentA // 128/cutlass::sizeof_bits<ElementA>::value
         32,   // AlignmentB // 128/cutlass::sizeof_bits<ElementB>::value
         cutlass::arch::OpMultiplyAddMixedInputUpcast,

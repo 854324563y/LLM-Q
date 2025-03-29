@@ -1,0 +1,44 @@
+[2025-03-12 06:32:58 root] (main_calibration_5_1.py 275): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-hf', cache_dir='./cache', output_dir='./log-adaptive-calibration-5-1/Llama-2-7b-hf-w4a4', save_dir=None, resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='', eval_ppl=False, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=0, let=True, lwc=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, scale_calibration=True, compensation_calibration=True, look_ahead_layers=2, analyze_per_layer_mse=True)
+[2025-03-12 06:33:05 root] (main_calibration_5_1.py 342): INFO === start quantization ===
+[2025-03-12 06:33:05 root] (main_calibration_5_1.py 348): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2025-03-12 06:33:05 root] (abq_llm_calibration_5_1.py 62): INFO Starting ...
+[2025-03-12 06:33:07 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 0 ===
+[2025-03-12 06:33:07 root] (abq_llm_calibration_5_1.py 278): INFO use compensation vector
+[2025-03-12 06:33:08 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 1 ===
+[2025-03-12 06:33:08 root] (abq_llm_calibration_5_1.py 278): INFO use compensation vector
+[2025-03-12 06:33:08 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 2 ===
+[2025-03-12 06:33:08 root] (abq_llm_calibration_5_1.py 278): INFO use compensation vector
+[2025-03-12 06:33:08 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 3 ===
+[2025-03-12 06:33:09 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 4 ===
+[2025-03-12 06:33:09 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 5 ===
+[2025-03-12 06:33:10 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 6 ===
+[2025-03-12 06:33:10 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 7 ===
+[2025-03-12 06:33:10 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 8 ===
+[2025-03-12 06:33:11 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 9 ===
+[2025-03-12 06:33:11 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 10 ===
+[2025-03-12 06:33:12 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 11 ===
+[2025-03-12 06:33:12 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 12 ===
+[2025-03-12 06:33:13 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 13 ===
+[2025-03-12 06:33:13 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 14 ===
+[2025-03-12 06:33:13 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 15 ===
+[2025-03-12 06:33:14 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 16 ===
+[2025-03-12 06:33:14 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 17 ===
+[2025-03-12 06:33:14 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 18 ===
+[2025-03-12 06:33:15 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 19 ===
+[2025-03-12 06:33:15 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 20 ===
+[2025-03-12 06:33:16 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 21 ===
+[2025-03-12 06:33:16 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 22 ===
+[2025-03-12 06:33:16 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 23 ===
+[2025-03-12 06:33:17 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 24 ===
+[2025-03-12 06:33:17 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 25 ===
+[2025-03-12 06:33:17 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 26 ===
+[2025-03-12 06:33:19 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 27 ===
+[2025-03-12 06:33:19 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 28 ===
+[2025-03-12 06:33:19 root] (abq_llm_calibration_5_1.py 278): INFO use compensation vector
+[2025-03-12 06:33:19 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 29 ===
+[2025-03-12 06:33:19 root] (abq_llm_calibration_5_1.py 278): INFO use compensation vector
+[2025-03-12 06:33:20 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 30 ===
+[2025-03-12 06:33:20 root] (abq_llm_calibration_5_1.py 278): INFO use compensation vector
+[2025-03-12 06:33:20 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 31 ===
+[2025-03-12 06:33:20 root] (abq_llm_calibration_5_1.py 278): INFO use compensation vector
+[2025-03-12 06:33:21 root] (main_calibration_5_1.py 371): INFO 15.106702327728271

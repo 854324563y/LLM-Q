@@ -1,0 +1,37 @@
+[2025-02-23 10:30:08 root] (main_attnmap.py 265): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-hf', cache_dir='./cache', output_dir='./log-attnmap/Llama-2-7b-hf', save_dir=None, resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=1, batch_size=1, seed=2, tasks='', eval_ppl=False, num_fewshot=0, wbits=16, abits=16, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=1, let=False, lwc=False, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None)
+[2025-02-23 10:30:17 root] (main_attnmap.py 332): INFO === start quantization ===
+[2025-02-23 10:30:17 root] (main_attnmap.py 338): INFO load calibration from ./cache/dataloader_Llama_wikitext2_1.cache
+[2025-02-23 10:30:17 root] (abq_llm_attnmap.py 62): INFO Starting ...
+[2025-02-23 10:30:19 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 0 ===
+[2025-02-23 10:30:21 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 1 ===
+[2025-02-23 10:30:21 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 2 ===
+[2025-02-23 10:30:22 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 3 ===
+[2025-02-23 10:30:23 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 4 ===
+[2025-02-23 10:30:23 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 5 ===
+[2025-02-23 10:30:24 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 6 ===
+[2025-02-23 10:30:25 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 7 ===
+[2025-02-23 10:30:26 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 8 ===
+[2025-02-23 10:30:27 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 9 ===
+[2025-02-23 10:30:27 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 10 ===
+[2025-02-23 10:30:28 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 11 ===
+[2025-02-23 10:30:29 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 12 ===
+[2025-02-23 10:30:30 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 13 ===
+[2025-02-23 10:30:30 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 14 ===
+[2025-02-23 10:30:31 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 15 ===
+[2025-02-23 10:30:32 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 16 ===
+[2025-02-23 10:30:33 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 17 ===
+[2025-02-23 10:30:34 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 18 ===
+[2025-02-23 10:30:34 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 19 ===
+[2025-02-23 10:30:35 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 20 ===
+[2025-02-23 10:30:36 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 21 ===
+[2025-02-23 10:30:36 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 22 ===
+[2025-02-23 10:30:37 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 23 ===
+[2025-02-23 10:30:38 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 24 ===
+[2025-02-23 10:30:39 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 25 ===
+[2025-02-23 10:30:39 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 26 ===
+[2025-02-23 10:30:40 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 27 ===
+[2025-02-23 10:30:41 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 28 ===
+[2025-02-23 10:30:41 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 29 ===
+[2025-02-23 10:30:42 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 30 ===
+[2025-02-23 10:30:43 root] (abq_llm_attnmap.py 212): INFO === Start quantize layer 31 ===
+[2025-02-23 10:30:44 root] (main_attnmap.py 361): INFO 27.204578638076782

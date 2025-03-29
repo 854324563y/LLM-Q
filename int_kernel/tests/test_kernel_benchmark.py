@@ -1,7 +1,10 @@
 import torch
 import torch.backends.cudnn as cudnn
+import torch.nn as nn
 import csv
 from int_kernel._CUDA import s8t_s8n_f16t_gemm, s8t_s4n_f16t_gemm, s4t_s4n_f16t_gemm
+from tabulate import tabulate
+import numpy as np
 
 def bench_func_latency(func, args, num_iter=1000):
     """测量函数的平均执行时间
@@ -54,55 +57,106 @@ def test_s4t_s4n_benchmark(M=128, N=4096, K=4096):
     w = torch.randint(0, 255, (N, K//2), dtype=torch.uint8, device="cuda")
     return bench_func_latency(s4t_s4n_f16t_gemm, [x, w])
 
+def test_fp16_linear_benchmark(M=128, N=4096, K=4096):
+    """测试FP16 nn.Linear的性能作为基准"""
+    print(f"\n=== Testing FP16 Linear (M={M}, N={N}, K={K}) ===")
+    linear = nn.Linear(K, N).half().cuda()
+    x = torch.randn(M, K, dtype=torch.float16, device="cuda")
+    return bench_func_latency(linear, [x])
+
+def calculate_metrics(M, N, K, latency_ms):
+    """计算性能指标
+    
+    Args:
+        M, N, K: 矩阵维度
+        latency_ms: 执行时间(ms)
+    
+    Returns:
+        dict: 包含TFLOPS和Memory BW等指标
+    """
+    # 计算FLOPs (2*M*N*K 用于gemm运算)
+    flops = 2 * M * N * K
+    tflops = (flops / (latency_ms * 1e-3)) / 1e12
+    
+    # 估算内存带宽 (假设每个元素读一次)
+    bytes_accessed = M * K + N * K + M * N  # 输入、权重和输出
+    memory_bw = (bytes_accessed / (latency_ms * 1e-3)) / 1e9  # GB/s
+    
+    return {
+        "TFLOPS": tflops,
+        "Memory_BW_GBs": memory_bw
+    }
+
 def run_all_benchmarks():
     """运行所有benchmark测试"""
-    # 测试不同的矩阵大小
-    sizes = [
-        (1, 4096, 4096),     # 批大小为1
-        (1, 4096, 11008),
-        (1, 11008, 4096),
-        (128, 4096, 4096),   # 标准大小
-        (128, 4096, 11008),
-        (128, 11008, 4096),
+    # 定义测试维度
+    batch_sizes = [1, 8, 16, 32, 64, 128, 256]
+    matrix_configs = [
+        (4096, 4096),    # 标准大小
+        (4096, 11008),   # 扩展K
+        (11008, 4096),   # 扩展N
     ]
     
     results = {}
-    for M, N, K in sizes:
-        print(f"\n=== Running benchmarks for M={M}, N={N}, K={K} ===")
-        results[(M,N,K)] = {
-            "s8t_s8n": test_s8t_s8n_benchmark(M, N, K),
-            "s8t_s4n": test_s8t_s4n_benchmark(M, N, K),
-            "s4t_s4n": test_s4t_s4n_benchmark(M, N, K)
-        }
+    for M in batch_sizes:
+        for N, K in matrix_configs:
+            print(f"\n=== Running benchmarks for M={M}, N={N}, K={K} ===")
+            results[(M,N,K)] = {
+                "fp16_linear": test_fp16_linear_benchmark(M, N, K),
+                "s8t_s8n": test_s8t_s8n_benchmark(M, N, K),
+                "s8t_s4n": test_s8t_s4n_benchmark(M, N, K),
+                "s4t_s4n": test_s4t_s4n_benchmark(M, N, K)
+            }
     
     # 打印汇总结果
-    print("\n=== Summary ===")
+    print("\n=== Performance Summary ===")
     for size, times in results.items():
         M, N, K = size
         print(f"\nMatrix size: M={M}, N={N}, K={K}")
-        print("Kernel      | Latency (ms)")
-        print("-----------|-------------")
+        
+        # 准备表格数据
+        table_data = []
+        headers = ["Kernel", "Latency(ms)", "TFLOPS", "Memory BW(GB/s)"]
+        
         for kernel, time in times.items():
-            print(f"{kernel:10s} | {time:10.3f}")
+            metrics = calculate_metrics(M, N, K, time)
+            table_data.append([
+                kernel,
+                f"{time:.3f}",
+                f"{metrics['TFLOPS']:.2f}",
+                f"{metrics['Memory_BW_GBs']:.2f}"
+            ])
+        
+        # 使用tabulate打印美化的表格
+        print(tabulate(table_data, headers=headers, tablefmt="grid"))
     
     # 保存结果到CSV文件
     with open('benchmark_results.csv', 'w', newline='') as csvfile:
-        fieldnames = ['M', 'N', 'K', 'Kernel', 'Latency_ms']
+        fieldnames = [
+            'Batch_Size', 'N', 'K',
+            'Kernel', 'Latency_ms', 'TFLOPS', 'Memory_BW_GBs',
+            'Matrix_Size', 'Total_Params'
+        ]
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         
         for size, times in results.items():
             M, N, K = size
             for kernel, time in times.items():
+                metrics = calculate_metrics(M, N, K, time)
                 writer.writerow({
-                    'M': M,
+                    'Batch_Size': M,
                     'N': N,
                     'K': K,
                     'Kernel': kernel,
-                    'Latency_ms': f"{time:.3f}"
+                    'Latency_ms': f"{time:.3f}",
+                    'TFLOPS': f"{metrics['TFLOPS']:.2f}",
+                    'Memory_BW_GBs': f"{metrics['Memory_BW_GBs']:.2f}",
+                    'Matrix_Size': f"{M}x{N}x{K}",
+                    'Total_Params': N * K
                 })
     
-    print("\nResults have been saved to benchmark_results.csv")
+    print("\nDetailed results have been saved to benchmark_results.csv")
 
 if __name__ == "__main__":
     run_all_benchmarks() 

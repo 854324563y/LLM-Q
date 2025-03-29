@@ -1,0 +1,369 @@
+[2025-03-27 03:27:21 root] (main.py 265): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/llama-7b-hf', cache_dir='./cache', output_dir='./log-abq-llm/llama-7b-hf-w4a7', save_dir=None, resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='piqa,arc_easy,arc_challenge,boolq,hellaswag,winogrande', eval_ppl=True, num_fewshot=0, wbits=4, abits=7, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=10, let=True, lwc=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None)
+[2025-03-27 03:30:11 root] (main.py 332): INFO === start quantization ===
+[2025-03-27 03:30:11 root] (main.py 338): INFO load calibration from ./cache/dataloader_llama_wikitext2_128.cache
+[2025-03-27 03:30:11 root] (abq_llm.py 62): INFO Starting ...
+[2025-03-27 03:30:14 root] (abq_llm.py 212): INFO === Start quantize layer 0 ===
+[2025-03-27 03:30:18 root] (abq_llm.py 268): INFO use compensation vector
+[2025-03-27 03:30:52 root] (abq_llm.py 328): INFO layer 0 iter 0 loss:0.013228598982095718 norm:0.011327230371534824 max memory_allocated 22883.16943359375 
+[2025-03-27 03:31:26 root] (abq_llm.py 328): INFO layer 0 iter 1 loss:0.007943841628730297 norm:0.006093093194067478 max memory_allocated 22883.16943359375 
+[2025-03-27 03:32:00 root] (abq_llm.py 328): INFO layer 0 iter 2 loss:0.0059478627517819405 norm:0.004317178390920162 max memory_allocated 22883.16943359375 
+[2025-03-27 03:32:34 root] (abq_llm.py 328): INFO layer 0 iter 3 loss:0.005211747717112303 norm:0.0033683786168694496 max memory_allocated 22883.16943359375 
+[2025-03-27 03:33:09 root] (abq_llm.py 328): INFO layer 0 iter 4 loss:0.004904520697891712 norm:0.0027785985730588436 max memory_allocated 22883.16943359375 
+[2025-03-27 03:33:43 root] (abq_llm.py 328): INFO layer 0 iter 5 loss:0.004716710653156042 norm:0.0023449999280273914 max memory_allocated 22883.16943359375 
+[2025-03-27 03:34:18 root] (abq_llm.py 328): INFO layer 0 iter 6 loss:0.004567728843539953 norm:0.001992651028558612 max memory_allocated 22883.16943359375 
+[2025-03-27 03:34:52 root] (abq_llm.py 328): INFO layer 0 iter 7 loss:0.004485572688281536 norm:0.001798619283363223 max memory_allocated 22883.16943359375 
+[2025-03-27 03:35:27 root] (abq_llm.py 328): INFO layer 0 iter 8 loss:0.004397063050419092 norm:0.0015630049165338278 max memory_allocated 22883.16943359375 
+[2025-03-27 03:36:01 root] (abq_llm.py 328): INFO layer 0 iter 9 loss:0.004336281679570675 norm:0.0014449292793869972 max memory_allocated 22883.16943359375 
+[2025-03-27 03:36:11 root] (abq_llm.py 212): INFO === Start quantize layer 1 ===
+[2025-03-27 03:36:14 root] (abq_llm.py 268): INFO use compensation vector
+[2025-03-27 03:36:48 root] (abq_llm.py 328): INFO layer 1 iter 0 loss:0.02236129343509674 norm:0.01367218792438507 max memory_allocated 22884.84130859375 
+[2025-03-27 03:37:23 root] (abq_llm.py 328): INFO layer 1 iter 1 loss:0.01455477811396122 norm:0.007100224029272795 max memory_allocated 22884.84130859375 
+[2025-03-27 03:37:58 root] (abq_llm.py 328): INFO layer 1 iter 2 loss:0.01144721545279026 norm:0.005194670986384153 max memory_allocated 22884.84130859375 
+[2025-03-27 03:38:32 root] (abq_llm.py 328): INFO layer 1 iter 3 loss:0.010514358058571815 norm:0.004130643326789141 max memory_allocated 22884.84130859375 
+[2025-03-27 03:39:07 root] (abq_llm.py 328): INFO layer 1 iter 4 loss:0.010077903978526592 norm:0.0035947442520409822 max memory_allocated 22884.84130859375 
+[2025-03-27 03:39:42 root] (abq_llm.py 328): INFO layer 1 iter 5 loss:0.009816894307732582 norm:0.0031648457515984774 max memory_allocated 22884.84130859375 
+[2025-03-27 03:40:16 root] (abq_llm.py 328): INFO layer 1 iter 6 loss:0.009657032787799835 norm:0.0029630493372678757 max memory_allocated 22884.84130859375 
+[2025-03-27 03:40:51 root] (abq_llm.py 328): INFO layer 1 iter 7 loss:0.009488417766988277 norm:0.002640345599502325 max memory_allocated 22884.84130859375 
+[2025-03-27 03:41:25 root] (abq_llm.py 328): INFO layer 1 iter 8 loss:0.009344995021820068 norm:0.002464774064719677 max memory_allocated 22884.84130859375 
+[2025-03-27 03:42:00 root] (abq_llm.py 328): INFO layer 1 iter 9 loss:0.009237880818545818 norm:0.002239490859210491 max memory_allocated 22884.84130859375 
+[2025-03-27 03:42:10 root] (abq_llm.py 212): INFO === Start quantize layer 2 ===
+[2025-03-27 03:42:13 root] (abq_llm.py 268): INFO use compensation vector
+[2025-03-27 03:42:47 root] (abq_llm.py 328): INFO layer 2 iter 0 loss:0.028737759217619896 norm:0.010119408369064331 max memory_allocated 22886.51318359375 
+[2025-03-27 03:43:22 root] (abq_llm.py 328): INFO layer 2 iter 1 loss:0.02456546574831009 norm:0.007499538827687502 max memory_allocated 22886.51318359375 
+[2025-03-27 03:43:57 root] (abq_llm.py 328): INFO layer 2 iter 2 loss:0.020821090787649155 norm:0.005559721030294895 max memory_allocated 22886.51318359375 
+[2025-03-27 03:44:31 root] (abq_llm.py 328): INFO layer 2 iter 3 loss:0.020026134327054024 norm:0.005557813216000795 max memory_allocated 22886.51318359375 
+[2025-03-27 03:45:06 root] (abq_llm.py 328): INFO layer 2 iter 4 loss:0.01934879645705223 norm:0.005560141988098621 max memory_allocated 22886.51318359375 
+[2025-03-27 03:45:41 root] (abq_llm.py 328): INFO layer 2 iter 5 loss:0.018721049651503563 norm:0.004983862861990929 max memory_allocated 22886.51318359375 
+[2025-03-27 03:46:15 root] (abq_llm.py 328): INFO layer 2 iter 6 loss:0.01847882568836212 norm:0.004663018509745598 max memory_allocated 22886.51318359375 
+[2025-03-27 03:46:50 root] (abq_llm.py 328): INFO layer 2 iter 7 loss:0.01838591881096363 norm:0.0044803861528635025 max memory_allocated 22886.51318359375 
+[2025-03-27 03:47:25 root] (abq_llm.py 328): INFO layer 2 iter 8 loss:0.018303021788597107 norm:0.00418577715754509 max memory_allocated 22886.51318359375 
+[2025-03-27 03:48:00 root] (abq_llm.py 328): INFO layer 2 iter 9 loss:0.018200071528553963 norm:0.004194619134068489 max memory_allocated 22886.51318359375 
+[2025-03-27 03:48:09 root] (abq_llm.py 212): INFO === Start quantize layer 3 ===
+[2025-03-27 03:48:47 root] (abq_llm.py 328): INFO layer 3 iter 0 loss:0.0307619571685791 norm:0.004270679783076048 max memory_allocated 22888.06982421875 
+[2025-03-27 03:49:21 root] (abq_llm.py 328): INFO layer 3 iter 1 loss:0.024372855201363564 norm:0.0014658551663160324 max memory_allocated 22888.06982421875 
+[2025-03-27 03:49:56 root] (abq_llm.py 328): INFO layer 3 iter 2 loss:0.021133828908205032 norm:0.001065347925759852 max memory_allocated 22888.06982421875 
+[2025-03-27 03:50:30 root] (abq_llm.py 328): INFO layer 3 iter 3 loss:0.019864514470100403 norm:0.0008148173801600933 max memory_allocated 22888.06982421875 
+[2025-03-27 03:51:04 root] (abq_llm.py 328): INFO layer 3 iter 4 loss:0.019132370129227638 norm:0.0008143602171912789 max memory_allocated 22888.06982421875 
+[2025-03-27 03:51:39 root] (abq_llm.py 328): INFO layer 3 iter 5 loss:0.01862902194261551 norm:0.0007502680527977645 max memory_allocated 22888.06982421875 
+[2025-03-27 03:52:14 root] (abq_llm.py 328): INFO layer 3 iter 6 loss:0.018410317599773407 norm:0.0006904086330905557 max memory_allocated 22888.06982421875 
+[2025-03-27 03:52:48 root] (abq_llm.py 328): INFO layer 3 iter 7 loss:0.018332865089178085 norm:0.000717502785846591 max memory_allocated 22888.06982421875 
+[2025-03-27 03:53:23 root] (abq_llm.py 328): INFO layer 3 iter 8 loss:0.01828382909297943 norm:0.0007233164506033063 max memory_allocated 22888.06982421875 
+[2025-03-27 03:53:58 root] (abq_llm.py 328): INFO layer 3 iter 9 loss:0.018229737877845764 norm:0.0006912070675753057 max memory_allocated 22888.06982421875 
+[2025-03-27 03:54:08 root] (abq_llm.py 212): INFO === Start quantize layer 4 ===
+[2025-03-27 03:54:46 root] (abq_llm.py 328): INFO layer 4 iter 0 loss:0.03955197334289551 norm:0.005132837686687708 max memory_allocated 22889.74169921875 
+[2025-03-27 03:55:21 root] (abq_llm.py 328): INFO layer 4 iter 1 loss:0.031042207032442093 norm:0.0019751680083572865 max memory_allocated 22889.74169921875 
+[2025-03-27 03:55:55 root] (abq_llm.py 328): INFO layer 4 iter 2 loss:0.026255911216139793 norm:0.0015134289860725403 max memory_allocated 22889.74169921875 
+[2025-03-27 03:56:30 root] (abq_llm.py 328): INFO layer 4 iter 3 loss:0.02444727160036564 norm:0.001268494757823646 max memory_allocated 22889.74169921875 
+[2025-03-27 03:57:04 root] (abq_llm.py 328): INFO layer 4 iter 4 loss:0.02356298826634884 norm:0.0011554972734302282 max memory_allocated 22889.74169921875 
+[2025-03-27 03:57:39 root] (abq_llm.py 328): INFO layer 4 iter 5 loss:0.023062145337462425 norm:0.00109384476672858 max memory_allocated 22889.74169921875 
+[2025-03-27 03:58:14 root] (abq_llm.py 328): INFO layer 4 iter 6 loss:0.022889485582709312 norm:0.001136149512603879 max memory_allocated 22889.74169921875 
+[2025-03-27 03:58:48 root] (abq_llm.py 328): INFO layer 4 iter 7 loss:0.022772109135985374 norm:0.0010673260549083352 max memory_allocated 22889.74169921875 
+[2025-03-27 03:59:23 root] (abq_llm.py 328): INFO layer 4 iter 8 loss:0.02272053249180317 norm:0.0010023796930909157 max memory_allocated 22889.74169921875 
+[2025-03-27 03:59:58 root] (abq_llm.py 328): INFO layer 4 iter 9 loss:0.022634530439972878 norm:0.0010034479200839996 max memory_allocated 22889.74169921875 
+[2025-03-27 04:00:07 root] (abq_llm.py 212): INFO === Start quantize layer 5 ===
+[2025-03-27 04:00:45 root] (abq_llm.py 328): INFO layer 5 iter 0 loss:0.04439787194132805 norm:0.008594848215579987 max memory_allocated 22891.41357421875 
+[2025-03-27 04:01:20 root] (abq_llm.py 328): INFO layer 5 iter 1 loss:0.034794412553310394 norm:0.00250223302282393 max memory_allocated 22891.41357421875 
+[2025-03-27 04:01:54 root] (abq_llm.py 328): INFO layer 5 iter 2 loss:0.029803816229104996 norm:0.002200530841946602 max memory_allocated 22891.41357421875 
+[2025-03-27 04:02:29 root] (abq_llm.py 328): INFO layer 5 iter 3 loss:0.027892623096704483 norm:0.0018374655628576875 max memory_allocated 22891.41357421875 
+[2025-03-27 04:03:04 root] (abq_llm.py 328): INFO layer 5 iter 4 loss:0.026796190068125725 norm:0.001637845765799284 max memory_allocated 22891.41357421875 
+[2025-03-27 04:03:38 root] (abq_llm.py 328): INFO layer 5 iter 5 loss:0.0263060349971056 norm:0.0015762372640892863 max memory_allocated 22891.41357421875 
+[2025-03-27 04:04:13 root] (abq_llm.py 328): INFO layer 5 iter 6 loss:0.026052910834550858 norm:0.0015875716926530004 max memory_allocated 22891.41357421875 
+[2025-03-27 04:04:47 root] (abq_llm.py 328): INFO layer 5 iter 7 loss:0.02592337504029274 norm:0.0014638499123975635 max memory_allocated 22891.41357421875 
+[2025-03-27 04:05:22 root] (abq_llm.py 328): INFO layer 5 iter 8 loss:0.025855692103505135 norm:0.0015225257957354188 max memory_allocated 22891.41357421875 
+[2025-03-27 04:05:57 root] (abq_llm.py 328): INFO layer 5 iter 9 loss:0.025754544883966446 norm:0.0014327354729175568 max memory_allocated 22891.41357421875 
+[2025-03-27 04:06:06 root] (abq_llm.py 212): INFO === Start quantize layer 6 ===
+[2025-03-27 04:06:44 root] (abq_llm.py 328): INFO layer 6 iter 0 loss:0.0507315956056118 norm:0.010267775505781174 max memory_allocated 22893.08544921875 
+[2025-03-27 04:07:19 root] (abq_llm.py 328): INFO layer 6 iter 1 loss:0.038712598383426666 norm:0.0032192207872867584 max memory_allocated 22893.08544921875 
+[2025-03-27 04:07:53 root] (abq_llm.py 328): INFO layer 6 iter 2 loss:0.03327067196369171 norm:0.002385578816756606 max memory_allocated 22893.08544921875 
+[2025-03-27 04:08:28 root] (abq_llm.py 328): INFO layer 6 iter 3 loss:0.03137412294745445 norm:0.0020443119574338198 max memory_allocated 22893.08544921875 
+[2025-03-27 04:09:03 root] (abq_llm.py 328): INFO layer 6 iter 4 loss:0.030327798798680305 norm:0.0018852093489840627 max memory_allocated 22893.08544921875 
+[2025-03-27 04:09:37 root] (abq_llm.py 328): INFO layer 6 iter 5 loss:0.029764091596007347 norm:0.0017499902751296759 max memory_allocated 22893.08544921875 
+[2025-03-27 04:10:12 root] (abq_llm.py 328): INFO layer 6 iter 6 loss:0.02950448729097843 norm:0.0018913663225248456 max memory_allocated 22893.08544921875 
+[2025-03-27 04:10:47 root] (abq_llm.py 328): INFO layer 6 iter 7 loss:0.02936760149896145 norm:0.001683854847215116 max memory_allocated 22893.08544921875 
+[2025-03-27 04:11:21 root] (abq_llm.py 328): INFO layer 6 iter 8 loss:0.02930261194705963 norm:0.0018235386814922094 max memory_allocated 22893.08544921875 
+[2025-03-27 04:11:56 root] (abq_llm.py 328): INFO layer 6 iter 9 loss:0.029225358739495277 norm:0.0016285160090774298 max memory_allocated 22893.08544921875 
+[2025-03-27 04:12:06 root] (abq_llm.py 212): INFO === Start quantize layer 7 ===
+[2025-03-27 04:12:44 root] (abq_llm.py 328): INFO layer 7 iter 0 loss:0.05288061499595642 norm:0.007247610948979855 max memory_allocated 22894.75732421875 
+[2025-03-27 04:13:18 root] (abq_llm.py 328): INFO layer 7 iter 1 loss:0.04205266386270523 norm:0.002474796259775758 max memory_allocated 22894.75732421875 
+[2025-03-27 04:13:53 root] (abq_llm.py 328): INFO layer 7 iter 2 loss:0.03676154837012291 norm:0.002060121390968561 max memory_allocated 22894.75732421875 
+[2025-03-27 04:14:28 root] (abq_llm.py 328): INFO layer 7 iter 3 loss:0.03478575497865677 norm:0.001869487576186657 max memory_allocated 22894.75732421875 
+[2025-03-27 04:15:02 root] (abq_llm.py 328): INFO layer 7 iter 4 loss:0.03374399617314339 norm:0.0016989503055810928 max memory_allocated 22894.75732421875 
+[2025-03-27 04:15:37 root] (abq_llm.py 328): INFO layer 7 iter 5 loss:0.03320523351430893 norm:0.0015615994343534112 max memory_allocated 22894.75732421875 
+[2025-03-27 04:16:12 root] (abq_llm.py 328): INFO layer 7 iter 6 loss:0.03303784877061844 norm:0.0016156340716406703 max memory_allocated 22894.75732421875 
+[2025-03-27 04:16:46 root] (abq_llm.py 328): INFO layer 7 iter 7 loss:0.032957904040813446 norm:0.0014630843652412295 max memory_allocated 22894.75732421875 
+[2025-03-27 04:17:21 root] (abq_llm.py 328): INFO layer 7 iter 8 loss:0.03285429999232292 norm:0.0013981361407786608 max memory_allocated 22894.75732421875 
+[2025-03-27 04:17:55 root] (abq_llm.py 328): INFO layer 7 iter 9 loss:0.0328185111284256 norm:0.0015026625478640199 max memory_allocated 22894.75732421875 
+[2025-03-27 04:18:05 root] (abq_llm.py 212): INFO === Start quantize layer 8 ===
+[2025-03-27 04:18:43 root] (abq_llm.py 328): INFO layer 8 iter 0 loss:0.05754929780960083 norm:0.009049201384186745 max memory_allocated 22896.42919921875 
+[2025-03-27 04:19:18 root] (abq_llm.py 328): INFO layer 8 iter 1 loss:0.04625402018427849 norm:0.0025225267745554447 max memory_allocated 22896.42919921875 
+[2025-03-27 04:19:53 root] (abq_llm.py 328): INFO layer 8 iter 2 loss:0.040356311947107315 norm:0.002003288362175226 max memory_allocated 22896.42919921875 
+[2025-03-27 04:20:27 root] (abq_llm.py 328): INFO layer 8 iter 3 loss:0.038053542375564575 norm:0.0017265971982851624 max memory_allocated 22896.42919921875 
+[2025-03-27 04:21:02 root] (abq_llm.py 328): INFO layer 8 iter 4 loss:0.03694094344973564 norm:0.0016588573344051838 max memory_allocated 22896.42919921875 
+[2025-03-27 04:21:36 root] (abq_llm.py 328): INFO layer 8 iter 5 loss:0.036394570022821426 norm:0.0015595396980643272 max memory_allocated 22896.42919921875 
+[2025-03-27 04:22:11 root] (abq_llm.py 328): INFO layer 8 iter 6 loss:0.03613238409161568 norm:0.0014810538850724697 max memory_allocated 22896.42919921875 
+[2025-03-27 04:22:45 root] (abq_llm.py 328): INFO layer 8 iter 7 loss:0.03593912720680237 norm:0.001420815009623766 max memory_allocated 22896.42919921875 
+[2025-03-27 04:23:20 root] (abq_llm.py 328): INFO layer 8 iter 8 loss:0.035832859575748444 norm:0.001384330098517239 max memory_allocated 22896.42919921875 
+[2025-03-27 04:23:54 root] (abq_llm.py 328): INFO layer 8 iter 9 loss:0.03578105941414833 norm:0.0014615500112995505 max memory_allocated 22896.42919921875 
+[2025-03-27 04:24:04 root] (abq_llm.py 212): INFO === Start quantize layer 9 ===
+[2025-03-27 04:24:42 root] (abq_llm.py 328): INFO layer 9 iter 0 loss:0.06217523664236069 norm:0.0070435889065265656 max memory_allocated 22898.10107421875 
+[2025-03-27 04:25:17 root] (abq_llm.py 328): INFO layer 9 iter 1 loss:0.050018712878227234 norm:0.0023523690178990364 max memory_allocated 22898.10107421875 
+[2025-03-27 04:25:51 root] (abq_llm.py 328): INFO layer 9 iter 2 loss:0.04399331659078598 norm:0.0017195228720083833 max memory_allocated 22898.10107421875 
+[2025-03-27 04:26:26 root] (abq_llm.py 328): INFO layer 9 iter 3 loss:0.04157982021570206 norm:0.0015057171694934368 max memory_allocated 22898.10107421875 
+[2025-03-27 04:27:00 root] (abq_llm.py 328): INFO layer 9 iter 4 loss:0.04042559117078781 norm:0.0013471569400280714 max memory_allocated 22898.10107421875 
+[2025-03-27 04:27:35 root] (abq_llm.py 328): INFO layer 9 iter 5 loss:0.03986991569399834 norm:0.0013063899241387844 max memory_allocated 22898.10107421875 
+[2025-03-27 04:28:09 root] (abq_llm.py 328): INFO layer 9 iter 6 loss:0.03964816406369209 norm:0.0013737381668761373 max memory_allocated 22898.10107421875 
+[2025-03-27 04:28:44 root] (abq_llm.py 328): INFO layer 9 iter 7 loss:0.03948530554771423 norm:0.0013466754462569952 max memory_allocated 22898.10107421875 
+[2025-03-27 04:29:19 root] (abq_llm.py 328): INFO layer 9 iter 8 loss:0.03939339146018028 norm:0.0013014022260904312 max memory_allocated 22898.10107421875 
+[2025-03-27 04:29:53 root] (abq_llm.py 328): INFO layer 9 iter 9 loss:0.03933165222406387 norm:0.001279415562748909 max memory_allocated 22898.10107421875 
+[2025-03-27 04:30:03 root] (abq_llm.py 212): INFO === Start quantize layer 10 ===
+[2025-03-27 04:30:41 root] (abq_llm.py 328): INFO layer 10 iter 0 loss:0.06062096357345581 norm:0.004391306079924107 max memory_allocated 22899.77294921875 
+[2025-03-27 04:31:16 root] (abq_llm.py 328): INFO layer 10 iter 1 loss:0.05204341188073158 norm:0.001979297958314419 max memory_allocated 22899.77294921875 
+[2025-03-27 04:31:51 root] (abq_llm.py 328): INFO layer 10 iter 2 loss:0.04619762301445007 norm:0.0015915576368570328 max memory_allocated 22899.77294921875 
+[2025-03-27 04:32:25 root] (abq_llm.py 328): INFO layer 10 iter 3 loss:0.04408244788646698 norm:0.0014466316206380725 max memory_allocated 22899.77294921875 
+[2025-03-27 04:33:00 root] (abq_llm.py 328): INFO layer 10 iter 4 loss:0.0431392565369606 norm:0.0013442103518173099 max memory_allocated 22899.77294921875 
+[2025-03-27 04:33:35 root] (abq_llm.py 328): INFO layer 10 iter 5 loss:0.042639315128326416 norm:0.001188900088891387 max memory_allocated 22899.77294921875 
+[2025-03-27 04:34:09 root] (abq_llm.py 328): INFO layer 10 iter 6 loss:0.042425625026226044 norm:0.0011214776895940304 max memory_allocated 22899.77294921875 
+[2025-03-27 04:34:44 root] (abq_llm.py 328): INFO layer 10 iter 7 loss:0.04233282431960106 norm:0.001156247453764081 max memory_allocated 22899.77294921875 
+[2025-03-27 04:35:19 root] (abq_llm.py 328): INFO layer 10 iter 8 loss:0.04226391017436981 norm:0.0011132194194942713 max memory_allocated 22899.77294921875 
+[2025-03-27 04:35:53 root] (abq_llm.py 328): INFO layer 10 iter 9 loss:0.04219131916761398 norm:0.0011336534516885877 max memory_allocated 22899.77294921875 
+[2025-03-27 04:36:03 root] (abq_llm.py 212): INFO === Start quantize layer 11 ===
+[2025-03-27 04:36:41 root] (abq_llm.py 328): INFO layer 11 iter 0 loss:0.06371653079986572 norm:0.005513222422450781 max memory_allocated 22901.44482421875 
+[2025-03-27 04:37:15 root] (abq_llm.py 328): INFO layer 11 iter 1 loss:0.054388731718063354 norm:0.001892243162728846 max memory_allocated 22901.44482421875 
+[2025-03-27 04:37:50 root] (abq_llm.py 328): INFO layer 11 iter 2 loss:0.04835980013012886 norm:0.0013799776788800955 max memory_allocated 22901.44482421875 
+[2025-03-27 04:38:25 root] (abq_llm.py 328): INFO layer 11 iter 3 loss:0.046366166323423386 norm:0.0011468527372926474 max memory_allocated 22901.44482421875 
+[2025-03-27 04:38:59 root] (abq_llm.py 328): INFO layer 11 iter 4 loss:0.04545435309410095 norm:0.0010485040256753564 max memory_allocated 22901.44482421875 
+[2025-03-27 04:39:34 root] (abq_llm.py 328): INFO layer 11 iter 5 loss:0.044993385672569275 norm:0.0010018943576142192 max memory_allocated 22901.44482421875 
+[2025-03-27 04:40:09 root] (abq_llm.py 328): INFO layer 11 iter 6 loss:0.044804561883211136 norm:0.000946172047406435 max memory_allocated 22901.44482421875 
+[2025-03-27 04:40:43 root] (abq_llm.py 328): INFO layer 11 iter 7 loss:0.04465577006340027 norm:0.0009240194922313094 max memory_allocated 22901.44482421875 
+[2025-03-27 04:41:18 root] (abq_llm.py 328): INFO layer 11 iter 8 loss:0.0445948988199234 norm:0.0009599535260349512 max memory_allocated 22901.44482421875 
+[2025-03-27 04:41:53 root] (abq_llm.py 328): INFO layer 11 iter 9 loss:0.04452921822667122 norm:0.0009143664501607418 max memory_allocated 22901.44482421875 
+[2025-03-27 04:42:02 root] (abq_llm.py 212): INFO === Start quantize layer 12 ===
+[2025-03-27 04:42:41 root] (abq_llm.py 328): INFO layer 12 iter 0 loss:0.06604164093732834 norm:0.004481499083340168 max memory_allocated 22903.11669921875 
+[2025-03-27 04:43:15 root] (abq_llm.py 328): INFO layer 12 iter 1 loss:0.057461217045784 norm:0.001945357769727707 max memory_allocated 22903.11669921875 
+[2025-03-27 04:43:50 root] (abq_llm.py 328): INFO layer 12 iter 2 loss:0.05153638869524002 norm:0.0016351768281310797 max memory_allocated 22903.11669921875 
+[2025-03-27 04:44:24 root] (abq_llm.py 328): INFO layer 12 iter 3 loss:0.04931909590959549 norm:0.0013716953108087182 max memory_allocated 22903.11669921875 
+[2025-03-27 04:44:59 root] (abq_llm.py 328): INFO layer 12 iter 4 loss:0.048225678503513336 norm:0.0012455448741093278 max memory_allocated 22903.11669921875 
+[2025-03-27 04:45:33 root] (abq_llm.py 328): INFO layer 12 iter 5 loss:0.04765694588422775 norm:0.001188462134450674 max memory_allocated 22903.11669921875 
+[2025-03-27 04:46:08 root] (abq_llm.py 328): INFO layer 12 iter 6 loss:0.047416649758815765 norm:0.0011861113598570228 max memory_allocated 22903.11669921875 
+[2025-03-27 04:46:43 root] (abq_llm.py 328): INFO layer 12 iter 7 loss:0.04725352302193642 norm:0.001127979252487421 max memory_allocated 22903.11669921875 
+[2025-03-27 04:47:17 root] (abq_llm.py 328): INFO layer 12 iter 8 loss:0.04712166264653206 norm:0.0010785056510940194 max memory_allocated 22903.11669921875 
+[2025-03-27 04:47:52 root] (abq_llm.py 328): INFO layer 12 iter 9 loss:0.04712633416056633 norm:0.0011328610125929117 max memory_allocated 22903.11669921875 
+[2025-03-27 04:48:02 root] (abq_llm.py 212): INFO === Start quantize layer 13 ===
+[2025-03-27 04:48:41 root] (abq_llm.py 328): INFO layer 13 iter 0 loss:0.06830007582902908 norm:0.006886806804686785 max memory_allocated 22904.78857421875 
+[2025-03-27 04:49:15 root] (abq_llm.py 328): INFO layer 13 iter 1 loss:0.059145472943782806 norm:0.0016274930676445365 max memory_allocated 22904.78857421875 
+[2025-03-27 04:49:50 root] (abq_llm.py 328): INFO layer 13 iter 2 loss:0.05368448793888092 norm:0.0013133608736097813 max memory_allocated 22904.78857421875 
+[2025-03-27 04:50:24 root] (abq_llm.py 328): INFO layer 13 iter 3 loss:0.05162373185157776 norm:0.0011378007475286722 max memory_allocated 22904.78857421875 
+[2025-03-27 04:50:59 root] (abq_llm.py 328): INFO layer 13 iter 4 loss:0.05055679753422737 norm:0.0010638991370797157 max memory_allocated 22904.78857421875 
+[2025-03-27 04:51:33 root] (abq_llm.py 328): INFO layer 13 iter 5 loss:0.049987271428108215 norm:0.000968471635133028 max memory_allocated 22904.78857421875 
+[2025-03-27 04:52:08 root] (abq_llm.py 328): INFO layer 13 iter 6 loss:0.04972132295370102 norm:0.0009220537031069398 max memory_allocated 22904.78857421875 
+[2025-03-27 04:52:43 root] (abq_llm.py 328): INFO layer 13 iter 7 loss:0.049582187086343765 norm:0.0009443243034183979 max memory_allocated 22904.78857421875 
+[2025-03-27 04:53:17 root] (abq_llm.py 328): INFO layer 13 iter 8 loss:0.049491092562675476 norm:0.000870067102368921 max memory_allocated 22904.78857421875 
+[2025-03-27 04:53:52 root] (abq_llm.py 328): INFO layer 13 iter 9 loss:0.0494210310280323 norm:0.0008831705199554563 max memory_allocated 22904.78857421875 
+[2025-03-27 04:54:03 root] (abq_llm.py 212): INFO === Start quantize layer 14 ===
+[2025-03-27 04:54:41 root] (abq_llm.py 328): INFO layer 14 iter 0 loss:0.07495081424713135 norm:0.006300869397819042 max memory_allocated 22906.46044921875 
+[2025-03-27 04:55:15 root] (abq_llm.py 328): INFO layer 14 iter 1 loss:0.06455043703317642 norm:0.002157684415578842 max memory_allocated 22906.46044921875 
+[2025-03-27 04:55:50 root] (abq_llm.py 328): INFO layer 14 iter 2 loss:0.05834951251745224 norm:0.0018123367335647345 max memory_allocated 22906.46044921875 
+[2025-03-27 04:56:25 root] (abq_llm.py 328): INFO layer 14 iter 3 loss:0.05587589368224144 norm:0.0013405964709818363 max memory_allocated 22906.46044921875 
+[2025-03-27 04:56:59 root] (abq_llm.py 328): INFO layer 14 iter 4 loss:0.05471751093864441 norm:0.001173645374365151 max memory_allocated 22906.46044921875 
+[2025-03-27 04:57:34 root] (abq_llm.py 328): INFO layer 14 iter 5 loss:0.05417313426733017 norm:0.0011638751020655036 max memory_allocated 22906.46044921875 
+[2025-03-27 04:58:08 root] (abq_llm.py 328): INFO layer 14 iter 6 loss:0.053891897201538086 norm:0.0010894208680838346 max memory_allocated 22906.46044921875 
+[2025-03-27 04:58:43 root] (abq_llm.py 328): INFO layer 14 iter 7 loss:0.053690653294324875 norm:0.0010873837163671851 max memory_allocated 22906.46044921875 
+[2025-03-27 04:59:18 root] (abq_llm.py 328): INFO layer 14 iter 8 loss:0.053571347147226334 norm:0.0011146173346787691 max memory_allocated 22906.46044921875 
+[2025-03-27 04:59:52 root] (abq_llm.py 328): INFO layer 14 iter 9 loss:0.0534425787627697 norm:0.0010354198748245835 max memory_allocated 22906.46044921875 
+[2025-03-27 05:00:02 root] (abq_llm.py 212): INFO === Start quantize layer 15 ===
+[2025-03-27 05:00:41 root] (abq_llm.py 328): INFO layer 15 iter 0 loss:0.07583858072757721 norm:0.003744263667613268 max memory_allocated 22908.13232421875 
+[2025-03-27 05:01:15 root] (abq_llm.py 328): INFO layer 15 iter 1 loss:0.06724260002374649 norm:0.0019050957635045052 max memory_allocated 22908.13232421875 
+[2025-03-27 05:01:50 root] (abq_llm.py 328): INFO layer 15 iter 2 loss:0.06135718896985054 norm:0.0015125710051506758 max memory_allocated 22908.13232421875 
+[2025-03-27 05:02:24 root] (abq_llm.py 328): INFO layer 15 iter 3 loss:0.0592648983001709 norm:0.0013403795892372727 max memory_allocated 22908.13232421875 
+[2025-03-27 05:02:59 root] (abq_llm.py 328): INFO layer 15 iter 4 loss:0.058336324989795685 norm:0.0014799813507124782 max memory_allocated 22908.13232421875 
+[2025-03-27 05:03:34 root] (abq_llm.py 328): INFO layer 15 iter 5 loss:0.057914696633815765 norm:0.0012765144929289818 max memory_allocated 22908.13232421875 
+[2025-03-27 05:04:08 root] (abq_llm.py 328): INFO layer 15 iter 6 loss:0.057692013680934906 norm:0.001246379455551505 max memory_allocated 22908.13232421875 
+[2025-03-27 05:04:43 root] (abq_llm.py 328): INFO layer 15 iter 7 loss:0.0575173981487751 norm:0.0011996219400316477 max memory_allocated 22908.13232421875 
+[2025-03-27 05:05:18 root] (abq_llm.py 328): INFO layer 15 iter 8 loss:0.0574457049369812 norm:0.001168763730674982 max memory_allocated 22908.13232421875 
+[2025-03-27 05:05:52 root] (abq_llm.py 328): INFO layer 15 iter 9 loss:0.05744131654500961 norm:0.0012489242944866419 max memory_allocated 22908.13232421875 
+[2025-03-27 05:06:02 root] (abq_llm.py 212): INFO === Start quantize layer 16 ===
+[2025-03-27 05:06:41 root] (abq_llm.py 328): INFO layer 16 iter 0 loss:0.08605768531560898 norm:0.00662754662334919 max memory_allocated 22909.80419921875 
+[2025-03-27 05:07:15 root] (abq_llm.py 328): INFO layer 16 iter 1 loss:0.07466335594654083 norm:0.002384611638262868 max memory_allocated 22909.80419921875 
+[2025-03-27 05:07:50 root] (abq_llm.py 328): INFO layer 16 iter 2 loss:0.06799926608800888 norm:0.0019203412812203169 max memory_allocated 22909.80419921875 
+[2025-03-27 05:08:25 root] (abq_llm.py 328): INFO layer 16 iter 3 loss:0.06544997543096542 norm:0.0019569110590964556 max memory_allocated 22909.80419921875 
+[2025-03-27 05:08:59 root] (abq_llm.py 328): INFO layer 16 iter 4 loss:0.06422463059425354 norm:0.0014950811164453626 max memory_allocated 22909.80419921875 
+[2025-03-27 05:09:34 root] (abq_llm.py 328): INFO layer 16 iter 5 loss:0.06371869891881943 norm:0.0013420264003798366 max memory_allocated 22909.80419921875 
+[2025-03-27 05:10:08 root] (abq_llm.py 328): INFO layer 16 iter 6 loss:0.06342185288667679 norm:0.0013479003682732582 max memory_allocated 22909.80419921875 
+[2025-03-27 05:10:43 root] (abq_llm.py 328): INFO layer 16 iter 7 loss:0.06320599466562271 norm:0.0012808043975383043 max memory_allocated 22909.80419921875 
+[2025-03-27 05:11:17 root] (abq_llm.py 328): INFO layer 16 iter 8 loss:0.06305329501628876 norm:0.001232371898368001 max memory_allocated 22909.80419921875 
+[2025-03-27 05:11:52 root] (abq_llm.py 328): INFO layer 16 iter 9 loss:0.0629274919629097 norm:0.0012394777731969953 max memory_allocated 22909.80419921875 
+[2025-03-27 05:12:01 root] (abq_llm.py 212): INFO === Start quantize layer 17 ===
+[2025-03-27 05:12:39 root] (abq_llm.py 328): INFO layer 17 iter 0 loss:0.09560580551624298 norm:0.0066521381959319115 max memory_allocated 22911.47607421875 
+[2025-03-27 05:13:14 root] (abq_llm.py 328): INFO layer 17 iter 1 loss:0.0835086777806282 norm:0.0020801089704036713 max memory_allocated 22911.47607421875 
+[2025-03-27 05:13:49 root] (abq_llm.py 328): INFO layer 17 iter 2 loss:0.07614342868328094 norm:0.001755493227392435 max memory_allocated 22911.47607421875 
+[2025-03-27 05:14:23 root] (abq_llm.py 328): INFO layer 17 iter 3 loss:0.07356885075569153 norm:0.0014954134821891785 max memory_allocated 22911.47607421875 
+[2025-03-27 05:14:57 root] (abq_llm.py 328): INFO layer 17 iter 4 loss:0.07227952033281326 norm:0.0012220490025356412 max memory_allocated 22911.47607421875 
+[2025-03-27 05:15:32 root] (abq_llm.py 328): INFO layer 17 iter 5 loss:0.07175461202859879 norm:0.0012364871799945831 max memory_allocated 22911.47607421875 
+[2025-03-27 05:16:07 root] (abq_llm.py 328): INFO layer 17 iter 6 loss:0.07146535813808441 norm:0.0011327053653076291 max memory_allocated 22911.47607421875 
+[2025-03-27 05:16:41 root] (abq_llm.py 328): INFO layer 17 iter 7 loss:0.07122787088155746 norm:0.001060943235643208 max memory_allocated 22911.47607421875 
+[2025-03-27 05:17:16 root] (abq_llm.py 328): INFO layer 17 iter 8 loss:0.07109051942825317 norm:0.001082834554836154 max memory_allocated 22911.47607421875 
+[2025-03-27 05:17:50 root] (abq_llm.py 328): INFO layer 17 iter 9 loss:0.07095953822135925 norm:0.0010592122562229633 max memory_allocated 22911.47607421875 
+[2025-03-27 05:18:00 root] (abq_llm.py 212): INFO === Start quantize layer 18 ===
+[2025-03-27 05:18:38 root] (abq_llm.py 328): INFO layer 18 iter 0 loss:0.10566999018192291 norm:0.005590987857431173 max memory_allocated 22913.14794921875 
+[2025-03-27 05:19:12 root] (abq_llm.py 328): INFO layer 18 iter 1 loss:0.09365081042051315 norm:0.0019253743812441826 max memory_allocated 22913.14794921875 
+[2025-03-27 05:19:47 root] (abq_llm.py 328): INFO layer 18 iter 2 loss:0.08609845489263535 norm:0.0015041265869513154 max memory_allocated 22913.14794921875 
+[2025-03-27 05:20:21 root] (abq_llm.py 328): INFO layer 18 iter 3 loss:0.08351883292198181 norm:0.0012675290927290916 max memory_allocated 22913.14794921875 
+[2025-03-27 05:20:56 root] (abq_llm.py 328): INFO layer 18 iter 4 loss:0.08236447721719742 norm:0.0011300682090222836 max memory_allocated 22913.14794921875 
+[2025-03-27 05:21:31 root] (abq_llm.py 328): INFO layer 18 iter 5 loss:0.08187608420848846 norm:0.001084926538169384 max memory_allocated 22913.14794921875 
+[2025-03-27 05:22:05 root] (abq_llm.py 328): INFO layer 18 iter 6 loss:0.08159586042165756 norm:0.0010486736427992582 max memory_allocated 22913.14794921875 
+[2025-03-27 05:22:40 root] (abq_llm.py 328): INFO layer 18 iter 7 loss:0.08141347020864487 norm:0.0010134062031283975 max memory_allocated 22913.14794921875 
+[2025-03-27 05:23:15 root] (abq_llm.py 328): INFO layer 18 iter 8 loss:0.08125587552785873 norm:0.0009704536059871316 max memory_allocated 22913.14794921875 
+[2025-03-27 05:23:49 root] (abq_llm.py 328): INFO layer 18 iter 9 loss:0.0811382606625557 norm:0.0009770874166861176 max memory_allocated 22913.14794921875 
+[2025-03-27 05:23:59 root] (abq_llm.py 212): INFO === Start quantize layer 19 ===
+[2025-03-27 05:24:37 root] (abq_llm.py 328): INFO layer 19 iter 0 loss:0.1183684915304184 norm:0.005557791795581579 max memory_allocated 22914.81982421875 
+[2025-03-27 05:25:12 root] (abq_llm.py 328): INFO layer 19 iter 1 loss:0.1069309264421463 norm:0.0024378434754908085 max memory_allocated 22914.81982421875 
+[2025-03-27 05:25:47 root] (abq_llm.py 328): INFO layer 19 iter 2 loss:0.09911564737558365 norm:0.001840951037593186 max memory_allocated 22914.81982421875 
+[2025-03-27 05:26:21 root] (abq_llm.py 328): INFO layer 19 iter 3 loss:0.0964578241109848 norm:0.0017157226102426648 max memory_allocated 22914.81982421875 
+[2025-03-27 05:26:56 root] (abq_llm.py 328): INFO layer 19 iter 4 loss:0.09530230611562729 norm:0.0015772266779094934 max memory_allocated 22914.81982421875 
+[2025-03-27 05:27:30 root] (abq_llm.py 328): INFO layer 19 iter 5 loss:0.0948239117860794 norm:0.0013845425564795732 max memory_allocated 22914.81982421875 
+[2025-03-27 05:28:05 root] (abq_llm.py 328): INFO layer 19 iter 6 loss:0.09452996402978897 norm:0.001347541925497353 max memory_allocated 22914.81982421875 
+[2025-03-27 05:28:40 root] (abq_llm.py 328): INFO layer 19 iter 7 loss:0.09433497488498688 norm:0.0012397882528603077 max memory_allocated 22914.81982421875 
+[2025-03-27 05:29:14 root] (abq_llm.py 328): INFO layer 19 iter 8 loss:0.0941760390996933 norm:0.001241066143848002 max memory_allocated 22914.81982421875 
+[2025-03-27 05:29:49 root] (abq_llm.py 328): INFO layer 19 iter 9 loss:0.09407057613134384 norm:0.0012472046073526144 max memory_allocated 22914.81982421875 
+[2025-03-27 05:29:59 root] (abq_llm.py 212): INFO === Start quantize layer 20 ===
+[2025-03-27 05:30:36 root] (abq_llm.py 328): INFO layer 20 iter 0 loss:0.14551730453968048 norm:0.010488007217645645 max memory_allocated 22916.49169921875 
+[2025-03-27 05:31:11 root] (abq_llm.py 328): INFO layer 20 iter 1 loss:0.12916216254234314 norm:0.00345218600705266 max memory_allocated 22916.49169921875 
+[2025-03-27 05:31:45 root] (abq_llm.py 328): INFO layer 20 iter 2 loss:0.11883150786161423 norm:0.002206064760684967 max memory_allocated 22916.49169921875 
+[2025-03-27 05:32:20 root] (abq_llm.py 328): INFO layer 20 iter 3 loss:0.11554856598377228 norm:0.001880280557088554 max memory_allocated 22916.49169921875 
+[2025-03-27 05:32:55 root] (abq_llm.py 328): INFO layer 20 iter 4 loss:0.11422122269868851 norm:0.001711226999759674 max memory_allocated 22916.49169921875 
+[2025-03-27 05:33:29 root] (abq_llm.py 328): INFO layer 20 iter 5 loss:0.11365571618080139 norm:0.0015166491502895951 max memory_allocated 22916.49169921875 
+[2025-03-27 05:34:04 root] (abq_llm.py 328): INFO layer 20 iter 6 loss:0.11317894607782364 norm:0.0014040247770026326 max memory_allocated 22916.49169921875 
+[2025-03-27 05:34:39 root] (abq_llm.py 328): INFO layer 20 iter 7 loss:0.11290176957845688 norm:0.0013737832196056843 max memory_allocated 22916.49169921875 
+[2025-03-27 05:35:14 root] (abq_llm.py 328): INFO layer 20 iter 8 loss:0.11268195509910583 norm:0.0013303968589752913 max memory_allocated 22916.49169921875 
+[2025-03-27 05:35:48 root] (abq_llm.py 328): INFO layer 20 iter 9 loss:0.11245431005954742 norm:0.0012979430612176657 max memory_allocated 22916.49169921875 
+[2025-03-27 05:35:58 root] (abq_llm.py 212): INFO === Start quantize layer 21 ===
+[2025-03-27 05:36:36 root] (abq_llm.py 328): INFO layer 21 iter 0 loss:0.16529932618141174 norm:0.008009479381144047 max memory_allocated 22918.16357421875 
+[2025-03-27 05:37:10 root] (abq_llm.py 328): INFO layer 21 iter 1 loss:0.15045271813869476 norm:0.0026497896760702133 max memory_allocated 22918.16357421875 
+[2025-03-27 05:37:45 root] (abq_llm.py 328): INFO layer 21 iter 2 loss:0.1398753970861435 norm:0.002247837372124195 max memory_allocated 22918.16357421875 
+[2025-03-27 05:38:20 root] (abq_llm.py 328): INFO layer 21 iter 3 loss:0.13677233457565308 norm:0.0019045587396249175 max memory_allocated 22918.16357421875 
+[2025-03-27 05:38:54 root] (abq_llm.py 328): INFO layer 21 iter 4 loss:0.13553430140018463 norm:0.001719539170153439 max memory_allocated 22918.16357421875 
+[2025-03-27 05:39:29 root] (abq_llm.py 328): INFO layer 21 iter 5 loss:0.13490045070648193 norm:0.0016093074809759855 max memory_allocated 22918.16357421875 
+[2025-03-27 05:40:03 root] (abq_llm.py 328): INFO layer 21 iter 6 loss:0.13448528945446014 norm:0.001510384026914835 max memory_allocated 22918.16357421875 
+[2025-03-27 05:40:38 root] (abq_llm.py 328): INFO layer 21 iter 7 loss:0.1342444121837616 norm:0.0015500588342547417 max memory_allocated 22918.16357421875 
+[2025-03-27 05:41:13 root] (abq_llm.py 328): INFO layer 21 iter 8 loss:0.1341610699892044 norm:0.0017748535610735416 max memory_allocated 22918.16357421875 
+[2025-03-27 05:41:47 root] (abq_llm.py 328): INFO layer 21 iter 9 loss:0.133976548910141 norm:0.0015903832390904427 max memory_allocated 22918.16357421875 
+[2025-03-27 05:41:57 root] (abq_llm.py 212): INFO === Start quantize layer 22 ===
+[2025-03-27 05:42:35 root] (abq_llm.py 328): INFO layer 22 iter 0 loss:0.1880239099264145 norm:0.006546967197209597 max memory_allocated 22919.83544921875 
+[2025-03-27 05:43:09 root] (abq_llm.py 328): INFO layer 22 iter 1 loss:0.17283529043197632 norm:0.0026132415514439344 max memory_allocated 22919.83544921875 
+[2025-03-27 05:43:44 root] (abq_llm.py 328): INFO layer 22 iter 2 loss:0.162028968334198 norm:0.0021065929904580116 max memory_allocated 22919.83544921875 
+[2025-03-27 05:44:19 root] (abq_llm.py 328): INFO layer 22 iter 3 loss:0.15869472920894623 norm:0.0018707162234932184 max memory_allocated 22919.83544921875 
+[2025-03-27 05:44:54 root] (abq_llm.py 328): INFO layer 22 iter 4 loss:0.1574959009885788 norm:0.0016729234484955668 max memory_allocated 22919.83544921875 
+[2025-03-27 05:45:28 root] (abq_llm.py 328): INFO layer 22 iter 5 loss:0.15701556205749512 norm:0.0015350792091339827 max memory_allocated 22919.83544921875 
+[2025-03-27 05:46:02 root] (abq_llm.py 328): INFO layer 22 iter 6 loss:0.15665079653263092 norm:0.0015946782659739256 max memory_allocated 22919.83544921875 
+[2025-03-27 05:46:37 root] (abq_llm.py 328): INFO layer 22 iter 7 loss:0.15639248490333557 norm:0.0015518628060817719 max memory_allocated 22919.83544921875 
+[2025-03-27 05:47:12 root] (abq_llm.py 328): INFO layer 22 iter 8 loss:0.15611255168914795 norm:0.0015349126188084483 max memory_allocated 22919.83544921875 
+[2025-03-27 05:47:46 root] (abq_llm.py 328): INFO layer 22 iter 9 loss:0.15591084957122803 norm:0.0014936067163944244 max memory_allocated 22919.83544921875 
+[2025-03-27 05:47:56 root] (abq_llm.py 212): INFO === Start quantize layer 23 ===
+[2025-03-27 05:48:33 root] (abq_llm.py 328): INFO layer 23 iter 0 loss:0.21552146971225739 norm:0.005078071728348732 max memory_allocated 22921.50732421875 
+[2025-03-27 05:49:08 root] (abq_llm.py 328): INFO layer 23 iter 1 loss:0.20091009140014648 norm:0.0027325251139700413 max memory_allocated 22921.50732421875 
+[2025-03-27 05:49:42 root] (abq_llm.py 328): INFO layer 23 iter 2 loss:0.18950970470905304 norm:0.0023624971508979797 max memory_allocated 22921.50732421875 
+[2025-03-27 05:50:17 root] (abq_llm.py 328): INFO layer 23 iter 3 loss:0.18610277771949768 norm:0.002202715026214719 max memory_allocated 22921.50732421875 
+[2025-03-27 05:50:51 root] (abq_llm.py 328): INFO layer 23 iter 4 loss:0.185016468167305 norm:0.002132887253537774 max memory_allocated 22921.50732421875 
+[2025-03-27 05:51:26 root] (abq_llm.py 328): INFO layer 23 iter 5 loss:0.1845046728849411 norm:0.0021215956658124924 max memory_allocated 22921.50732421875 
+[2025-03-27 05:52:01 root] (abq_llm.py 328): INFO layer 23 iter 6 loss:0.18412691354751587 norm:0.002157669048756361 max memory_allocated 22921.50732421875 
+[2025-03-27 05:52:35 root] (abq_llm.py 328): INFO layer 23 iter 7 loss:0.18379931151866913 norm:0.002003818517550826 max memory_allocated 22921.50732421875 
+[2025-03-27 05:53:10 root] (abq_llm.py 328): INFO layer 23 iter 8 loss:0.1835796982049942 norm:0.0020098965615034103 max memory_allocated 22921.50732421875 
+[2025-03-27 05:53:44 root] (abq_llm.py 328): INFO layer 23 iter 9 loss:0.18341457843780518 norm:0.002000889042392373 max memory_allocated 22921.50732421875 
+[2025-03-27 05:53:54 root] (abq_llm.py 212): INFO === Start quantize layer 24 ===
+[2025-03-27 05:54:32 root] (abq_llm.py 328): INFO layer 24 iter 0 loss:0.2458699345588684 norm:0.004479152616113424 max memory_allocated 22923.17919921875 
+[2025-03-27 05:55:07 root] (abq_llm.py 328): INFO layer 24 iter 1 loss:0.23099581897258759 norm:0.002564431168138981 max memory_allocated 22923.17919921875 
+[2025-03-27 05:55:41 root] (abq_llm.py 328): INFO layer 24 iter 2 loss:0.21772193908691406 norm:0.0017899733502417803 max memory_allocated 22923.17919921875 
+[2025-03-27 05:56:16 root] (abq_llm.py 328): INFO layer 24 iter 3 loss:0.2139265090227127 norm:0.0015072356909513474 max memory_allocated 22923.17919921875 
+[2025-03-27 05:56:51 root] (abq_llm.py 328): INFO layer 24 iter 4 loss:0.21283599734306335 norm:0.0013792846584692597 max memory_allocated 22923.17919921875 
+[2025-03-27 05:57:26 root] (abq_llm.py 328): INFO layer 24 iter 5 loss:0.21230357885360718 norm:0.0013335607945919037 max memory_allocated 22923.17919921875 
+[2025-03-27 05:58:00 root] (abq_llm.py 328): INFO layer 24 iter 6 loss:0.211923748254776 norm:0.001282460754737258 max memory_allocated 22923.17919921875 
+[2025-03-27 05:58:35 root] (abq_llm.py 328): INFO layer 24 iter 7 loss:0.21159720420837402 norm:0.0011816503247246146 max memory_allocated 22923.17919921875 
+[2025-03-27 05:59:09 root] (abq_llm.py 328): INFO layer 24 iter 8 loss:0.21128803491592407 norm:0.0011292992858216166 max memory_allocated 22923.17919921875 
+[2025-03-27 05:59:44 root] (abq_llm.py 328): INFO layer 24 iter 9 loss:0.2110668420791626 norm:0.0011051243636757135 max memory_allocated 22923.17919921875 
+[2025-03-27 05:59:54 root] (abq_llm.py 212): INFO === Start quantize layer 25 ===
+[2025-03-27 06:00:32 root] (abq_llm.py 328): INFO layer 25 iter 0 loss:0.28046756982803345 norm:0.006728423293679953 max memory_allocated 22924.85107421875 
+[2025-03-27 06:01:06 root] (abq_llm.py 328): INFO layer 25 iter 1 loss:0.26334062218666077 norm:0.0027218491304665804 max memory_allocated 22924.85107421875 
+[2025-03-27 06:01:41 root] (abq_llm.py 328): INFO layer 25 iter 2 loss:0.2496955692768097 norm:0.002041138941422105 max memory_allocated 22924.85107421875 
+[2025-03-27 06:02:16 root] (abq_llm.py 328): INFO layer 25 iter 3 loss:0.24584847688674927 norm:0.0017538282554596663 max memory_allocated 22924.85107421875 
+[2025-03-27 06:02:50 root] (abq_llm.py 328): INFO layer 25 iter 4 loss:0.24480679631233215 norm:0.0015877248952165246 max memory_allocated 22924.85107421875 
+[2025-03-27 06:03:25 root] (abq_llm.py 328): INFO layer 25 iter 5 loss:0.24433253705501556 norm:0.0015433887019753456 max memory_allocated 22924.85107421875 
+[2025-03-27 06:03:59 root] (abq_llm.py 328): INFO layer 25 iter 6 loss:0.2439938187599182 norm:0.0014656579587608576 max memory_allocated 22924.85107421875 
+[2025-03-27 06:04:34 root] (abq_llm.py 328): INFO layer 25 iter 7 loss:0.24366527795791626 norm:0.0014094008365646005 max memory_allocated 22924.85107421875 
+[2025-03-27 06:05:09 root] (abq_llm.py 328): INFO layer 25 iter 8 loss:0.24341608583927155 norm:0.0014038942754268646 max memory_allocated 22924.85107421875 
+[2025-03-27 06:05:43 root] (abq_llm.py 328): INFO layer 25 iter 9 loss:0.24329246580600739 norm:0.0013656842056661844 max memory_allocated 22924.85107421875 
+[2025-03-27 06:05:53 root] (abq_llm.py 212): INFO === Start quantize layer 26 ===
+[2025-03-27 06:06:31 root] (abq_llm.py 328): INFO layer 26 iter 0 loss:0.3195863962173462 norm:0.00650160014629364 max memory_allocated 22926.52294921875 
+[2025-03-27 06:07:05 root] (abq_llm.py 328): INFO layer 26 iter 1 loss:0.30093997716903687 norm:0.005777920130640268 max memory_allocated 22926.52294921875 
+[2025-03-27 06:07:40 root] (abq_llm.py 328): INFO layer 26 iter 2 loss:0.2857380509376526 norm:0.0020760612096637487 max memory_allocated 22926.52294921875 
+[2025-03-27 06:08:15 root] (abq_llm.py 328): INFO layer 26 iter 3 loss:0.2817002236843109 norm:0.0018038994167000055 max memory_allocated 22926.52294921875 
+[2025-03-27 06:08:49 root] (abq_llm.py 328): INFO layer 26 iter 4 loss:0.28066420555114746 norm:0.0015302676474675536 max memory_allocated 22926.52294921875 
+[2025-03-27 06:09:24 root] (abq_llm.py 328): INFO layer 26 iter 5 loss:0.28014296293258667 norm:0.0013847018126398325 max memory_allocated 22926.52294921875 
+[2025-03-27 06:09:58 root] (abq_llm.py 328): INFO layer 26 iter 6 loss:0.2797788977622986 norm:0.0013261812273412943 max memory_allocated 22926.52294921875 
+[2025-03-27 06:10:33 root] (abq_llm.py 328): INFO layer 26 iter 7 loss:0.279449999332428 norm:0.0012636400060728192 max memory_allocated 22926.52294921875 
+[2025-03-27 06:11:07 root] (abq_llm.py 328): INFO layer 26 iter 8 loss:0.2792121171951294 norm:0.001283550402149558 max memory_allocated 22926.52294921875 
+[2025-03-27 06:11:42 root] (abq_llm.py 328): INFO layer 26 iter 9 loss:0.2789839804172516 norm:0.0012480877339839935 max memory_allocated 22926.52294921875 
+[2025-03-27 06:11:52 root] (abq_llm.py 212): INFO === Start quantize layer 27 ===
+[2025-03-27 06:12:29 root] (abq_llm.py 328): INFO layer 27 iter 0 loss:0.35471415519714355 norm:0.009236784651875496 max memory_allocated 22928.19482421875 
+[2025-03-27 06:13:04 root] (abq_llm.py 328): INFO layer 27 iter 1 loss:0.3364368975162506 norm:0.00326918694190681 max memory_allocated 22928.19482421875 
+[2025-03-27 06:13:39 root] (abq_llm.py 328): INFO layer 27 iter 2 loss:0.32203152775764465 norm:0.0031305206939578056 max memory_allocated 22928.19482421875 
+[2025-03-27 06:14:13 root] (abq_llm.py 328): INFO layer 27 iter 3 loss:0.31808170676231384 norm:0.00295278150588274 max memory_allocated 22928.19482421875 
+[2025-03-27 06:14:48 root] (abq_llm.py 328): INFO layer 27 iter 4 loss:0.3169950842857361 norm:0.0029294779524207115 max memory_allocated 22928.19482421875 
+[2025-03-27 06:15:22 root] (abq_llm.py 328): INFO layer 27 iter 5 loss:0.31648701429367065 norm:0.0027073435485363007 max memory_allocated 22928.19482421875 
+[2025-03-27 06:15:57 root] (abq_llm.py 328): INFO layer 27 iter 6 loss:0.3160763382911682 norm:0.0026217361446470022 max memory_allocated 22928.19482421875 
+[2025-03-27 06:16:31 root] (abq_llm.py 328): INFO layer 27 iter 7 loss:0.31584489345550537 norm:0.0028642904944717884 max memory_allocated 22928.19482421875 
+[2025-03-27 06:17:06 root] (abq_llm.py 328): INFO layer 27 iter 8 loss:0.31557968258857727 norm:0.002667075954377651 max memory_allocated 22928.19482421875 
+[2025-03-27 06:17:40 root] (abq_llm.py 328): INFO layer 27 iter 9 loss:0.3153684437274933 norm:0.0025271179620176554 max memory_allocated 22928.19482421875 
+[2025-03-27 06:17:50 root] (abq_llm.py 212): INFO === Start quantize layer 28 ===
+[2025-03-27 06:17:53 root] (abq_llm.py 268): INFO use compensation vector
+[2025-03-27 06:18:28 root] (abq_llm.py 328): INFO layer 28 iter 0 loss:0.4151451289653778 norm:0.022219182923436165 max memory_allocated 22929.98193359375 
+[2025-03-27 06:19:03 root] (abq_llm.py 328): INFO layer 28 iter 1 loss:0.39231741428375244 norm:0.016589025035500526 max memory_allocated 22929.98193359375 
+[2025-03-27 06:19:37 root] (abq_llm.py 328): INFO layer 28 iter 2 loss:0.3744341731071472 norm:0.011089914478361607 max memory_allocated 22929.98193359375 
+[2025-03-27 06:20:12 root] (abq_llm.py 328): INFO layer 28 iter 3 loss:0.3693090081214905 norm:0.009483442641794682 max memory_allocated 22929.98193359375 
+[2025-03-27 06:20:47 root] (abq_llm.py 328): INFO layer 28 iter 4 loss:0.3678070902824402 norm:0.00839043315500021 max memory_allocated 22929.98193359375 
+[2025-03-27 06:21:22 root] (abq_llm.py 328): INFO layer 28 iter 5 loss:0.36682894825935364 norm:0.007247817236930132 max memory_allocated 22929.98193359375 
+[2025-03-27 06:21:57 root] (abq_llm.py 328): INFO layer 28 iter 6 loss:0.36606645584106445 norm:0.006454650312662125 max memory_allocated 22929.98193359375 
+[2025-03-27 06:22:31 root] (abq_llm.py 328): INFO layer 28 iter 7 loss:0.3655671775341034 norm:0.005721823312342167 max memory_allocated 22929.98193359375 
+[2025-03-27 06:23:06 root] (abq_llm.py 328): INFO layer 28 iter 8 loss:0.365253746509552 norm:0.005484694615006447 max memory_allocated 22929.98193359375 
+[2025-03-27 06:23:40 root] (abq_llm.py 328): INFO layer 28 iter 9 loss:0.3651279807090759 norm:0.005685846786946058 max memory_allocated 22929.98193359375 
+[2025-03-27 06:23:50 root] (abq_llm.py 212): INFO === Start quantize layer 29 ===
+[2025-03-27 06:23:53 root] (abq_llm.py 268): INFO use compensation vector
+[2025-03-27 06:24:28 root] (abq_llm.py 328): INFO layer 29 iter 0 loss:0.4782821536064148 norm:0.02609805390238762 max memory_allocated 22931.65380859375 
+[2025-03-27 06:25:03 root] (abq_llm.py 328): INFO layer 29 iter 1 loss:0.45314183831214905 norm:0.018236808478832245 max memory_allocated 22931.65380859375 
+[2025-03-27 06:25:37 root] (abq_llm.py 328): INFO layer 29 iter 2 loss:0.4328031837940216 norm:0.012397157959640026 max memory_allocated 22931.65380859375 
+[2025-03-27 06:26:12 root] (abq_llm.py 328): INFO layer 29 iter 3 loss:0.4277031123638153 norm:0.010256538167595863 max memory_allocated 22931.65380859375 
+[2025-03-27 06:26:47 root] (abq_llm.py 328): INFO layer 29 iter 4 loss:0.4261443614959717 norm:0.008915940299630165 max memory_allocated 22931.65380859375 
+[2025-03-27 06:27:22 root] (abq_llm.py 328): INFO layer 29 iter 5 loss:0.4252183139324188 norm:0.007886390201747417 max memory_allocated 22931.65380859375 
+[2025-03-27 06:27:56 root] (abq_llm.py 328): INFO layer 29 iter 6 loss:0.4244842827320099 norm:0.0069351596757769585 max memory_allocated 22931.65380859375 
+[2025-03-27 06:28:31 root] (abq_llm.py 328): INFO layer 29 iter 7 loss:0.42389142513275146 norm:0.006190191488713026 max memory_allocated 22931.65380859375 
+[2025-03-27 06:29:06 root] (abq_llm.py 328): INFO layer 29 iter 8 loss:0.42352181673049927 norm:0.005788372363895178 max memory_allocated 22931.65380859375 
+[2025-03-27 06:29:41 root] (abq_llm.py 328): INFO layer 29 iter 9 loss:0.4234342575073242 norm:0.005747532472014427 max memory_allocated 22931.65380859375 
+[2025-03-27 06:29:50 root] (abq_llm.py 212): INFO === Start quantize layer 30 ===
+[2025-03-27 06:29:54 root] (abq_llm.py 268): INFO use compensation vector
+[2025-03-27 06:30:28 root] (abq_llm.py 328): INFO layer 30 iter 0 loss:0.6458143591880798 norm:0.036548931151628494 max memory_allocated 22933.32568359375 
+[2025-03-27 06:31:03 root] (abq_llm.py 328): INFO layer 30 iter 1 loss:0.5934356451034546 norm:0.02309974655508995 max memory_allocated 22933.32568359375 
+[2025-03-27 06:31:38 root] (abq_llm.py 328): INFO layer 30 iter 2 loss:0.5556439161300659 norm:0.0135100819170475 max memory_allocated 22933.32568359375 
+[2025-03-27 06:32:13 root] (abq_llm.py 328): INFO layer 30 iter 3 loss:0.5468463897705078 norm:0.015283332206308842 max memory_allocated 22933.32568359375 
+[2025-03-27 06:32:47 root] (abq_llm.py 328): INFO layer 30 iter 4 loss:0.5439331531524658 norm:0.01767081767320633 max memory_allocated 22933.32568359375 
+[2025-03-27 06:33:22 root] (abq_llm.py 328): INFO layer 30 iter 5 loss:0.542113184928894 norm:0.019257064908742905 max memory_allocated 22933.32568359375 
+[2025-03-27 06:33:57 root] (abq_llm.py 328): INFO layer 30 iter 6 loss:0.5410284399986267 norm:0.019030390307307243 max memory_allocated 22933.32568359375 
+[2025-03-27 06:34:32 root] (abq_llm.py 328): INFO layer 30 iter 7 loss:0.539716362953186 norm:0.018786970525979996 max memory_allocated 22933.32568359375 
+[2025-03-27 06:35:07 root] (abq_llm.py 328): INFO layer 30 iter 8 loss:0.5387093424797058 norm:0.018915507942438126 max memory_allocated 22933.32568359375 
+[2025-03-27 06:35:42 root] (abq_llm.py 328): INFO layer 30 iter 9 loss:0.5379409193992615 norm:0.019119158387184143 max memory_allocated 22933.32568359375 
+[2025-03-27 06:35:51 root] (abq_llm.py 212): INFO === Start quantize layer 31 ===
+[2025-03-27 06:35:54 root] (abq_llm.py 268): INFO use compensation vector
+[2025-03-27 06:36:29 root] (abq_llm.py 328): INFO layer 31 iter 0 loss:1.1033755540847778 norm:0.09755562245845795 max memory_allocated 22934.99755859375 
+[2025-03-27 06:37:04 root] (abq_llm.py 328): INFO layer 31 iter 1 loss:1.0014922618865967 norm:0.07225096225738525 max memory_allocated 22934.99755859375 
+[2025-03-27 06:37:38 root] (abq_llm.py 328): INFO layer 31 iter 2 loss:0.9280780553817749 norm:0.05163334310054779 max memory_allocated 22934.99755859375 
+[2025-03-27 06:38:13 root] (abq_llm.py 328): INFO layer 31 iter 3 loss:0.9068229794502258 norm:0.04711403697729111 max memory_allocated 22934.99755859375 
+[2025-03-27 06:38:48 root] (abq_llm.py 328): INFO layer 31 iter 4 loss:0.8968839645385742 norm:0.04389939457178116 max memory_allocated 22934.99755859375 
+[2025-03-27 06:39:22 root] (abq_llm.py 328): INFO layer 31 iter 5 loss:0.8911294937133789 norm:0.043183550238609314 max memory_allocated 22934.99755859375 
+[2025-03-27 06:39:57 root] (abq_llm.py 328): INFO layer 31 iter 6 loss:0.8867961168289185 norm:0.042090028524398804 max memory_allocated 22934.99755859375 
+[2025-03-27 06:40:32 root] (abq_llm.py 328): INFO layer 31 iter 7 loss:0.8825613856315613 norm:0.03854228928685188 max memory_allocated 22934.99755859375 
+[2025-03-27 06:41:07 root] (abq_llm.py 328): INFO layer 31 iter 8 loss:0.8795708417892456 norm:0.03850747272372246 max memory_allocated 22934.99755859375 
+[2025-03-27 06:41:42 root] (abq_llm.py 328): INFO layer 31 iter 9 loss:0.8776335120201111 norm:0.03744901344180107 max memory_allocated 22934.99755859375 
+[2025-03-27 06:41:52 root] (main.py 361): INFO 11500.667852640152
+[2025-03-27 06:41:59 root] (main.py 114): INFO load calibration from ./cache/testloader_llama_wikitext2_all.cache
+[2025-03-27 06:43:16 root] (main.py 158): INFO wikitext2 : 5.8989763259887695
+[2025-03-27 06:43:17 root] (main.py 114): INFO load calibration from ./cache/testloader_llama_c4_all.cache
+[2025-03-27 06:45:17 root] (main.py 158): INFO c4 : 7.386232376098633
+[2025-03-27 08:49:23 root] (main.py 169): INFO {'wikitext2': 5.8989763259887695, 'c4': 7.386232376098633, 'results': {'arc_challenge': {'acc': 0.378839590443686, 'acc_stderr': 0.014175915490000322, 'acc_norm': 0.40102389078498296, 'acc_norm_stderr': 0.014322255790719865}, 'winogrande': {'acc': 0.6527229676400947, 'acc_stderr': 0.013380909249751249}, 'hellaswag': {'acc': 0.5512846046604262, 'acc_stderr': 0.0049634646577472385, 'acc_norm': 0.7119099780920135, 'acc_norm_stderr': 0.0045194768356467754}, 'boolq': {'acc': 0.7207951070336391, 'acc_stderr': 0.007846210712706136}, 'piqa': {'acc': 0.7709466811751904, 'acc_stderr': 0.009804509865175505, 'acc_norm': 0.7747551686615887, 'acc_norm_stderr': 0.009746643471032141}, 'arc_easy': {'acc': 0.6548821548821548, 'acc_stderr': 0.009755139387152037, 'acc_norm': 0.5180976430976431, 'acc_norm_stderr': 0.010253060653479164}}, 'versions': {'arc_challenge': 0, 'winogrande': 0, 'hellaswag': 0, 'boolq': 1, 'piqa': 0, 'arc_easy': 0}, 'config': {'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}

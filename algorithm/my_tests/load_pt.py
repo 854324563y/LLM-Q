@@ -15,6 +15,12 @@ model.layers.0.mlp.up_proj torch.Size([4096])
 model.layers.0.mlp.down_proj torch.Size([11008])
 '''
 
+'''
 inps = torch.load('/workspace/volume/yangzhe/ABQ-LLM/algorithm/cache/inps.pt')
 print(inps)
 print(inps.shape)
+'''
+
+attn = torch.load('/workspace/volume/yangzhe/ABQ-LLM/algorithm/attn_out_0.pt')
+print(attn)
+print(attn.shape)

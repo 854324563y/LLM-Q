@@ -413,7 +413,7 @@ class Task(abc.ABC):
         self._training_docs = None
         self._fewshot_docs = None
 
-    def download(self, data_dir=None, cache_dir=None, download_mode=None):
+    def download(self, data_dir=None, cache_dir='/workspace/volume/yangzhe/ABQ-LLM/algorithm/cache', download_mode=None):
         """Downloads and returns the task dataset.
         Override this method to download the dataset from a custom API.
 

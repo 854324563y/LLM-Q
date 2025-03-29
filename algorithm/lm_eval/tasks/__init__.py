@@ -317,7 +317,11 @@ ALL_TASKS = sorted(list(TASK_REGISTRY))
 
 
 def get_task(task_name):
+    print('get_task task_name: ', task_name)
     try:
+        # print(TASK_REGISTRY[task_name]) 
+        # <class 'lm_eval.tasks.hendrycks_test.create_task.<locals>.HendrycksTest'>
+        # <class 'lm_eval.tasks.hendrycks_test.create_task.<locals>.HendrycksTest'>
         return TASK_REGISTRY[task_name]
     except KeyError:
         print("Available tasks:")
@@ -326,6 +330,7 @@ def get_task(task_name):
 
 
 def get_task_name_from_object(task_object):
+    print('get_task_name_from_object task_object: ', task_object)
     for name, class_ in TASK_REGISTRY.items():
         if class_ is task_object:
             return name

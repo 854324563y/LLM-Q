@@ -1,0 +1,53 @@
+[2025-03-24 08:21:10 root] (main_calib_config3_attn.py 283): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/llama-7b-hf', cache_dir='./cache', output_dir='./log-divide-adaptive-calibration-attnloss/llama-7b-hf-0.25', save_dir=None, resume='./log-divide-adaptive-calibration-attnloss/llama-7b-hf-0.25/abq_parameters.pth', real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='piqa,arc_easy,arc_challenge,boolq,hellaswag,winogrande', eval_ppl=True, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=0, let=True, lwc=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, quant_map='log-divide-adaptive/llama-7b-hf/quant_map_llama-7b-hf_0.25.pkl', blocks_pkl='./log-divide/llama-7b-hf-w4a4/llama-7b-hf_blocks.pkl', scale_calibration=True, compensation_calibration=True)
+[2025-03-24 08:24:52 root] (main_calib_config3_attn.py 350): INFO === start quantization ===
+[2025-03-24 08:24:52 root] (main_calib_config3_attn.py 356): INFO load calibration from ./cache/dataloader_llama_wikitext2_128.cache
+[2025-03-24 08:24:52 root] (abq_llm_calib_config3_attn.py 82): INFO Starting ...
+[2025-03-24 08:24:52 root] (abq_llm_calib_config3_attn.py 89): INFO Loaded quant_map from log-divide-adaptive/llama-7b-hf/quant_map_llama-7b-hf_0.25.pkl
+[2025-03-24 08:24:52 root] (abq_llm_calib_config3_attn.py 96): INFO Loaded blocks from ./log-divide/llama-7b-hf-w4a4/llama-7b-hf_blocks.pkl: [(0, 1), (1, 2), (2, 5), (5, 8), (8, 11), (11, 14), (14, 16), (16, 19), (19, 22), (22, 25), (25, 27), (27, 28), (28, 29), (29, 30), (30, 31), (31, 32)]
+[2025-03-24 08:24:52 root] (abq_llm_calib_config3_attn.py 102): INFO Processed blocks: [[0], [1], [2, 3, 4], [5, 6, 7], [8, 9, 10], [11, 12, 13], [14, 15], [16, 17, 18], [19, 20, 21], [22, 23, 24], [25, 26], [27], [28], [29], [30], [31]]
+[2025-03-24 08:24:54 root] (abq_llm_calib_config3_attn.py 257): INFO === Start quantize block 0 with layers [0] ===
+[2025-03-24 08:24:54 root] (abq_llm_calib_config3_attn.py 309): INFO use compensation vector
+[2025-03-24 08:24:55 root] (abq_llm_calib_config3_attn.py 509): INFO Saving abq_parameters for block 0, block: [0]
+[2025-03-24 08:24:55 root] (abq_llm_calib_config3_attn.py 257): INFO === Start quantize block 1 with layers [1] ===
+[2025-03-24 08:24:55 root] (abq_llm_calib_config3_attn.py 309): INFO use compensation vector
+[2025-03-24 08:24:56 root] (abq_llm_calib_config3_attn.py 509): INFO Saving abq_parameters for block 1, block: [1]
+[2025-03-24 08:24:56 root] (abq_llm_calib_config3_attn.py 257): INFO === Start quantize block 2 with layers [2, 3, 4] ===
+[2025-03-24 08:24:57 root] (abq_llm_calib_config3_attn.py 309): INFO use compensation vector
+[2025-03-24 08:24:58 root] (abq_llm_calib_config3_attn.py 509): INFO Saving abq_parameters for block 2, block: [2, 3, 4]
+[2025-03-24 08:24:58 root] (abq_llm_calib_config3_attn.py 257): INFO === Start quantize block 3 with layers [5, 6, 7] ===
+[2025-03-24 08:25:00 root] (abq_llm_calib_config3_attn.py 509): INFO Saving abq_parameters for block 3, block: [5, 6, 7]
+[2025-03-24 08:25:00 root] (abq_llm_calib_config3_attn.py 257): INFO === Start quantize block 4 with layers [8, 9, 10] ===
+[2025-03-24 08:25:02 root] (abq_llm_calib_config3_attn.py 509): INFO Saving abq_parameters for block 4, block: [8, 9, 10]
+[2025-03-24 08:25:02 root] (abq_llm_calib_config3_attn.py 257): INFO === Start quantize block 5 with layers [11, 12, 13] ===
+[2025-03-24 08:25:03 root] (abq_llm_calib_config3_attn.py 509): INFO Saving abq_parameters for block 5, block: [11, 12, 13]
+[2025-03-24 08:25:04 root] (abq_llm_calib_config3_attn.py 257): INFO === Start quantize block 6 with layers [14, 15] ===
+[2025-03-24 08:25:05 root] (abq_llm_calib_config3_attn.py 509): INFO Saving abq_parameters for block 6, block: [14, 15]
+[2025-03-24 08:25:05 root] (abq_llm_calib_config3_attn.py 257): INFO === Start quantize block 7 with layers [16, 17, 18] ===
+[2025-03-24 08:25:06 root] (abq_llm_calib_config3_attn.py 509): INFO Saving abq_parameters for block 7, block: [16, 17, 18]
+[2025-03-24 08:25:06 root] (abq_llm_calib_config3_attn.py 257): INFO === Start quantize block 8 with layers [19, 20, 21] ===
+[2025-03-24 08:25:08 root] (abq_llm_calib_config3_attn.py 509): INFO Saving abq_parameters for block 8, block: [19, 20, 21]
+[2025-03-24 08:25:08 root] (abq_llm_calib_config3_attn.py 257): INFO === Start quantize block 9 with layers [22, 23, 24] ===
+[2025-03-24 08:25:10 root] (abq_llm_calib_config3_attn.py 509): INFO Saving abq_parameters for block 9, block: [22, 23, 24]
+[2025-03-24 08:25:10 root] (abq_llm_calib_config3_attn.py 257): INFO === Start quantize block 10 with layers [25, 26] ===
+[2025-03-24 08:25:11 root] (abq_llm_calib_config3_attn.py 509): INFO Saving abq_parameters for block 10, block: [25, 26]
+[2025-03-24 08:25:11 root] (abq_llm_calib_config3_attn.py 257): INFO === Start quantize block 11 with layers [27] ===
+[2025-03-24 08:25:12 root] (abq_llm_calib_config3_attn.py 509): INFO Saving abq_parameters for block 11, block: [27]
+[2025-03-24 08:25:12 root] (abq_llm_calib_config3_attn.py 257): INFO === Start quantize block 12 with layers [28] ===
+[2025-03-24 08:25:12 root] (abq_llm_calib_config3_attn.py 309): INFO use compensation vector
+[2025-03-24 08:25:13 root] (abq_llm_calib_config3_attn.py 509): INFO Saving abq_parameters for block 12, block: [28]
+[2025-03-24 08:25:13 root] (abq_llm_calib_config3_attn.py 257): INFO === Start quantize block 13 with layers [29] ===
+[2025-03-24 08:25:13 root] (abq_llm_calib_config3_attn.py 309): INFO use compensation vector
+[2025-03-24 08:25:14 root] (abq_llm_calib_config3_attn.py 509): INFO Saving abq_parameters for block 13, block: [29]
+[2025-03-24 08:25:14 root] (abq_llm_calib_config3_attn.py 257): INFO === Start quantize block 14 with layers [30] ===
+[2025-03-24 08:25:14 root] (abq_llm_calib_config3_attn.py 309): INFO use compensation vector
+[2025-03-24 08:25:14 root] (abq_llm_calib_config3_attn.py 509): INFO Saving abq_parameters for block 14, block: [30]
+[2025-03-24 08:25:14 root] (abq_llm_calib_config3_attn.py 257): INFO === Start quantize block 15 with layers [31] ===
+[2025-03-24 08:25:15 root] (abq_llm_calib_config3_attn.py 309): INFO use compensation vector
+[2025-03-24 08:25:15 root] (abq_llm_calib_config3_attn.py 509): INFO Saving abq_parameters for block 15, block: [31]
+[2025-03-24 08:25:16 root] (main_calib_config3_attn.py 379): INFO 23.989095211029053
+[2025-03-24 08:25:20 root] (main_calib_config3_attn.py 117): INFO load calibration from ./cache/testloader_llama_wikitext2_all.cache
+[2025-03-24 08:26:19 root] (main_calib_config3_attn.py 161): INFO wikitext2 : 126.6103286743164
+[2025-03-24 08:26:20 root] (main_calib_config3_attn.py 117): INFO load calibration from ./cache/testloader_llama_c4_all.cache
+[2025-03-24 08:27:52 root] (main_calib_config3_attn.py 161): INFO c4 : 137.7154998779297
+[2025-03-24 09:44:33 root] (main_calib_config3_attn.py 172): INFO {'wikitext2': 126.6103286743164, 'c4': 137.7154998779297, 'results': {'winogrande': {'acc': 0.4877663772691397, 'acc_stderr': 0.01404827882040562}, 'arc_challenge': {'acc': 0.24488054607508533, 'acc_stderr': 0.012566273985131358, 'acc_norm': 0.28498293515358364, 'acc_norm_stderr': 0.013191348179838793}, 'boolq': {'acc': 0.6162079510703364, 'acc_stderr': 0.008505584729104971}, 'arc_easy': {'acc': 0.4078282828282828, 'acc_stderr': 0.01008395024004122, 'acc_norm': 0.3771043771043771, 'acc_norm_stderr': 0.009945041946366506}, 'piqa': {'acc': 0.6120783460282916, 'acc_stderr': 0.011368965300027374, 'acc_norm': 0.5930359085963003, 'acc_norm_stderr': 0.011462093919190166}, 'hellaswag': {'acc': 0.3399721171081458, 'acc_stderr': 0.0047273124488928535, 'acc_norm': 0.41435968930491934, 'acc_norm_stderr': 0.0049160438384556766}}, 'versions': {'winogrande': 0, 'arc_challenge': 0, 'boolq': 1, 'arc_easy': 0, 'piqa': 0, 'hellaswag': 0}, 'config': {'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2025-03-24 09:44:33 root] (main_calib_config3_attn.py 175): INFO 24.49,40.78,61.62,34.00,61.21,48.78

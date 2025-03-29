@@ -1,0 +1,13 @@
+[2025-03-22 09:51:43 root] (main_quant_config.py 119): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-chat-hf', cache_dir='./cache', output_dir='./log-parallel3/Llama-2-7b-chat-hf-2', blocks_pkl='./log/Llama-2-7b-chat-hf-w4a4/Llama-2-7b-chat-hf_blocks.pkl', calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, reload=False, parallel=False, parallel2=True, size_bound_factor=1.0, bitops_bound_factor=0.4, weight_quant_params={'per_channel_axes': [0], 'symmetric': False, 'dynamic_method': 'per_channel', 'group_size': None, 'lwc': False, 'disable_zero_point': False}, act_quant_params={'per_channel_axes': [], 'symmetric': False, 'dynamic_method': 'per_token'})
+[2025-03-22 09:51:46 root] (main_quant_config.py 142): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2025-03-22 09:51:46 root] (main_quant_config.py 153): INFO [(0, 1), (1, 2), (2, 3), (3, 6), (6, 9), (9, 11), (11, 14), (14, 17), (17, 20), (20, 23), (23, 26), (26, 29), (29, 30), (30, 31), (31, 32)]
+[2025-03-22 09:51:48 root] (block_wise_quant_config_search_parallel.py 741): INFO Using 2 GPUs for parallel matrix computation
+[2025-03-22 09:51:49 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 0
+[2025-03-22 09:55:21 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 1
+[2025-03-22 09:58:49 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 2
+[2025-03-22 10:02:21 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 3
+[2025-03-22 11:34:28 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 4
+[2025-03-22 13:06:42 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 5
+[2025-03-22 13:33:57 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 6
+[2025-03-22 15:06:04 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 7
+[2025-03-22 16:38:07 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 8

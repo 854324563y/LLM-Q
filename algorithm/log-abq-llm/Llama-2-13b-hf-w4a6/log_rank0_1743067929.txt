@@ -1,0 +1,57 @@
+[2025-03-27 09:32:09 root] (main.py 265): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-13b-hf', cache_dir='./cache', output_dir='./log-abq-llm/Llama-2-13b-hf-w4a6', save_dir=None, resume='./log-abq-llm/Llama-2-13b-hf-w4a6/abq_parameters.pth', real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='piqa,arc_easy,arc_challenge,boolq,hellaswag,winogrande', eval_ppl=True, num_fewshot=0, wbits=4, abits=6, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=0, let=True, lwc=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None)
+[2025-03-27 09:32:11 root] (main.py 332): INFO === start quantization ===
+[2025-03-27 09:32:11 root] (main.py 338): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2025-03-27 09:32:11 root] (abq_llm.py 62): INFO Starting ...
+[2025-03-27 09:32:14 root] (abq_llm.py 212): INFO === Start quantize layer 0 ===
+[2025-03-27 09:32:14 root] (abq_llm.py 268): INFO use compensation vector
+[2025-03-27 09:32:16 root] (abq_llm.py 212): INFO === Start quantize layer 1 ===
+[2025-03-27 09:32:16 root] (abq_llm.py 268): INFO use compensation vector
+[2025-03-27 09:32:17 root] (abq_llm.py 212): INFO === Start quantize layer 2 ===
+[2025-03-27 09:32:17 root] (abq_llm.py 268): INFO use compensation vector
+[2025-03-27 09:32:17 root] (abq_llm.py 212): INFO === Start quantize layer 3 ===
+[2025-03-27 09:32:18 root] (abq_llm.py 212): INFO === Start quantize layer 4 ===
+[2025-03-27 09:32:18 root] (abq_llm.py 212): INFO === Start quantize layer 5 ===
+[2025-03-27 09:32:19 root] (abq_llm.py 212): INFO === Start quantize layer 6 ===
+[2025-03-27 09:32:19 root] (abq_llm.py 212): INFO === Start quantize layer 7 ===
+[2025-03-27 09:32:20 root] (abq_llm.py 212): INFO === Start quantize layer 8 ===
+[2025-03-27 09:32:21 root] (abq_llm.py 212): INFO === Start quantize layer 9 ===
+[2025-03-27 09:32:21 root] (abq_llm.py 212): INFO === Start quantize layer 10 ===
+[2025-03-27 09:32:22 root] (abq_llm.py 212): INFO === Start quantize layer 11 ===
+[2025-03-27 09:32:23 root] (abq_llm.py 212): INFO === Start quantize layer 12 ===
+[2025-03-27 09:32:23 root] (abq_llm.py 212): INFO === Start quantize layer 13 ===
+[2025-03-27 09:32:24 root] (abq_llm.py 212): INFO === Start quantize layer 14 ===
+[2025-03-27 09:32:24 root] (abq_llm.py 212): INFO === Start quantize layer 15 ===
+[2025-03-27 09:32:25 root] (abq_llm.py 212): INFO === Start quantize layer 16 ===
+[2025-03-27 09:32:26 root] (abq_llm.py 212): INFO === Start quantize layer 17 ===
+[2025-03-27 09:32:26 root] (abq_llm.py 212): INFO === Start quantize layer 18 ===
+[2025-03-27 09:32:27 root] (abq_llm.py 212): INFO === Start quantize layer 19 ===
+[2025-03-27 09:32:27 root] (abq_llm.py 212): INFO === Start quantize layer 20 ===
+[2025-03-27 09:32:28 root] (abq_llm.py 212): INFO === Start quantize layer 21 ===
+[2025-03-27 09:32:29 root] (abq_llm.py 212): INFO === Start quantize layer 22 ===
+[2025-03-27 09:32:29 root] (abq_llm.py 212): INFO === Start quantize layer 23 ===
+[2025-03-27 09:32:30 root] (abq_llm.py 212): INFO === Start quantize layer 24 ===
+[2025-03-27 09:32:30 root] (abq_llm.py 212): INFO === Start quantize layer 25 ===
+[2025-03-27 09:32:31 root] (abq_llm.py 212): INFO === Start quantize layer 26 ===
+[2025-03-27 09:32:31 root] (abq_llm.py 212): INFO === Start quantize layer 27 ===
+[2025-03-27 09:32:32 root] (abq_llm.py 212): INFO === Start quantize layer 28 ===
+[2025-03-27 09:32:33 root] (abq_llm.py 212): INFO === Start quantize layer 29 ===
+[2025-03-27 09:32:33 root] (abq_llm.py 212): INFO === Start quantize layer 30 ===
+[2025-03-27 09:32:34 root] (abq_llm.py 212): INFO === Start quantize layer 31 ===
+[2025-03-27 09:32:35 root] (abq_llm.py 212): INFO === Start quantize layer 32 ===
+[2025-03-27 09:32:35 root] (abq_llm.py 212): INFO === Start quantize layer 33 ===
+[2025-03-27 09:32:36 root] (abq_llm.py 212): INFO === Start quantize layer 34 ===
+[2025-03-27 09:32:36 root] (abq_llm.py 212): INFO === Start quantize layer 35 ===
+[2025-03-27 09:32:37 root] (abq_llm.py 212): INFO === Start quantize layer 36 ===
+[2025-03-27 09:32:37 root] (abq_llm.py 268): INFO use compensation vector
+[2025-03-27 09:32:37 root] (abq_llm.py 212): INFO === Start quantize layer 37 ===
+[2025-03-27 09:32:38 root] (abq_llm.py 268): INFO use compensation vector
+[2025-03-27 09:32:38 root] (abq_llm.py 212): INFO === Start quantize layer 38 ===
+[2025-03-27 09:32:38 root] (abq_llm.py 268): INFO use compensation vector
+[2025-03-27 09:32:39 root] (abq_llm.py 212): INFO === Start quantize layer 39 ===
+[2025-03-27 09:32:39 root] (abq_llm.py 268): INFO use compensation vector
+[2025-03-27 09:32:39 root] (main.py 361): INFO 28.31629991531372
+[2025-03-27 09:32:44 root] (main.py 114): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2025-03-27 09:34:48 root] (main.py 158): INFO wikitext2 : 5.202765941619873
+[2025-03-27 09:34:48 root] (main.py 114): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2025-03-27 09:38:03 root] (main.py 158): INFO c4 : 6.8954877853393555
+[2025-03-27 12:10:03 root] (main.py 169): INFO {'wikitext2': 5.202765941619873, 'c4': 6.8954877853393555, 'results': {'arc_easy': {'acc': 0.7184343434343434, 'acc_stderr': 0.00922893476451929, 'acc_norm': 0.5757575757575758, 'acc_norm_stderr': 0.010141333654958559}, 'arc_challenge': {'acc': 0.42662116040955633, 'acc_stderr': 0.014453185592920293, 'acc_norm': 0.4402730375426621, 'acc_norm_stderr': 0.014506769524804243}, 'piqa': {'acc': 0.7742110990206746, 'acc_stderr': 0.009754980670917315, 'acc_norm': 0.7763873775843307, 'acc_norm_stderr': 0.009721489519176282}, 'boolq': {'acc': 0.6483180428134556, 'acc_stderr': 0.008351445237661381}, 'winogrande': {'acc': 0.6850828729281768, 'acc_stderr': 0.013054277568469237}, 'hellaswag': {'acc': 0.574088826926907, 'acc_stderr': 0.004934698012050242, 'acc_norm': 0.7418840868352917, 'acc_norm_stderr': 0.004367037632204535}}, 'versions': {'arc_easy': 0, 'arc_challenge': 0, 'piqa': 0, 'boolq': 1, 'winogrande': 0, 'hellaswag': 0}, 'config': {'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}

@@ -1,0 +1,23 @@
+[2025-03-14 08:57:02 root] (main_divide_blocks.py 279): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/llama-13b-hf', cache_dir='./cache', output_dir='./log-divide/llama-13b-hf-w4a4', save_dir=None, resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='', eval_ppl=False, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=10, let=False, lwc=False, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, error_threshold=0.3, similarity_threshold=0.999, sensitivity_threshold=0.1, max_block_size=3, reload=True)
+[2025-03-14 08:57:02 quantize.utils_divide] (utils_divide.py 110): INFO Block 0-1: size=1, error_sum=0.0022, min_similarity=1.0000, max_sensitivity_diff=0.0000
+[2025-03-14 08:57:02 quantize.utils_divide] (utils_divide.py 110): INFO Block 1-2: size=1, error_sum=0.0048, min_similarity=0.9616, max_sensitivity_diff=1.2939
+[2025-03-14 08:57:02 quantize.utils_divide] (utils_divide.py 110): INFO Block 2-3: size=1, error_sum=1.3331, min_similarity=0.9820, max_sensitivity_diff=0.4528
+[2025-03-14 08:57:02 quantize.utils_divide] (utils_divide.py 110): INFO Block 3-6: size=3, error_sum=0.0336, min_similarity=0.9996, max_sensitivity_diff=0.0687
+[2025-03-14 08:57:02 quantize.utils_divide] (utils_divide.py 110): INFO Block 6-7: size=1, error_sum=4.5615, min_similarity=0.9998, max_sensitivity_diff=0.0584
+[2025-03-14 08:57:02 quantize.utils_divide] (utils_divide.py 110): INFO Block 7-10: size=3, error_sum=0.0425, min_similarity=0.9990, max_sensitivity_diff=0.0558
+[2025-03-14 08:57:02 quantize.utils_divide] (utils_divide.py 110): INFO Block 10-13: size=3, error_sum=0.0680, min_similarity=0.9999, max_sensitivity_diff=0.0522
+[2025-03-14 08:57:02 quantize.utils_divide] (utils_divide.py 110): INFO Block 13-16: size=3, error_sum=0.1057, min_similarity=0.9998, max_sensitivity_diff=0.0578
+[2025-03-14 08:57:02 quantize.utils_divide] (utils_divide.py 110): INFO Block 16-19: size=3, error_sum=0.1624, min_similarity=0.9997, max_sensitivity_diff=0.0151
+[2025-03-14 08:57:02 quantize.utils_divide] (utils_divide.py 110): INFO Block 19-22: size=3, error_sum=0.2383, min_similarity=0.9995, max_sensitivity_diff=0.0252
+[2025-03-14 08:57:02 quantize.utils_divide] (utils_divide.py 110): INFO Block 22-25: size=3, error_sum=0.2641, min_similarity=0.9997, max_sensitivity_diff=0.0255
+[2025-03-14 08:57:02 quantize.utils_divide] (utils_divide.py 110): INFO Block 25-28: size=3, error_sum=0.2792, min_similarity=0.9999, max_sensitivity_diff=0.0203
+[2025-03-14 08:57:02 quantize.utils_divide] (utils_divide.py 110): INFO Block 28-30: size=2, error_sum=0.2208, min_similarity=0.9998, max_sensitivity_diff=0.0410
+[2025-03-14 08:57:02 quantize.utils_divide] (utils_divide.py 110): INFO Block 30-32: size=2, error_sum=0.2192, min_similarity=0.9999, max_sensitivity_diff=0.0159
+[2025-03-14 08:57:02 quantize.utils_divide] (utils_divide.py 110): INFO Block 32-34: size=2, error_sum=0.2607, min_similarity=1.0000, max_sensitivity_diff=0.0215
+[2025-03-14 08:57:02 quantize.utils_divide] (utils_divide.py 110): INFO Block 34-35: size=1, error_sum=0.1929, min_similarity=0.9999, max_sensitivity_diff=0.0033
+[2025-03-14 08:57:02 quantize.utils_divide] (utils_divide.py 110): INFO Block 35-36: size=1, error_sum=0.2154, min_similarity=0.9997, max_sensitivity_diff=0.0439
+[2025-03-14 08:57:02 quantize.utils_divide] (utils_divide.py 110): INFO Block 36-37: size=1, error_sum=0.2855, min_similarity=0.9996, max_sensitivity_diff=0.0200
+[2025-03-14 08:57:02 quantize.utils_divide] (utils_divide.py 110): INFO Block 37-38: size=1, error_sum=0.4554, min_similarity=0.9999, max_sensitivity_diff=0.0312
+[2025-03-14 08:57:02 quantize.utils_divide] (utils_divide.py 110): INFO Block 38-39: size=1, error_sum=1.7355, min_similarity=0.9997, max_sensitivity_diff=0.0176
+[2025-03-14 08:57:02 quantize.utils_divide] (utils_divide.py 110): INFO Block 39-40: size=1, error_sum=9.1318, min_similarity=0.9977, max_sensitivity_diff=0.0548
+[2025-03-14 08:57:02 root] (main_divide_blocks.py 296): INFO blocks: [(0, 1), (1, 2), (2, 3), (3, 6), (6, 7), (7, 10), (10, 13), (13, 16), (16, 19), (19, 22), (22, 25), (25, 28), (28, 30), (30, 32), (32, 34), (34, 35), (35, 36), (36, 37), (37, 38), (38, 39), (39, 40)]

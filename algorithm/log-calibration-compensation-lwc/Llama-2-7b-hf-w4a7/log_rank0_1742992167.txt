@@ -1,0 +1,7 @@
+[2025-03-26 12:29:27 root] (main_calibration.py 269): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-hf', cache_dir='./cache', output_dir='./log-calibration-compensation-lwc/Llama-2-7b-hf-w4a7', save_dir='./log-calibration-compensation-lwc/quant/Llama-2-7b-hf-w4a7', resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='piqa,arc_easy,arc_challenge,boolq,hellaswag,winogrande', eval_ppl=True, num_fewshot=0, wbits=4, abits=7, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=20, let=True, lwc=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, scale_calibration=True, compensation_calibration=True)
+[2025-03-26 12:29:36 root] (main_calibration.py 336): INFO === start quantization ===
+[2025-03-26 12:29:36 root] (main_calibration.py 342): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2025-03-26 12:29:36 root] (abq_llm_calibration.py 62): INFO Starting ...
+[2025-03-26 12:29:39 root] (abq_llm_calibration.py 212): INFO === Start quantize layer 0 ===
+[2025-03-26 12:29:43 root] (abq_llm_calibration.py 276): INFO use compensation vector
+[2025-03-26 12:30:16 root] (abq_llm_calibration.py 358): INFO layer 0 iter 0 loss:0.010605819523334503 norm:0.013461535796523094 max memory_allocated 22562.10693359375 

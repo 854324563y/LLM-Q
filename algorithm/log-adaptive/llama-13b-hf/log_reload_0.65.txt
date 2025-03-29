@@ -1,0 +1,177 @@
+/opt/conda/envs/abq-llm/lib/python3.10/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+['main_quant_config.py', '--model', '/workspace/volume/inference-soft-data/AE/llm/models/llama-13b-hf', '--output_dir', './log-adaptive/llama-13b-hf', '--blocks_pkl', 'my_tests/llama_40.pkl', '--nsamples', '128', '--reload', '--bitops_bound_factor', '0.65']
+[2025-03-04 08:15:12 root](main_quant_config.py 118): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/llama-13b-hf', cache_dir='./cache', output_dir='./log-adaptive/llama-13b-hf', blocks_pkl='my_tests/llama_40.pkl', calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, reload=True, parallel=False, size_bound_factor=1.0, bitops_bound_factor=0.65, weight_quant_params={'per_channel_axes': [0], 'symmetric': False, 'dynamic_method': 'per_channel', 'group_size': None, 'lwc': False, 'disable_zero_point': False}, act_quant_params={'per_channel_axes': [], 'symmetric': False, 'dynamic_method': 'per_token'})
+block  0
+Restricted license - for non-production use only - expires 2026-11-23
+[2025-03-04 08:15:12 gurobipy](gurobi_qpif.py 150): INFO Restricted license - for non-production use only - expires 2026-11-23
+[1, 2, 2, 1, 1, 1]
+Total bitops for this block: 9.56G
+ ans:  [-0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -0.0, -0.0, 1.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, 1.0, 0.0]
+block  1
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+block  2
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [-0.0, 1.0, -0.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, -0.0, 1.0]
+block  3
+[1, 1, 2, 2, 1, 1]
+Total bitops for this block: 9.56G
+ ans:  [-0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, -0.0, 1.0, -0.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0]
+block  4
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+block  5
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+block  6
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [-0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, -0.0, 1.0]
+block  7
+[1, 1, 2, 2, 1, 1]
+Total bitops for this block: 9.56G
+ ans:  [-0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, -0.0, 1.0, -0.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0]
+block  8
+[1, 1, 2, 2, 1, 1]
+Total bitops for this block: 9.56G
+ ans:  [-0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, -0.0, 1.0, -0.0, -0.0, 1.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0]
+block  9
+[1, 1, 2, 2, 1, 1]
+Total bitops for this block: 9.56G
+ ans:  [-0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, -0.0, 1.0, -0.0, -0.0, 1.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0]
+block  10
+[1, 1, 2, 2, 1, 1]
+Total bitops for this block: 9.56G
+ ans:  [-0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, -0.0, 1.0, -0.0, -0.0, 1.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0]
+block  11
+[1, 1, 2, 2, 1, 1]
+Total bitops for this block: 9.56G
+ ans:  [-0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, -0.0, 1.0, -0.0, -0.0, 1.0, -0.0, 1.0, 0.0, -0.0, 1.0, 0.0]
+block  12
+[1, 1, 2, 2, 1, 1]
+Total bitops for this block: 9.56G
+ ans:  [-0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, -0.0, 1.0, -0.0, -0.0, 1.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0]
+block  13
+[1, 1, 2, 2, 1, 1]
+Total bitops for this block: 9.56G
+ ans:  [-0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, -0.0, 1.0, -0.0, -0.0, 1.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0]
+block  14
+[1, 1, 2, 2, 1, 1]
+Total bitops for this block: 9.56G
+ ans:  [-0.0, 1.0, -0.0, -0.0, 1.0, -0.0, -0.0, -0.0, 1.0, -0.0, -0.0, 1.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0]
+block  15
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [-0.0, 1.0, -0.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, 0.0, 1.0]
+block  16
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [-0.0, 1.0, -0.0, -0.0, 1.0, -0.0, -0.0, 1.0, -0.0, -0.0, 1.0, -0.0, -0.0, 1.0, -0.0, -0.0, 0.0, 1.0]
+block  17
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [-0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, 0.0, 1.0]
+block  18
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [-0.0, 1.0, -0.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, 0.0, 1.0]
+block  19
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+block  20
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+block  21
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+block  22
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [-0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, 1.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0]
+block  23
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+block  24
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [-0.0, 1.0, -0.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, 0.0, 1.0]
+block  25
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+block  26
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [-0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, 0.0, 1.0]
+block  27
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [-0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, 0.0, 1.0]
+block  28
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+block  29
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [-0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, 1.0, -0.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, 0.0, 1.0]
+block  30
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [-0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, 0.0, 1.0]
+block  31
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [-0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, 0.0, 1.0]
+block  32
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [-0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, 1.0, -0.0, -0.0, 1.0, -0.0, -0.0, 1.0, -0.0, -0.0, 0.0, 1.0]
+block  33
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [-0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, 0.0, 1.0]
+block  34
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [-0.0, 1.0, -0.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, 0.0, 1.0]
+block  35
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [-0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, -0.0, 1.0]
+block  36
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [-0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, -0.0, 1.0]
+block  37
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [-0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, 1.0, 0.0, -0.0, -0.0, 1.0]
+block  38
+[1, 0, 2, 0, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [0.0, 1.0, -0.0, 1.0, 0.0, -0.0, -0.0, 0.0, 1.0, 1.0, -0.0, -0.0, -0.0, 1.0, -0.0, -0.0, -0.0, 1.0]
+block  39
+[1, 1, 1, 1, 1, 2]
+Total bitops for this block: 10.15G
+ ans:  [-0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, 1.0, -0.0, -0.0, 1.0, -0.0, -0.0, 1.0, 0.0, -0.0, -0.0, 1.0]
+
+Total network bitops: 400.16G
+
+Total w8a8 network bitops: 630.84G
+
+量化配置统计:
+w4a4: 2/240 (0.8%)
+w4a8: 187/240 (77.9%)
+w8a8: 51/240 (21.2%)
+平均weight位宽: 4.85 bits
+平均activation位宽: 7.97 bits

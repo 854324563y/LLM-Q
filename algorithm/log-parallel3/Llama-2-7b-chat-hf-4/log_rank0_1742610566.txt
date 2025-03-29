@@ -1,0 +1,20 @@
+[2025-03-22 02:29:26 root] (main_quant_config.py 119): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-chat-hf', cache_dir='./cache', output_dir='./log-parallel3/Llama-2-7b-chat-hf', blocks_pkl='./log/Llama-2-7b-chat-hf-w4a4/Llama-2-7b-chat-hf_blocks.pkl', calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, reload=False, parallel=False, parallel2=True, size_bound_factor=1.0, bitops_bound_factor=0.4, weight_quant_params={'per_channel_axes': [0], 'symmetric': False, 'dynamic_method': 'per_channel', 'group_size': None, 'lwc': False, 'disable_zero_point': False}, act_quant_params={'per_channel_axes': [], 'symmetric': False, 'dynamic_method': 'per_token'})
+[2025-03-22 02:29:32 root] (main_quant_config.py 142): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2025-03-22 02:29:32 root] (main_quant_config.py 153): INFO [(0, 1), (1, 2), (2, 3), (3, 6), (6, 9), (9, 11), (11, 14), (14, 17), (17, 20), (20, 23), (23, 26), (26, 29), (29, 30), (30, 31), (31, 32)]
+[2025-03-22 02:29:36 root] (block_wise_quant_config_search_parallel.py 741): INFO Using 4 GPUs for parallel matrix computation
+[2025-03-22 02:29:38 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 0
+[2025-03-22 02:32:07 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 1
+[2025-03-22 02:34:01 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 2
+[2025-03-22 02:35:56 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 3
+[2025-03-22 03:22:17 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 4
+[2025-03-22 04:08:34 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 5
+[2025-03-22 04:22:22 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 6
+[2025-03-22 05:08:42 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 7
+[2025-03-22 05:54:58 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 8
+[2025-03-22 06:41:18 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 9
+[2025-03-22 07:27:42 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 10
+[2025-03-22 08:13:58 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 11
+[2025-03-22 09:00:16 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 12
+[2025-03-22 09:02:10 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 13
+[2025-03-22 09:04:05 root] (block_wise_quant_config_search_parallel.py 750): INFO Processing block 14
+[2025-03-22 09:05:59 gurobipy] (gurobi_qpif.py 150): INFO Restricted license - for non-production use only - expires 2026-11-23

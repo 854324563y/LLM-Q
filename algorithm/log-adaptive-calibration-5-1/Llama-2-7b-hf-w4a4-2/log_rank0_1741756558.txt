@@ -1,0 +1,8 @@
+[2025-03-12 05:15:58 root] (main_calibration_5_1.py 275): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-hf', cache_dir='./cache', output_dir='./log-adaptive-calibration-5-1/Llama-2-7b-hf-w4a4', save_dir=None, resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='', eval_ppl=False, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=1, let=True, lwc=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, scale_calibration=True, compensation_calibration=True, look_ahead_layers=2, analyze_per_layer_mse=True)
+[2025-03-12 05:16:06 root] (main_calibration_5_1.py 342): INFO === start quantization ===
+[2025-03-12 05:16:06 root] (main_calibration_5_1.py 348): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2025-03-12 05:16:06 root] (abq_llm_calibration_5_1.py 62): INFO Starting ...
+[2025-03-12 05:16:09 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 0 ===
+[2025-03-12 05:16:12 root] (abq_llm_calibration_5_1.py 278): INFO use compensation vector
+[2025-03-12 05:16:52 root] (abq_llm_calibration_5_1.py 419): INFO layer 0 iter 0 loss:0.12200230360031128 norm:nan max memory_allocated 29364.18115234375 
+[2025-03-12 05:16:53 root] (abq_llm_calibration_5_1.py 439): INFO === Analyzing end-to-end MSE for layer 0 ===

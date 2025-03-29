@@ -1,0 +1,26 @@
+[2025-03-11 15:10:15 root] (main_calibration_5_1.py 275): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-hf', cache_dir='./cache', output_dir='./log-adaptive-calibration-5-1/Llama-2-7b-hf-w4a4', save_dir=None, resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='', eval_ppl=False, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=20, let=True, lwc=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, scale_calibration=True, compensation_calibration=True, look_ahead_layers=3, analyze_per_layer_mse=True)
+[2025-03-11 15:10:24 root] (main_calibration_5_1.py 342): INFO === start quantization ===
+[2025-03-11 15:10:24 root] (main_calibration_5_1.py 348): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2025-03-11 15:10:24 root] (abq_llm_calibration_5_1.py 62): INFO Starting ...
+[2025-03-11 15:10:26 root] (abq_llm_calibration_5_1.py 218): INFO === Start quantize layer 0 ===
+[2025-03-11 15:10:30 root] (abq_llm_calibration_5_1.py 274): INFO use compensation vector
+[2025-03-11 15:11:10 root] (abq_llm_calibration_5_1.py 414): INFO layer 0 iter 0 loss:0.12444259971380234 norm:nan max memory_allocated 26665.212890625 
+[2025-03-11 15:11:50 root] (abq_llm_calibration_5_1.py 414): INFO layer 0 iter 1 loss:0.043307751417160034 norm:0.11819663643836975 max memory_allocated 26665.212890625 
+[2025-03-11 15:12:31 root] (abq_llm_calibration_5_1.py 414): INFO layer 0 iter 2 loss:0.031578678637742996 norm:0.10861751437187195 max memory_allocated 26665.212890625 
+[2025-03-11 15:13:12 root] (abq_llm_calibration_5_1.py 414): INFO layer 0 iter 3 loss:0.040513791143894196 norm:0.15548546612262726 max memory_allocated 26665.212890625 
+[2025-03-11 15:13:52 root] (abq_llm_calibration_5_1.py 414): INFO layer 0 iter 4 loss:0.25035548210144043 norm:0.9358971118927002 max memory_allocated 26665.212890625 
+[2025-03-11 15:14:33 root] (abq_llm_calibration_5_1.py 414): INFO layer 0 iter 5 loss:0.07605618983507156 norm:0.2531962990760803 max memory_allocated 26665.212890625 
+[2025-03-11 15:15:14 root] (abq_llm_calibration_5_1.py 414): INFO layer 0 iter 6 loss:0.034928660839796066 norm:0.09380657970905304 max memory_allocated 26665.212890625 
+[2025-03-11 15:15:55 root] (abq_llm_calibration_5_1.py 414): INFO layer 0 iter 7 loss:0.028380295261740685 norm:0.05836568772792816 max memory_allocated 26665.212890625 
+[2025-03-11 15:16:36 root] (abq_llm_calibration_5_1.py 414): INFO layer 0 iter 8 loss:0.025492586195468903 norm:0.06332605332136154 max memory_allocated 26665.212890625 
+[2025-03-11 15:17:17 root] (abq_llm_calibration_5_1.py 414): INFO layer 0 iter 9 loss:0.02527265064418316 norm:0.06315203011035919 max memory_allocated 26665.212890625 
+[2025-03-11 15:17:58 root] (abq_llm_calibration_5_1.py 414): INFO layer 0 iter 10 loss:0.0679975301027298 norm:0.198218435049057 max memory_allocated 26665.212890625 
+[2025-03-11 15:18:39 root] (abq_llm_calibration_5_1.py 414): INFO layer 0 iter 11 loss:0.0368102565407753 norm:0.0908251628279686 max memory_allocated 26665.212890625 
+[2025-03-11 15:19:19 root] (abq_llm_calibration_5_1.py 414): INFO layer 0 iter 12 loss:0.028608914464712143 norm:0.08528386056423187 max memory_allocated 26665.212890625 
+[2025-03-11 15:20:00 root] (abq_llm_calibration_5_1.py 414): INFO layer 0 iter 13 loss:0.10908913612365723 norm:0.3512685298919678 max memory_allocated 26665.212890625 
+[2025-03-11 15:20:41 root] (abq_llm_calibration_5_1.py 414): INFO layer 0 iter 14 loss:0.04120441526174545 norm:0.12715862691402435 max memory_allocated 26665.212890625 
+[2025-03-11 15:21:22 root] (abq_llm_calibration_5_1.py 414): INFO layer 0 iter 15 loss:0.029776738956570625 norm:0.08740347623825073 max memory_allocated 26665.212890625 
+[2025-03-11 15:22:03 root] (abq_llm_calibration_5_1.py 414): INFO layer 0 iter 16 loss:0.02502937614917755 norm:0.05504519119858742 max memory_allocated 26665.212890625 
+[2025-03-11 15:22:44 root] (abq_llm_calibration_5_1.py 414): INFO layer 0 iter 17 loss:0.01975359581410885 norm:0.03516117483377457 max memory_allocated 26665.212890625 
+[2025-03-11 15:23:25 root] (abq_llm_calibration_5_1.py 414): INFO layer 0 iter 18 loss:0.018363267183303833 norm:0.038951292634010315 max memory_allocated 26665.212890625 
+[2025-03-11 15:24:06 root] (abq_llm_calibration_5_1.py 414): INFO layer 0 iter 19 loss:0.017251554876565933 norm:0.040592171251773834 max memory_allocated 26665.212890625 

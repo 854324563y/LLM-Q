@@ -142,8 +142,11 @@ class QuantLlamaAttention(nn.Module):
         key_states = repeat_kv(key_states, self.num_key_value_groups)
         value_states = repeat_kv(value_states, self.num_key_value_groups)
         
-        query_states = self.qkt_matmul.quant_x1(query_states)
-        key_states = self.qkt_matmul.quant_x2(key_states)
+        ### 取消quant_
+        # query_states = self.qkt_matmul.quant_x1(query_states)
+        # key_states = self.qkt_matmul.quant_x2(key_states)
+
+
         attn_weights = self.qkt_matmul(query_states, key_states.transpose(2, 3)) / math.sqrt(self.head_dim)
         if attn_weights.size() != (bsz, self.num_heads, q_len, kv_seq_len):
             raise ValueError(
@@ -161,8 +164,13 @@ class QuantLlamaAttention(nn.Module):
 
         # upcast attention to fp32
         attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
-        attn_weights = self.pv_matmul.quant_x1(attn_weights)
-        value_states = self.pv_matmul.quant_x2(value_states)
+
+
+        ### 取消quant_
+        #attn_weights = self.pv_matmul.quant_x1(attn_weights)
+        #value_states = self.pv_matmul.quant_x2(value_states)
+
+
         attn_output = self.pv_matmul(attn_weights, value_states)
 
         if attn_output.size() != (bsz, self.num_heads, q_len, self.head_dim):

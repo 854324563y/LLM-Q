@@ -88,6 +88,8 @@ def smooth_and_quant_temporary(model, args, isllama):
                 if "smooth_scale" in name:
                     module.data = truncate_number(module)
         if isllama:
+            # 对activation的缩放融入到上一层的layernorm中
+            # 对weight直接缩放
             smooth_ln_fcs_temporary(model.input_layernorm,[model.self_attn.q_proj, model.self_attn.k_proj, model.self_attn.v_proj],
                                     model.qkv_smooth_scale,model.qkv_smooth_shift)
             smooth_ln_fcs_temporary(model.post_attention_layernorm,[model.mlp.up_proj,model.mlp.gate_proj],

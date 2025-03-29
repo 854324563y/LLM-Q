@@ -83,6 +83,8 @@ class UniformAffineQuantizer(nn.Module):
         self.lwc = lwc
         
         init_value = 4.             # inti value of learnable weight clipping
+        ## 若lwc为True，说明当前为weight_quantizer
+        ## 否则可能为weight_quantizer或act_quantizer
         if lwc:
             if group_size:
                 dim1 = int(shape[0]*math.ceil(shape[1]/group_size))
@@ -121,7 +123,7 @@ class UniformAffineQuantizer(nn.Module):
         if round_zero_point is not None:
             x_int = x_int.add(round_zero_point)
 
-        print('x_int max', x_int.max(), 'x_int min', x_int.min())
+        # print('x_int max', x_int.max(), 'x_int min', x_int.min())
         
         x_int = x_int.clamp(self.qmin, self.qmax)
         x_dequant = x_int

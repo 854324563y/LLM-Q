@@ -85,7 +85,46 @@ def simple_evaluate(
             assert tasks != [], "No tasks specified"
             print(f"Selected Tasks: {task_names}")
             
-            task_dict = lm_eval.tasks.get_task_dict(task_names)
+            # print('task_names: ', task_names)
+            # ['hendrycksTest-electrical_engineering', 'hendrycksTest-high_school_geography', 
+            # 'hendrycksTest-high_school_us_history', 'hendrycksTest-college_mathematics', 
+            # 'hendrycksTest-high_school_computer_science', 'hendrycksTest-international_law', 
+            # 'hendrycksTest-logical_fallacies', 'hendrycksTest-world_religions', 
+            # 'hendrycksTest-high_school_statistics', 'hendrycksTest-high_school_microeconomics', 
+            # 'hendrycksTest-high_school_psychology', 'hendrycksTest-moral_disputes', 
+            # 'hendrycksTest-college_biology', 'hendrycksTest-professional_law', 
+            # 'hendrycksTest-us_foreign_policy', 'hendrycksTest-professional_accounting', 
+            # 'hendrycksTest-management', 'hendrycksTest-clinical_knowledge', 'hendrycksTest-college_medicine', 
+            # 'hendrycksTest-nutrition', 'hendrycksTest-computer_security', 'hendrycksTest-marketing', 
+            # 'hendrycksTest-conceptual_physics', 'hendrycksTest-professional_psychology', 'hendrycksTest-anatomy', 
+            # 'hendrycksTest-sociology', 'hendrycksTest-business_ethics', 'hendrycksTest-high_school_physics', 
+            # 'hendrycksTest-human_aging', 'hendrycksTest-human_sexuality', 'hendrycksTest-public_relations', 
+            # 'hendrycksTest-miscellaneous', 'hendrycksTest-astronomy', 'hendrycksTest-high_school_world_history', 
+            # 'hendrycksTest-college_chemistry', 'hendrycksTest-medical_genetics', 'hendrycksTest-elementary_mathematics', 
+            # 'hendrycksTest-security_studies', 'hendrycksTest-formal_logic', 'hendrycksTest-prehistory', 
+            # 'hendrycksTest-college_computer_science', 'hendrycksTest-high_school_macroeconomics', 
+            # 'hendrycksTest-high_school_mathematics', 'hendrycksTest-high_school_european_history', 
+            # 'hendrycksTest-philosophy', 'hendrycksTest-high_school_chemistry', 'hendrycksTest-global_facts', 
+            # 'hendrycksTest-abstract_algebra', 'hendrycksTest-econometrics', 
+            # 'hendrycksTest-high_school_government_and_politics', 'hendrycksTest-jurisprudence', 
+            # 'hendrycksTest-moral_scenarios', 'hendrycksTest-college_physics', 'hendrycksTest-virology', 
+            # 'hendrycksTest-high_school_biology', 'hendrycksTest-machine_learning', 'hendrycksTest-professional_medicine']
+
+
+            # print('type task_names[0]', type(task_names[0])) # type task_names[0] <class 'str'>
+            
+
+            import dill
+
+            if isinstance(task_names, list) and 'hendrycksTest' in task_names[0]:
+                with open('cache/hendrycksTest.pkl', 'rb') as f:
+                    task_dict = dill.load(f)
+            else:
+                task_dict = lm_eval.tasks.get_task_dict(task_names)
+
+            
+            # dill.dump(task_dict, open('cache/hendrycksTest.pkl', 'wb'))
+            
             
             results = evaluate(
                 lm=lm,

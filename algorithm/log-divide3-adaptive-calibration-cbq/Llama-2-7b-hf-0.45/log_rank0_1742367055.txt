@@ -1,0 +1,596 @@
+[2025-03-19 06:50:55 root] (main_calib_config3_cbq.py 281): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-hf', cache_dir='./cache', output_dir='./log-divide3-adaptive-calibration-cbq/Llama-2-7b-hf-0.45', save_dir=None, resume='./log-divide3-adaptive-calibration-cbq/Llama-2-7b-hf-0.45/abq_parameters.pth', real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='piqa,arc_easy,arc_challenge,boolq,hellaswag,winogrande', eval_ppl=True, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=10, let=True, lwc=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, quant_map='log-divide-adaptive/Llama-2-7b-hf/quant_map_Llama-2-7b-hf_0.45.pkl', scale_calibration=True, compensation_calibration=True, window_size=3)
+[2025-03-19 06:53:51 root] (main_calib_config3_cbq.py 348): INFO === start quantization ===
+[2025-03-19 06:53:52 root] (main_calib_config3_cbq.py 354): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2025-03-19 06:53:52 root] (abq_llm_calib_config3_cbq.py 86): INFO Starting ...
+[2025-03-19 06:53:52 root] (abq_llm_calib_config3_cbq.py 93): INFO Loaded quant_map from log-divide-adaptive/Llama-2-7b-hf/quant_map_Llama-2-7b-hf_0.45.pkl
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[0]: {'self_attn.q_proj': 0, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 0, 'mlp.up_proj': 1, 'mlp.down_proj': 1}
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 0 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 0 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 0 module self_attn.q_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 0 module self_attn.o_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 0 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 0 module mlp.up_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[1]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 2, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 0}
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 1 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 1 module self_attn.v_proj scheme w8a8 wbit 8 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 1 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 1 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 1 module mlp.down_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 1 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[2]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 2 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 2 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 2 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 2 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 2 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 2 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[3]: {'self_attn.q_proj': 2, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 3 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 3 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 3 module self_attn.q_proj scheme w8a8 wbit 8 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 3 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 3 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 3 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[4]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 4 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 4 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 4 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 4 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 4 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 4 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[5]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 5 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 5 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 5 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 5 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 5 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 5 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[6]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 0, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 6 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 6 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 6 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 6 module self_attn.o_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 6 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 6 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[7]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 7 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 7 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 7 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 7 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 7 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 7 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[8]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 1, 'mlp.down_proj': 1}
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 8 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 8 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 8 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 8 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 8 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 8 module mlp.up_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[9]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 9 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 9 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 9 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 9 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 9 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 9 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[10]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 10 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 10 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 10 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 10 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 10 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 10 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[11]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 0, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 11 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 11 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 11 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 11 module self_attn.o_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 11 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 11 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[12]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 12 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 12 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 12 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 12 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 12 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:56 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 12 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[13]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 1, 'mlp.down_proj': 1}
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 13 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 13 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 13 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 13 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 13 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 13 module mlp.up_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[14]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 0, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 14 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 14 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 14 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 14 module self_attn.o_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 14 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 14 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[15]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 1, 'mlp.down_proj': 1}
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 15 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 15 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 15 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 15 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 15 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 15 module mlp.up_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[16]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 16 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 16 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 16 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 16 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 16 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 16 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[17]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 17 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 17 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 17 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 17 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 17 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 17 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[18]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 18 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 18 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 18 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 18 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 18 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 18 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[19]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 2, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 19 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 19 module self_attn.v_proj scheme w8a8 wbit 8 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 19 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 19 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 19 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 19 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[20]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 20 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 20 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 20 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 20 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 20 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 20 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[21]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 21 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 21 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 21 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 21 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 21 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 21 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[22]: {'self_attn.q_proj': 2, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 22 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 22 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 22 module self_attn.q_proj scheme w8a8 wbit 8 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 22 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 22 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 22 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[23]: {'self_attn.q_proj': 2, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 23 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 23 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 23 module self_attn.q_proj scheme w8a8 wbit 8 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 23 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 23 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 23 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[24]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 24 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 24 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 24 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 24 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 24 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 24 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[25]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 25 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 25 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 25 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 25 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 25 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 25 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[26]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 26 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 26 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 26 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 26 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 26 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:57 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 26 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[27]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 27 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 27 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 27 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 27 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 27 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 27 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[28]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 2, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 28 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 28 module self_attn.v_proj scheme w8a8 wbit 8 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 28 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 28 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 28 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 28 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[29]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 29 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 29 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 29 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 29 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 29 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 29 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[30]: {'self_attn.q_proj': 0, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 0, 'mlp.up_proj': 1, 'mlp.down_proj': 1}
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 30 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 30 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 30 module self_attn.q_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 30 module self_attn.o_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 30 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 30 module mlp.up_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 254): INFO quant_map[31]: {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 0, 'self_attn.o_proj': 0, 'mlp.up_proj': 1, 'mlp.down_proj': 1}
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 31 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 31 module self_attn.v_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 31 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 31 module self_attn.o_proj scheme w4a4 wbit 4 abits 4
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 31 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 259): INFO layer 31 module mlp.up_proj scheme w4a8 wbit 4 abits 8
+[2025-03-19 06:53:58 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 0 to 2 ===
+[2025-03-19 06:56:40 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 0-2 epoch 0 loss:0.12236754596233368 norm:0.21590252220630646 max memory_allocated 48741.67578125 
+[2025-03-19 06:58:42 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 0-2 epoch 1 loss:0.08203552663326263 norm:0.0757686123251915 max memory_allocated 48741.67578125 
+[2025-03-19 07:00:53 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 0-2 epoch 2 loss:0.08096499741077423 norm:0.08351244777441025 max memory_allocated 48741.67578125 
+[2025-03-19 07:02:59 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 0-2 epoch 3 loss:0.07657495886087418 norm:0.06770052760839462 max memory_allocated 48741.67578125 
+[2025-03-19 07:05:14 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 0-2 epoch 4 loss:0.07476859539747238 norm:0.06398782134056091 max memory_allocated 48741.67578125 
+[2025-03-19 07:07:21 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 0-2 epoch 5 loss:0.07322105020284653 norm:0.05541682988405228 max memory_allocated 48741.67578125 
+[2025-03-19 07:09:28 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 0-2 epoch 6 loss:0.07269855588674545 norm:0.0575292631983757 max memory_allocated 48741.67578125 
+[2025-03-19 07:11:40 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 0-2 epoch 7 loss:0.07131391763687134 norm:0.055076584219932556 max memory_allocated 48741.67578125 
+[2025-03-19 07:13:48 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 0-2 epoch 8 loss:0.07018491625785828 norm:0.04480503499507904 max memory_allocated 48741.67578125 
+[2025-03-19 07:16:02 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 0-2 epoch 9 loss:0.06794577836990356 norm:0.0400976799428463 max memory_allocated 48741.67578125 
+[2025-03-19 07:16:44 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 0-2
+[2025-03-19 07:16:45 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 1 to 3 ===
+[2025-03-19 07:19:32 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 1-3 epoch 0 loss:0.10086265206336975 norm:0.1907946914434433 max memory_allocated 56934.7099609375 
+[2025-03-19 07:21:47 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 1-3 epoch 1 loss:0.07181476056575775 norm:0.03416319191455841 max memory_allocated 56934.7099609375 
+[2025-03-19 07:23:55 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 1-3 epoch 2 loss:0.0656350627541542 norm:0.029670607298612595 max memory_allocated 56934.7099609375 
+[2025-03-19 07:26:10 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 1-3 epoch 3 loss:0.06291770935058594 norm:0.03181254118680954 max memory_allocated 56934.7099609375 
+[2025-03-19 07:28:18 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 1-3 epoch 4 loss:0.06285177171230316 norm:0.0346304327249527 max memory_allocated 56934.7099609375 
+[2025-03-19 07:30:32 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 1-3 epoch 5 loss:0.0645139068365097 norm:0.03598871827125549 max memory_allocated 56934.7099609375 
+[2025-03-19 07:32:40 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 1-3 epoch 6 loss:0.06262049078941345 norm:0.033352479338645935 max memory_allocated 56934.7099609375 
+[2025-03-19 07:34:55 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 1-3 epoch 7 loss:0.06407315284013748 norm:0.03977552056312561 max memory_allocated 56934.7099609375 
+[2025-03-19 07:37:03 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 1-3 epoch 8 loss:0.06291113793849945 norm:0.03763054311275482 max memory_allocated 56934.7099609375 
+[2025-03-19 07:39:12 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 1-3 epoch 9 loss:0.062166858464479446 norm:0.038678038865327835 max memory_allocated 56934.7099609375 
+[2025-03-19 07:39:59 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 1-3
+[2025-03-19 07:40:00 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 2 to 4 ===
+[2025-03-19 07:42:41 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 2-4 epoch 0 loss:0.04285001382231712 norm:0.0025738305412232876 max memory_allocated 56934.7099609375 
+[2025-03-19 07:44:57 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 2-4 epoch 1 loss:0.031557366251945496 norm:0.001014923327602446 max memory_allocated 56934.7099609375 
+[2025-03-19 07:47:05 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 2-4 epoch 2 loss:0.029739852994680405 norm:0.0008354840101674199 max memory_allocated 56934.7099609375 
+[2025-03-19 07:49:14 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 2-4 epoch 3 loss:0.029221314936876297 norm:0.0008228054502978921 max memory_allocated 56934.7099609375 
+[2025-03-19 07:51:29 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 2-4 epoch 4 loss:0.02902209758758545 norm:0.0007775731501169503 max memory_allocated 56934.7099609375 
+[2025-03-19 07:53:38 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 2-4 epoch 5 loss:0.028935421258211136 norm:0.0007923558005131781 max memory_allocated 56934.7099609375 
+[2025-03-19 07:55:54 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 2-4 epoch 6 loss:0.028891196474432945 norm:0.000756629160605371 max memory_allocated 56934.7099609375 
+[2025-03-19 07:58:02 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 2-4 epoch 7 loss:0.02888740412890911 norm:0.0007742892485111952 max memory_allocated 56934.7099609375 
+[2025-03-19 08:00:17 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 2-4 epoch 8 loss:0.02894115261733532 norm:0.0007842310587875545 max memory_allocated 56934.7099609375 
+[2025-03-19 08:02:25 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 2-4 epoch 9 loss:0.028983434662222862 norm:0.000787464901804924 max memory_allocated 56934.7099609375 
+[2025-03-19 08:03:11 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 2-4
+[2025-03-19 08:03:11 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 3 to 5 ===
+[2025-03-19 08:06:05 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 3-5 epoch 0 loss:0.04924826696515083 norm:0.0026863268576562405 max memory_allocated 56934.7099609375 
+[2025-03-19 08:08:13 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 3-5 epoch 1 loss:0.03637271001935005 norm:0.000922003760933876 max memory_allocated 56934.7099609375 
+[2025-03-19 08:10:28 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 3-5 epoch 2 loss:0.03393160551786423 norm:0.0006145208026282489 max memory_allocated 56934.7099609375 
+[2025-03-19 08:12:38 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 3-5 epoch 3 loss:0.03322382643818855 norm:0.000549200689420104 max memory_allocated 56934.7099609375 
+[2025-03-19 08:14:52 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 3-5 epoch 4 loss:0.033079445362091064 norm:0.0007527556736022234 max memory_allocated 56934.7099609375 
+[2025-03-19 08:17:01 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 3-5 epoch 5 loss:0.03294923156499863 norm:0.0005191391101107001 max memory_allocated 56934.7099609375 
+[2025-03-19 08:19:10 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 3-5 epoch 6 loss:0.032850902527570724 norm:0.0004951806622557342 max memory_allocated 56934.7099609375 
+[2025-03-19 08:21:26 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 3-5 epoch 7 loss:0.032798103988170624 norm:0.00048174450057558715 max memory_allocated 56934.7099609375 
+[2025-03-19 08:23:35 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 3-5 epoch 8 loss:0.032803975045681 norm:0.0004801712348125875 max memory_allocated 56934.7099609375 
+[2025-03-19 08:25:51 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 3-5 epoch 9 loss:0.03279074281454086 norm:0.0004621117259375751 max memory_allocated 56934.7099609375 
+[2025-03-19 08:26:36 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 3-5
+[2025-03-19 08:26:36 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 4 to 6 ===
+[2025-03-19 08:29:21 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 4-6 epoch 0 loss:0.05812352895736694 norm:0.005465274676680565 max memory_allocated 56934.8798828125 
+[2025-03-19 08:31:36 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 4-6 epoch 1 loss:0.043448854237794876 norm:0.0012618397595360875 max memory_allocated 56934.8798828125 
+[2025-03-19 08:33:44 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 4-6 epoch 2 loss:0.040262218564748764 norm:0.0008368644048459828 max memory_allocated 56934.8798828125 
+[2025-03-19 08:35:59 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 4-6 epoch 3 loss:0.03919731080532074 norm:0.0006663721287623048 max memory_allocated 56934.8798828125 
+[2025-03-19 08:38:07 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 4-6 epoch 4 loss:0.038771484047174454 norm:0.0005906916339881718 max memory_allocated 56934.8798828125 
+[2025-03-19 08:40:21 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 4-6 epoch 5 loss:0.03861233592033386 norm:0.0005729805561713874 max memory_allocated 56934.8798828125 
+[2025-03-19 08:42:29 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 4-6 epoch 6 loss:0.03848908096551895 norm:0.0005489729810506105 max memory_allocated 56934.8798828125 
+[2025-03-19 08:44:38 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 4-6 epoch 7 loss:0.03847891464829445 norm:0.0005578355048783123 max memory_allocated 56934.8798828125 
+[2025-03-19 08:46:53 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 4-6 epoch 8 loss:0.038490232080221176 norm:0.0005330578424036503 max memory_allocated 56934.8798828125 
+[2025-03-19 08:49:00 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 4-6 epoch 9 loss:0.0384187325835228 norm:0.0005164743051864207 max memory_allocated 56934.8798828125 
+[2025-03-19 08:49:48 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 4-6
+[2025-03-19 08:49:49 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 5 to 7 ===
+[2025-03-19 08:52:09 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 5-7 epoch 0 loss:0.06217831373214722 norm:0.00307708908803761 max memory_allocated 56935.0517578125 
+[2025-03-19 08:53:52 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 5-7 epoch 1 loss:0.044653043150901794 norm:0.0012914990074932575 max memory_allocated 56935.0517578125 
+[2025-03-19 08:55:39 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 5-7 epoch 2 loss:0.04040435701608658 norm:0.0017937161028385162 max memory_allocated 56935.0517578125 
+[2025-03-19 08:57:22 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 5-7 epoch 3 loss:0.038993559777736664 norm:0.0006357267848215997 max memory_allocated 56935.0517578125 
+[2025-03-19 08:59:05 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 5-7 epoch 4 loss:0.038461051881313324 norm:0.0005717165768146515 max memory_allocated 56935.0517578125 
+[2025-03-19 09:00:52 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 5-7 epoch 5 loss:0.03825424984097481 norm:0.0005367867415770888 max memory_allocated 56935.0517578125 
+[2025-03-19 09:02:34 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 5-7 epoch 6 loss:0.0381246879696846 norm:0.0005240058526396751 max memory_allocated 56935.0517578125 
+[2025-03-19 09:04:16 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 5-7 epoch 7 loss:0.03807244822382927 norm:0.0005219472222961485 max memory_allocated 56935.0517578125 
+[2025-03-19 09:06:04 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 5-7 epoch 8 loss:0.038001906126737595 norm:0.0005143299931660295 max memory_allocated 56935.0517578125 
+[2025-03-19 09:07:46 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 5-7 epoch 9 loss:0.03800106793642044 norm:0.0005169006763026118 max memory_allocated 56935.0517578125 
+[2025-03-19 09:08:23 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 5-7
+[2025-03-19 09:08:24 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 6 to 8 ===
+[2025-03-19 09:10:36 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 6-8 epoch 0 loss:0.05639554187655449 norm:0.018867570906877518 max memory_allocated 56935.2236328125 
+[2025-03-19 09:12:18 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 6-8 epoch 1 loss:0.040360528975725174 norm:0.0017947506858035922 max memory_allocated 56935.2236328125 
+[2025-03-19 09:14:01 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 6-8 epoch 2 loss:0.037015289068222046 norm:0.0012796891387552023 max memory_allocated 56935.2236328125 
+[2025-03-19 09:15:48 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 6-8 epoch 3 loss:0.03590767830610275 norm:0.0009647450060583651 max memory_allocated 56935.2236328125 
+[2025-03-19 09:17:30 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 6-8 epoch 4 loss:0.03542202711105347 norm:0.0008339870255440474 max memory_allocated 56935.2236328125 
+[2025-03-19 09:19:13 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 6-8 epoch 5 loss:0.03520350158214569 norm:0.0007460376946255565 max memory_allocated 56935.2236328125 
+[2025-03-19 09:21:01 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 6-8 epoch 6 loss:0.034923654049634933 norm:0.0006825475720688701 max memory_allocated 56935.2236328125 
+[2025-03-19 09:22:42 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 6-8 epoch 7 loss:0.03473258391022682 norm:0.000629369867965579 max memory_allocated 56935.2236328125 
+[2025-03-19 09:24:24 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 6-8 epoch 8 loss:0.03470543771982193 norm:0.0006024635513313115 max memory_allocated 56935.2236328125 
+[2025-03-19 09:26:11 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 6-8 epoch 9 loss:0.03463033214211464 norm:0.000617814774159342 max memory_allocated 56935.2236328125 
+[2025-03-19 09:26:47 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 6-8
+[2025-03-19 09:26:48 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 7 to 9 ===
+[2025-03-19 09:28:54 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 7-9 epoch 0 loss:0.06342928856611252 norm:0.025221463292837143 max memory_allocated 56935.3955078125 
+[2025-03-19 09:30:40 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 7-9 epoch 1 loss:0.041189730167388916 norm:0.0039008273743093014 max memory_allocated 56935.3955078125 
+[2025-03-19 09:32:23 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 7-9 epoch 2 loss:0.03606247156858444 norm:0.002398909069597721 max memory_allocated 56935.3955078125 
+[2025-03-19 09:34:05 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 7-9 epoch 3 loss:0.034205470234155655 norm:0.0018413534853607416 max memory_allocated 56935.3955078125 
+[2025-03-19 09:35:52 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 7-9 epoch 4 loss:0.03337306156754494 norm:0.0014497707597911358 max memory_allocated 56935.3955078125 
+[2025-03-19 09:37:34 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 7-9 epoch 5 loss:0.03294418007135391 norm:0.0013438923051580787 max memory_allocated 56935.3955078125 
+[2025-03-19 09:39:16 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 7-9 epoch 6 loss:0.03267724812030792 norm:0.0011203954927623272 max memory_allocated 56935.3955078125 
+[2025-03-19 09:41:03 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 7-9 epoch 7 loss:0.032553646713495255 norm:0.0010446320520713925 max memory_allocated 56935.3955078125 
+[2025-03-19 09:42:45 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 7-9 epoch 8 loss:0.03244159370660782 norm:0.0009782296838238835 max memory_allocated 56935.3955078125 
+[2025-03-19 09:44:27 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 7-9 epoch 9 loss:0.03238575533032417 norm:0.0008714641444385052 max memory_allocated 56935.3955078125 
+[2025-03-19 09:45:08 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 7-9
+[2025-03-19 09:45:08 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 8 to 10 ===
+[2025-03-19 09:47:15 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 8-10 epoch 0 loss:0.05752287432551384 norm:0.0030725495889782906 max memory_allocated 56935.5673828125 
+[2025-03-19 09:48:57 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 8-10 epoch 1 loss:0.03930995240807533 norm:0.0013498542830348015 max memory_allocated 56935.5673828125 
+[2025-03-19 09:50:44 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 8-10 epoch 2 loss:0.03441758453845978 norm:0.0007565798005089164 max memory_allocated 56935.5673828125 
+[2025-03-19 09:52:26 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 8-10 epoch 3 loss:0.03266625478863716 norm:0.0005075904773548245 max memory_allocated 56935.5673828125 
+[2025-03-19 09:54:09 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 8-10 epoch 4 loss:0.031996652483940125 norm:0.0004016986640635878 max memory_allocated 56935.5673828125 
+[2025-03-19 09:55:55 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 8-10 epoch 5 loss:0.03167339414358139 norm:0.00035973015474155545 max memory_allocated 56935.5673828125 
+[2025-03-19 09:57:37 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 8-10 epoch 6 loss:0.03147142753005028 norm:0.00034492206759750843 max memory_allocated 56935.5673828125 
+[2025-03-19 09:59:19 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 8-10 epoch 7 loss:0.031412843614816666 norm:0.00033982243621721864 max memory_allocated 56935.5673828125 
+[2025-03-19 10:01:06 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 8-10 epoch 8 loss:0.031335990875959396 norm:0.0003380168054718524 max memory_allocated 56935.5673828125 
+[2025-03-19 10:02:49 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 8-10 epoch 9 loss:0.031240355223417282 norm:0.00033299645292572677 max memory_allocated 56935.5673828125 
+[2025-03-19 10:03:25 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 8-10
+[2025-03-19 10:03:25 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 9 to 11 ===
+[2025-03-19 10:05:37 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 9-11 epoch 0 loss:0.06481368094682693 norm:0.0029930046293884516 max memory_allocated 56935.7392578125 
+[2025-03-19 10:07:19 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 9-11 epoch 1 loss:0.046238820999860764 norm:0.001365557312965393 max memory_allocated 56935.7392578125 
+[2025-03-19 10:09:02 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 9-11 epoch 2 loss:0.041068464517593384 norm:0.0008097089594230056 max memory_allocated 56935.7392578125 
+[2025-03-19 10:10:49 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 9-11 epoch 3 loss:0.03929273784160614 norm:0.0005682468181475997 max memory_allocated 56935.7392578125 
+[2025-03-19 10:12:31 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 9-11 epoch 4 loss:0.03869819641113281 norm:0.00047120137605816126 max memory_allocated 56935.7392578125 
+[2025-03-19 10:14:13 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 9-11 epoch 5 loss:0.03846170753240585 norm:0.00043203006498515606 max memory_allocated 56935.7392578125 
+[2025-03-19 10:16:00 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 9-11 epoch 6 loss:0.03838735446333885 norm:0.00041569359018467367 max memory_allocated 56935.7392578125 
+[2025-03-19 10:17:42 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 9-11 epoch 7 loss:0.03836239129304886 norm:0.00040383724262937903 max memory_allocated 56935.7392578125 
+[2025-03-19 10:19:24 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 9-11 epoch 8 loss:0.03840553015470505 norm:0.0004092666204087436 max memory_allocated 56935.7392578125 
+[2025-03-19 10:21:12 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 9-11 epoch 9 loss:0.03841518983244896 norm:0.0004123197868466377 max memory_allocated 56935.7392578125 
+[2025-03-19 10:21:47 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 9-11
+[2025-03-19 10:21:48 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 10 to 12 ===
+[2025-03-19 10:23:54 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 10-12 epoch 0 loss:0.06227407976984978 norm:0.0025859451852738857 max memory_allocated 56935.9111328125 
+[2025-03-19 10:25:41 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 10-12 epoch 1 loss:0.044882964342832565 norm:0.0011090764310210943 max memory_allocated 56935.9111328125 
+[2025-03-19 10:27:23 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 10-12 epoch 2 loss:0.04055248200893402 norm:0.0006660479702986777 max memory_allocated 56935.9111328125 
+[2025-03-19 10:29:06 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 10-12 epoch 3 loss:0.039252858608961105 norm:0.0004797987057827413 max memory_allocated 56935.9111328125 
+[2025-03-19 10:30:53 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 10-12 epoch 4 loss:0.038937389850616455 norm:0.00041373231215402484 max memory_allocated 56935.9111328125 
+[2025-03-19 10:32:35 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 10-12 epoch 5 loss:0.039030175656080246 norm:0.00038900290383026004 max memory_allocated 56935.9111328125 
+[2025-03-19 10:34:17 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 10-12 epoch 6 loss:0.039140962064266205 norm:0.000376445590518415 max memory_allocated 56935.9111328125 
+[2025-03-19 10:36:04 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 10-12 epoch 7 loss:0.03926488012075424 norm:0.000368088687537238 max memory_allocated 56935.9111328125 
+[2025-03-19 10:37:46 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 10-12 epoch 8 loss:0.039315804839134216 norm:0.00036326859844848514 max memory_allocated 56935.9111328125 
+[2025-03-19 10:39:28 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 10-12 epoch 9 loss:0.03938106819987297 norm:0.00036350407754071057 max memory_allocated 56935.9111328125 
+[2025-03-19 10:40:08 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 10-12
+[2025-03-19 10:40:08 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 11 to 13 ===
+[2025-03-19 10:42:14 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 11-13 epoch 0 loss:0.04615385830402374 norm:0.001386931398883462 max memory_allocated 56936.0830078125 
+[2025-03-19 10:43:56 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 11-13 epoch 1 loss:0.03529340401291847 norm:0.0005667094374075532 max memory_allocated 56936.0830078125 
+[2025-03-19 10:45:42 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 11-13 epoch 2 loss:0.03300457447767258 norm:0.00040639014332555234 max memory_allocated 56936.0830078125 
+[2025-03-19 10:47:24 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 11-13 epoch 3 loss:0.03227943181991577 norm:0.0003435347171034664 max memory_allocated 56936.0830078125 
+[2025-03-19 10:49:06 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 11-13 epoch 4 loss:0.03203635290265083 norm:0.0003152632270939648 max memory_allocated 56936.0830078125 
+[2025-03-19 10:50:54 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 11-13 epoch 5 loss:0.03202235326170921 norm:0.000305463676340878 max memory_allocated 56936.0830078125 
+[2025-03-19 10:52:36 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 11-13 epoch 6 loss:0.03217260539531708 norm:0.00030815679929219186 max memory_allocated 56936.0830078125 
+[2025-03-19 10:54:18 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 11-13 epoch 7 loss:0.032312169671058655 norm:0.0003031856322195381 max memory_allocated 56936.0830078125 
+[2025-03-19 10:56:05 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 11-13 epoch 8 loss:0.03244177997112274 norm:0.00030112493550404906 max memory_allocated 56936.0830078125 
+[2025-03-19 10:57:46 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 11-13 epoch 9 loss:0.03262191265821457 norm:0.00030433363281190395 max memory_allocated 56936.0830078125 
+[2025-03-19 10:58:22 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 11-13
+[2025-03-19 10:58:23 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 12 to 14 ===
+[2025-03-19 11:00:34 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 12-14 epoch 0 loss:0.05196910724043846 norm:0.0021256026811897755 max memory_allocated 56936.2548828125 
+[2025-03-19 11:02:16 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 12-14 epoch 1 loss:0.03945663571357727 norm:0.0009716447675600648 max memory_allocated 56936.2548828125 
+[2025-03-19 11:03:58 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 12-14 epoch 2 loss:0.036025602370500565 norm:0.0005660780007019639 max memory_allocated 56936.2548828125 
+[2025-03-19 11:05:44 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 12-14 epoch 3 loss:0.03484979271888733 norm:0.0003989861870650202 max memory_allocated 56936.2548828125 
+[2025-03-19 11:07:26 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 12-14 epoch 4 loss:0.034535568207502365 norm:0.000338865676894784 max memory_allocated 56936.2548828125 
+[2025-03-19 11:09:08 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 12-14 epoch 5 loss:0.03443223610520363 norm:0.00030901082209311426 max memory_allocated 56936.2548828125 
+[2025-03-19 11:10:56 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 12-14 epoch 6 loss:0.0344485342502594 norm:0.00030077414703555405 max memory_allocated 56936.2548828125 
+[2025-03-19 11:12:38 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 12-14 epoch 7 loss:0.03451839089393616 norm:0.0002922473940998316 max memory_allocated 56936.2548828125 
+[2025-03-19 11:14:21 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 12-14 epoch 8 loss:0.03457573428750038 norm:0.00028639938682317734 max memory_allocated 56936.2548828125 
+[2025-03-19 11:16:08 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 12-14 epoch 9 loss:0.03462143987417221 norm:0.0002854695194400847 max memory_allocated 56936.2548828125 
+[2025-03-19 11:16:43 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 12-14
+[2025-03-19 11:16:43 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 13 to 15 ===
+[2025-03-19 11:18:50 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 13-15 epoch 0 loss:0.038314033299684525 norm:0.0011062811827287078 max memory_allocated 56936.4267578125 
+[2025-03-19 11:20:37 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 13-15 epoch 1 loss:0.029242414981126785 norm:0.0004966338165104389 max memory_allocated 56936.4267578125 
+[2025-03-19 11:22:19 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 13-15 epoch 2 loss:0.026997923851013184 norm:0.00032679905416443944 max memory_allocated 56936.4267578125 
+[2025-03-19 11:24:02 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 13-15 epoch 3 loss:0.026257717981934547 norm:0.0002651957329362631 max memory_allocated 56936.4267578125 
+[2025-03-19 11:25:49 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 13-15 epoch 4 loss:0.025959065183997154 norm:0.00023773632710799575 max memory_allocated 56936.4267578125 
+[2025-03-19 11:27:31 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 13-15 epoch 5 loss:0.02586251124739647 norm:0.00022030164836905897 max memory_allocated 56936.4267578125 
+[2025-03-19 11:29:13 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 13-15 epoch 6 loss:0.025853494182229042 norm:0.00022154723410494626 max memory_allocated 56936.4267578125 
+[2025-03-19 11:31:01 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 13-15 epoch 7 loss:0.025861375033855438 norm:0.00021348560403566808 max memory_allocated 56936.4267578125 
+[2025-03-19 11:32:43 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 13-15 epoch 8 loss:0.0258648619055748 norm:0.00022137070482131094 max memory_allocated 56936.4267578125 
+[2025-03-19 11:34:25 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 13-15 epoch 9 loss:0.02589256316423416 norm:0.00021576229482889175 max memory_allocated 56936.4267578125 
+[2025-03-19 11:35:06 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 13-15
+[2025-03-19 11:35:06 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 14 to 16 ===
+[2025-03-19 11:37:12 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 14-16 epoch 0 loss:0.05190327391028404 norm:0.002897938247770071 max memory_allocated 56936.5986328125 
+[2025-03-19 11:38:54 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 14-16 epoch 1 loss:0.03701366111636162 norm:0.000851823715493083 max memory_allocated 56936.5986328125 
+[2025-03-19 11:40:40 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 14-16 epoch 2 loss:0.033773116767406464 norm:0.000516336876899004 max memory_allocated 56936.5986328125 
+[2025-03-19 11:42:22 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 14-16 epoch 3 loss:0.0325813814997673 norm:0.0003796075761783868 max memory_allocated 56936.5986328125 
+[2025-03-19 11:44:05 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 14-16 epoch 4 loss:0.0320906788110733 norm:0.00032179694972001016 max memory_allocated 56936.5986328125 
+[2025-03-19 11:45:52 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 14-16 epoch 5 loss:0.03190413862466812 norm:0.0002906970330514014 max memory_allocated 56936.5986328125 
+[2025-03-19 11:47:33 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 14-16 epoch 6 loss:0.0318031832575798 norm:0.0002665631764102727 max memory_allocated 56936.5986328125 
+[2025-03-19 11:49:16 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 14-16 epoch 7 loss:0.03174152597784996 norm:0.0002526720054447651 max memory_allocated 56936.5986328125 
+[2025-03-19 11:51:03 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 14-16 epoch 8 loss:0.0318484790623188 norm:0.00024456370738334954 max memory_allocated 56936.5986328125 
+[2025-03-19 11:52:44 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 14-16 epoch 9 loss:0.031855784356594086 norm:0.0002471341867931187 max memory_allocated 56936.5986328125 
+[2025-03-19 11:53:20 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 14-16
+[2025-03-19 11:53:20 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 15 to 17 ===
+[2025-03-19 11:55:30 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 15-17 epoch 0 loss:0.03769904375076294 norm:0.0015150441322475672 max memory_allocated 56936.7705078125 
+[2025-03-19 11:57:12 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 15-17 epoch 1 loss:0.027929866686463356 norm:0.0005423132097348571 max memory_allocated 56936.7705078125 
+[2025-03-19 11:58:54 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 15-17 epoch 2 loss:0.02590710110962391 norm:0.0003547980741132051 max memory_allocated 56936.7705078125 
+[2025-03-19 12:00:41 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 15-17 epoch 3 loss:0.025219246745109558 norm:0.0002765842364169657 max memory_allocated 56936.7705078125 
+[2025-03-19 12:02:24 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 15-17 epoch 4 loss:0.02494770474731922 norm:0.0002404375991318375 max memory_allocated 56936.7705078125 
+[2025-03-19 12:04:06 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 15-17 epoch 5 loss:0.02483028545975685 norm:0.00021621238556690514 max memory_allocated 56936.7705078125 
+[2025-03-19 12:05:53 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 15-17 epoch 6 loss:0.024797119200229645 norm:0.00020683252660091966 max memory_allocated 56936.7705078125 
+[2025-03-19 12:07:34 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 15-17 epoch 7 loss:0.02480398304760456 norm:0.00019792314560618252 max memory_allocated 56936.7705078125 
+[2025-03-19 12:09:16 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 15-17 epoch 8 loss:0.024843763560056686 norm:0.00020019873045384884 max memory_allocated 56936.7705078125 
+[2025-03-19 12:11:02 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 15-17 epoch 9 loss:0.024840502068400383 norm:0.00019639352103695273 max memory_allocated 56936.7705078125 
+[2025-03-19 12:11:38 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 15-17
+[2025-03-19 12:11:38 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 16 to 18 ===
+[2025-03-19 12:13:43 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 16-18 epoch 0 loss:0.04062347114086151 norm:0.0010814889101311564 max memory_allocated 56936.9423828125 
+[2025-03-19 12:15:30 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 16-18 epoch 1 loss:0.032894302159547806 norm:0.00043271094909869134 max memory_allocated 56936.9423828125 
+[2025-03-19 12:17:13 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 16-18 epoch 2 loss:0.031461071223020554 norm:0.0003040391020476818 max memory_allocated 56936.9423828125 
+[2025-03-19 12:18:55 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 16-18 epoch 3 loss:0.031095338985323906 norm:0.00025774494861252606 max memory_allocated 56936.9423828125 
+[2025-03-19 12:20:41 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 16-18 epoch 4 loss:0.031002525240182877 norm:0.00023021064407657832 max memory_allocated 56936.9423828125 
+[2025-03-19 12:22:23 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 16-18 epoch 5 loss:0.03106326423585415 norm:0.00022968536359257996 max memory_allocated 56936.9423828125 
+[2025-03-19 12:24:05 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 16-18 epoch 6 loss:0.03117571771144867 norm:0.00022103401715867221 max memory_allocated 56936.9423828125 
+[2025-03-19 12:25:51 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 16-18 epoch 7 loss:0.031216688454151154 norm:0.00021198764443397522 max memory_allocated 56936.9423828125 
+[2025-03-19 12:27:33 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 16-18 epoch 8 loss:0.0313204824924469 norm:0.00021266963449306786 max memory_allocated 56936.9423828125 
+[2025-03-19 12:29:15 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 16-18 epoch 9 loss:0.03136800229549408 norm:0.00020732275152113289 max memory_allocated 56936.9423828125 
+[2025-03-19 12:29:56 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 16-18
+[2025-03-19 12:29:56 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 17 to 19 ===
+[2025-03-19 12:32:01 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 17-19 epoch 0 loss:0.03747730702161789 norm:0.000888675800524652 max memory_allocated 56937.1142578125 
+[2025-03-19 12:33:42 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 17-19 epoch 1 loss:0.030964653939008713 norm:0.00036120243021287024 max memory_allocated 56937.1142578125 
+[2025-03-19 12:35:29 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 17-19 epoch 2 loss:0.029738744720816612 norm:0.0002580653235781938 max memory_allocated 56937.1142578125 
+[2025-03-19 12:37:11 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 17-19 epoch 3 loss:0.029377132654190063 norm:0.00020957774540875107 max memory_allocated 56937.1142578125 
+[2025-03-19 12:38:54 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 17-19 epoch 4 loss:0.029318222776055336 norm:0.00020013547327835113 max memory_allocated 56937.1142578125 
+[2025-03-19 12:40:40 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 17-19 epoch 5 loss:0.029302095994353294 norm:0.00018536782590672374 max memory_allocated 56937.1142578125 
+[2025-03-19 12:42:22 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 17-19 epoch 6 loss:0.029326224699616432 norm:0.0001816601725295186 max memory_allocated 56937.1142578125 
+[2025-03-19 12:44:04 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 17-19 epoch 7 loss:0.02941788174211979 norm:0.00017786059470381588 max memory_allocated 56937.1142578125 
+[2025-03-19 12:45:51 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 17-19 epoch 8 loss:0.029539057984948158 norm:0.0001823880011215806 max memory_allocated 56937.1142578125 
+[2025-03-19 12:47:32 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 17-19 epoch 9 loss:0.02965904213488102 norm:0.000179472568561323 max memory_allocated 56937.1142578125 
+[2025-03-19 12:48:08 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 17-19
+[2025-03-19 12:48:09 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 18 to 20 ===
+[2025-03-19 12:50:19 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 18-20 epoch 0 loss:0.037243589758872986 norm:0.0007855703588575125 max memory_allocated 56937.2861328125 
+[2025-03-19 12:52:01 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 18-20 epoch 1 loss:0.031511399894952774 norm:0.0003570667759049684 max memory_allocated 56937.2861328125 
+[2025-03-19 12:53:42 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 18-20 epoch 2 loss:0.030488040298223495 norm:0.0002631538372952491 max memory_allocated 56937.2861328125 
+[2025-03-19 12:55:29 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 18-20 epoch 3 loss:0.03024880401790142 norm:0.00023776208399794996 max memory_allocated 56937.2861328125 
+[2025-03-19 12:57:11 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 18-20 epoch 4 loss:0.03018844872713089 norm:0.0002235586871393025 max memory_allocated 56937.2861328125 
+[2025-03-19 12:58:53 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 18-20 epoch 5 loss:0.030177190899848938 norm:0.00020688957010861486 max memory_allocated 56937.2861328125 
+[2025-03-19 13:00:40 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 18-20 epoch 6 loss:0.030208971351385117 norm:0.00020081116235814989 max memory_allocated 56937.2861328125 
+[2025-03-19 13:02:22 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 18-20 epoch 7 loss:0.03032655455172062 norm:0.00020800839411094785 max memory_allocated 56937.2861328125 
+[2025-03-19 13:04:04 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 18-20 epoch 8 loss:0.03045092150568962 norm:0.0002032415068242699 max memory_allocated 56937.2861328125 
+[2025-03-19 13:05:51 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 18-20 epoch 9 loss:0.03054589219391346 norm:0.0001980238885153085 max memory_allocated 56937.2861328125 
+[2025-03-19 13:06:26 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 18-20
+[2025-03-19 13:06:26 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 19 to 21 ===
+[2025-03-19 13:08:31 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 19-21 epoch 0 loss:0.03789962828159332 norm:0.0008851354359649122 max memory_allocated 56937.4580078125 
+[2025-03-19 13:10:18 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 19-21 epoch 1 loss:0.03215593099594116 norm:0.00035275783739052713 max memory_allocated 56937.4580078125 
+[2025-03-19 13:12:00 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 19-21 epoch 2 loss:0.031249724328517914 norm:0.0002608404029160738 max memory_allocated 56937.4580078125 
+[2025-03-19 13:13:42 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 19-21 epoch 3 loss:0.031016575172543526 norm:0.00022973085287958384 max memory_allocated 56937.4580078125 
+[2025-03-19 13:15:28 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 19-21 epoch 4 loss:0.030995652079582214 norm:0.0002213737170677632 max memory_allocated 56937.4580078125 
+[2025-03-19 13:17:10 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 19-21 epoch 5 loss:0.031021635979413986 norm:0.00021317026403266937 max memory_allocated 56937.4580078125 
+[2025-03-19 13:18:52 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 19-21 epoch 6 loss:0.031099488958716393 norm:0.00021804083371534944 max memory_allocated 56937.4580078125 
+[2025-03-19 13:20:39 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 19-21 epoch 7 loss:0.031145013868808746 norm:0.00020414975006133318 max memory_allocated 56937.4580078125 
+[2025-03-19 13:22:21 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 19-21 epoch 8 loss:0.031221874058246613 norm:0.00020524801220744848 max memory_allocated 56937.4580078125 
+[2025-03-19 13:24:03 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 19-21 epoch 9 loss:0.031307511031627655 norm:0.00019708405307028443 max memory_allocated 56937.4580078125 
+[2025-03-19 13:24:39 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 19-21
+[2025-03-19 13:24:40 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 20 to 22 ===
+[2025-03-19 13:26:53 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 20-22 epoch 0 loss:0.03549426048994064 norm:0.0006546450895257294 max memory_allocated 56937.6298828125 
+[2025-03-19 13:28:34 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 20-22 epoch 1 loss:0.030671069398522377 norm:0.00030157947912812233 max memory_allocated 56937.6298828125 
+[2025-03-19 13:30:22 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 20-22 epoch 2 loss:0.02992621809244156 norm:0.0002566286420915276 max memory_allocated 56937.6298828125 
+[2025-03-19 13:32:04 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 20-22 epoch 3 loss:0.029712431132793427 norm:0.00023492230684496462 max memory_allocated 56937.6298828125 
+[2025-03-19 13:33:46 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 20-22 epoch 4 loss:0.02966655045747757 norm:0.00022233912022784352 max memory_allocated 56937.6298828125 
+[2025-03-19 13:35:33 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 20-22 epoch 5 loss:0.029678067192435265 norm:0.00020749498798977584 max memory_allocated 56937.6298828125 
+[2025-03-19 13:37:15 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 20-22 epoch 6 loss:0.029754189774394035 norm:0.00020986946765333414 max memory_allocated 56937.6298828125 
+[2025-03-19 13:38:57 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 20-22 epoch 7 loss:0.029821807518601418 norm:0.00021490035578608513 max memory_allocated 56937.6298828125 
+[2025-03-19 13:40:42 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 20-22 epoch 8 loss:0.02992990054190159 norm:0.00020312529522925615 max memory_allocated 56937.6298828125 
+[2025-03-19 13:42:24 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 20-22 epoch 9 loss:0.029988566413521767 norm:0.00020606884208973497 max memory_allocated 56937.6298828125 
+[2025-03-19 13:43:00 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 20-22
+[2025-03-19 13:43:01 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 21 to 23 ===
+[2025-03-19 13:45:13 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 21-23 epoch 0 loss:0.035677965730428696 norm:0.001063077594153583 max memory_allocated 56937.8017578125 
+[2025-03-19 13:46:55 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 21-23 epoch 1 loss:0.03038814850151539 norm:0.0005168834468349814 max memory_allocated 56937.8017578125 
+[2025-03-19 13:48:37 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 21-23 epoch 2 loss:0.029505806043744087 norm:0.00034917594166472554 max memory_allocated 56937.8017578125 
+[2025-03-19 13:50:25 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 21-23 epoch 3 loss:0.029196294024586678 norm:0.00026904468541033566 max memory_allocated 56937.8017578125 
+[2025-03-19 13:52:09 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 21-23 epoch 4 loss:0.029101189225912094 norm:0.00023017945932224393 max memory_allocated 56937.8017578125 
+[2025-03-19 13:53:51 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 21-23 epoch 5 loss:0.029073163866996765 norm:0.00020883785327896476 max memory_allocated 56937.8017578125 
+[2025-03-19 13:55:38 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 21-23 epoch 6 loss:0.029083646833896637 norm:0.00019855589198414236 max memory_allocated 56937.8017578125 
+[2025-03-19 13:57:20 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 21-23 epoch 7 loss:0.029113082215189934 norm:0.00019318760314490646 max memory_allocated 56937.8017578125 
+[2025-03-19 13:59:02 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 21-23 epoch 8 loss:0.02912050485610962 norm:0.0001875141606433317 max memory_allocated 56937.8017578125 
+[2025-03-19 14:00:50 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 21-23 epoch 9 loss:0.029162440448999405 norm:0.00018722028471529484 max memory_allocated 56937.8017578125 
+[2025-03-19 14:01:25 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 21-23
+[2025-03-19 14:01:26 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 22 to 24 ===
+[2025-03-19 14:03:32 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 22-24 epoch 0 loss:0.037126634269952774 norm:0.005567482672631741 max memory_allocated 56937.9736328125 
+[2025-03-19 14:05:20 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 22-24 epoch 1 loss:0.030790695920586586 norm:0.0010176879586651921 max memory_allocated 56937.9736328125 
+[2025-03-19 14:07:04 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 22-24 epoch 2 loss:0.029847389087080956 norm:0.0006562966154888272 max memory_allocated 56937.9736328125 
+[2025-03-19 14:08:47 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 22-24 epoch 3 loss:0.02955349162220955 norm:0.0005333445151336491 max memory_allocated 56937.9736328125 
+[2025-03-19 14:10:35 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 22-24 epoch 4 loss:0.02939602918922901 norm:0.00043440787703730166 max memory_allocated 56937.9736328125 
+[2025-03-19 14:12:18 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 22-24 epoch 5 loss:0.029322665184736252 norm:0.00035918806679546833 max memory_allocated 56937.9736328125 
+[2025-03-19 14:14:01 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 22-24 epoch 6 loss:0.02928817830979824 norm:0.00032474432373419404 max memory_allocated 56937.9736328125 
+[2025-03-19 14:15:50 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 22-24 epoch 7 loss:0.029239729046821594 norm:0.0002953707880806178 max memory_allocated 56937.9736328125 
+[2025-03-19 14:17:32 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 22-24 epoch 8 loss:0.029244348406791687 norm:0.000281624001218006 max memory_allocated 56937.9736328125 
+[2025-03-19 14:19:16 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 22-24 epoch 9 loss:0.02920714020729065 norm:0.00025731156347319484 max memory_allocated 56937.9736328125 
+[2025-03-19 14:19:57 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 22-24
+[2025-03-19 14:19:57 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 23 to 25 ===
+[2025-03-19 14:22:03 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 23-25 epoch 0 loss:0.03927931934595108 norm:0.00081633310765028 max memory_allocated 56938.1455078125 
+[2025-03-19 14:23:45 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 23-25 epoch 1 loss:0.033542782068252563 norm:0.00044542941031977534 max memory_allocated 56938.1455078125 
+[2025-03-19 14:25:33 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 23-25 epoch 2 loss:0.03264303132891655 norm:0.0003348718164488673 max memory_allocated 56938.1455078125 
+[2025-03-19 14:27:17 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 23-25 epoch 3 loss:0.03240439295768738 norm:0.00029471763991750777 max memory_allocated 56938.1455078125 
+[2025-03-19 14:29:01 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 23-25 epoch 4 loss:0.03225690871477127 norm:0.00026888627326115966 max memory_allocated 56938.1455078125 
+[2025-03-19 14:30:49 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 23-25 epoch 5 loss:0.032141223549842834 norm:0.0002538848202675581 max memory_allocated 56938.1455078125 
+[2025-03-19 14:32:33 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 23-25 epoch 6 loss:0.03214702382683754 norm:0.0002528876066207886 max memory_allocated 56938.1455078125 
+[2025-03-19 14:34:16 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 23-25 epoch 7 loss:0.03219303861260414 norm:0.0002748781116679311 max memory_allocated 56938.1455078125 
+[2025-03-19 14:36:05 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 23-25 epoch 8 loss:0.03222544491291046 norm:0.0002556420222390443 max memory_allocated 56938.1455078125 
+[2025-03-19 14:37:49 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 23-25 epoch 9 loss:0.032257139682769775 norm:0.00025213765911757946 max memory_allocated 56938.1455078125 
+[2025-03-19 14:38:25 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 23-25
+[2025-03-19 14:38:25 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 24 to 26 ===
+[2025-03-19 14:40:38 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 24-26 epoch 0 loss:0.0426376536488533 norm:0.0007025594240985811 max memory_allocated 56938.3173828125 
+[2025-03-19 14:42:22 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 24-26 epoch 1 loss:0.03628401458263397 norm:0.0003639445931185037 max memory_allocated 56938.3173828125 
+[2025-03-19 14:44:06 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 24-26 epoch 2 loss:0.035347484052181244 norm:0.0003263522230554372 max memory_allocated 56938.3173828125 
+[2025-03-19 14:45:54 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 24-26 epoch 3 loss:0.035083264112472534 norm:0.00031605776166543365 max memory_allocated 56938.3173828125 
+[2025-03-19 14:47:37 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 24-26 epoch 4 loss:0.03503375127911568 norm:0.00030083832098171115 max memory_allocated 56938.3173828125 
+[2025-03-19 14:49:20 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 24-26 epoch 5 loss:0.03497159853577614 norm:0.0003065743076149374 max memory_allocated 56938.3173828125 
+[2025-03-19 14:51:09 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 24-26 epoch 6 loss:0.034998614341020584 norm:0.0003060581802856177 max memory_allocated 56938.3173828125 
+[2025-03-19 14:52:52 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 24-26 epoch 7 loss:0.03502409905195236 norm:0.0003362982824910432 max memory_allocated 56938.3173828125 
+[2025-03-19 14:54:35 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 24-26 epoch 8 loss:0.03509720414876938 norm:0.00031742456485517323 max memory_allocated 56938.3173828125 
+[2025-03-19 14:56:23 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 24-26 epoch 9 loss:0.03517307713627815 norm:0.0002829265722539276 max memory_allocated 56938.3173828125 
+[2025-03-19 14:56:59 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 24-26
+[2025-03-19 14:57:00 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 25 to 27 ===
+[2025-03-19 14:59:06 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 25-27 epoch 0 loss:0.04579365253448486 norm:0.0008686644141562283 max memory_allocated 56938.4892578125 
+[2025-03-19 15:00:53 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 25-27 epoch 1 loss:0.03864060342311859 norm:0.00036369485314935446 max memory_allocated 56938.4892578125 
+[2025-03-19 15:02:36 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 25-27 epoch 2 loss:0.03764452785253525 norm:0.0003001052245963365 max memory_allocated 56938.4892578125 
+[2025-03-19 15:04:19 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 25-27 epoch 3 loss:0.0373196117579937 norm:0.0002781888470053673 max memory_allocated 56938.4892578125 
+[2025-03-19 15:06:07 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 25-27 epoch 4 loss:0.03718055784702301 norm:0.0002679313183762133 max memory_allocated 56938.4892578125 
+[2025-03-19 15:07:50 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 25-27 epoch 5 loss:0.037129659205675125 norm:0.00025826538330875337 max memory_allocated 56938.4892578125 
+[2025-03-19 15:09:32 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 25-27 epoch 6 loss:0.037081822752952576 norm:0.00025756561080925167 max memory_allocated 56938.4892578125 
+[2025-03-19 15:11:19 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 25-27 epoch 7 loss:0.03709397464990616 norm:0.00025267963064834476 max memory_allocated 56938.4892578125 
+[2025-03-19 15:13:03 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 25-27 epoch 8 loss:0.037117961794137955 norm:0.0002499987604096532 max memory_allocated 56938.4892578125 
+[2025-03-19 15:14:51 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 25-27 epoch 9 loss:0.03712713345885277 norm:0.00023963936837390065 max memory_allocated 56938.4892578125 
+[2025-03-19 15:15:28 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 25-27
+[2025-03-19 15:15:28 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 26 to 28 ===
+[2025-03-19 15:17:35 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 26-28 epoch 0 loss:0.05188234895467758 norm:0.004810444079339504 max memory_allocated 56938.833984375 
+[2025-03-19 15:19:18 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 26-28 epoch 1 loss:0.0433034673333168 norm:0.003691778751090169 max memory_allocated 56938.833984375 
+[2025-03-19 15:21:07 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 26-28 epoch 2 loss:0.04216356575489044 norm:0.003180427011102438 max memory_allocated 56938.833984375 
+[2025-03-19 15:22:50 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 26-28 epoch 3 loss:0.04171377792954445 norm:0.0028261428233236074 max memory_allocated 56938.833984375 
+[2025-03-19 15:24:32 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 26-28 epoch 4 loss:0.04147130250930786 norm:0.002420182339847088 max memory_allocated 56938.833984375 
+[2025-03-19 15:26:20 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 26-28 epoch 5 loss:0.041395097970962524 norm:0.0020800833590328693 max memory_allocated 56938.833984375 
+[2025-03-19 15:28:04 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 26-28 epoch 6 loss:0.041385360062122345 norm:0.001986186485737562 max memory_allocated 56938.833984375 
+[2025-03-19 15:29:52 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 26-28 epoch 7 loss:0.041435062885284424 norm:0.001793418894521892 max memory_allocated 56938.833984375 
+[2025-03-19 15:31:35 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 26-28 epoch 8 loss:0.04153447225689888 norm:0.0018205257365480065 max memory_allocated 56938.833984375 
+[2025-03-19 15:33:19 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 26-28 epoch 9 loss:0.04156112298369408 norm:0.0017163909506052732 max memory_allocated 56938.833984375 
+[2025-03-19 15:33:55 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 26-28
+[2025-03-19 15:33:55 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 27 to 29 ===
+[2025-03-19 15:36:07 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 27-29 epoch 0 loss:0.06335428357124329 norm:0.00644101295620203 max memory_allocated 56939.1787109375 
+[2025-03-19 15:37:51 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 27-29 epoch 1 loss:0.05221135541796684 norm:0.0032400351483374834 max memory_allocated 56939.1787109375 
+[2025-03-19 15:39:34 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 27-29 epoch 2 loss:0.05047498643398285 norm:0.0029178541153669357 max memory_allocated 56939.1787109375 
+[2025-03-19 15:41:22 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 27-29 epoch 3 loss:0.04983605071902275 norm:0.002768414793536067 max memory_allocated 56939.1787109375 
+[2025-03-19 15:43:05 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 27-29 epoch 4 loss:0.049525186419487 norm:0.0025629540905356407 max memory_allocated 56939.1787109375 
+[2025-03-19 15:44:53 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 27-29 epoch 5 loss:0.049389228224754333 norm:0.0024304171092808247 max memory_allocated 56939.1787109375 
+[2025-03-19 15:46:36 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 27-29 epoch 6 loss:0.04937276616692543 norm:0.002244249451905489 max memory_allocated 56939.1787109375 
+[2025-03-19 15:48:20 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 27-29 epoch 7 loss:0.04927370697259903 norm:0.0019130207365378737 max memory_allocated 56939.1787109375 
+[2025-03-19 15:50:10 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 27-29 epoch 8 loss:0.049244582653045654 norm:0.0016667924355715513 max memory_allocated 56939.1787109375 
+[2025-03-19 15:51:54 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 27-29 epoch 9 loss:0.04924768954515457 norm:0.0015389466425403953 max memory_allocated 56939.1787109375 
+[2025-03-19 15:52:30 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 27-29
+[2025-03-19 15:52:30 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 28 to 30 ===
+[2025-03-19 15:54:37 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 28-30 epoch 0 loss:155.95458984375 norm:252.5262908935547 max memory_allocated 56939.5234375 
+[2025-03-19 15:56:26 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 28-30 epoch 1 loss:2.2992160320281982 norm:3.170224905014038 max memory_allocated 56939.5234375 
+[2025-03-19 15:58:09 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 28-30 epoch 2 loss:1.8707201480865479 norm:3.2633395195007324 max memory_allocated 56939.5234375 
+[2025-03-19 15:59:58 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 28-30 epoch 3 loss:1.6258150339126587 norm:3.339759588241577 max memory_allocated 56939.5234375 
+[2025-03-19 16:01:42 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 28-30 epoch 4 loss:1.4049248695373535 norm:3.2327592372894287 max memory_allocated 56939.5234375 
+[2025-03-19 16:03:25 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 28-30 epoch 5 loss:1.2210041284561157 norm:3.1127076148986816 max memory_allocated 56939.5234375 
+[2025-03-19 16:05:14 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 28-30 epoch 6 loss:1.0682997703552246 norm:3.0054051876068115 max memory_allocated 56939.5234375 
+[2025-03-19 16:06:58 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 28-30 epoch 7 loss:0.9640873074531555 norm:2.927722454071045 max memory_allocated 56939.5234375 
+[2025-03-19 16:08:40 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 28-30 epoch 8 loss:0.8709952235221863 norm:2.878751039505005 max memory_allocated 56939.5234375 
+[2025-03-19 16:10:29 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 28-30 epoch 9 loss:0.8050355911254883 norm:2.6957714557647705 max memory_allocated 56939.5234375 
+[2025-03-19 16:11:05 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 28-30
+[2025-03-19 16:11:06 root] (abq_llm_calib_config3_cbq.py 302): INFO === Start quantize layers 29 to 31 ===
+[2025-03-19 16:13:13 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 29-31 epoch 0 loss:47.148136138916016 norm:87.38726043701172 max memory_allocated 56939.6953125 
+[2025-03-19 16:15:01 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 29-31 epoch 1 loss:11.1343994140625 norm:179.83753967285156 max memory_allocated 56939.6953125 
+[2025-03-19 16:16:44 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 29-31 epoch 2 loss:6.538100242614746 norm:120.92758178710938 max memory_allocated 56939.6953125 
+[2025-03-19 16:18:27 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 29-31 epoch 3 loss:5.77139139175415 norm:127.31338500976562 max memory_allocated 56939.6953125 
+[2025-03-19 16:20:17 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 29-31 epoch 4 loss:4.518798351287842 norm:91.4484634399414 max memory_allocated 56939.6953125 
+[2025-03-19 16:22:01 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 29-31 epoch 5 loss:4.182261943817139 norm:87.62712860107422 max memory_allocated 56939.6953125 
+[2025-03-19 16:23:44 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 29-31 epoch 6 loss:3.60163950920105 norm:59.962852478027344 max memory_allocated 56939.6953125 
+[2025-03-19 16:25:33 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 29-31 epoch 7 loss:3.385906934738159 norm:58.981571197509766 max memory_allocated 56939.6953125 
+[2025-03-19 16:27:16 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 29-31 epoch 8 loss:3.1015868186950684 norm:48.43675994873047 max memory_allocated 56939.6953125 
+[2025-03-19 16:29:00 root] (abq_llm_calib_config3_cbq.py 508): INFO layers 29-31 epoch 9 loss:2.9091854095458984 norm:40.93474197387695 max memory_allocated 56939.6953125 
+[2025-03-19 16:29:35 root] (abq_llm_calib_config3_cbq.py 568): INFO Saving abq_parameters for block 29-31
+[2025-03-19 16:29:36 root] (main_calib_config3_cbq.py 377): INFO 34544.4061563015
+[2025-03-19 16:29:44 root] (main_calib_config3_cbq.py 117): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2025-03-19 16:30:49 root] (main_calib_config3_cbq.py 161): INFO wikitext2 : 7.714745998382568
+[2025-03-19 16:30:49 root] (main_calib_config3_cbq.py 117): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2025-03-19 16:32:29 root] (main_calib_config3_cbq.py 161): INFO c4 : 11.3433837890625
+[2025-03-19 18:02:51 root] (main_calib_config3_cbq.py 172): INFO {'wikitext2': 7.714745998382568, 'c4': 11.3433837890625, 'results': {'boolq': {'acc': 0.6477064220183486, 'acc_stderr': 0.008354760493906111}, 'piqa': {'acc': 0.7388465723612623, 'acc_stderr': 0.010248738649935574, 'acc_norm': 0.7334058759521219, 'acc_norm_stderr': 0.010316749863541365}, 'arc_easy': {'acc': 0.6035353535353535, 'acc_stderr': 0.010037412763064527, 'acc_norm': 0.4890572390572391, 'acc_norm_stderr': 0.010257326131172879}, 'hellaswag': {'acc': 0.507966540529775, 'acc_stderr': 0.00498914801062512, 'acc_norm': 0.6526588329018124, 'acc_norm_stderr': 0.004751522127418449}, 'winogrande': {'acc': 0.6211523283346487, 'acc_stderr': 0.013633724603180335}, 'arc_challenge': {'acc': 0.3250853242320819, 'acc_stderr': 0.01368814730972912, 'acc_norm': 0.34044368600682595, 'acc_norm_stderr': 0.01384746051889298}}, 'versions': {'boolq': 1, 'piqa': 0, 'arc_easy': 0, 'hellaswag': 0, 'winogrande': 0, 'arc_challenge': 0}, 'config': {'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2025-03-19 18:02:51 root] (main_calib_config3_cbq.py 175): INFO 32.51,60.35,64.77,50.80,73.88,62.12

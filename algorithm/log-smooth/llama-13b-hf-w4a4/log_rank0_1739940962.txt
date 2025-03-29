@@ -1,0 +1,7 @@
+[2025-02-19 04:56:02 root] (main_smooth.py 560): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/llama-13b-hf', cache_dir='./cache', output_dir='./log-smooth/llama-13b-hf-w4a4', save_dir='./log-smooth/quant/llama-13b-hf-w4a4', resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='piqa,arc_easy,arc_challenge,boolq,hellaswag,winogrande', eval_ppl=True, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=10, let=True, lwc=False, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, scale_calibration=True, compensation_calibration=False)
+[2025-02-19 04:56:18 root] (main_smooth.py 627): INFO === start quantization ===
+[2025-02-19 05:05:21 root] (main_smooth.py 658): INFO 542.9356446266174
+[2025-02-19 05:06:17 root] (main_smooth.py 117): INFO load calibration from ./cache/testloader_llama_wikitext2_all.cache
+[2025-02-19 05:07:54 root] (main_smooth.py 161): INFO wikitext2 : 834.4706420898438
+[2025-02-19 05:07:54 root] (main_smooth.py 117): INFO load calibration from ./cache/testloader_llama_c4_all.cache
+[2025-02-19 05:10:24 root] (main_smooth.py 161): INFO c4 : 669.9902954101562

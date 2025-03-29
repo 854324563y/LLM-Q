@@ -60,10 +60,12 @@ class QuantLinear(nn.Module):
     
     
     def forward(self, input: torch.Tensor):
+        #print("QuantLinear forward")
         if self.use_temporary_parameter:
             weight = self.temp_weight
             bias = self.temp_bias
         elif self.use_weight_quant:
+            #print("use_weight_quant")
             weight = self.weight_quantizer(self.weight)
             bias = self.bias
         else:

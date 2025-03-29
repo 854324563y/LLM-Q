@@ -1,0 +1,224 @@
+[2025-03-17 13:19:59 root] (main_divide_blocks.py 279): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/llama-13b-hf', cache_dir='./cache', output_dir='./log-divide4/llama-13b-hf-w4a4', save_dir=None, resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='', eval_ppl=False, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=10, let=False, lwc=False, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, error_threshold=0.3, similarity_threshold=0.999, sensitivity_threshold=0.1, max_block_size=4, reload=False)
+[2025-03-17 13:20:25 root] (main_divide_blocks.py 360): INFO === start quantization ===
+[2025-03-17 13:20:25 root] (main_divide_blocks.py 366): INFO load calibration from ./cache/dataloader_llama_wikitext2_128.cache
+[2025-03-17 13:20:25 root] (abq_llm_divide_blocks.py 66): INFO Starting ...
+[2025-03-17 13:20:26 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 0 similarity and sensitivity ===
+[2025-03-17 13:20:27 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 2.320279788970947
+[2025-03-17 13:20:27 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 1 similarity and sensitivity ===
+[2025-03-17 13:20:28 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9615949051720756
+[2025-03-17 13:20:28 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.6141661882400515
+[2025-03-17 13:20:28 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 2 similarity and sensitivity ===
+[2025-03-17 13:20:29 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.981979250907898
+[2025-03-17 13:20:30 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 4.066954597405025
+[2025-03-17 13:20:30 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 3 similarity and sensitivity ===
+[2025-03-17 13:20:31 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9900599632944379
+[2025-03-17 13:20:31 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.7448118703705924
+[2025-03-17 13:20:31 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 4 similarity and sensitivity ===
+[2025-03-17 13:20:32 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.999608039855957
+[2025-03-17 13:20:33 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.762608848299299
+[2025-03-17 13:20:33 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 5 similarity and sensitivity ===
+[2025-03-17 13:20:34 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9996611731392997
+[2025-03-17 13:20:34 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.693883468423571
+[2025-03-17 13:20:34 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 6 similarity and sensitivity ===
+[2025-03-17 13:20:36 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9998395698411124
+[2025-03-17 13:20:36 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.7523171663284303
+[2025-03-17 13:20:36 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 7 similarity and sensitivity ===
+[2025-03-17 13:20:37 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9992820194789341
+[2025-03-17 13:20:37 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.731710420336042
+[2025-03-17 13:20:37 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 8 similarity and sensitivity ===
+[2025-03-17 13:20:39 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9989871723311288
+[2025-03-17 13:20:39 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.6759087102753774
+[2025-03-17 13:20:39 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 9 similarity and sensitivity ===
+[2025-03-17 13:20:40 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.99907933814185
+[2025-03-17 13:20:40 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.715382119587489
+[2025-03-17 13:20:40 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 10 similarity and sensitivity ===
+[2025-03-17 13:20:42 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9996614541326251
+[2025-03-17 13:20:42 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.69973144020353
+[2025-03-17 13:20:42 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 11 similarity and sensitivity ===
+[2025-03-17 13:20:43 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9999208705765861
+[2025-03-17 13:20:43 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.701703068188259
+[2025-03-17 13:20:43 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 12 similarity and sensitivity ===
+[2025-03-17 13:20:45 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9999057565416608
+[2025-03-17 13:20:45 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.753949097224644
+[2025-03-17 13:20:45 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 13 similarity and sensitivity ===
+[2025-03-17 13:20:46 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9992532985551017
+[2025-03-17 13:20:47 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.6923445037433082
+[2025-03-17 13:20:47 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 14 similarity and sensitivity ===
+[2025-03-17 13:20:48 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9998063615390232
+[2025-03-17 13:20:49 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.7501482844352725
+[2025-03-17 13:20:49 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 15 similarity and sensitivity ===
+[2025-03-17 13:20:50 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9998798029763358
+[2025-03-17 13:20:50 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.7240645374570573
+[2025-03-17 13:20:50 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 16 similarity and sensitivity ===
+[2025-03-17 13:20:52 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9997897403580802
+[2025-03-17 13:20:52 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.7159415824072703
+[2025-03-17 13:20:52 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 17 similarity and sensitivity ===
+[2025-03-17 13:20:53 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9999437417302813
+[2025-03-17 13:20:53 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.7310768008232116
+[2025-03-17 13:20:53 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 18 similarity and sensitivity ===
+[2025-03-17 13:20:55 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9997287307466779
+[2025-03-17 13:20:55 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.7162366492407664
+[2025-03-17 13:20:55 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 19 similarity and sensitivity ===
+[2025-03-17 13:20:56 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9998310378619603
+[2025-03-17 13:20:56 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.7300322192055835
+[2025-03-17 13:20:56 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 20 similarity and sensitivity ===
+[2025-03-17 13:20:58 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9998751538140433
+[2025-03-17 13:20:58 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.7048156329563686
+[2025-03-17 13:20:58 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 21 similarity and sensitivity ===
+[2025-03-17 13:21:00 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9995440074375698
+[2025-03-17 13:21:00 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.715273421151297
+[2025-03-17 13:21:00 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 22 similarity and sensitivity ===
+[2025-03-17 13:21:01 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9999141778264727
+[2025-03-17 13:21:01 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.7128319569996426
+[2025-03-17 13:21:01 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 23 similarity and sensitivity ===
+[2025-03-17 13:21:03 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9996859942163739
+[2025-03-17 13:21:03 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.738313409260342
+[2025-03-17 13:21:03 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 24 similarity and sensitivity ===
+[2025-03-17 13:21:05 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9998900975499835
+[2025-03-17 13:21:05 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.718493754523141
+[2025-03-17 13:21:05 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 25 similarity and sensitivity ===
+[2025-03-17 13:21:06 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9998655489512852
+[2025-03-17 13:21:06 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.733975638662066
+[2025-03-17 13:21:06 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 26 similarity and sensitivity ===
+[2025-03-17 13:21:08 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9999262179647174
+[2025-03-17 13:21:08 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.737500841276986
+[2025-03-17 13:21:08 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 27 similarity and sensitivity ===
+[2025-03-17 13:21:09 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9999001026153564
+[2025-03-17 13:21:09 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.7577734027590073
+[2025-03-17 13:21:09 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 28 similarity and sensitivity ===
+[2025-03-17 13:21:11 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9997256653649467
+[2025-03-17 13:21:11 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.7355907474245345
+[2025-03-17 13:21:11 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 29 similarity and sensitivity ===
+[2025-03-17 13:21:13 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.999829820224217
+[2025-03-17 13:21:13 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.7765845741544455
+[2025-03-17 13:21:13 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 30 similarity and sensitivity ===
+[2025-03-17 13:21:14 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9999498214040484
+[2025-03-17 13:21:14 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.7676370246069766
+[2025-03-17 13:21:14 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 31 similarity and sensitivity ===
+[2025-03-17 13:21:16 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9998759201594761
+[2025-03-17 13:21:16 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.783556478364127
+[2025-03-17 13:21:16 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 32 similarity and sensitivity ===
+[2025-03-17 13:21:17 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9999594432967049
+[2025-03-17 13:21:18 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.8043460028512137
+[2025-03-17 13:21:18 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 33 similarity and sensitivity ===
+[2025-03-17 13:21:19 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9999618870871407
+[2025-03-17 13:21:19 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.8258079392569404
+[2025-03-17 13:21:19 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 34 similarity and sensitivity ===
+[2025-03-17 13:21:23 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.999891860144479
+[2025-03-17 13:21:24 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.8291522434779575
+[2025-03-17 13:21:24 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 35 similarity and sensitivity ===
+[2025-03-17 13:21:25 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9997418693133763
+[2025-03-17 13:21:25 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.785220425469535
+[2025-03-17 13:21:25 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 36 similarity and sensitivity ===
+[2025-03-17 13:21:27 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9996395707130432
+[2025-03-17 13:21:27 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.805184800284249
+[2025-03-17 13:21:27 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 37 similarity and sensitivity ===
+[2025-03-17 13:21:28 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9998987827982221
+[2025-03-17 13:21:28 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.836404524530683
+[2025-03-17 13:21:28 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 38 similarity and sensitivity ===
+[2025-03-17 13:21:30 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9997256909097944
+[2025-03-17 13:21:30 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.853971035139902
+[2025-03-17 13:21:30 root] (abq_llm_divide_blocks.py 222): INFO === Start compute layer 39 similarity and sensitivity ===
+[2025-03-17 13:21:31 quantize.utils_divide] (utils_divide.py 234): INFO Layer similarity: 0.9977353811264038
+[2025-03-17 13:21:31 quantize.utils_divide] (utils_divide.py 275): INFO Hessian sensitivity: 3.7991774899618966
+[2025-03-17 13:21:31 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 0 ===
+[2025-03-17 13:21:45 root] (abq_llm_divide_blocks.py 283): INFO layer 0 loss_mean: 0.002226109616458416
+[2025-03-17 13:21:45 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 1 ===
+[2025-03-17 13:21:59 root] (abq_llm_divide_blocks.py 283): INFO layer 1 loss_mean: 0.004792365245521069
+[2025-03-17 13:21:59 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 2 ===
+[2025-03-17 13:22:13 root] (abq_llm_divide_blocks.py 283): INFO layer 2 loss_mean: 1.3331352472305298
+[2025-03-17 13:22:13 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 3 ===
+[2025-03-17 13:22:27 root] (abq_llm_divide_blocks.py 283): INFO layer 3 loss_mean: 0.004918871447443962
+[2025-03-17 13:22:27 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 4 ===
+[2025-03-17 13:22:41 root] (abq_llm_divide_blocks.py 283): INFO layer 4 loss_mean: 0.011435621418058872
+[2025-03-17 13:22:41 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 5 ===
+[2025-03-17 13:22:54 root] (abq_llm_divide_blocks.py 283): INFO layer 5 loss_mean: 0.017215542495250702
+[2025-03-17 13:22:54 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 6 ===
+[2025-03-17 13:23:08 root] (abq_llm_divide_blocks.py 283): INFO layer 6 loss_mean: 4.561468124389648
+[2025-03-17 13:23:08 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 7 ===
+[2025-03-17 13:23:22 root] (abq_llm_divide_blocks.py 283): INFO layer 7 loss_mean: 0.012619167566299438
+[2025-03-17 13:23:22 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 8 ===
+[2025-03-17 13:23:36 root] (abq_llm_divide_blocks.py 283): INFO layer 8 loss_mean: 0.014345774427056313
+[2025-03-17 13:23:36 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 9 ===
+[2025-03-17 13:23:50 root] (abq_llm_divide_blocks.py 283): INFO layer 9 loss_mean: 0.015526057220995426
+[2025-03-17 13:23:50 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 10 ===
+[2025-03-17 13:24:04 root] (abq_llm_divide_blocks.py 283): INFO layer 10 loss_mean: 0.01991034299135208
+[2025-03-17 13:24:04 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 11 ===
+[2025-03-17 13:24:18 root] (abq_llm_divide_blocks.py 283): INFO layer 11 loss_mean: 0.022336026653647423
+[2025-03-17 13:24:18 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 12 ===
+[2025-03-17 13:24:32 root] (abq_llm_divide_blocks.py 283): INFO layer 12 loss_mean: 0.025731509551405907
+[2025-03-17 13:24:34 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 13 ===
+[2025-03-17 13:24:48 root] (abq_llm_divide_blocks.py 283): INFO layer 13 loss_mean: 0.030220109969377518
+[2025-03-17 13:24:48 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 14 ===
+[2025-03-17 13:25:02 root] (abq_llm_divide_blocks.py 283): INFO layer 14 loss_mean: 0.03975162282586098
+[2025-03-17 13:25:02 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 15 ===
+[2025-03-17 13:25:16 root] (abq_llm_divide_blocks.py 283): INFO layer 15 loss_mean: 0.0356915146112442
+[2025-03-17 13:25:16 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 16 ===
+[2025-03-17 13:25:30 root] (abq_llm_divide_blocks.py 283): INFO layer 16 loss_mean: 0.04594811052083969
+[2025-03-17 13:25:30 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 17 ===
+[2025-03-17 13:25:43 root] (abq_llm_divide_blocks.py 283): INFO layer 17 loss_mean: 0.05367680639028549
+[2025-03-17 13:25:43 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 18 ===
+[2025-03-17 13:25:57 root] (abq_llm_divide_blocks.py 283): INFO layer 18 loss_mean: 0.06273846328258514
+[2025-03-17 13:25:57 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 19 ===
+[2025-03-17 13:26:11 root] (abq_llm_divide_blocks.py 283): INFO layer 19 loss_mean: 0.06803489476442337
+[2025-03-17 13:26:11 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 20 ===
+[2025-03-17 13:26:25 root] (abq_llm_divide_blocks.py 283): INFO layer 20 loss_mean: 0.0823562741279602
+[2025-03-17 13:26:25 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 21 ===
+[2025-03-17 13:26:39 root] (abq_llm_divide_blocks.py 283): INFO layer 21 loss_mean: 0.08792723715305328
+[2025-03-17 13:26:39 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 22 ===
+[2025-03-17 13:26:52 root] (abq_llm_divide_blocks.py 283): INFO layer 22 loss_mean: 0.09362228214740753
+[2025-03-17 13:26:52 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 23 ===
+[2025-03-17 13:27:06 root] (abq_llm_divide_blocks.py 283): INFO layer 23 loss_mean: 0.08363264799118042
+[2025-03-17 13:27:06 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 24 ===
+[2025-03-17 13:27:20 root] (abq_llm_divide_blocks.py 283): INFO layer 24 loss_mean: 0.08683845400810242
+[2025-03-17 13:27:22 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 25 ===
+[2025-03-17 13:27:36 root] (abq_llm_divide_blocks.py 283): INFO layer 25 loss_mean: 0.09167320281267166
+[2025-03-17 13:27:36 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 26 ===
+[2025-03-17 13:27:50 root] (abq_llm_divide_blocks.py 283): INFO layer 26 loss_mean: 0.09354615956544876
+[2025-03-17 13:27:50 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 27 ===
+[2025-03-17 13:28:04 root] (abq_llm_divide_blocks.py 283): INFO layer 27 loss_mean: 0.09397178888320923
+[2025-03-17 13:28:04 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 28 ===
+[2025-03-17 13:28:18 root] (abq_llm_divide_blocks.py 283): INFO layer 28 loss_mean: 0.12101263552904129
+[2025-03-17 13:28:18 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 29 ===
+[2025-03-17 13:28:33 root] (abq_llm_divide_blocks.py 283): INFO layer 29 loss_mean: 0.09979680180549622
+[2025-03-17 13:28:33 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 30 ===
+[2025-03-17 13:28:47 root] (abq_llm_divide_blocks.py 283): INFO layer 30 loss_mean: 0.10218530893325806
+[2025-03-17 13:28:47 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 31 ===
+[2025-03-17 13:29:01 root] (abq_llm_divide_blocks.py 283): INFO layer 31 loss_mean: 0.11705990880727768
+[2025-03-17 13:29:01 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 32 ===
+[2025-03-17 13:29:15 root] (abq_llm_divide_blocks.py 283): INFO layer 32 loss_mean: 0.1194460466504097
+[2025-03-17 13:29:15 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 33 ===
+[2025-03-17 13:29:29 root] (abq_llm_divide_blocks.py 283): INFO layer 33 loss_mean: 0.14123192429542542
+[2025-03-17 13:29:31 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 34 ===
+[2025-03-17 13:29:45 root] (abq_llm_divide_blocks.py 283): INFO layer 34 loss_mean: 0.19288724660873413
+[2025-03-17 13:29:45 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 35 ===
+[2025-03-17 13:29:59 root] (abq_llm_divide_blocks.py 283): INFO layer 35 loss_mean: 0.21538779139518738
+[2025-03-17 13:29:59 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 36 ===
+[2025-03-17 13:30:13 root] (abq_llm_divide_blocks.py 283): INFO layer 36 loss_mean: 0.285514771938324
+[2025-03-17 13:30:13 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 37 ===
+[2025-03-17 13:30:27 root] (abq_llm_divide_blocks.py 283): INFO layer 37 loss_mean: 0.45537593960762024
+[2025-03-17 13:30:27 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 38 ===
+[2025-03-17 13:30:41 root] (abq_llm_divide_blocks.py 283): INFO layer 38 loss_mean: 1.735478162765503
+[2025-03-17 13:30:41 root] (abq_llm_divide_blocks.py 237): INFO === Start quantize layer 39 ===
+[2025-03-17 13:30:54 root] (abq_llm_divide_blocks.py 283): INFO layer 39 loss_mean: 9.131796836853027
+[2025-03-17 13:30:54 quantize.utils_divide] (utils_divide.py 110): INFO Block 0-2: size=2, error_sum=0.0070, min_similarity=0.9616, max_sensitivity_diff=1.2939
+[2025-03-17 13:30:54 quantize.utils_divide] (utils_divide.py 110): INFO Block 2-3: size=1, error_sum=1.3331, min_similarity=0.9820, max_sensitivity_diff=0.4528
+[2025-03-17 13:30:54 quantize.utils_divide] (utils_divide.py 110): INFO Block 3-6: size=3, error_sum=0.0336, min_similarity=0.9996, max_sensitivity_diff=0.0687
+[2025-03-17 13:30:54 quantize.utils_divide] (utils_divide.py 110): INFO Block 6-7: size=1, error_sum=4.5615, min_similarity=0.9998, max_sensitivity_diff=0.0584
+[2025-03-17 13:30:54 quantize.utils_divide] (utils_divide.py 110): INFO Block 7-11: size=4, error_sum=0.0624, min_similarity=0.9990, max_sensitivity_diff=0.0558
+[2025-03-17 13:30:54 quantize.utils_divide] (utils_divide.py 110): INFO Block 11-15: size=4, error_sum=0.1180, min_similarity=0.9993, max_sensitivity_diff=0.0616
+[2025-03-17 13:30:54 quantize.utils_divide] (utils_divide.py 110): INFO Block 15-19: size=4, error_sum=0.1981, min_similarity=0.9997, max_sensitivity_diff=0.0151
+[2025-03-17 13:30:54 quantize.utils_divide] (utils_divide.py 110): INFO Block 19-22: size=3, error_sum=0.2383, min_similarity=0.9995, max_sensitivity_diff=0.0252
+[2025-03-17 13:30:54 quantize.utils_divide] (utils_divide.py 110): INFO Block 22-25: size=3, error_sum=0.2641, min_similarity=0.9997, max_sensitivity_diff=0.0255
+[2025-03-17 13:30:54 quantize.utils_divide] (utils_divide.py 110): INFO Block 25-28: size=3, error_sum=0.2792, min_similarity=0.9999, max_sensitivity_diff=0.0203
+[2025-03-17 13:30:54 quantize.utils_divide] (utils_divide.py 110): INFO Block 28-30: size=2, error_sum=0.2208, min_similarity=0.9998, max_sensitivity_diff=0.0410
+[2025-03-17 13:30:54 quantize.utils_divide] (utils_divide.py 110): INFO Block 30-32: size=2, error_sum=0.2192, min_similarity=0.9999, max_sensitivity_diff=0.0159
+[2025-03-17 13:30:54 quantize.utils_divide] (utils_divide.py 110): INFO Block 32-34: size=2, error_sum=0.2607, min_similarity=1.0000, max_sensitivity_diff=0.0215
+[2025-03-17 13:30:54 quantize.utils_divide] (utils_divide.py 110): INFO Block 34-35: size=1, error_sum=0.1929, min_similarity=0.9999, max_sensitivity_diff=0.0033
+[2025-03-17 13:30:54 quantize.utils_divide] (utils_divide.py 110): INFO Block 35-36: size=1, error_sum=0.2154, min_similarity=0.9997, max_sensitivity_diff=0.0439
+[2025-03-17 13:30:54 quantize.utils_divide] (utils_divide.py 110): INFO Block 36-37: size=1, error_sum=0.2855, min_similarity=0.9996, max_sensitivity_diff=0.0200
+[2025-03-17 13:30:54 quantize.utils_divide] (utils_divide.py 110): INFO Block 37-38: size=1, error_sum=0.4554, min_similarity=0.9999, max_sensitivity_diff=0.0312
+[2025-03-17 13:30:54 quantize.utils_divide] (utils_divide.py 110): INFO Block 38-39: size=1, error_sum=1.7355, min_similarity=0.9997, max_sensitivity_diff=0.0176
+[2025-03-17 13:30:54 quantize.utils_divide] (utils_divide.py 110): INFO Block 39-40: size=1, error_sum=9.1318, min_similarity=0.9977, max_sensitivity_diff=0.0548
+[2025-03-17 13:30:54 root] (abq_llm_divide_blocks.py 299): INFO blocks: [(0, 2), (2, 3), (3, 6), (6, 7), (7, 11), (11, 15), (15, 19), (19, 22), (22, 25), (25, 28), (28, 30), (30, 32), (32, 34), (34, 35), (35, 36), (36, 37), (37, 38), (38, 39), (39, 40)]
+[2025-03-17 13:30:55 root] (main_divide_blocks.py 389): INFO 629.9266242980957

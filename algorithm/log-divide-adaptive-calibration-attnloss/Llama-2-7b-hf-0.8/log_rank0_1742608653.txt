@@ -1,0 +1,21 @@
+[2025-03-22 01:57:33 root] (main_calib_config3_attn.py 283): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-hf', cache_dir='./cache', output_dir='./log-divide-adaptive-calibration-attnloss/Llama-2-7b-hf-0.8', save_dir=None, resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='piqa,arc_easy,arc_challenge,boolq,hellaswag,winogrande', eval_ppl=True, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=1, let=True, lwc=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=True, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, quant_map='log-divide-adaptive/Llama-2-7b-hf/quant_map_Llama-2-7b-hf_0.8.pkl', blocks_pkl='./log-divide/Llama-2-7b-hf-w4a4/Llama-2-7b-hf_blocks.pkl', scale_calibration=True, compensation_calibration=True)
+[2025-03-22 01:57:40 root] (main_calib_config3_attn.py 340): INFO set quantization in gpu 0
+[2025-03-22 01:57:40 root] (main_calib_config3_attn.py 350): INFO === start quantization ===
+[2025-03-22 01:57:40 root] (main_calib_config3_attn.py 356): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2025-03-22 01:57:40 root] (abq_llm_calib_config3_attn.py 82): INFO Starting ...
+[2025-03-22 01:57:40 root] (abq_llm_calib_config3_attn.py 89): INFO Loaded quant_map from log-divide-adaptive/Llama-2-7b-hf/quant_map_Llama-2-7b-hf_0.8.pkl
+[2025-03-22 01:57:40 root] (abq_llm_calib_config3_attn.py 96): INFO Loaded blocks from ./log-divide/Llama-2-7b-hf-w4a4/Llama-2-7b-hf_blocks.pkl: [(0, 1), (1, 2), (2, 3), (3, 6), (6, 9), (9, 11), (11, 14), (14, 17), (17, 20), (20, 23), (23, 26), (26, 29), (29, 30), (30, 31), (31, 32)]
+[2025-03-22 01:57:40 root] (abq_llm_calib_config3_attn.py 102): INFO Processed blocks: [[0], [1], [2], [3, 4, 5], [6, 7, 8], [9, 10], [11, 12, 13], [14, 15, 16], [17, 18, 19], [20, 21, 22], [23, 24, 25], [26, 27, 28], [29], [30], [31]]
+[2025-03-22 01:57:42 root] (abq_llm_calib_config3_attn.py 257): INFO === Start quantize block 0 with layers [0] ===
+[2025-03-22 01:57:42 root] (abq_llm_calib_config3_attn.py 309): INFO use compensation vector
+[2025-03-22 01:58:16 root] (abq_llm_calib_config3_attn.py 464): INFO block 0 (layers [0]) iter 0 loss:0.001646880293264985 norm:0.005481779109686613 max memory_allocated 34633.880859375 
+[2025-03-22 01:58:54 root] (abq_llm_calib_config3_attn.py 509): INFO Saving abq_parameters for block 0, block: [0]
+[2025-03-22 01:58:54 root] (abq_llm_calib_config3_attn.py 257): INFO === Start quantize block 1 with layers [1] ===
+[2025-03-22 01:58:54 root] (abq_llm_calib_config3_attn.py 309): INFO use compensation vector
+[2025-03-22 01:59:28 root] (abq_llm_calib_config3_attn.py 464): INFO block 1 (layers [1]) iter 0 loss:0.020031223073601723 norm:0.012836149893701077 max memory_allocated 35100.7724609375 
+[2025-03-22 02:00:08 root] (abq_llm_calib_config3_attn.py 509): INFO Saving abq_parameters for block 1, block: [1]
+[2025-03-22 02:00:08 root] (abq_llm_calib_config3_attn.py 257): INFO === Start quantize block 2 with layers [2] ===
+[2025-03-22 02:00:08 root] (abq_llm_calib_config3_attn.py 309): INFO use compensation vector
+[2025-03-22 02:00:42 root] (abq_llm_calib_config3_attn.py 464): INFO block 2 (layers [2]) iter 0 loss:0.016977781429886818 norm:0.005758577957749367 max memory_allocated 35100.8349609375 
+[2025-03-22 02:01:23 root] (abq_llm_calib_config3_attn.py 509): INFO Saving abq_parameters for block 2, block: [2]
+[2025-03-22 02:01:23 root] (abq_llm_calib_config3_attn.py 257): INFO === Start quantize block 3 with layers [3, 4, 5] ===

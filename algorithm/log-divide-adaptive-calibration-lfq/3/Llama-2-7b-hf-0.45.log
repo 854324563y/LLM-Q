@@ -1,0 +1,570 @@
+nohup: ignoring input
+/opt/conda/envs/abq-llm/lib/python3.10/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/opt/conda/envs/abq-llm/lib/python3.10/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/opt/conda/envs/abq-llm/lib/python3.10/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+['main_calib_config3_step.py', '--model', '/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-hf', '--epochs', '10', '--output_dir', './log-divide-adaptive-calibration-lfq/3/Llama-2-7b-hf-0.45', '--eval_ppl', '--wbits', '4', '--abits', '4', '--let', '--lwc', '--tasks', 'piqa,arc_easy,arc_challenge,boolq,hellaswag,winogrande', '--compensation_calibration', '--quant_map', 'log-divide-adaptive/Llama-2-7b-hf/quant_map_Llama-2-7b-hf_0.45.pkl', '--look_ahead_layers', '3']
+[2025-03-25 08:45:16 root](main_calib_config3_step.py 290): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-hf', cache_dir='./cache', output_dir='./log-divide-adaptive-calibration-lfq/3/Llama-2-7b-hf-0.45', save_dir=None, resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='piqa,arc_easy,arc_challenge,boolq,hellaswag,winogrande', eval_ppl=True, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=10, let=True, lwc=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, quant_map='log-divide-adaptive/Llama-2-7b-hf/quant_map_Llama-2-7b-hf_0.45.pkl', scale_calibration=True, compensation_calibration=True, look_ahead_layers=3, analyze_per_layer_mse=False)
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]/opt/conda/envs/abq-llm/lib/python3.10/site-packages/transformers/modeling_utils.py:484: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  return torch.load(checkpoint_file, map_location=map_location)
+Loading checkpoint shards:  50%|█████     | 1/2 [00:03<00:03,  3.37s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.23s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.41s/it]
+vocab size:  32000
+[2025-03-25 08:45:24 root](main_calib_config3_step.py 357): INFO === start quantization ===
+/workspace/volume/yangzhe/ABQ-LLM/algorithm/main_calib_config3_step.py:362: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  dataloader = torch.load(cache_dataloader)
+[2025-03-25 08:45:24 root](main_calib_config3_step.py 363): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+/workspace/volume/yangzhe/ABQ-LLM/algorithm/main_calib_config3_step.py:376: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  act_scales = torch.load(args.act_scales)
+/workspace/volume/yangzhe/ABQ-LLM/algorithm/main_calib_config3_step.py:377: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  act_shifts = torch.load(args.act_shifts)
+[2025-03-25 08:45:24 root](abq_llm_calib_config3_step.py 83): INFO Starting ...
+[2025-03-25 08:45:24 root](abq_llm_calib_config3_step.py 97): INFO Loaded quant_map from log-divide-adaptive/Llama-2-7b-hf/quant_map_Llama-2-7b-hf_0.45.pkl
+[2025-03-25 08:45:26 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 0 ===
+/workspace/volume/yangzhe/ABQ-LLM/algorithm/quantize/abq_llm_calib_config3_step.py:290: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+quant_map[i]:  {'self_attn.q_proj': 0, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 0, 'mlp.up_proj': 1, 'mlp.down_proj': 1}
+layer 0 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 0 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 0 module self_attn.q_proj scheme w4a4 wbit 4 abits 4
+layer 0 module self_attn.o_proj scheme w4a4 wbit 4 abits 4
+layer 0 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 0 module mlp.up_proj scheme w4a8 wbit 4 abits 8
+[2025-03-25 08:45:28 root](abq_llm_calib_config3_step.py 325): INFO use compensation vector
+/workspace/volume/yangzhe/ABQ-LLM/algorithm/utils.py:45: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self._scaler = torch.cuda.amp.GradScaler()
+/opt/conda/envs/abq-llm/lib/python3.10/site-packages/torch/nn/functional.py:3369: UserWarning: reduction: 'mean' divides the total loss by both the batch size and the support size.'batchmean' divides only by the batch size, and aligns with the KL div math definition.'mean' will be changed to behave the same as 'batchmean' in the next major release.
+  warnings.warn(
+[2025-03-25 08:46:12 root](abq_llm_calib_config3_step.py 461): INFO layer 0 iter 0 loss:0.05562124028801918 norm:nan max memory_allocated 26665.212890625 
+[2025-03-25 08:46:56 root](abq_llm_calib_config3_step.py 461): INFO layer 0 iter 1 loss:0.02147763967514038 norm:0.10409420728683472 max memory_allocated 26665.212890625 
+[2025-03-25 08:47:39 root](abq_llm_calib_config3_step.py 461): INFO layer 0 iter 2 loss:0.022156648337841034 norm:0.15302522480487823 max memory_allocated 26665.212890625 
+[2025-03-25 08:48:23 root](abq_llm_calib_config3_step.py 461): INFO layer 0 iter 3 loss:0.015729933977127075 norm:0.05284150689840317 max memory_allocated 26665.212890625 
+[2025-03-25 08:49:07 root](abq_llm_calib_config3_step.py 461): INFO layer 0 iter 4 loss:0.01291651464998722 norm:0.04874210059642792 max memory_allocated 26665.212890625 
+[2025-03-25 08:49:51 root](abq_llm_calib_config3_step.py 461): INFO layer 0 iter 5 loss:0.009402018040418625 norm:0.043447963893413544 max memory_allocated 26665.212890625 
+[2025-03-25 08:50:35 root](abq_llm_calib_config3_step.py 461): INFO layer 0 iter 6 loss:0.008833901025354862 norm:0.03665108606219292 max memory_allocated 26665.212890625 
+[2025-03-25 08:51:19 root](abq_llm_calib_config3_step.py 461): INFO layer 0 iter 7 loss:0.007262407336384058 norm:0.026649657636880875 max memory_allocated 26665.212890625 
+[2025-03-25 08:52:03 root](abq_llm_calib_config3_step.py 461): INFO layer 0 iter 8 loss:0.4189210534095764 norm:0.9294350743293762 max memory_allocated 26665.212890625 
+[2025-03-25 08:52:47 root](abq_llm_calib_config3_step.py 461): INFO layer 0 iter 9 loss:0.04260735958814621 norm:0.12490913271903992 max memory_allocated 26665.212890625 
+[2025-03-25 08:52:56 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 1 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 2, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 0}
+layer 1 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 1 module self_attn.v_proj scheme w8a8 wbit 8 abits 8
+layer 1 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 1 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 1 module mlp.down_proj scheme w4a4 wbit 4 abits 4
+layer 1 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 08:52:59 root](abq_llm_calib_config3_step.py 325): INFO use compensation vector
+[2025-03-25 08:53:43 root](abq_llm_calib_config3_step.py 461): INFO layer 1 iter 0 loss:0.07336992025375366 norm:0.17392849922180176 max memory_allocated 26665.384765625 
+[2025-03-25 08:54:27 root](abq_llm_calib_config3_step.py 461): INFO layer 1 iter 1 loss:0.05056600645184517 norm:0.03720153123140335 max memory_allocated 26665.384765625 
+[2025-03-25 08:55:11 root](abq_llm_calib_config3_step.py 461): INFO layer 1 iter 2 loss:0.046676523983478546 norm:0.044709257781505585 max memory_allocated 26665.384765625 
+[2025-03-25 08:55:55 root](abq_llm_calib_config3_step.py 461): INFO layer 1 iter 3 loss:0.04428805783390999 norm:0.04141690582036972 max memory_allocated 26665.384765625 
+[2025-03-25 08:56:40 root](abq_llm_calib_config3_step.py 461): INFO layer 1 iter 4 loss:0.04235611483454704 norm:0.04029311612248421 max memory_allocated 26665.384765625 
+[2025-03-25 08:57:24 root](abq_llm_calib_config3_step.py 461): INFO layer 1 iter 5 loss:0.04072017967700958 norm:0.03303994983434677 max memory_allocated 26665.384765625 
+[2025-03-25 08:58:08 root](abq_llm_calib_config3_step.py 461): INFO layer 1 iter 6 loss:0.03934173285961151 norm:0.030989034101366997 max memory_allocated 26665.384765625 
+[2025-03-25 08:58:52 root](abq_llm_calib_config3_step.py 461): INFO layer 1 iter 7 loss:0.038827937096357346 norm:0.027887534350156784 max memory_allocated 26665.384765625 
+[2025-03-25 08:59:36 root](abq_llm_calib_config3_step.py 461): INFO layer 1 iter 8 loss:0.03887251764535904 norm:0.028411712497472763 max memory_allocated 26665.384765625 
+[2025-03-25 09:00:20 root](abq_llm_calib_config3_step.py 461): INFO layer 1 iter 9 loss:0.03851591795682907 norm:0.027253031730651855 max memory_allocated 26665.384765625 
+[2025-03-25 09:00:29 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 2 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 2 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 2 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 2 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 2 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 2 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 2 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 09:00:32 root](abq_llm_calib_config3_step.py 325): INFO use compensation vector
+[2025-03-25 09:01:17 root](abq_llm_calib_config3_step.py 461): INFO layer 2 iter 0 loss:0.048245031386613846 norm:0.05872731655836105 max memory_allocated 26665.556640625 
+[2025-03-25 09:02:01 root](abq_llm_calib_config3_step.py 461): INFO layer 2 iter 1 loss:0.04168945178389549 norm:0.017995299771428108 max memory_allocated 26665.556640625 
+[2025-03-25 09:02:45 root](abq_llm_calib_config3_step.py 461): INFO layer 2 iter 2 loss:0.04013039171695709 norm:0.01711132936179638 max memory_allocated 26665.556640625 
+[2025-03-25 09:03:29 root](abq_llm_calib_config3_step.py 461): INFO layer 2 iter 3 loss:0.039164043962955475 norm:0.013103784993290901 max memory_allocated 26665.556640625 
+[2025-03-25 09:04:13 root](abq_llm_calib_config3_step.py 461): INFO layer 2 iter 4 loss:0.03845283389091492 norm:0.011690447106957436 max memory_allocated 26665.556640625 
+[2025-03-25 09:04:57 root](abq_llm_calib_config3_step.py 461): INFO layer 2 iter 5 loss:0.03796524554491043 norm:0.010640830732882023 max memory_allocated 26665.556640625 
+[2025-03-25 09:05:41 root](abq_llm_calib_config3_step.py 461): INFO layer 2 iter 6 loss:0.037621501833200455 norm:0.009775659069418907 max memory_allocated 26665.556640625 
+[2025-03-25 09:06:25 root](abq_llm_calib_config3_step.py 461): INFO layer 2 iter 7 loss:0.03737625479698181 norm:0.008931903168559074 max memory_allocated 26665.556640625 
+[2025-03-25 09:07:09 root](abq_llm_calib_config3_step.py 461): INFO layer 2 iter 8 loss:0.03715375438332558 norm:0.008237392641603947 max memory_allocated 26665.556640625 
+[2025-03-25 09:07:53 root](abq_llm_calib_config3_step.py 461): INFO layer 2 iter 9 loss:0.03694210946559906 norm:0.007873235270380974 max memory_allocated 26665.556640625 
+[2025-03-25 09:08:02 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 3 ===
+quant_map[i]:  {'self_attn.q_proj': 2, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 3 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 3 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 3 module self_attn.q_proj scheme w8a8 wbit 8 abits 8
+layer 3 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 3 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 3 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 09:08:49 root](abq_llm_calib_config3_step.py 461): INFO layer 3 iter 0 loss:0.04363911598920822 norm:0.0022134066093713045 max memory_allocated 26665.61328125 
+[2025-03-25 09:09:33 root](abq_llm_calib_config3_step.py 461): INFO layer 3 iter 1 loss:0.04021203890442848 norm:0.0010125716216862202 max memory_allocated 26665.61328125 
+[2025-03-25 09:10:17 root](abq_llm_calib_config3_step.py 461): INFO layer 3 iter 2 loss:0.03896335884928703 norm:0.0004513285239227116 max memory_allocated 26665.61328125 
+[2025-03-25 09:11:01 root](abq_llm_calib_config3_step.py 461): INFO layer 3 iter 3 loss:0.03810792416334152 norm:0.0003162441134918481 max memory_allocated 26665.61328125 
+[2025-03-25 09:11:46 root](abq_llm_calib_config3_step.py 461): INFO layer 3 iter 4 loss:0.03765491768717766 norm:0.00024197799211833626 max memory_allocated 26665.61328125 
+[2025-03-25 09:12:30 root](abq_llm_calib_config3_step.py 461): INFO layer 3 iter 5 loss:0.03734291344881058 norm:0.00020017710630781949 max memory_allocated 26665.61328125 
+[2025-03-25 09:13:14 root](abq_llm_calib_config3_step.py 461): INFO layer 3 iter 6 loss:0.03710594028234482 norm:0.0001824467908591032 max memory_allocated 26665.61328125 
+[2025-03-25 09:13:58 root](abq_llm_calib_config3_step.py 461): INFO layer 3 iter 7 loss:0.036918822675943375 norm:0.00016466299712192267 max memory_allocated 26665.61328125 
+[2025-03-25 09:14:42 root](abq_llm_calib_config3_step.py 461): INFO layer 3 iter 8 loss:0.036782097071409225 norm:0.00015817787789274007 max memory_allocated 26665.61328125 
+[2025-03-25 09:15:26 root](abq_llm_calib_config3_step.py 461): INFO layer 3 iter 9 loss:0.03665074706077576 norm:0.00015574572898913175 max memory_allocated 26665.61328125 
+[2025-03-25 09:15:35 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 4 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 4 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 4 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 4 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 4 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 4 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 4 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 09:16:23 root](abq_llm_calib_config3_step.py 461): INFO layer 4 iter 0 loss:0.0482783168554306 norm:0.002813412109389901 max memory_allocated 26666.78515625 
+[2025-03-25 09:17:07 root](abq_llm_calib_config3_step.py 461): INFO layer 4 iter 1 loss:0.04450073838233948 norm:0.0018585720099508762 max memory_allocated 26666.78515625 
+[2025-03-25 09:17:51 root](abq_llm_calib_config3_step.py 461): INFO layer 4 iter 2 loss:0.04242780804634094 norm:0.0012067435309290886 max memory_allocated 26666.78515625 
+[2025-03-25 09:18:35 root](abq_llm_calib_config3_step.py 461): INFO layer 4 iter 3 loss:0.04106396064162254 norm:0.0007273271912708879 max memory_allocated 26666.78515625 
+[2025-03-25 09:19:19 root](abq_llm_calib_config3_step.py 461): INFO layer 4 iter 4 loss:0.040261466056108475 norm:0.0005896418588235974 max memory_allocated 26666.78515625 
+[2025-03-25 09:20:03 root](abq_llm_calib_config3_step.py 461): INFO layer 4 iter 5 loss:0.03970830887556076 norm:0.0004401735495775938 max memory_allocated 26666.78515625 
+[2025-03-25 09:20:47 root](abq_llm_calib_config3_step.py 461): INFO layer 4 iter 6 loss:0.0393223762512207 norm:0.00043232584721408784 max memory_allocated 26666.78515625 
+[2025-03-25 09:21:31 root](abq_llm_calib_config3_step.py 461): INFO layer 4 iter 7 loss:0.03900487720966339 norm:0.0003953156410716474 max memory_allocated 26666.78515625 
+[2025-03-25 09:22:15 root](abq_llm_calib_config3_step.py 461): INFO layer 4 iter 8 loss:0.03871304169297218 norm:0.0003336080117151141 max memory_allocated 26666.78515625 
+[2025-03-25 09:22:59 root](abq_llm_calib_config3_step.py 461): INFO layer 4 iter 9 loss:0.03848032280802727 norm:0.00030360365053638816 max memory_allocated 26666.78515625 
+[2025-03-25 09:23:09 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 5 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 5 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 5 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 5 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 5 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 5 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 5 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 09:23:56 root](abq_llm_calib_config3_step.py 461): INFO layer 5 iter 0 loss:0.04810401424765587 norm:0.0010687902104109526 max memory_allocated 26666.95703125 
+[2025-03-25 09:24:40 root](abq_llm_calib_config3_step.py 461): INFO layer 5 iter 1 loss:0.04511139169335365 norm:0.00046453624963760376 max memory_allocated 26666.95703125 
+[2025-03-25 09:25:24 root](abq_llm_calib_config3_step.py 461): INFO layer 5 iter 2 loss:0.043644968420267105 norm:0.0003237876226194203 max memory_allocated 26666.95703125 
+[2025-03-25 09:26:08 root](abq_llm_calib_config3_step.py 461): INFO layer 5 iter 3 loss:0.04270428046584129 norm:0.00025022379122674465 max memory_allocated 26666.95703125 
+[2025-03-25 09:26:52 root](abq_llm_calib_config3_step.py 461): INFO layer 5 iter 4 loss:0.0419965535402298 norm:0.0002088468463625759 max memory_allocated 26666.95703125 
+[2025-03-25 09:27:35 root](abq_llm_calib_config3_step.py 461): INFO layer 5 iter 5 loss:0.04154035821557045 norm:0.00019983077072538435 max memory_allocated 26666.95703125 
+[2025-03-25 09:28:19 root](abq_llm_calib_config3_step.py 461): INFO layer 5 iter 6 loss:0.04121338203549385 norm:0.00018975528655573726 max memory_allocated 26666.95703125 
+[2025-03-25 09:29:03 root](abq_llm_calib_config3_step.py 461): INFO layer 5 iter 7 loss:0.040982045233249664 norm:0.0001939627982210368 max memory_allocated 26666.95703125 
+[2025-03-25 09:29:47 root](abq_llm_calib_config3_step.py 461): INFO layer 5 iter 8 loss:0.04073534905910492 norm:0.0001791303657228127 max memory_allocated 26666.95703125 
+[2025-03-25 09:30:31 root](abq_llm_calib_config3_step.py 461): INFO layer 5 iter 9 loss:0.04056846350431442 norm:0.0001877365866675973 max memory_allocated 26666.95703125 
+[2025-03-25 09:30:41 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 6 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 0, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 6 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 6 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 6 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 6 module self_attn.o_proj scheme w4a4 wbit 4 abits 4
+layer 6 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 6 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 09:31:28 root](abq_llm_calib_config3_step.py 461): INFO layer 6 iter 0 loss:0.0589505098760128 norm:0.00401310482993722 max memory_allocated 26667.12890625 
+[2025-03-25 09:32:12 root](abq_llm_calib_config3_step.py 461): INFO layer 6 iter 1 loss:0.052869465202093124 norm:0.0017059579258784652 max memory_allocated 26667.12890625 
+[2025-03-25 09:32:56 root](abq_llm_calib_config3_step.py 461): INFO layer 6 iter 2 loss:0.05039214342832565 norm:0.0010686125606298447 max memory_allocated 26667.12890625 
+[2025-03-25 09:33:40 root](abq_llm_calib_config3_step.py 461): INFO layer 6 iter 3 loss:0.048809994012117386 norm:0.0006922386819496751 max memory_allocated 26667.12890625 
+[2025-03-25 09:34:24 root](abq_llm_calib_config3_step.py 461): INFO layer 6 iter 4 loss:0.047795288264751434 norm:0.0005467385635711253 max memory_allocated 26667.12890625 
+[2025-03-25 09:35:08 root](abq_llm_calib_config3_step.py 461): INFO layer 6 iter 5 loss:0.047070495784282684 norm:0.00043986798846162856 max memory_allocated 26667.12890625 
+[2025-03-25 09:35:52 root](abq_llm_calib_config3_step.py 461): INFO layer 6 iter 6 loss:0.046615101397037506 norm:0.00037930725375190377 max memory_allocated 26667.12890625 
+[2025-03-25 09:36:36 root](abq_llm_calib_config3_step.py 461): INFO layer 6 iter 7 loss:0.0462496243417263 norm:0.00033500182325951755 max memory_allocated 26667.12890625 
+[2025-03-25 09:37:20 root](abq_llm_calib_config3_step.py 461): INFO layer 6 iter 8 loss:0.045969296246767044 norm:0.0003255623742006719 max memory_allocated 26667.12890625 
+[2025-03-25 09:38:04 root](abq_llm_calib_config3_step.py 461): INFO layer 6 iter 9 loss:0.0457615926861763 norm:0.0003256332129240036 max memory_allocated 26667.12890625 
+[2025-03-25 09:38:14 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 7 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 7 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 7 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 7 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 7 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 7 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 7 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 09:39:01 root](abq_llm_calib_config3_step.py 461): INFO layer 7 iter 0 loss:0.058160923421382904 norm:0.0011812591692432761 max memory_allocated 26668.30078125 
+[2025-03-25 09:39:45 root](abq_llm_calib_config3_step.py 461): INFO layer 7 iter 1 loss:0.05366615578532219 norm:0.0005478642997331917 max memory_allocated 26668.30078125 
+[2025-03-25 09:40:29 root](abq_llm_calib_config3_step.py 461): INFO layer 7 iter 2 loss:0.051486242562532425 norm:0.000358679739292711 max memory_allocated 26668.30078125 
+[2025-03-25 09:41:13 root](abq_llm_calib_config3_step.py 461): INFO layer 7 iter 3 loss:0.05021161586046219 norm:0.0002638617006596178 max memory_allocated 26668.30078125 
+[2025-03-25 09:41:57 root](abq_llm_calib_config3_step.py 461): INFO layer 7 iter 4 loss:0.04940963536500931 norm:0.00024121055321302265 max memory_allocated 26668.30078125 
+[2025-03-25 09:42:41 root](abq_llm_calib_config3_step.py 461): INFO layer 7 iter 5 loss:0.049013879150152206 norm:0.0002122214064002037 max memory_allocated 26668.30078125 
+[2025-03-25 09:43:26 root](abq_llm_calib_config3_step.py 461): INFO layer 7 iter 6 loss:0.04859165847301483 norm:0.00019266747403889894 max memory_allocated 26668.30078125 
+[2025-03-25 09:44:10 root](abq_llm_calib_config3_step.py 461): INFO layer 7 iter 7 loss:0.04831555113196373 norm:0.0001854988222476095 max memory_allocated 26668.30078125 
+[2025-03-25 09:44:54 root](abq_llm_calib_config3_step.py 461): INFO layer 7 iter 8 loss:0.048113156110048294 norm:0.00019242230337113142 max memory_allocated 26668.30078125 
+[2025-03-25 09:45:38 root](abq_llm_calib_config3_step.py 461): INFO layer 7 iter 9 loss:0.047921836376190186 norm:0.00019678202806971967 max memory_allocated 26668.30078125 
+[2025-03-25 09:45:47 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 8 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 1, 'mlp.down_proj': 1}
+layer 8 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 8 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 8 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 8 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 8 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 8 module mlp.up_proj scheme w4a8 wbit 4 abits 8
+[2025-03-25 09:46:34 root](abq_llm_calib_config3_step.py 461): INFO layer 8 iter 0 loss:0.05585940182209015 norm:0.0003395361127331853 max memory_allocated 26668.30078125 
+[2025-03-25 09:47:18 root](abq_llm_calib_config3_step.py 461): INFO layer 8 iter 1 loss:0.05325806513428688 norm:0.0002251882542623207 max memory_allocated 26668.30078125 
+[2025-03-25 09:48:02 root](abq_llm_calib_config3_step.py 461): INFO layer 8 iter 2 loss:0.05164502188563347 norm:0.0001689373457338661 max memory_allocated 26668.30078125 
+[2025-03-25 09:48:45 root](abq_llm_calib_config3_step.py 461): INFO layer 8 iter 3 loss:0.05062270909547806 norm:0.00014652794925495982 max memory_allocated 26668.30078125 
+[2025-03-25 09:49:29 root](abq_llm_calib_config3_step.py 461): INFO layer 8 iter 4 loss:0.05004711449146271 norm:0.00013375081471167505 max memory_allocated 26668.30078125 
+[2025-03-25 09:50:13 root](abq_llm_calib_config3_step.py 461): INFO layer 8 iter 5 loss:0.04967499524354935 norm:0.00012584480282384902 max memory_allocated 26668.30078125 
+[2025-03-25 09:50:57 root](abq_llm_calib_config3_step.py 461): INFO layer 8 iter 6 loss:0.049389488995075226 norm:0.0001220094709424302 max memory_allocated 26668.30078125 
+[2025-03-25 09:51:41 root](abq_llm_calib_config3_step.py 461): INFO layer 8 iter 7 loss:0.04917679727077484 norm:0.0001249640918103978 max memory_allocated 26668.30078125 
+[2025-03-25 09:52:25 root](abq_llm_calib_config3_step.py 461): INFO layer 8 iter 8 loss:0.04902254790067673 norm:0.0001244500745087862 max memory_allocated 26668.30078125 
+[2025-03-25 09:53:09 root](abq_llm_calib_config3_step.py 461): INFO layer 8 iter 9 loss:0.0488634929060936 norm:0.00012178130418760702 max memory_allocated 26668.30078125 
+[2025-03-25 09:53:19 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 9 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 9 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 9 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 9 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 9 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 9 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 9 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 09:54:06 root](abq_llm_calib_config3_step.py 461): INFO layer 9 iter 0 loss:0.060971539467573166 norm:0.0010453984141349792 max memory_allocated 26668.30078125 
+[2025-03-25 09:54:50 root](abq_llm_calib_config3_step.py 461): INFO layer 9 iter 1 loss:0.05700548738241196 norm:0.00044841322232969105 max memory_allocated 26668.30078125 
+[2025-03-25 09:55:34 root](abq_llm_calib_config3_step.py 461): INFO layer 9 iter 2 loss:0.054635144770145416 norm:0.00024155978462658823 max memory_allocated 26668.30078125 
+[2025-03-25 09:56:22 root](abq_llm_calib_config3_step.py 461): INFO layer 9 iter 3 loss:0.05337342619895935 norm:0.0001742866006679833 max memory_allocated 26668.30078125 
+[2025-03-25 09:57:16 root](abq_llm_calib_config3_step.py 461): INFO layer 9 iter 4 loss:0.05268147587776184 norm:0.00014370842836797237 max memory_allocated 26668.30078125 
+[2025-03-25 09:58:08 root](abq_llm_calib_config3_step.py 461): INFO layer 9 iter 5 loss:0.05225660651922226 norm:0.00013149918231647462 max memory_allocated 26668.30078125 
+[2025-03-25 09:59:00 root](abq_llm_calib_config3_step.py 461): INFO layer 9 iter 6 loss:0.051997486501932144 norm:0.00012120134488213807 max memory_allocated 26668.30078125 
+[2025-03-25 09:59:51 root](abq_llm_calib_config3_step.py 461): INFO layer 9 iter 7 loss:0.05178803578019142 norm:0.0001180837643914856 max memory_allocated 26668.30078125 
+[2025-03-25 10:00:35 root](abq_llm_calib_config3_step.py 461): INFO layer 9 iter 8 loss:0.05162346363067627 norm:0.00011860774247907102 max memory_allocated 26668.30078125 
+[2025-03-25 10:01:19 root](abq_llm_calib_config3_step.py 461): INFO layer 9 iter 9 loss:0.051469720900058746 norm:0.00011574913514778018 max memory_allocated 26668.30078125 
+[2025-03-25 10:01:28 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 10 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 10 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 10 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 10 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 10 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 10 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 10 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 10:02:16 root](abq_llm_calib_config3_step.py 461): INFO layer 10 iter 0 loss:0.05917676165699959 norm:0.00047821924090385437 max memory_allocated 26668.30078125 
+[2025-03-25 10:03:00 root](abq_llm_calib_config3_step.py 461): INFO layer 10 iter 1 loss:0.05619248002767563 norm:0.0002850315358955413 max memory_allocated 26668.30078125 
+[2025-03-25 10:03:44 root](abq_llm_calib_config3_step.py 461): INFO layer 10 iter 2 loss:0.05441499128937721 norm:0.0001893367589218542 max memory_allocated 26668.30078125 
+[2025-03-25 10:04:28 root](abq_llm_calib_config3_step.py 461): INFO layer 10 iter 3 loss:0.05316075310111046 norm:0.00013803131878376007 max memory_allocated 26668.30078125 
+[2025-03-25 10:05:12 root](abq_llm_calib_config3_step.py 461): INFO layer 10 iter 4 loss:0.05246123671531677 norm:0.00011495430953800678 max memory_allocated 26668.30078125 
+[2025-03-25 10:05:56 root](abq_llm_calib_config3_step.py 461): INFO layer 10 iter 5 loss:0.052079908549785614 norm:0.00010590637248242274 max memory_allocated 26668.30078125 
+[2025-03-25 10:06:40 root](abq_llm_calib_config3_step.py 461): INFO layer 10 iter 6 loss:0.05181161314249039 norm:0.00010208158346358687 max memory_allocated 26668.30078125 
+[2025-03-25 10:07:24 root](abq_llm_calib_config3_step.py 461): INFO layer 10 iter 7 loss:0.05161404237151146 norm:9.864142339210957e-05 max memory_allocated 26668.30078125 
+[2025-03-25 10:08:08 root](abq_llm_calib_config3_step.py 461): INFO layer 10 iter 8 loss:0.05145502835512161 norm:9.837189281824976e-05 max memory_allocated 26668.30078125 
+[2025-03-25 10:08:52 root](abq_llm_calib_config3_step.py 461): INFO layer 10 iter 9 loss:0.05132453143596649 norm:9.813114593271166e-05 max memory_allocated 26668.30078125 
+[2025-03-25 10:09:01 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 11 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 0, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 11 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 11 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 11 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 11 module self_attn.o_proj scheme w4a4 wbit 4 abits 4
+layer 11 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 11 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 10:09:48 root](abq_llm_calib_config3_step.py 461): INFO layer 11 iter 0 loss:0.06391435861587524 norm:0.0020060748793184757 max memory_allocated 26668.30078125 
+[2025-03-25 10:10:32 root](abq_llm_calib_config3_step.py 461): INFO layer 11 iter 1 loss:0.05962375923991203 norm:0.0009206254035234451 max memory_allocated 26668.30078125 
+[2025-03-25 10:11:16 root](abq_llm_calib_config3_step.py 461): INFO layer 11 iter 2 loss:0.05734381824731827 norm:0.0005317197064869106 max memory_allocated 26668.30078125 
+[2025-03-25 10:12:00 root](abq_llm_calib_config3_step.py 461): INFO layer 11 iter 3 loss:0.05593832582235336 norm:0.0003538280143402517 max memory_allocated 26668.30078125 
+[2025-03-25 10:12:44 root](abq_llm_calib_config3_step.py 461): INFO layer 11 iter 4 loss:0.05515030026435852 norm:0.0002623214677441865 max memory_allocated 26668.30078125 
+[2025-03-25 10:13:28 root](abq_llm_calib_config3_step.py 461): INFO layer 11 iter 5 loss:0.0546497143805027 norm:0.00019600953964982182 max memory_allocated 26668.30078125 
+[2025-03-25 10:14:12 root](abq_llm_calib_config3_step.py 461): INFO layer 11 iter 6 loss:0.05432355776429176 norm:0.0001578597875777632 max memory_allocated 26668.30078125 
+[2025-03-25 10:14:56 root](abq_llm_calib_config3_step.py 461): INFO layer 11 iter 7 loss:0.05411994829773903 norm:0.00014026954886503518 max memory_allocated 26668.30078125 
+[2025-03-25 10:15:40 root](abq_llm_calib_config3_step.py 461): INFO layer 11 iter 8 loss:0.05397358164191246 norm:0.00012838936527259648 max memory_allocated 26668.30078125 
+[2025-03-25 10:16:25 root](abq_llm_calib_config3_step.py 461): INFO layer 11 iter 9 loss:0.05381827801465988 norm:0.00012694348697550595 max memory_allocated 26668.30078125 
+[2025-03-25 10:16:34 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 12 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 12 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 12 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 12 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 12 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 12 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 12 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 10:17:21 root](abq_llm_calib_config3_step.py 461): INFO layer 12 iter 0 loss:0.05919070541858673 norm:0.00038979382952675223 max memory_allocated 26668.30078125 
+[2025-03-25 10:18:05 root](abq_llm_calib_config3_step.py 461): INFO layer 12 iter 1 loss:0.056769903749227524 norm:0.00022161715605761856 max memory_allocated 26668.30078125 
+[2025-03-25 10:18:50 root](abq_llm_calib_config3_step.py 461): INFO layer 12 iter 2 loss:0.05534941703081131 norm:0.0001504129613749683 max memory_allocated 26668.30078125 
+[2025-03-25 10:19:34 root](abq_llm_calib_config3_step.py 461): INFO layer 12 iter 3 loss:0.05435951426625252 norm:0.0001148429510067217 max memory_allocated 26668.30078125 
+[2025-03-25 10:20:18 root](abq_llm_calib_config3_step.py 461): INFO layer 12 iter 4 loss:0.0538240484893322 norm:9.663788659963757e-05 max memory_allocated 26668.30078125 
+[2025-03-25 10:21:02 root](abq_llm_calib_config3_step.py 461): INFO layer 12 iter 5 loss:0.05350286141037941 norm:9.041123848874122e-05 max memory_allocated 26668.30078125 
+[2025-03-25 10:21:46 root](abq_llm_calib_config3_step.py 461): INFO layer 12 iter 6 loss:0.05325797200202942 norm:8.501702541252598e-05 max memory_allocated 26668.30078125 
+[2025-03-25 10:22:30 root](abq_llm_calib_config3_step.py 461): INFO layer 12 iter 7 loss:0.0530729740858078 norm:8.147273911163211e-05 max memory_allocated 26668.30078125 
+[2025-03-25 10:23:14 root](abq_llm_calib_config3_step.py 461): INFO layer 12 iter 8 loss:0.0529157891869545 norm:8.125360909616575e-05 max memory_allocated 26668.30078125 
+[2025-03-25 10:23:58 root](abq_llm_calib_config3_step.py 461): INFO layer 12 iter 9 loss:0.05281978100538254 norm:8.086244633886963e-05 max memory_allocated 26668.30078125 
+[2025-03-25 10:24:08 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 13 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 1, 'mlp.down_proj': 1}
+layer 13 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 13 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 13 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 13 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 13 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 13 module mlp.up_proj scheme w4a8 wbit 4 abits 8
+[2025-03-25 10:24:55 root](abq_llm_calib_config3_step.py 461): INFO layer 13 iter 0 loss:0.05718742683529854 norm:0.0004059554194100201 max memory_allocated 26668.33203125 
+[2025-03-25 10:25:39 root](abq_llm_calib_config3_step.py 461): INFO layer 13 iter 1 loss:0.055266693234443665 norm:0.00018574298883322626 max memory_allocated 26668.33203125 
+[2025-03-25 10:26:23 root](abq_llm_calib_config3_step.py 461): INFO layer 13 iter 2 loss:0.054084885865449905 norm:0.00011657311551971361 max memory_allocated 26668.33203125 
+[2025-03-25 10:27:07 root](abq_llm_calib_config3_step.py 461): INFO layer 13 iter 3 loss:0.05327039211988449 norm:9.023399616125971e-05 max memory_allocated 26668.33203125 
+[2025-03-25 10:27:51 root](abq_llm_calib_config3_step.py 461): INFO layer 13 iter 4 loss:0.05285659804940224 norm:8.124823216348886e-05 max memory_allocated 26668.33203125 
+[2025-03-25 10:28:35 root](abq_llm_calib_config3_step.py 461): INFO layer 13 iter 5 loss:0.052591584622859955 norm:7.709562487434596e-05 max memory_allocated 26668.33203125 
+[2025-03-25 10:29:19 root](abq_llm_calib_config3_step.py 461): INFO layer 13 iter 6 loss:0.052409879863262177 norm:7.451045530615374e-05 max memory_allocated 26668.33203125 
+[2025-03-25 10:30:03 root](abq_llm_calib_config3_step.py 461): INFO layer 13 iter 7 loss:0.052254557609558105 norm:7.463565998477861e-05 max memory_allocated 26668.33203125 
+[2025-03-25 10:30:47 root](abq_llm_calib_config3_step.py 461): INFO layer 13 iter 8 loss:0.052126556634902954 norm:7.16502036084421e-05 max memory_allocated 26668.33203125 
+[2025-03-25 10:31:31 root](abq_llm_calib_config3_step.py 461): INFO layer 13 iter 9 loss:0.05204346030950546 norm:7.14637353667058e-05 max memory_allocated 26668.33203125 
+[2025-03-25 10:31:41 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 14 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 0, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 14 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 14 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 14 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 14 module self_attn.o_proj scheme w4a4 wbit 4 abits 4
+layer 14 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 14 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 10:32:28 root](abq_llm_calib_config3_step.py 461): INFO layer 14 iter 0 loss:0.062182970345020294 norm:0.0004787601064890623 max memory_allocated 26668.50390625 
+[2025-03-25 10:33:12 root](abq_llm_calib_config3_step.py 461): INFO layer 14 iter 1 loss:0.059431787580251694 norm:0.00024301338999066502 max memory_allocated 26668.50390625 
+[2025-03-25 10:33:56 root](abq_llm_calib_config3_step.py 461): INFO layer 14 iter 2 loss:0.057920023798942566 norm:0.00016117813356686383 max memory_allocated 26668.50390625 
+[2025-03-25 10:34:40 root](abq_llm_calib_config3_step.py 461): INFO layer 14 iter 3 loss:0.05686253309249878 norm:0.00011922007251996547 max memory_allocated 26668.50390625 
+[2025-03-25 10:35:25 root](abq_llm_calib_config3_step.py 461): INFO layer 14 iter 4 loss:0.05634810030460358 norm:0.00010166155698243529 max memory_allocated 26668.50390625 
+[2025-03-25 10:36:09 root](abq_llm_calib_config3_step.py 461): INFO layer 14 iter 5 loss:0.056005895137786865 norm:9.189260890707374e-05 max memory_allocated 26668.50390625 
+[2025-03-25 10:36:53 root](abq_llm_calib_config3_step.py 461): INFO layer 14 iter 6 loss:0.05578622221946716 norm:8.680910104885697e-05 max memory_allocated 26668.50390625 
+[2025-03-25 10:37:37 root](abq_llm_calib_config3_step.py 461): INFO layer 14 iter 7 loss:0.055615559220314026 norm:8.495389920426533e-05 max memory_allocated 26668.50390625 
+[2025-03-25 10:38:21 root](abq_llm_calib_config3_step.py 461): INFO layer 14 iter 8 loss:0.05547591298818588 norm:8.341006468981504e-05 max memory_allocated 26668.50390625 
+[2025-03-25 10:39:05 root](abq_llm_calib_config3_step.py 461): INFO layer 14 iter 9 loss:0.055351026356220245 norm:8.121986320475116e-05 max memory_allocated 26668.50390625 
+[2025-03-25 10:39:15 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 15 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 1, 'mlp.down_proj': 1}
+layer 15 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 15 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 15 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 15 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 15 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 15 module mlp.up_proj scheme w4a8 wbit 4 abits 8
+[2025-03-25 10:40:02 root](abq_llm_calib_config3_step.py 461): INFO layer 15 iter 0 loss:0.06546531617641449 norm:0.0005711126141250134 max memory_allocated 26668.67578125 
+[2025-03-25 10:40:46 root](abq_llm_calib_config3_step.py 461): INFO layer 15 iter 1 loss:0.06272950023412704 norm:0.00020362244686111808 max memory_allocated 26668.67578125 
+[2025-03-25 10:41:30 root](abq_llm_calib_config3_step.py 461): INFO layer 15 iter 2 loss:0.060960762202739716 norm:0.00013836145808454603 max memory_allocated 26668.67578125 
+[2025-03-25 10:42:13 root](abq_llm_calib_config3_step.py 461): INFO layer 15 iter 3 loss:0.059925660490989685 norm:0.00010497012408450246 max memory_allocated 26668.67578125 
+[2025-03-25 10:42:57 root](abq_llm_calib_config3_step.py 461): INFO layer 15 iter 4 loss:0.059442371129989624 norm:8.71386582730338e-05 max memory_allocated 26668.67578125 
+[2025-03-25 10:43:41 root](abq_llm_calib_config3_step.py 461): INFO layer 15 iter 5 loss:0.05911792069673538 norm:8.04011506261304e-05 max memory_allocated 26668.67578125 
+[2025-03-25 10:44:25 root](abq_llm_calib_config3_step.py 461): INFO layer 15 iter 6 loss:0.05887690186500549 norm:7.803468906786293e-05 max memory_allocated 26668.67578125 
+[2025-03-25 10:45:09 root](abq_llm_calib_config3_step.py 461): INFO layer 15 iter 7 loss:0.058701686561107635 norm:7.937962072901428e-05 max memory_allocated 26668.67578125 
+[2025-03-25 10:45:54 root](abq_llm_calib_config3_step.py 461): INFO layer 15 iter 8 loss:0.05857115983963013 norm:7.734801329206675e-05 max memory_allocated 26668.67578125 
+[2025-03-25 10:46:38 root](abq_llm_calib_config3_step.py 461): INFO layer 15 iter 9 loss:0.05846615135669708 norm:7.602731056977063e-05 max memory_allocated 26668.67578125 
+[2025-03-25 10:46:47 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 16 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 16 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 16 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 16 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 16 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 16 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 16 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 10:47:34 root](abq_llm_calib_config3_step.py 461): INFO layer 16 iter 0 loss:0.07349367439746857 norm:0.0008437723154202104 max memory_allocated 26668.84765625 
+[2025-03-25 10:48:18 root](abq_llm_calib_config3_step.py 461): INFO layer 16 iter 1 loss:0.06999952346086502 norm:0.0003332685155328363 max memory_allocated 26668.84765625 
+[2025-03-25 10:49:02 root](abq_llm_calib_config3_step.py 461): INFO layer 16 iter 2 loss:0.06766420602798462 norm:0.00018442478904034942 max memory_allocated 26668.84765625 
+[2025-03-25 10:49:46 root](abq_llm_calib_config3_step.py 461): INFO layer 16 iter 3 loss:0.06644749641418457 norm:0.00013947773550171405 max memory_allocated 26668.84765625 
+[2025-03-25 10:50:31 root](abq_llm_calib_config3_step.py 461): INFO layer 16 iter 4 loss:0.06595540046691895 norm:0.00011758586333598942 max memory_allocated 26668.84765625 
+[2025-03-25 10:51:15 root](abq_llm_calib_config3_step.py 461): INFO layer 16 iter 5 loss:0.06561404466629028 norm:0.00011005582200596109 max memory_allocated 26668.84765625 
+[2025-03-25 10:51:59 root](abq_llm_calib_config3_step.py 461): INFO layer 16 iter 6 loss:0.06537444144487381 norm:9.931856766343117e-05 max memory_allocated 26668.84765625 
+[2025-03-25 10:52:43 root](abq_llm_calib_config3_step.py 461): INFO layer 16 iter 7 loss:0.0651627853512764 norm:9.908343781717122e-05 max memory_allocated 26668.84765625 
+[2025-03-25 10:53:27 root](abq_llm_calib_config3_step.py 461): INFO layer 16 iter 8 loss:0.06498806923627853 norm:9.913388203131035e-05 max memory_allocated 26668.84765625 
+[2025-03-25 10:54:11 root](abq_llm_calib_config3_step.py 461): INFO layer 16 iter 9 loss:0.06485351920127869 norm:9.172804857371375e-05 max memory_allocated 26668.84765625 
+[2025-03-25 10:54:21 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 17 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 17 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 17 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 17 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 17 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 17 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 17 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 10:55:08 root](abq_llm_calib_config3_step.py 461): INFO layer 17 iter 0 loss:0.07926757633686066 norm:0.0009508479852229357 max memory_allocated 26669.01953125 
+[2025-03-25 10:55:52 root](abq_llm_calib_config3_step.py 461): INFO layer 17 iter 1 loss:0.07634109258651733 norm:0.0003272287722211331 max memory_allocated 26669.01953125 
+[2025-03-25 10:56:36 root](abq_llm_calib_config3_step.py 461): INFO layer 17 iter 2 loss:0.07425983995199203 norm:0.0001593271445017308 max memory_allocated 26669.01953125 
+[2025-03-25 10:57:20 root](abq_llm_calib_config3_step.py 461): INFO layer 17 iter 3 loss:0.07319676876068115 norm:0.00012680297368206084 max memory_allocated 26669.01953125 
+[2025-03-25 10:58:04 root](abq_llm_calib_config3_step.py 461): INFO layer 17 iter 4 loss:0.07280000299215317 norm:0.00010508327250136063 max memory_allocated 26669.01953125 
+[2025-03-25 10:58:48 root](abq_llm_calib_config3_step.py 461): INFO layer 17 iter 5 loss:0.072503961622715 norm:8.985788736026734e-05 max memory_allocated 26669.01953125 
+[2025-03-25 10:59:32 root](abq_llm_calib_config3_step.py 461): INFO layer 17 iter 6 loss:0.07224538922309875 norm:8.654134580865502e-05 max memory_allocated 26669.01953125 
+[2025-03-25 11:00:16 root](abq_llm_calib_config3_step.py 461): INFO layer 17 iter 7 loss:0.0720333456993103 norm:8.645080379210413e-05 max memory_allocated 26669.01953125 
+[2025-03-25 11:01:00 root](abq_llm_calib_config3_step.py 461): INFO layer 17 iter 8 loss:0.07186821848154068 norm:9.085894271265715e-05 max memory_allocated 26669.01953125 
+[2025-03-25 11:01:44 root](abq_llm_calib_config3_step.py 461): INFO layer 17 iter 9 loss:0.07173274457454681 norm:8.54225509101525e-05 max memory_allocated 26669.01953125 
+[2025-03-25 11:01:53 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 18 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 18 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 18 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 18 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 18 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 18 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 18 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 11:02:40 root](abq_llm_calib_config3_step.py 461): INFO layer 18 iter 0 loss:0.0902184247970581 norm:0.0008382659289054573 max memory_allocated 26669.19140625 
+[2025-03-25 11:03:24 root](abq_llm_calib_config3_step.py 461): INFO layer 18 iter 1 loss:0.08664079010486603 norm:0.0003529674431774765 max memory_allocated 26669.19140625 
+[2025-03-25 11:04:08 root](abq_llm_calib_config3_step.py 461): INFO layer 18 iter 2 loss:0.08391598612070084 norm:0.00021683658997062594 max memory_allocated 26669.19140625 
+[2025-03-25 11:04:53 root](abq_llm_calib_config3_step.py 461): INFO layer 18 iter 3 loss:0.0827496349811554 norm:0.0001644307776587084 max memory_allocated 26669.19140625 
+[2025-03-25 11:05:37 root](abq_llm_calib_config3_step.py 461): INFO layer 18 iter 4 loss:0.08231419324874878 norm:0.0001298965362366289 max memory_allocated 26669.19140625 
+[2025-03-25 11:06:21 root](abq_llm_calib_config3_step.py 461): INFO layer 18 iter 5 loss:0.08193838596343994 norm:0.00011858673678943887 max memory_allocated 26669.19140625 
+[2025-03-25 11:07:05 root](abq_llm_calib_config3_step.py 461): INFO layer 18 iter 6 loss:0.08160721510648727 norm:0.00011222689499845728 max memory_allocated 26669.19140625 
+[2025-03-25 11:07:49 root](abq_llm_calib_config3_step.py 461): INFO layer 18 iter 7 loss:0.08135893940925598 norm:0.00010310307698091492 max memory_allocated 26669.19140625 
+[2025-03-25 11:08:33 root](abq_llm_calib_config3_step.py 461): INFO layer 18 iter 8 loss:0.08117106556892395 norm:9.582928032614291e-05 max memory_allocated 26669.19140625 
+[2025-03-25 11:09:17 root](abq_llm_calib_config3_step.py 461): INFO layer 18 iter 9 loss:0.08102482557296753 norm:9.37220174819231e-05 max memory_allocated 26669.19140625 
+[2025-03-25 11:09:27 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 19 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 2, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 19 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 19 module self_attn.v_proj scheme w8a8 wbit 8 abits 8
+layer 19 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 19 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 19 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 19 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 11:10:14 root](abq_llm_calib_config3_step.py 461): INFO layer 19 iter 0 loss:0.10095162689685822 norm:0.0008056763326749206 max memory_allocated 26669.36328125 
+[2025-03-25 11:10:58 root](abq_llm_calib_config3_step.py 461): INFO layer 19 iter 1 loss:0.09759440273046494 norm:0.00037102855276316404 max memory_allocated 26669.36328125 
+[2025-03-25 11:11:42 root](abq_llm_calib_config3_step.py 461): INFO layer 19 iter 2 loss:0.09503526240587234 norm:0.00021704491518903524 max memory_allocated 26669.36328125 
+[2025-03-25 11:12:27 root](abq_llm_calib_config3_step.py 461): INFO layer 19 iter 3 loss:0.09394746273756027 norm:0.00015555767458863556 max memory_allocated 26669.36328125 
+[2025-03-25 11:13:11 root](abq_llm_calib_config3_step.py 461): INFO layer 19 iter 4 loss:0.0935455933213234 norm:0.0001269063795916736 max memory_allocated 26669.36328125 
+[2025-03-25 11:13:55 root](abq_llm_calib_config3_step.py 461): INFO layer 19 iter 5 loss:0.09317269921302795 norm:0.00011303456994937733 max memory_allocated 26669.36328125 
+[2025-03-25 11:14:39 root](abq_llm_calib_config3_step.py 461): INFO layer 19 iter 6 loss:0.09286201745271683 norm:0.00010401800682302564 max memory_allocated 26669.36328125 
+[2025-03-25 11:15:24 root](abq_llm_calib_config3_step.py 461): INFO layer 19 iter 7 loss:0.09260047227144241 norm:9.340723045170307e-05 max memory_allocated 26669.36328125 
+[2025-03-25 11:16:15 root](abq_llm_calib_config3_step.py 461): INFO layer 19 iter 8 loss:0.09239932894706726 norm:8.908805466489866e-05 max memory_allocated 26669.36328125 
+[2025-03-25 11:17:07 root](abq_llm_calib_config3_step.py 461): INFO layer 19 iter 9 loss:0.09224044531583786 norm:8.685358625371009e-05 max memory_allocated 26669.36328125 
+[2025-03-25 11:17:18 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 20 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 20 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 20 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 20 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 20 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 20 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 20 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 11:18:12 root](abq_llm_calib_config3_step.py 461): INFO layer 20 iter 0 loss:0.11747068911790848 norm:0.0014210924273356795 max memory_allocated 26669.53515625 
+[2025-03-25 11:19:02 root](abq_llm_calib_config3_step.py 461): INFO layer 20 iter 1 loss:0.11275327205657959 norm:0.0005521547282114625 max memory_allocated 26669.53515625 
+[2025-03-25 11:19:52 root](abq_llm_calib_config3_step.py 461): INFO layer 20 iter 2 loss:0.10909847170114517 norm:0.0002454357163514942 max memory_allocated 26669.53515625 
+[2025-03-25 11:20:42 root](abq_llm_calib_config3_step.py 461): INFO layer 20 iter 3 loss:0.10789080709218979 norm:0.00015798727690707892 max memory_allocated 26669.53515625 
+[2025-03-25 11:21:33 root](abq_llm_calib_config3_step.py 461): INFO layer 20 iter 4 loss:0.10737791657447815 norm:0.00013432458217721432 max memory_allocated 26669.53515625 
+[2025-03-25 11:22:20 root](abq_llm_calib_config3_step.py 461): INFO layer 20 iter 5 loss:0.10692902654409409 norm:0.00012051974044879898 max memory_allocated 26669.53515625 
+[2025-03-25 11:23:04 root](abq_llm_calib_config3_step.py 461): INFO layer 20 iter 6 loss:0.10654529184103012 norm:0.00011796862963819876 max memory_allocated 26669.53515625 
+[2025-03-25 11:23:48 root](abq_llm_calib_config3_step.py 461): INFO layer 20 iter 7 loss:0.10624316334724426 norm:0.00011218259896850213 max memory_allocated 26669.53515625 
+[2025-03-25 11:24:32 root](abq_llm_calib_config3_step.py 461): INFO layer 20 iter 8 loss:0.10603341460227966 norm:0.00011408219143049791 max memory_allocated 26669.53515625 
+[2025-03-25 11:25:16 root](abq_llm_calib_config3_step.py 461): INFO layer 20 iter 9 loss:0.10586598515510559 norm:0.00010735521209426224 max memory_allocated 26669.53515625 
+[2025-03-25 11:25:26 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 21 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 21 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 21 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 21 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 21 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 21 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 21 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 11:26:13 root](abq_llm_calib_config3_step.py 461): INFO layer 21 iter 0 loss:0.13079220056533813 norm:0.0008241698378697038 max memory_allocated 26669.70703125 
+[2025-03-25 11:26:57 root](abq_llm_calib_config3_step.py 461): INFO layer 21 iter 1 loss:0.12705771625041962 norm:0.00032576409284956753 max memory_allocated 26669.70703125 
+[2025-03-25 11:27:41 root](abq_llm_calib_config3_step.py 461): INFO layer 21 iter 2 loss:0.12391061335802078 norm:0.00017752790881786495 max memory_allocated 26669.70703125 
+[2025-03-25 11:28:25 root](abq_llm_calib_config3_step.py 461): INFO layer 21 iter 3 loss:0.12286734580993652 norm:0.00013240828411653638 max memory_allocated 26669.70703125 
+[2025-03-25 11:29:10 root](abq_llm_calib_config3_step.py 461): INFO layer 21 iter 4 loss:0.12237957119941711 norm:0.00012010878708679229 max memory_allocated 26669.70703125 
+[2025-03-25 11:29:54 root](abq_llm_calib_config3_step.py 461): INFO layer 21 iter 5 loss:0.12192976474761963 norm:0.00011203080066479743 max memory_allocated 26669.70703125 
+[2025-03-25 11:30:38 root](abq_llm_calib_config3_step.py 461): INFO layer 21 iter 6 loss:0.121552973985672 norm:0.0001073249732144177 max memory_allocated 26669.70703125 
+[2025-03-25 11:31:22 root](abq_llm_calib_config3_step.py 461): INFO layer 21 iter 7 loss:0.12124481797218323 norm:0.0001010467458399944 max memory_allocated 26669.70703125 
+[2025-03-25 11:32:06 root](abq_llm_calib_config3_step.py 461): INFO layer 21 iter 8 loss:0.12101806700229645 norm:9.692089952295646e-05 max memory_allocated 26669.70703125 
+[2025-03-25 11:32:50 root](abq_llm_calib_config3_step.py 461): INFO layer 21 iter 9 loss:0.12088099122047424 norm:9.643510566093028e-05 max memory_allocated 26669.70703125 
+[2025-03-25 11:33:00 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 22 ===
+quant_map[i]:  {'self_attn.q_proj': 2, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 22 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 22 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 22 module self_attn.q_proj scheme w8a8 wbit 8 abits 8
+layer 22 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 22 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 22 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 11:33:47 root](abq_llm_calib_config3_step.py 461): INFO layer 22 iter 0 loss:0.1505526304244995 norm:0.0011830590665340424 max memory_allocated 26669.87890625 
+[2025-03-25 11:34:31 root](abq_llm_calib_config3_step.py 461): INFO layer 22 iter 1 loss:0.14559420943260193 norm:0.00039349280996248126 max memory_allocated 26669.87890625 
+[2025-03-25 11:35:15 root](abq_llm_calib_config3_step.py 461): INFO layer 22 iter 2 loss:0.14207561314105988 norm:0.00022142010857351124 max memory_allocated 26669.87890625 
+[2025-03-25 11:35:59 root](abq_llm_calib_config3_step.py 461): INFO layer 22 iter 3 loss:0.14084653556346893 norm:0.00018228690896648914 max memory_allocated 26669.87890625 
+[2025-03-25 11:36:43 root](abq_llm_calib_config3_step.py 461): INFO layer 22 iter 4 loss:0.14024484157562256 norm:0.00015852016804274172 max memory_allocated 26669.87890625 
+[2025-03-25 11:37:27 root](abq_llm_calib_config3_step.py 461): INFO layer 22 iter 5 loss:0.1397113800048828 norm:0.00014536926755681634 max memory_allocated 26669.87890625 
+[2025-03-25 11:38:11 root](abq_llm_calib_config3_step.py 461): INFO layer 22 iter 6 loss:0.13929155468940735 norm:0.0001310011139139533 max memory_allocated 26669.87890625 
+[2025-03-25 11:38:55 root](abq_llm_calib_config3_step.py 461): INFO layer 22 iter 7 loss:0.13900652527809143 norm:0.00012118793529225513 max memory_allocated 26669.87890625 
+[2025-03-25 11:39:39 root](abq_llm_calib_config3_step.py 461): INFO layer 22 iter 8 loss:0.1388271450996399 norm:0.00011935640941374004 max memory_allocated 26669.87890625 
+[2025-03-25 11:40:23 root](abq_llm_calib_config3_step.py 461): INFO layer 22 iter 9 loss:0.13869750499725342 norm:0.0001161850814241916 max memory_allocated 26669.87890625 
+[2025-03-25 11:40:33 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 23 ===
+quant_map[i]:  {'self_attn.q_proj': 2, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 23 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 23 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 23 module self_attn.q_proj scheme w8a8 wbit 8 abits 8
+layer 23 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 23 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 23 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 11:41:20 root](abq_llm_calib_config3_step.py 461): INFO layer 23 iter 0 loss:0.1717132180929184 norm:0.0012834836961701512 max memory_allocated 26671.05078125 
+[2025-03-25 11:42:04 root](abq_llm_calib_config3_step.py 461): INFO layer 23 iter 1 loss:0.16698665916919708 norm:0.0006582177011296153 max memory_allocated 26671.05078125 
+[2025-03-25 11:42:48 root](abq_llm_calib_config3_step.py 461): INFO layer 23 iter 2 loss:0.16284094750881195 norm:0.00039732581353746355 max memory_allocated 26671.05078125 
+[2025-03-25 11:43:32 root](abq_llm_calib_config3_step.py 461): INFO layer 23 iter 3 loss:0.16151919960975647 norm:0.00028372954693622887 max memory_allocated 26671.05078125 
+[2025-03-25 11:44:16 root](abq_llm_calib_config3_step.py 461): INFO layer 23 iter 4 loss:0.16077694296836853 norm:0.00022944297234062105 max memory_allocated 26671.05078125 
+[2025-03-25 11:45:00 root](abq_llm_calib_config3_step.py 461): INFO layer 23 iter 5 loss:0.16011880338191986 norm:0.00018736861238721758 max memory_allocated 26671.05078125 
+[2025-03-25 11:45:44 root](abq_llm_calib_config3_step.py 461): INFO layer 23 iter 6 loss:0.159625843167305 norm:0.0001633272913750261 max memory_allocated 26671.05078125 
+[2025-03-25 11:46:28 root](abq_llm_calib_config3_step.py 461): INFO layer 23 iter 7 loss:0.15930859744548798 norm:0.00014882508548907936 max memory_allocated 26671.05078125 
+[2025-03-25 11:47:12 root](abq_llm_calib_config3_step.py 461): INFO layer 23 iter 8 loss:0.15911905467510223 norm:0.00013565616973210126 max memory_allocated 26671.05078125 
+[2025-03-25 11:47:57 root](abq_llm_calib_config3_step.py 461): INFO layer 23 iter 9 loss:0.1589946299791336 norm:0.00012378529936540872 max memory_allocated 26671.05078125 
+[2025-03-25 11:48:06 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 24 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 24 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 24 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 24 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 24 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 24 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 24 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 11:48:53 root](abq_llm_calib_config3_step.py 461): INFO layer 24 iter 0 loss:0.19746097922325134 norm:0.0014106741873547435 max memory_allocated 26671.05078125 
+[2025-03-25 11:49:37 root](abq_llm_calib_config3_step.py 461): INFO layer 24 iter 1 loss:0.19170287251472473 norm:0.0004447340907063335 max memory_allocated 26671.05078125 
+[2025-03-25 11:50:21 root](abq_llm_calib_config3_step.py 461): INFO layer 24 iter 2 loss:0.18709240853786469 norm:0.00029036548221483827 max memory_allocated 26671.05078125 
+[2025-03-25 11:51:06 root](abq_llm_calib_config3_step.py 461): INFO layer 24 iter 3 loss:0.1853661835193634 norm:0.000205358155653812 max memory_allocated 26671.05078125 
+[2025-03-25 11:51:50 root](abq_llm_calib_config3_step.py 461): INFO layer 24 iter 4 loss:0.18449711799621582 norm:0.00017708246014080942 max memory_allocated 26671.05078125 
+[2025-03-25 11:52:34 root](abq_llm_calib_config3_step.py 461): INFO layer 24 iter 5 loss:0.18379053473472595 norm:0.00016174647316802293 max memory_allocated 26671.05078125 
+[2025-03-25 11:53:18 root](abq_llm_calib_config3_step.py 461): INFO layer 24 iter 6 loss:0.18327206373214722 norm:0.0001501741207903251 max memory_allocated 26671.05078125 
+[2025-03-25 11:54:03 root](abq_llm_calib_config3_step.py 461): INFO layer 24 iter 7 loss:0.18297268450260162 norm:0.00014912759070284665 max memory_allocated 26671.05078125 
+[2025-03-25 11:54:47 root](abq_llm_calib_config3_step.py 461): INFO layer 24 iter 8 loss:0.182828888297081 norm:0.00014619842113461345 max memory_allocated 26671.05078125 
+[2025-03-25 11:55:31 root](abq_llm_calib_config3_step.py 461): INFO layer 24 iter 9 loss:0.182699054479599 norm:0.00013702255091629922 max memory_allocated 26671.05078125 
+[2025-03-25 11:55:40 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 25 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 25 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 25 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 25 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 25 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 25 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 25 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 11:56:27 root](abq_llm_calib_config3_step.py 461): INFO layer 25 iter 0 loss:0.2287629395723343 norm:0.0010933912126347423 max memory_allocated 26671.39453125 
+[2025-03-25 11:57:11 root](abq_llm_calib_config3_step.py 461): INFO layer 25 iter 1 loss:0.22231176495552063 norm:0.0005650944076478481 max memory_allocated 26671.39453125 
+[2025-03-25 11:57:55 root](abq_llm_calib_config3_step.py 461): INFO layer 25 iter 2 loss:0.21643663942813873 norm:0.0003279467928223312 max memory_allocated 26671.39453125 
+[2025-03-25 11:58:39 root](abq_llm_calib_config3_step.py 461): INFO layer 25 iter 3 loss:0.2142994999885559 norm:0.0002600934822112322 max memory_allocated 26671.39453125 
+[2025-03-25 11:59:23 root](abq_llm_calib_config3_step.py 461): INFO layer 25 iter 4 loss:0.21334011852741241 norm:0.00022572751913685352 max memory_allocated 26671.39453125 
+[2025-03-25 12:00:07 root](abq_llm_calib_config3_step.py 461): INFO layer 25 iter 5 loss:0.2125236839056015 norm:0.0002071914786938578 max memory_allocated 26671.39453125 
+[2025-03-25 12:00:51 root](abq_llm_calib_config3_step.py 461): INFO layer 25 iter 6 loss:0.21195997297763824 norm:0.0001983010588446632 max memory_allocated 26671.39453125 
+[2025-03-25 12:01:35 root](abq_llm_calib_config3_step.py 461): INFO layer 25 iter 7 loss:0.21154113113880157 norm:0.00017736917652655393 max memory_allocated 26671.39453125 
+[2025-03-25 12:02:19 root](abq_llm_calib_config3_step.py 461): INFO layer 25 iter 8 loss:0.21133649349212646 norm:0.00017607667541597039 max memory_allocated 26671.39453125 
+[2025-03-25 12:03:04 root](abq_llm_calib_config3_step.py 461): INFO layer 25 iter 9 loss:0.21119840443134308 norm:0.00016816737479530275 max memory_allocated 26671.39453125 
+[2025-03-25 12:03:13 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 26 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 26 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 26 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 26 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 26 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 26 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 26 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 12:04:00 root](abq_llm_calib_config3_step.py 461): INFO layer 26 iter 0 loss:0.2616730332374573 norm:0.0016107443952932954 max memory_allocated 26671.56640625 
+[2025-03-25 12:04:44 root](abq_llm_calib_config3_step.py 461): INFO layer 26 iter 1 loss:0.25498124957084656 norm:0.0007490810239687562 max memory_allocated 26671.56640625 
+[2025-03-25 12:05:28 root](abq_llm_calib_config3_step.py 461): INFO layer 26 iter 2 loss:0.24904313683509827 norm:0.0003880490257870406 max memory_allocated 26671.56640625 
+[2025-03-25 12:06:12 root](abq_llm_calib_config3_step.py 461): INFO layer 26 iter 3 loss:0.2467333972454071 norm:0.0003038741706404835 max memory_allocated 26671.56640625 
+[2025-03-25 12:06:57 root](abq_llm_calib_config3_step.py 461): INFO layer 26 iter 4 loss:0.24553149938583374 norm:0.00023685845371801406 max memory_allocated 26671.56640625 
+[2025-03-25 12:07:41 root](abq_llm_calib_config3_step.py 461): INFO layer 26 iter 5 loss:0.2446451187133789 norm:0.00021281429508235306 max memory_allocated 26671.56640625 
+[2025-03-25 12:08:25 root](abq_llm_calib_config3_step.py 461): INFO layer 26 iter 6 loss:0.24401123821735382 norm:0.0001954100007424131 max memory_allocated 26671.56640625 
+[2025-03-25 12:09:09 root](abq_llm_calib_config3_step.py 461): INFO layer 26 iter 7 loss:0.24362346529960632 norm:0.00018228682165499777 max memory_allocated 26671.56640625 
+[2025-03-25 12:09:53 root](abq_llm_calib_config3_step.py 461): INFO layer 26 iter 8 loss:0.24338780343532562 norm:0.00017366412794217467 max memory_allocated 26671.56640625 
+[2025-03-25 12:10:37 root](abq_llm_calib_config3_step.py 461): INFO layer 26 iter 9 loss:0.24322190880775452 norm:0.0001700377615634352 max memory_allocated 26671.56640625 
+[2025-03-25 12:10:47 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 27 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 1, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 27 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 27 module self_attn.v_proj scheme w4a8 wbit 4 abits 8
+layer 27 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 27 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 27 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 27 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 12:11:34 root](abq_llm_calib_config3_step.py 461): INFO layer 27 iter 0 loss:0.3542957901954651 norm:nan max memory_allocated 26671.56640625 
+[2025-03-25 12:12:18 root](abq_llm_calib_config3_step.py 461): INFO layer 27 iter 1 loss:0.34191685914993286 norm:nan max memory_allocated 26671.56640625 
+[2025-03-25 12:13:02 root](abq_llm_calib_config3_step.py 461): INFO layer 27 iter 2 loss:0.3315203785896301 norm:nan max memory_allocated 26671.56640625 
+[2025-03-25 12:13:47 root](abq_llm_calib_config3_step.py 461): INFO layer 27 iter 3 loss:0.32778263092041016 norm:0.0005301604396663606 max memory_allocated 26671.56640625 
+[2025-03-25 12:14:31 root](abq_llm_calib_config3_step.py 461): INFO layer 27 iter 4 loss:0.32578176259994507 norm:0.0004976095515303314 max memory_allocated 26671.56640625 
+[2025-03-25 12:15:15 root](abq_llm_calib_config3_step.py 461): INFO layer 27 iter 5 loss:0.3245151937007904 norm:0.0005038065719418228 max memory_allocated 26671.56640625 
+[2025-03-25 12:15:59 root](abq_llm_calib_config3_step.py 461): INFO layer 27 iter 6 loss:0.32342109084129333 norm:0.000517804641276598 max memory_allocated 26671.56640625 
+[2025-03-25 12:16:43 root](abq_llm_calib_config3_step.py 461): INFO layer 27 iter 7 loss:0.3228053152561188 norm:0.0005179946892894804 max memory_allocated 26671.56640625 
+[2025-03-25 12:17:27 root](abq_llm_calib_config3_step.py 461): INFO layer 27 iter 8 loss:0.3222430348396301 norm:0.0005551974172703922 max memory_allocated 26671.56640625 
+[2025-03-25 12:18:11 root](abq_llm_calib_config3_step.py 461): INFO layer 27 iter 9 loss:0.3218786120414734 norm:0.00048467505257576704 max memory_allocated 26671.56640625 
+[2025-03-25 12:18:20 root](abq_llm_calib_config3_step.py 255): INFO === Start quantize layer 28 ===
+quant_map[i]:  {'self_attn.q_proj': 1, 'self_attn.k_proj': 1, 'self_attn.v_proj': 2, 'self_attn.o_proj': 1, 'mlp.up_proj': 0, 'mlp.down_proj': 1}
+layer 28 module self_attn.k_proj scheme w4a8 wbit 4 abits 8
+layer 28 module self_attn.v_proj scheme w8a8 wbit 8 abits 8
+layer 28 module self_attn.q_proj scheme w4a8 wbit 4 abits 8
+layer 28 module self_attn.o_proj scheme w4a8 wbit 4 abits 8
+layer 28 module mlp.down_proj scheme w4a8 wbit 4 abits 8
+layer 28 module mlp.up_proj scheme w4a4 wbit 4 abits 4
+[2025-03-25 12:18:23 root](abq_llm_calib_config3_step.py 325): INFO use compensation vector
+[2025-03-25 12:18:31 root](abq_llm_calib_config3_step.py 451): INFO Loss is NAN, stopping training
+> /workspace/volume/yangzhe/ABQ-LLM/algorithm/quantize/abq_llm_calib_config3_step.py(454)abqllm()
+-> loss_list.append(loss.detach().cpu())
+(Pdb) Traceback (most recent call last):
+  File "/workspace/volume/yangzhe/ABQ-LLM/algorithm/main_calib_config3_step.py", line 414, in <module>
+    main()
+  File "/workspace/volume/yangzhe/ABQ-LLM/algorithm/main_calib_config3_step.py", line 378, in main
+    abqllm(
+  File "/workspace/volume/yangzhe/ABQ-LLM/algorithm/quantize/abq_llm_calib_config3_step.py", line 454, in abqllm
+    loss_list.append(loss.detach().cpu())
+  File "/workspace/volume/yangzhe/ABQ-LLM/algorithm/quantize/abq_llm_calib_config3_step.py", line 454, in abqllm
+    loss_list.append(loss.detach().cpu())
+  File "/opt/conda/envs/abq-llm/lib/python3.10/bdb.py", line 90, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/opt/conda/envs/abq-llm/lib/python3.10/bdb.py", line 114, in dispatch_line
+    self.user_line(frame)
+  File "/opt/conda/envs/abq-llm/lib/python3.10/pdb.py", line 262, in user_line
+    self.interaction(frame, None)
+  File "/opt/conda/envs/abq-llm/lib/python3.10/pdb.py", line 357, in interaction
+    self._cmdloop()
+  File "/opt/conda/envs/abq-llm/lib/python3.10/pdb.py", line 322, in _cmdloop
+    self.cmdloop()
+  File "/opt/conda/envs/abq-llm/lib/python3.10/cmd.py", line 126, in cmdloop
+    line = input(self.prompt)
+OSError: [Errno 9] Bad file descriptor

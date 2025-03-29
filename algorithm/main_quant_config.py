@@ -8,7 +8,7 @@ from datautils import get_loaders
 from parallel_utils import map_layers_to_multi_gpus, get_lowest_occupied_gpu
 import torch.nn as nn
 from quantize.blocks.block_wise_quant_config_search import search_quant_config, load_search_quant_config
-from quantize.blocks.block_wise_quant_config_search_parallel import search_quant_config_parallel
+from quantize.blocks.block_wise_quant_config_search_parallel import search_quant_config_parallel, search_quant_config_parallel2
 from tqdm import tqdm
 import utils
 from pathlib import Path
@@ -73,7 +73,9 @@ def main():
     parser.add_argument("--net", type=str, default=None, choices=net_choices)
     parser.add_argument("--reload", action="store_true", help="load search quant config")
     parser.add_argument("--parallel", action="store_true", help="use parallel search")
-    parser.add_argument("--size_bound_factor", type=float, default=0.7, help="size bound")
+    parser.add_argument("--parallel2", action="store_true", help="use parallel search with matrix computation parallelization")
+    parser.add_argument("--size_bound_factor", type=float, default=1.0, help="size bound")
+    parser.add_argument("--bitops_bound_factor", type=float, default=0.7, help="bitops bound")
     args = parser.parse_args()
 
     args.weight_quant_params = {
@@ -92,10 +94,13 @@ def main():
         "dynamic_method": args.a_dynamic_method,
     }
 
+
+
     # blocks contains tuple of [start_layer, end_layer), the end_layer is exclusive
     # such as [(0, 1), (1, 2, 3)], first block is single layer 0, second block contains two layers 1 and 2
     with open(args.blocks_pkl, 'rb') as f:
         blocks = pickle.load(f)
+
 
     random.seed(args.seed)
     np.random.seed(args.seed)
@@ -118,6 +123,11 @@ def main():
         args.net = args.model.split('/')[-1]
     # assert args.net in net_choices
     args.model_family = args.net.split('-')[0]
+
+
+    if args.reload:
+        load_search_quant_config(None, blocks, args, None, None)
+        return
 
     lm = LMClass(args)
     lm.seqlen = 2048
@@ -142,8 +152,9 @@ def main():
 
     logger.info(blocks)
 
-    if args.reload:
-        load_search_quant_config(lm, blocks, args, dataloader, logger)
+
+    if args.parallel2:
+        search_quant_config_parallel2(lm, blocks, args, dataloader, logger)
     elif args.parallel:
         search_quant_config_parallel(lm, blocks, args, dataloader, logger)
     else:
@@ -159,3 +170,6 @@ if __name__ == "__main__":
     # CUDA_VISIBLE_DEVICES=0 python main_quant_config.py --model /workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-chat-hf --output_dir ./log/Llama-2-7b-chat-hf-w4a4-mpq --blocks_pkl log/Llama-2-7b-chat-hf-w4a4/Llama-2-7b-chat-hf_blocks.pkl --nsamples 128
 
     # python main_quant_config.py --model /workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-chat-hf --output_dir ./log/Llama-2-7b-chat-hf-mpq-paral --blocks_pkl log/Llama-2-7b-chat-hf-w4a4/Llama-2-7b-chat-hf_blocks.pkl --nsamples 128 --parallel 2>&1 | tee log/Llama-2-7b-chat-hf-mpq-paral/log.txt
+
+    # bitops_bound_factor = [0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95]
+    # size_bound_factor = [0.65, 0.7, 0.75]

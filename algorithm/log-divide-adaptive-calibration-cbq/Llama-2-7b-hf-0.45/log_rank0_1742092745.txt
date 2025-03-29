@@ -1,0 +1,10 @@
+[2025-03-16 02:39:05 root] (main_calib_config3_cbq.py 280): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-hf', cache_dir='./cache', output_dir='./log-divide-adaptive-calibration-cbq/Llama-2-7b-hf-0.45', save_dir=None, resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='piqa,arc_easy,arc_challenge,boolq,hellaswag,winogrande', eval_ppl=True, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=1, let=True, lwc=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, quant_map='log-divide-adaptive/Llama-2-7b-hf/quant_map_Llama-2-7b-hf_0.45.pkl', scale_calibration=True, compensation_calibration=True)
+[2025-03-16 02:41:29 root] (main_calib_config3_cbq.py 347): INFO === start quantization ===
+[2025-03-16 02:41:29 root] (main_calib_config3_cbq.py 353): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2025-03-16 02:41:29 root] (abq_llm_calib_config3_cbq.py 82): INFO Starting ...
+[2025-03-16 02:41:29 root] (abq_llm_calib_config3_cbq.py 89): INFO Loaded quant_map from log-divide-adaptive/Llama-2-7b-hf/quant_map_Llama-2-7b-hf_0.45.pkl
+[2025-03-16 02:41:35 root] (abq_llm_calib_config3_cbq.py 294): INFO === Start quantize layers 0 to 1 ===
+[2025-03-16 02:42:37 root] (abq_llm_calib_config3_cbq.py 447): INFO layers 0-1 epoch 0 loss:0.20596465468406677 norm:0.5614199042320251 max memory_allocated 38105.85986328125 
+[2025-03-16 02:43:08 root] (abq_llm_calib_config3_cbq.py 294): INFO === Start quantize layers 1 to 2 ===
+[2025-03-16 02:44:11 root] (abq_llm_calib_config3_cbq.py 447): INFO layers 1-2 epoch 0 loss:0.4986547827720642 norm:0.33984556794166565 max memory_allocated 38138.54931640625 
+[2025-03-16 02:44:41 root] (abq_llm_calib_config3_cbq.py 294): INFO === Start quantize layers 2 to 3 ===

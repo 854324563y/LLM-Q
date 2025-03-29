@@ -1,10 +1,10 @@
 import torch
 
-model = torch.load('log/Llama-2-7b-chat-hf-w4a4-117/abq_parameters.pth')
+model = torch.load('./log-divide-adaptive-calibration/Llama-2-13b-hf-0.4/abq_parameters.pth')
 for name, layer in model.items():
     print(name)
     for name, param in layer.items():
-        print(name, param.shape)
+        print(name, param)
 '''
 没有compensation
 

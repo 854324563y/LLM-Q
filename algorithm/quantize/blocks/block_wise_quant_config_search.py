@@ -173,6 +173,7 @@ def mixed_quant_optimze(hm, module_bitops, module_size, schemes_per_module=3,bit
     assert hm.shape[0]%schemes_per_module == 0, 'schemes_per_module must be a divisor of L'
     num_modules = hm.shape[0]//schemes_per_module
 
+    ### 随机生成都能有很多矩阵能选w4a4???
     # hm = generate_psd_matrix(hm.shape[0])
     # print('hm: ', hm)
 
@@ -197,17 +198,23 @@ def mixed_quant_optimze(hm, module_bitops, module_size, schemes_per_module=3,bit
     
     constraints = [equality_constraint_matrix@x == np.ones((num_modules,)),
                    module_bitops@x/10**9<=bitops_bound,
-                   module_size@x/8/1024/1024<=size_bound]
+                   #module_size@x/8/1024/1024<=size_bound
+                   ]
 
     # constraints = [equality_constraint_matrix@x == np.ones((num_modules,))]
     prob = cp.Problem(objective, constraints)
     prob.solve(verbose=False)
 
     # Print result.
-    print("Solution status", prob.status)
-    print("A solution x is")
-    print(x.value)
-    # print(f"bitops: {x.value@module_bitops}")
+    #print("Solution status", prob.status)
+    #print("A solution x is")
+    #print(x.value)
+
+    config_indices = [group.index(1) for group in zip(*[iter(x.value)]*3)]
+    print(config_indices)
+    
+    total_bitops = x.value@module_bitops
+    print(f"Total bitops for this block: {total_bitops/10**9:.2f}G")
 
     ans = x.value.tolist()
     # ans = x.value
@@ -363,6 +370,14 @@ def search_quant_config(lm, blocks_config, args, dataloader, logger):
          67108864 134217728  67108864  67108864 134217728 180355072 180355072
          360710144 180355072 180355072 360710144]
         '''
+
+        '''
+        print('module_bitops: ', module_bitops)
+        [ 268472311  536924147 1073795059  268472311  536924147 1073795059
+         268472311  536924147 1073795059  268472311  536924147 1073795059
+         721457143 1442893811 2885734387  721519351 1442983667 2885824243]
+        '''
+
         layer_cost[block_index] = {'module_index': module_index, 'module_size': module_size, 'module_bitops': module_bitops}
 
         # Forward inference to get full-precision output of this block
@@ -440,8 +455,12 @@ def search_quant_config(lm, blocks_config, args, dataloader, logger):
                 else:
                     hm_modify[i, j] = hm_modify[j, i] = hm[i,j] - hm[i,i] - hm[j,j]
         
-        hm_info[block_index] = {'hm': hm_modify, 'module_index': module_index, 'index2modulescheme': index2modulescheme}
-
+        hm_info[block_index] = {'hm_ori': hm, 'hm': hm_modify, 'module_index': module_index, 'index2modulescheme': index2modulescheme}
+        
+        # # ====================================
+        # hm_info[block_index] = {'hm': hm, 'module_index': module_index, 'index2modulescheme': index2modulescheme}
+        # with open(f'{args.output_dir}/hm_{block_index}_{args.net}.pkl', 'wb') as f:
+        #     pickle.dump(hm, f)
     
         fp_inps = copy.deepcopy(fp_out)
         block = [layer.to('cpu') for layer in block]
@@ -458,22 +477,63 @@ def search_quant_config(lm, blocks_config, args, dataloader, logger):
     quant_map = {}
 
     # def mixed_quant_optimze(hm, module_bitops, module_size, schemes_per_module=3,bitops_bound=np.inf,size_bound=np.inf, PSD=False):
+    total_network_bitops = 0
     for i in range(len(blocks_config)):
-        hm = hm_info[i]['hm']
+        hm = hm_info[i]['hm_ori']
         module_bitops = layer_cost[i]['module_bitops']
         module_size = layer_cost[i]['module_size']
-        size = module_size.sum()/(4+8+8)/1024/1024
+        size = module_size.sum()/(4+8+8)/1024/1024 ## 这里的size和量化配置无关，求模型的MB。
         size_bound = size * args.size_bound_factor
-        ans = mixed_quant_optimze(hm, module_bitops, module_size, bitops_bound=np.inf, size_bound=size_bound, PSD=True)
-        print('block ', i, ' ans: ', ans)
+        bitops = sum(module_bitops[i] for i in range(2, len(module_bitops), 3)) ### 计算每第三项的和，即 w8a8 的 bitops
+        bitops_bound = bitops * args.bitops_bound_factor/10**9
+        print('block ', i)
+        ans = mixed_quant_optimze(hm, module_bitops, module_size, bitops_bound=bitops_bound, size_bound=size_bound, PSD=True)
+        print('ans: ', ans)
         quant_result[i] = ans
+        total_network_bitops += np.array(ans)@module_bitops # G(Giga)bitops
 
+    print(f"\nTotal network bitops: {total_network_bitops/10**9:.2f}G")
+    total_w8a8_bitops = sum(sum(layer_cost[i]['module_bitops'][j] for j in range(2, len(layer_cost[i]['module_bitops']), 3)) for i in range(len(blocks_config)))
+    total_w4a4_bitops = sum(sum(layer_cost[i]['module_bitops'][j] for j in range(0, len(layer_cost[i]['module_bitops']), 3)) for i in range(len(blocks_config)))
+    print(f"\nTotal w8a8 network bitops: {total_w8a8_bitops/10**9:.2f}G")
+    print(f"Total w4a4 network bitops: {total_w4a4_bitops/10**9:.2f}G")
+
+    # 计算平均位宽
+    total_modules = 0
+    w4a4_count = 0
+    w4a8_count = 0
+    w8a8_count = 0
+    
+    for i in range(len(blocks_config)):
+        ans = quant_result[i]
+        for j in range(0, len(ans), 3):  # 每3个一组，对应一个模块的3种量化方案
+            total_modules += 1
+            if int(ans[j]) == 1:  # w4a4
+                w4a4_count += 1
+            elif int(ans[j+1]) == 1:  # w4a8
+                w4a8_count += 1
+            elif int(ans[j+2]) == 1:  # w8a8
+                w8a8_count += 1
+    
+    # 计算平均weight bits
+    avg_wbits = (4 * (w4a4_count + w4a8_count) + 8 * w8a8_count) / total_modules
+    # 计算平均activation bits
+    avg_abits = (4 * w4a4_count + 8 * (w4a8_count + w8a8_count)) / total_modules
+    
+    print(f"\n量化配置统计:")
+    print(f"w4a4: {w4a4_count}/{total_modules} ({w4a4_count/total_modules*100:.1f}%)")
+    print(f"w4a8: {w4a8_count}/{total_modules} ({w4a8_count/total_modules*100:.1f}%)")
+    print(f"w8a8: {w8a8_count}/{total_modules} ({w8a8_count/total_modules*100:.1f}%)")
+    print(f"平均weight位宽: {avg_wbits:.2f} bits")
+    print(f"平均activation位宽: {avg_abits:.2f} bits")
+
+    quant_result['total_network_bitops'] = total_network_bitops
     with open(f'{args.output_dir}/quant_result_{args.net}_{args.size_bound_factor}.pkl', 'wb') as f:
         pickle.dump(quant_result, f)
 
     for i in range(len(quant_result)):
         module_index = {v: k for k, v in hm_info[i]['module_index'].items()}
-        print(type(quant_result[i]))
+        # print(type(quant_result[i]))
         for j in range(len(quant_result[i])):
             if int(quant_result[i][j]) == 1:
                 modulename = module_index[j][:-5]
@@ -496,22 +556,62 @@ def load_search_quant_config(lm, blocks_config, args, dataloader, logger):
     quant_map = {}
 
     # def mixed_quant_optimze(hm, module_bitops, module_size, schemes_per_module=3,bitops_bound=np.inf,size_bound=np.inf, PSD=False):
+    total_network_bitops = 0
     for i in range(len(blocks_config)):
-        hm = hm_info[i]['hm']
+        hm = hm_info[i]['hm_ori']
         module_bitops = layer_cost[i]['module_bitops']
         module_size = layer_cost[i]['module_size']
-        size = module_size.sum()/(4+8+8)/1024/1024
+        size = module_size.sum()/(4+8+8)/1024/1024 ## 这里的size和量化配置无关，求模型的MB。
         size_bound = size * args.size_bound_factor
-        ans = mixed_quant_optimze(hm, module_bitops, module_size, bitops_bound=np.inf, size_bound=size_bound, PSD=True)
-        print('block ', i, ' ans: ', ans)
+        bitops = sum(module_bitops[i] for i in range(2, len(module_bitops), 3)) ### 计算每第三项的和，即 w8a8 的 bitops
+        bitops_bound = bitops * args.bitops_bound_factor/10**9
+        print('block ', i)
+        ans = mixed_quant_optimze(hm, module_bitops, module_size, bitops_bound=bitops_bound, size_bound=size_bound, PSD=True)
+        print(' ans: ', ans)
         quant_result[i] = ans
+        total_network_bitops += np.array(ans)@module_bitops # G(Giga)bitops
 
-    with open(f'{args.output_dir}/quant_result_{args.net}_{args.size_bound_factor}.pkl', 'wb') as f:
+    print(f"\nTotal network bitops: {total_network_bitops/10**9:.2f}G")
+    total_w8a8_bitops = sum(sum(layer_cost[i]['module_bitops'][j] for j in range(2, len(layer_cost[i]['module_bitops']), 3)) for i in range(len(blocks_config)))
+    total_w4a4_bitops = sum(sum(layer_cost[i]['module_bitops'][j] for j in range(0, len(layer_cost[i]['module_bitops']), 3)) for i in range(len(blocks_config)))
+    print(f"\nTotal w8a8 network bitops: {total_w8a8_bitops/10**9:.2f}G")
+    print(f"Total w4a4 network bitops: {total_w4a4_bitops/10**9:.2f}G")
+
+    # 计算平均位宽
+    total_modules = 0
+    w4a4_count = 0
+    w4a8_count = 0
+    w8a8_count = 0
+    
+    for i in range(len(blocks_config)):
+        ans = quant_result[i]
+        for j in range(0, len(ans), 3):  # 每3个一组，对应一个模块的3种量化方案
+            total_modules += 1
+            if int(ans[j]) == 1:  # w4a4
+                w4a4_count += 1
+            elif int(ans[j+1]) == 1:  # w4a8
+                w4a8_count += 1
+            elif int(ans[j+2]) == 1:  # w8a8
+                w8a8_count += 1
+    
+    # 计算平均weight bits
+    avg_wbits = (4 * (w4a4_count + w4a8_count) + 8 * w8a8_count) / total_modules
+    # 计算平均activation bits
+    avg_abits = (4 * w4a4_count + 8 * (w4a8_count + w8a8_count)) / total_modules
+    
+    print(f"\n量化配置统计:")
+    print(f"w4a4: {w4a4_count}/{total_modules} ({w4a4_count/total_modules*100:.1f}%)")
+    print(f"w4a8: {w4a8_count}/{total_modules} ({w4a8_count/total_modules*100:.1f}%)")
+    print(f"w8a8: {w8a8_count}/{total_modules} ({w8a8_count/total_modules*100:.1f}%)")
+    print(f"平均weight位宽: {avg_wbits:.2f} bits")
+    print(f"平均activation位宽: {avg_abits:.2f} bits")
+
+    quant_result['total_network_bitops'] = total_network_bitops
+    with open(f'{args.output_dir}/quant_result_{args.net}_{args.bitops_bound_factor}.pkl', 'wb') as f:
         pickle.dump(quant_result, f)
 
-    for i in range(len(quant_result)):
+    for i in range(len(blocks_config)):
         module_index = {v: k for k, v in hm_info[i]['module_index'].items()}
-        print(type(quant_result[i]))
         for j in range(len(quant_result[i])):
             if int(quant_result[i][j]) == 1:
                 modulename = module_index[j][:-5]
@@ -520,5 +620,5 @@ def load_search_quant_config(lm, blocks_config, args, dataloader, logger):
                 if layer not in quant_map:
                     quant_map[layer] = {}
                 quant_map[layer][modulename] = j % 3
-    with open(f'{args.output_dir}/quant_map_{args.net}.pkl', 'wb') as f:
+    with open(f'{args.output_dir}/quant_map_{args.net}_{args.bitops_bound_factor}.pkl', 'wb') as f:
         pickle.dump(quant_map, f)

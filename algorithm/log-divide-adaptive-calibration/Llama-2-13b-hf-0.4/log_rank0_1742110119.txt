@@ -1,0 +1,394 @@
+[2025-03-16 07:28:39 root] (main_calib_config3.py 283): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-13b-hf', cache_dir='./cache', output_dir='./log-divide-adaptive-calibration/Llama-2-13b-hf-0.4', save_dir=None, resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='piqa,arc_easy,arc_challenge,boolq,hellaswag,winogrande', eval_ppl=True, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=20, let=True, lwc=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, quant_map='log-divide-adaptive/Llama-2-13b-hf/quant_map_Llama-2-13b-hf_0.4.pkl', blocks_pkl='./log-divide/Llama-2-13b-hf-w4a4/Llama-2-13b-hf_blocks.pkl', scale_calibration=True, compensation_calibration=True)
+[2025-03-16 07:28:41 root] (main_calib_config3.py 350): INFO === start quantization ===
+[2025-03-16 07:28:41 root] (main_calib_config3.py 356): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2025-03-16 07:28:41 root] (abq_llm_calib_config3.py 82): INFO Starting ...
+[2025-03-16 07:28:41 root] (abq_llm_calib_config3.py 89): INFO Loaded quant_map from log-divide-adaptive/Llama-2-13b-hf/quant_map_Llama-2-13b-hf_0.4.pkl
+[2025-03-16 07:28:41 root] (abq_llm_calib_config3.py 96): INFO Loaded blocks from ./log-divide/Llama-2-13b-hf-w4a4/Llama-2-13b-hf_blocks.pkl: [(0, 1), (1, 2), (2, 3), (3, 6), (6, 9), (9, 12), (12, 15), (15, 18), (18, 21), (21, 24), (24, 27), (27, 30), (30, 33), (33, 36), (36, 37), (37, 38), (38, 39), (39, 40)]
+[2025-03-16 07:28:41 root] (abq_llm_calib_config3.py 102): INFO Processed blocks: [[0], [1], [2], [3, 4, 5], [6, 7, 8], [9, 10, 11], [12, 13, 14], [15, 16, 17], [18, 19, 20], [21, 22, 23], [24, 25, 26], [27, 28, 29], [30, 31, 32], [33, 34, 35], [36], [37], [38], [39]]
+[2025-03-16 07:28:45 root] (abq_llm_calib_config3.py 257): INFO === Start quantize block 0 with layers [0] ===
+[2025-03-16 07:28:45 root] (abq_llm_calib_config3.py 309): INFO use compensation vector
+[2025-03-16 07:29:33 root] (abq_llm_calib_config3.py 461): INFO block 0 (layers [0]) iter 0 loss:0.010323721915483475 norm:0.014946574345231056 max memory_allocated 44358.79345703125 
+[2025-03-16 07:30:15 root] (abq_llm_calib_config3.py 461): INFO block 0 (layers [0]) iter 1 loss:0.005699658766388893 norm:0.008258647285401821 max memory_allocated 44358.79345703125 
+[2025-03-16 07:30:58 root] (abq_llm_calib_config3.py 461): INFO block 0 (layers [0]) iter 2 loss:0.003884692210704088 norm:0.005237219389528036 max memory_allocated 44358.79345703125 
+[2025-03-16 07:31:41 root] (abq_llm_calib_config3.py 461): INFO block 0 (layers [0]) iter 3 loss:0.0032581498380750418 norm:0.004073811694979668 max memory_allocated 44358.79345703125 
+[2025-03-16 07:32:24 root] (abq_llm_calib_config3.py 461): INFO block 0 (layers [0]) iter 4 loss:0.0030715144239366055 norm:0.0035019423812627792 max memory_allocated 44358.79345703125 
+[2025-03-16 07:33:07 root] (abq_llm_calib_config3.py 461): INFO block 0 (layers [0]) iter 5 loss:0.0028920730110257864 norm:0.002865179907530546 max memory_allocated 44358.79345703125 
+[2025-03-16 07:33:50 root] (abq_llm_calib_config3.py 461): INFO block 0 (layers [0]) iter 6 loss:0.002874556463211775 norm:0.002493254840373993 max memory_allocated 44358.79345703125 
+[2025-03-16 07:34:34 root] (abq_llm_calib_config3.py 461): INFO block 0 (layers [0]) iter 7 loss:0.002789960475638509 norm:0.0020435629412531853 max memory_allocated 44358.79345703125 
+[2025-03-16 07:35:17 root] (abq_llm_calib_config3.py 461): INFO block 0 (layers [0]) iter 8 loss:0.00268835318274796 norm:0.0018256905023008585 max memory_allocated 44358.79345703125 
+[2025-03-16 07:36:00 root] (abq_llm_calib_config3.py 461): INFO block 0 (layers [0]) iter 9 loss:0.0025748922489583492 norm:0.0016920724883675575 max memory_allocated 44358.79345703125 
+[2025-03-16 07:36:43 root] (abq_llm_calib_config3.py 461): INFO block 0 (layers [0]) iter 10 loss:0.0026289094239473343 norm:0.0015630859415978193 max memory_allocated 44358.79345703125 
+[2025-03-16 07:37:26 root] (abq_llm_calib_config3.py 461): INFO block 0 (layers [0]) iter 11 loss:0.0025102468207478523 norm:0.0015044466126710176 max memory_allocated 44358.79345703125 
+[2025-03-16 07:38:10 root] (abq_llm_calib_config3.py 461): INFO block 0 (layers [0]) iter 12 loss:0.002550604287534952 norm:0.0013970572035759687 max memory_allocated 44358.79345703125 
+[2025-03-16 07:38:53 root] (abq_llm_calib_config3.py 461): INFO block 0 (layers [0]) iter 13 loss:0.0025005959905683994 norm:0.0012865593889728189 max memory_allocated 44358.79345703125 
+[2025-03-16 07:39:36 root] (abq_llm_calib_config3.py 461): INFO block 0 (layers [0]) iter 14 loss:0.0025623603723943233 norm:0.0013490616111084819 max memory_allocated 44358.79345703125 
+[2025-03-16 07:40:19 root] (abq_llm_calib_config3.py 461): INFO block 0 (layers [0]) iter 15 loss:0.002429389161989093 norm:0.0011444888077676296 max memory_allocated 44358.79345703125 
+[2025-03-16 07:41:02 root] (abq_llm_calib_config3.py 461): INFO block 0 (layers [0]) iter 16 loss:0.002466819016262889 norm:0.0011540588457137346 max memory_allocated 44358.79345703125 
+[2025-03-16 07:41:45 root] (abq_llm_calib_config3.py 461): INFO block 0 (layers [0]) iter 17 loss:0.00246571097522974 norm:0.0011418343055993319 max memory_allocated 44358.79345703125 
+[2025-03-16 07:42:29 root] (abq_llm_calib_config3.py 461): INFO block 0 (layers [0]) iter 18 loss:0.002463587326928973 norm:0.0011645155027508736 max memory_allocated 44358.79345703125 
+[2025-03-16 07:43:12 root] (abq_llm_calib_config3.py 461): INFO block 0 (layers [0]) iter 19 loss:0.0024297861382365227 norm:0.000997025053948164 max memory_allocated 44358.79345703125 
+[2025-03-16 07:44:10 root] (abq_llm_calib_config3.py 257): INFO === Start quantize block 1 with layers [1] ===
+[2025-03-16 07:44:15 root] (abq_llm_calib_config3.py 309): INFO use compensation vector
+[2025-03-16 07:45:01 root] (abq_llm_calib_config3.py 461): INFO block 1 (layers [1]) iter 0 loss:0.023174772039055824 norm:0.014597122557461262 max memory_allocated 44358.79345703125 
+[2025-03-16 07:45:44 root] (abq_llm_calib_config3.py 461): INFO block 1 (layers [1]) iter 1 loss:0.01426510140299797 norm:0.008723451755940914 max memory_allocated 44358.79345703125 
+[2025-03-16 07:46:27 root] (abq_llm_calib_config3.py 461): INFO block 1 (layers [1]) iter 2 loss:0.010302052833139896 norm:0.005979773588478565 max memory_allocated 44358.79345703125 
+[2025-03-16 07:47:10 root] (abq_llm_calib_config3.py 461): INFO block 1 (layers [1]) iter 3 loss:0.009157965891063213 norm:0.00479549914598465 max memory_allocated 44358.79345703125 
+[2025-03-16 07:47:53 root] (abq_llm_calib_config3.py 461): INFO block 1 (layers [1]) iter 4 loss:0.008694926276803017 norm:0.0040064649656414986 max memory_allocated 44358.79345703125 
+[2025-03-16 07:48:36 root] (abq_llm_calib_config3.py 461): INFO block 1 (layers [1]) iter 5 loss:0.008436834439635277 norm:0.0034612405579537153 max memory_allocated 44358.79345703125 
+[2025-03-16 07:49:19 root] (abq_llm_calib_config3.py 461): INFO block 1 (layers [1]) iter 6 loss:0.008240675553679466 norm:0.0030728676356375217 max memory_allocated 44358.79345703125 
+[2025-03-16 07:50:03 root] (abq_llm_calib_config3.py 461): INFO block 1 (layers [1]) iter 7 loss:0.00813225843012333 norm:0.0026813477743417025 max memory_allocated 44358.79345703125 
+[2025-03-16 07:50:46 root] (abq_llm_calib_config3.py 461): INFO block 1 (layers [1]) iter 8 loss:0.00799476820975542 norm:0.002302328823134303 max memory_allocated 44358.79345703125 
+[2025-03-16 07:51:29 root] (abq_llm_calib_config3.py 461): INFO block 1 (layers [1]) iter 9 loss:0.007842025719583035 norm:0.001994355348870158 max memory_allocated 44358.79345703125 
+[2025-03-16 07:52:13 root] (abq_llm_calib_config3.py 461): INFO block 1 (layers [1]) iter 10 loss:0.007722079288214445 norm:0.0017214968102052808 max memory_allocated 44358.79345703125 
+[2025-03-16 07:52:56 root] (abq_llm_calib_config3.py 461): INFO block 1 (layers [1]) iter 11 loss:0.007632075343281031 norm:0.001562691992148757 max memory_allocated 44358.79345703125 
+[2025-03-16 07:53:39 root] (abq_llm_calib_config3.py 461): INFO block 1 (layers [1]) iter 12 loss:0.0076034655794501305 norm:0.001489682705141604 max memory_allocated 44358.79345703125 
+[2025-03-16 07:54:22 root] (abq_llm_calib_config3.py 461): INFO block 1 (layers [1]) iter 13 loss:0.007583592087030411 norm:0.0015626555541530252 max memory_allocated 44358.79345703125 
+[2025-03-16 07:55:06 root] (abq_llm_calib_config3.py 461): INFO block 1 (layers [1]) iter 14 loss:0.007636805064976215 norm:0.0014097276143729687 max memory_allocated 44358.79345703125 
+[2025-03-16 07:55:49 root] (abq_llm_calib_config3.py 461): INFO block 1 (layers [1]) iter 15 loss:0.007521842606365681 norm:0.0013956823386251926 max memory_allocated 44358.79345703125 
+[2025-03-16 07:56:32 root] (abq_llm_calib_config3.py 461): INFO block 1 (layers [1]) iter 16 loss:0.007569389883428812 norm:0.0012344273272901773 max memory_allocated 44358.79345703125 
+[2025-03-16 07:57:15 root] (abq_llm_calib_config3.py 461): INFO block 1 (layers [1]) iter 17 loss:0.007467172108590603 norm:0.0012915923725813627 max memory_allocated 44358.79345703125 
+[2025-03-16 07:57:59 root] (abq_llm_calib_config3.py 461): INFO block 1 (layers [1]) iter 18 loss:0.00754505442455411 norm:0.0011837572092190385 max memory_allocated 44358.79345703125 
+[2025-03-16 07:58:42 root] (abq_llm_calib_config3.py 461): INFO block 1 (layers [1]) iter 19 loss:0.007440377492457628 norm:0.0012108136434108019 max memory_allocated 44358.79345703125 
+[2025-03-16 07:59:43 root] (abq_llm_calib_config3.py 257): INFO === Start quantize block 2 with layers [2] ===
+[2025-03-16 07:59:49 root] (abq_llm_calib_config3.py 309): INFO use compensation vector
+[2025-03-16 08:00:36 root] (abq_llm_calib_config3.py 461): INFO block 2 (layers [2]) iter 0 loss:0.029852252453565598 norm:0.014195245690643787 max memory_allocated 44358.79345703125 
+[2025-03-16 08:01:19 root] (abq_llm_calib_config3.py 461): INFO block 2 (layers [2]) iter 1 loss:0.02051466889679432 norm:0.009242987260222435 max memory_allocated 44358.79345703125 
+[2025-03-16 08:02:02 root] (abq_llm_calib_config3.py 461): INFO block 2 (layers [2]) iter 2 loss:0.01570083387196064 norm:0.006097255274653435 max memory_allocated 44358.79345703125 
+[2025-03-16 08:02:45 root] (abq_llm_calib_config3.py 461): INFO block 2 (layers [2]) iter 3 loss:0.014247966930270195 norm:0.004842390771955252 max memory_allocated 44358.79345703125 
+[2025-03-16 08:03:28 root] (abq_llm_calib_config3.py 461): INFO block 2 (layers [2]) iter 4 loss:0.013643987476825714 norm:0.003970078658312559 max memory_allocated 44358.79345703125 
+[2025-03-16 08:04:11 root] (abq_llm_calib_config3.py 461): INFO block 2 (layers [2]) iter 5 loss:0.013236429542303085 norm:0.00343128084205091 max memory_allocated 44358.79345703125 
+[2025-03-16 08:04:55 root] (abq_llm_calib_config3.py 461): INFO block 2 (layers [2]) iter 6 loss:0.012895829044282436 norm:0.0029997588135302067 max memory_allocated 44358.79345703125 
+[2025-03-16 08:05:38 root] (abq_llm_calib_config3.py 461): INFO block 2 (layers [2]) iter 7 loss:0.012623484246432781 norm:0.002647638786584139 max memory_allocated 44358.79345703125 
+[2025-03-16 08:06:21 root] (abq_llm_calib_config3.py 461): INFO block 2 (layers [2]) iter 8 loss:0.01243017241358757 norm:0.002315588528290391 max memory_allocated 44358.79345703125 
+[2025-03-16 08:07:05 root] (abq_llm_calib_config3.py 461): INFO block 2 (layers [2]) iter 9 loss:0.012293829582631588 norm:0.0019637099467217922 max memory_allocated 44358.79345703125 
+[2025-03-16 08:07:48 root] (abq_llm_calib_config3.py 461): INFO block 2 (layers [2]) iter 10 loss:0.012182499282062054 norm:0.001689218683168292 max memory_allocated 44358.79345703125 
+[2025-03-16 08:08:31 root] (abq_llm_calib_config3.py 461): INFO block 2 (layers [2]) iter 11 loss:0.012194829061627388 norm:0.0016289004124701023 max memory_allocated 44358.79345703125 
+[2025-03-16 08:09:15 root] (abq_llm_calib_config3.py 461): INFO block 2 (layers [2]) iter 12 loss:0.012157576158642769 norm:0.0016141985543072224 max memory_allocated 44358.79345703125 
+[2025-03-16 08:09:58 root] (abq_llm_calib_config3.py 461): INFO block 2 (layers [2]) iter 13 loss:0.012149511836469173 norm:0.0015849788906052709 max memory_allocated 44358.79345703125 
+[2025-03-16 08:10:41 root] (abq_llm_calib_config3.py 461): INFO block 2 (layers [2]) iter 14 loss:0.012143515050411224 norm:0.0015529196243733168 max memory_allocated 44358.79345703125 
+[2025-03-16 08:11:25 root] (abq_llm_calib_config3.py 461): INFO block 2 (layers [2]) iter 15 loss:0.012163687497377396 norm:0.0015619844198226929 max memory_allocated 44358.79345703125 
+[2025-03-16 08:12:08 root] (abq_llm_calib_config3.py 461): INFO block 2 (layers [2]) iter 16 loss:0.01216251403093338 norm:0.0013411547988653183 max memory_allocated 44358.79345703125 
+[2025-03-16 08:12:51 root] (abq_llm_calib_config3.py 461): INFO block 2 (layers [2]) iter 17 loss:0.012109652161598206 norm:0.0013820065651088953 max memory_allocated 44358.79345703125 
+[2025-03-16 08:13:34 root] (abq_llm_calib_config3.py 461): INFO block 2 (layers [2]) iter 18 loss:0.012057051062583923 norm:0.0012276350753381848 max memory_allocated 44358.79345703125 
+[2025-03-16 08:14:18 root] (abq_llm_calib_config3.py 461): INFO block 2 (layers [2]) iter 19 loss:0.012067765928804874 norm:0.0012922545429319143 max memory_allocated 44358.79345703125 
+[2025-03-16 08:15:18 root] (abq_llm_calib_config3.py 257): INFO === Start quantize block 3 with layers [3, 4, 5] ===
+[2025-03-16 08:17:49 root] (abq_llm_calib_config3.py 461): INFO block 3 (layers [3, 4, 5]) iter 0 loss:0.08137591928243637 norm:0.004128206986933947 max memory_allocated 62694.06494140625 
+[2025-03-16 08:19:56 root] (abq_llm_calib_config3.py 461): INFO block 3 (layers [3, 4, 5]) iter 1 loss:0.055066000670194626 norm:0.024964481592178345 max memory_allocated 62694.06494140625 
+[2025-03-16 08:22:04 root] (abq_llm_calib_config3.py 461): INFO block 3 (layers [3, 4, 5]) iter 2 loss:0.04125982150435448 norm:0.0067602405324578285 max memory_allocated 62694.06494140625 
+[2025-03-16 08:24:11 root] (abq_llm_calib_config3.py 461): INFO block 3 (layers [3, 4, 5]) iter 3 loss:0.03607655316591263 norm:0.001486173365265131 max memory_allocated 62694.06494140625 
+[2025-03-16 08:26:18 root] (abq_llm_calib_config3.py 461): INFO block 3 (layers [3, 4, 5]) iter 4 loss:0.033462200313806534 norm:0.0011321186320856214 max memory_allocated 62694.06494140625 
+[2025-03-16 08:28:26 root] (abq_llm_calib_config3.py 461): INFO block 3 (layers [3, 4, 5]) iter 5 loss:0.03249206393957138 norm:0.0022710589691996574 max memory_allocated 62694.06494140625 
+[2025-03-16 08:30:33 root] (abq_llm_calib_config3.py 461): INFO block 3 (layers [3, 4, 5]) iter 6 loss:0.031661439687013626 norm:0.002480556955561042 max memory_allocated 62694.06494140625 
+[2025-03-16 08:32:41 root] (abq_llm_calib_config3.py 461): INFO block 3 (layers [3, 4, 5]) iter 7 loss:0.030345013365149498 norm:0.0016795301344245672 max memory_allocated 62694.06494140625 
+[2025-03-16 08:34:48 root] (abq_llm_calib_config3.py 461): INFO block 3 (layers [3, 4, 5]) iter 8 loss:0.02961299568414688 norm:0.001263836631551385 max memory_allocated 62694.06494140625 
+[2025-03-16 08:36:56 root] (abq_llm_calib_config3.py 461): INFO block 3 (layers [3, 4, 5]) iter 9 loss:0.029476068913936615 norm:0.0013097103219479322 max memory_allocated 62694.06494140625 
+[2025-03-16 08:39:03 root] (abq_llm_calib_config3.py 461): INFO block 3 (layers [3, 4, 5]) iter 10 loss:0.028660647571086884 norm:0.0012089592637494206 max memory_allocated 62694.06494140625 
+[2025-03-16 08:41:11 root] (abq_llm_calib_config3.py 461): INFO block 3 (layers [3, 4, 5]) iter 11 loss:0.02800072357058525 norm:0.0009935355046764016 max memory_allocated 62694.06494140625 
+[2025-03-16 08:43:18 root] (abq_llm_calib_config3.py 461): INFO block 3 (layers [3, 4, 5]) iter 12 loss:0.027974288910627365 norm:0.0009787848684936762 max memory_allocated 62694.06494140625 
+[2025-03-16 08:45:26 root] (abq_llm_calib_config3.py 461): INFO block 3 (layers [3, 4, 5]) iter 13 loss:0.02779197506606579 norm:0.0009449344943277538 max memory_allocated 62694.06494140625 
+[2025-03-16 08:47:33 root] (abq_llm_calib_config3.py 461): INFO block 3 (layers [3, 4, 5]) iter 14 loss:0.02811230532824993 norm:0.0010603273985907435 max memory_allocated 62694.06494140625 
+[2025-03-16 08:49:41 root] (abq_llm_calib_config3.py 461): INFO block 3 (layers [3, 4, 5]) iter 15 loss:0.028295336291193962 norm:0.0010733823291957378 max memory_allocated 62694.06494140625 
+[2025-03-16 08:51:49 root] (abq_llm_calib_config3.py 461): INFO block 3 (layers [3, 4, 5]) iter 16 loss:0.027547912672162056 norm:0.0007937931804917753 max memory_allocated 62694.06494140625 
+[2025-03-16 08:53:57 root] (abq_llm_calib_config3.py 461): INFO block 3 (layers [3, 4, 5]) iter 17 loss:0.028116552159190178 norm:0.001061379094608128 max memory_allocated 62694.06494140625 
+[2025-03-16 08:56:05 root] (abq_llm_calib_config3.py 461): INFO block 3 (layers [3, 4, 5]) iter 18 loss:0.027984267100691795 norm:0.0010691909119486809 max memory_allocated 62694.06494140625 
+[2025-03-16 08:58:12 root] (abq_llm_calib_config3.py 461): INFO block 3 (layers [3, 4, 5]) iter 19 loss:0.02760937251150608 norm:0.0008387983543798327 max memory_allocated 62694.06494140625 
+[2025-03-16 09:01:09 root] (abq_llm_calib_config3.py 257): INFO === Start quantize block 4 with layers [6, 7, 8] ===
+[2025-03-16 09:03:38 root] (abq_llm_calib_config3.py 461): INFO block 4 (layers [6, 7, 8]) iter 0 loss:0.08295705914497375 norm:0.0016497555188834667 max memory_allocated 62695.29931640625 
+[2025-03-16 09:05:46 root] (abq_llm_calib_config3.py 461): INFO block 4 (layers [6, 7, 8]) iter 1 loss:0.058757733553647995 norm:0.0006634219898842275 max memory_allocated 62695.29931640625 
+[2025-03-16 09:07:54 root] (abq_llm_calib_config3.py 461): INFO block 4 (layers [6, 7, 8]) iter 2 loss:0.04601983726024628 norm:0.00042861790279857814 max memory_allocated 62695.29931640625 
+[2025-03-16 09:10:01 root] (abq_llm_calib_config3.py 461): INFO block 4 (layers [6, 7, 8]) iter 3 loss:0.04034177213907242 norm:0.00034031731775030494 max memory_allocated 62695.29931640625 
+[2025-03-16 09:12:09 root] (abq_llm_calib_config3.py 461): INFO block 4 (layers [6, 7, 8]) iter 4 loss:0.0374910943210125 norm:0.00031081755878403783 max memory_allocated 62695.29931640625 
+[2025-03-16 09:14:16 root] (abq_llm_calib_config3.py 461): INFO block 4 (layers [6, 7, 8]) iter 5 loss:0.03557762876152992 norm:0.0002846186689566821 max memory_allocated 62695.29931640625 
+[2025-03-16 09:16:24 root] (abq_llm_calib_config3.py 461): INFO block 4 (layers [6, 7, 8]) iter 6 loss:0.034193966537714005 norm:0.0002752101863734424 max memory_allocated 62695.29931640625 
+[2025-03-16 09:18:31 root] (abq_llm_calib_config3.py 461): INFO block 4 (layers [6, 7, 8]) iter 7 loss:0.033248625695705414 norm:0.00026366044767200947 max memory_allocated 62695.29931640625 
+[2025-03-16 09:20:39 root] (abq_llm_calib_config3.py 461): INFO block 4 (layers [6, 7, 8]) iter 8 loss:0.03257037326693535 norm:0.0002560779685154557 max memory_allocated 62695.29931640625 
+[2025-03-16 09:22:47 root] (abq_llm_calib_config3.py 461): INFO block 4 (layers [6, 7, 8]) iter 9 loss:0.032082732766866684 norm:0.00024687452241778374 max memory_allocated 62695.29931640625 
+[2025-03-16 09:24:54 root] (abq_llm_calib_config3.py 461): INFO block 4 (layers [6, 7, 8]) iter 10 loss:0.03176296129822731 norm:0.00024609919637441635 max memory_allocated 62695.29931640625 
+[2025-03-16 09:27:02 root] (abq_llm_calib_config3.py 461): INFO block 4 (layers [6, 7, 8]) iter 11 loss:0.031506024301052094 norm:0.0002493967767804861 max memory_allocated 62695.29931640625 
+[2025-03-16 09:29:09 root] (abq_llm_calib_config3.py 461): INFO block 4 (layers [6, 7, 8]) iter 12 loss:0.03129265457391739 norm:0.0002480297116562724 max memory_allocated 62695.29931640625 
+[2025-03-16 09:31:17 root] (abq_llm_calib_config3.py 461): INFO block 4 (layers [6, 7, 8]) iter 13 loss:0.031162500381469727 norm:0.00025628836010582745 max memory_allocated 62695.29931640625 
+[2025-03-16 09:33:24 root] (abq_llm_calib_config3.py 461): INFO block 4 (layers [6, 7, 8]) iter 14 loss:0.031040122732520103 norm:0.00024682056391611695 max memory_allocated 62695.29931640625 
+[2025-03-16 09:35:32 root] (abq_llm_calib_config3.py 461): INFO block 4 (layers [6, 7, 8]) iter 15 loss:0.030944669619202614 norm:0.0002501926210243255 max memory_allocated 62695.29931640625 
+[2025-03-16 09:37:39 root] (abq_llm_calib_config3.py 461): INFO block 4 (layers [6, 7, 8]) iter 16 loss:0.03086024336516857 norm:0.0002462044940330088 max memory_allocated 62695.29931640625 
+[2025-03-16 09:39:47 root] (abq_llm_calib_config3.py 461): INFO block 4 (layers [6, 7, 8]) iter 17 loss:0.030783649533987045 norm:0.00024477799888700247 max memory_allocated 62695.29931640625 
+[2025-03-16 09:41:55 root] (abq_llm_calib_config3.py 461): INFO block 4 (layers [6, 7, 8]) iter 18 loss:0.030718820169568062 norm:0.00024037266848608851 max memory_allocated 62695.29931640625 
+[2025-03-16 09:44:02 root] (abq_llm_calib_config3.py 461): INFO block 4 (layers [6, 7, 8]) iter 19 loss:0.030621182173490524 norm:0.00023284531198441982 max memory_allocated 62695.29931640625 
+[2025-03-16 09:46:59 root] (abq_llm_calib_config3.py 257): INFO === Start quantize block 5 with layers [9, 10, 11] ===
+[2025-03-16 09:49:32 root] (abq_llm_calib_config3.py 461): INFO block 5 (layers [9, 10, 11]) iter 0 loss:0.11631958931684494 norm:0.003431101096794009 max memory_allocated 62695.29931640625 
+[2025-03-16 09:51:40 root] (abq_llm_calib_config3.py 461): INFO block 5 (layers [9, 10, 11]) iter 1 loss:0.07865943014621735 norm:0.0013728803023695946 max memory_allocated 62695.29931640625 
+[2025-03-16 09:53:48 root] (abq_llm_calib_config3.py 461): INFO block 5 (layers [9, 10, 11]) iter 2 loss:0.06035156920552254 norm:0.0007387989317066967 max memory_allocated 62695.29931640625 
+[2025-03-16 09:55:55 root] (abq_llm_calib_config3.py 461): INFO block 5 (layers [9, 10, 11]) iter 3 loss:0.051996201276779175 norm:0.0005135679384693503 max memory_allocated 62695.29931640625 
+[2025-03-16 09:58:03 root] (abq_llm_calib_config3.py 461): INFO block 5 (layers [9, 10, 11]) iter 4 loss:0.048015985637903214 norm:0.00042338360799476504 max memory_allocated 62695.29931640625 
+[2025-03-16 10:00:11 root] (abq_llm_calib_config3.py 461): INFO block 5 (layers [9, 10, 11]) iter 5 loss:0.045618828386068344 norm:0.00037480605533346534 max memory_allocated 62695.29931640625 
+[2025-03-16 10:02:18 root] (abq_llm_calib_config3.py 461): INFO block 5 (layers [9, 10, 11]) iter 6 loss:0.043938878923654556 norm:0.0003555176081135869 max memory_allocated 62695.29931640625 
+[2025-03-16 10:04:26 root] (abq_llm_calib_config3.py 461): INFO block 5 (layers [9, 10, 11]) iter 7 loss:0.04272483289241791 norm:0.00033062067814171314 max memory_allocated 62695.29931640625 
+[2025-03-16 10:06:34 root] (abq_llm_calib_config3.py 461): INFO block 5 (layers [9, 10, 11]) iter 8 loss:0.041865698993206024 norm:0.00032132011256180704 max memory_allocated 62695.29931640625 
+[2025-03-16 10:08:41 root] (abq_llm_calib_config3.py 461): INFO block 5 (layers [9, 10, 11]) iter 9 loss:0.04121200740337372 norm:0.0003075031563639641 max memory_allocated 62695.29931640625 
+[2025-03-16 10:10:49 root] (abq_llm_calib_config3.py 461): INFO block 5 (layers [9, 10, 11]) iter 10 loss:0.0407538004219532 norm:0.0002938924008049071 max memory_allocated 62695.29931640625 
+[2025-03-16 10:12:57 root] (abq_llm_calib_config3.py 461): INFO block 5 (layers [9, 10, 11]) iter 11 loss:0.04038618505001068 norm:0.0002874035853892565 max memory_allocated 62695.29931640625 
+[2025-03-16 10:15:04 root] (abq_llm_calib_config3.py 461): INFO block 5 (layers [9, 10, 11]) iter 12 loss:0.04016181454062462 norm:0.00029523958801291883 max memory_allocated 62695.29931640625 
+[2025-03-16 10:17:12 root] (abq_llm_calib_config3.py 461): INFO block 5 (layers [9, 10, 11]) iter 13 loss:0.039963942021131516 norm:0.00027959750150330365 max memory_allocated 62695.29931640625 
+[2025-03-16 10:19:20 root] (abq_llm_calib_config3.py 461): INFO block 5 (layers [9, 10, 11]) iter 14 loss:0.03977147489786148 norm:0.00027047228650189936 max memory_allocated 62695.29931640625 
+[2025-03-16 10:21:27 root] (abq_llm_calib_config3.py 461): INFO block 5 (layers [9, 10, 11]) iter 15 loss:0.039597202092409134 norm:0.0002635482233017683 max memory_allocated 62695.29931640625 
+[2025-03-16 10:23:35 root] (abq_llm_calib_config3.py 461): INFO block 5 (layers [9, 10, 11]) iter 16 loss:0.03944843262434006 norm:0.0002636441495269537 max memory_allocated 62695.29931640625 
+[2025-03-16 10:25:43 root] (abq_llm_calib_config3.py 461): INFO block 5 (layers [9, 10, 11]) iter 17 loss:0.03935326263308525 norm:0.0002599380095489323 max memory_allocated 62695.29931640625 
+[2025-03-16 10:27:50 root] (abq_llm_calib_config3.py 461): INFO block 5 (layers [9, 10, 11]) iter 18 loss:0.03928552195429802 norm:0.0002634193515405059 max memory_allocated 62695.29931640625 
+[2025-03-16 10:29:58 root] (abq_llm_calib_config3.py 461): INFO block 5 (layers [9, 10, 11]) iter 19 loss:0.03916522115468979 norm:0.00026263046311214566 max memory_allocated 62695.29931640625 
+[2025-03-16 10:32:54 root] (abq_llm_calib_config3.py 257): INFO === Start quantize block 6 with layers [12, 13, 14] ===
+[2025-03-16 10:35:25 root] (abq_llm_calib_config3.py 461): INFO block 6 (layers [12, 13, 14]) iter 0 loss:0.10289309918880463 norm:0.0017482907278463244 max memory_allocated 62697.76806640625 
+[2025-03-16 10:37:33 root] (abq_llm_calib_config3.py 461): INFO block 6 (layers [12, 13, 14]) iter 1 loss:0.07708974927663803 norm:0.000836726394481957 max memory_allocated 62697.76806640625 
+[2025-03-16 10:39:41 root] (abq_llm_calib_config3.py 461): INFO block 6 (layers [12, 13, 14]) iter 2 loss:0.06199140474200249 norm:0.0005190798547118902 max memory_allocated 62697.76806640625 
+[2025-03-16 10:41:49 root] (abq_llm_calib_config3.py 461): INFO block 6 (layers [12, 13, 14]) iter 3 loss:0.05476781353354454 norm:0.00037434283876791596 max memory_allocated 62697.76806640625 
+[2025-03-16 10:43:57 root] (abq_llm_calib_config3.py 461): INFO block 6 (layers [12, 13, 14]) iter 4 loss:0.051187142729759216 norm:0.00030942136072553694 max memory_allocated 62697.76806640625 
+[2025-03-16 10:46:04 root] (abq_llm_calib_config3.py 461): INFO block 6 (layers [12, 13, 14]) iter 5 loss:0.049026649445295334 norm:0.0002790714497677982 max memory_allocated 62697.76806640625 
+[2025-03-16 10:48:12 root] (abq_llm_calib_config3.py 461): INFO block 6 (layers [12, 13, 14]) iter 6 loss:0.047540824860334396 norm:0.00025813328102231026 max memory_allocated 62697.76806640625 
+[2025-03-16 10:50:20 root] (abq_llm_calib_config3.py 461): INFO block 6 (layers [12, 13, 14]) iter 7 loss:0.04652734473347664 norm:0.00024511211086064577 max memory_allocated 62697.76806640625 
+[2025-03-16 10:52:27 root] (abq_llm_calib_config3.py 461): INFO block 6 (layers [12, 13, 14]) iter 8 loss:0.045781705528497696 norm:0.00023306749062612653 max memory_allocated 62697.76806640625 
+[2025-03-16 10:54:35 root] (abq_llm_calib_config3.py 461): INFO block 6 (layers [12, 13, 14]) iter 9 loss:0.04527716338634491 norm:0.00022473587887361646 max memory_allocated 62697.76806640625 
+[2025-03-16 10:56:43 root] (abq_llm_calib_config3.py 461): INFO block 6 (layers [12, 13, 14]) iter 10 loss:0.0448809377849102 norm:0.00021714004105888307 max memory_allocated 62697.76806640625 
+[2025-03-16 10:58:50 root] (abq_llm_calib_config3.py 461): INFO block 6 (layers [12, 13, 14]) iter 11 loss:0.04458726942539215 norm:0.00021255029423628002 max memory_allocated 62697.76806640625 
+[2025-03-16 11:00:58 root] (abq_llm_calib_config3.py 461): INFO block 6 (layers [12, 13, 14]) iter 12 loss:0.044371698051691055 norm:0.00020517612574622035 max memory_allocated 62697.76806640625 
+[2025-03-16 11:03:06 root] (abq_llm_calib_config3.py 461): INFO block 6 (layers [12, 13, 14]) iter 13 loss:0.04418453574180603 norm:0.00019874179270118475 max memory_allocated 62697.76806640625 
+[2025-03-16 11:05:13 root] (abq_llm_calib_config3.py 461): INFO block 6 (layers [12, 13, 14]) iter 14 loss:0.04403243213891983 norm:0.00019872249686159194 max memory_allocated 62697.76806640625 
+[2025-03-16 11:07:21 root] (abq_llm_calib_config3.py 461): INFO block 6 (layers [12, 13, 14]) iter 15 loss:0.043895408511161804 norm:0.0001916136097861454 max memory_allocated 62697.76806640625 
+[2025-03-16 11:09:29 root] (abq_llm_calib_config3.py 461): INFO block 6 (layers [12, 13, 14]) iter 16 loss:0.043800171464681625 norm:0.00018723624816630036 max memory_allocated 62697.76806640625 
+[2025-03-16 11:11:37 root] (abq_llm_calib_config3.py 461): INFO block 6 (layers [12, 13, 14]) iter 17 loss:0.04371952638030052 norm:0.0001868203398771584 max memory_allocated 62697.76806640625 
+[2025-03-16 11:13:44 root] (abq_llm_calib_config3.py 461): INFO block 6 (layers [12, 13, 14]) iter 18 loss:0.04363232105970383 norm:0.00019070990674663335 max memory_allocated 62697.76806640625 
+[2025-03-16 11:15:52 root] (abq_llm_calib_config3.py 461): INFO block 6 (layers [12, 13, 14]) iter 19 loss:0.043563343584537506 norm:0.00018555106362327933 max memory_allocated 62697.76806640625 
+[2025-03-16 11:18:50 root] (abq_llm_calib_config3.py 257): INFO === Start quantize block 7 with layers [15, 16, 17] ===
+[2025-03-16 11:21:18 root] (abq_llm_calib_config3.py 461): INFO block 7 (layers [15, 16, 17]) iter 0 loss:0.09300161153078079 norm:0.0013085480313748121 max memory_allocated 62697.76806640625 
+[2025-03-16 11:23:25 root] (abq_llm_calib_config3.py 461): INFO block 7 (layers [15, 16, 17]) iter 1 loss:0.07413757592439651 norm:0.0006015296094119549 max memory_allocated 62697.76806640625 
+[2025-03-16 11:25:33 root] (abq_llm_calib_config3.py 461): INFO block 7 (layers [15, 16, 17]) iter 2 loss:0.06100672483444214 norm:0.0003818795667029917 max memory_allocated 62697.76806640625 
+[2025-03-16 11:27:40 root] (abq_llm_calib_config3.py 461): INFO block 7 (layers [15, 16, 17]) iter 3 loss:0.05511477589607239 norm:0.00028687616577371955 max memory_allocated 62697.76806640625 
+[2025-03-16 11:29:48 root] (abq_llm_calib_config3.py 461): INFO block 7 (layers [15, 16, 17]) iter 4 loss:0.05214399844408035 norm:0.00024900963762775064 max memory_allocated 62697.76806640625 
+[2025-03-16 11:31:55 root] (abq_llm_calib_config3.py 461): INFO block 7 (layers [15, 16, 17]) iter 5 loss:0.050207581371068954 norm:0.00022799981525167823 max memory_allocated 62697.76806640625 
+[2025-03-16 11:34:02 root] (abq_llm_calib_config3.py 461): INFO block 7 (layers [15, 16, 17]) iter 6 loss:0.04885699227452278 norm:0.00021364656277000904 max memory_allocated 62697.76806640625 
+[2025-03-16 11:36:09 root] (abq_llm_calib_config3.py 461): INFO block 7 (layers [15, 16, 17]) iter 7 loss:0.047889601439237595 norm:0.00020267764921300113 max memory_allocated 62697.76806640625 
+[2025-03-16 11:38:16 root] (abq_llm_calib_config3.py 461): INFO block 7 (layers [15, 16, 17]) iter 8 loss:0.04723767191171646 norm:0.00019503514340613037 max memory_allocated 62697.76806640625 
+[2025-03-16 11:40:24 root] (abq_llm_calib_config3.py 461): INFO block 7 (layers [15, 16, 17]) iter 9 loss:0.046770356595516205 norm:0.00019112176960334182 max memory_allocated 62697.76806640625 
+[2025-03-16 11:42:31 root] (abq_llm_calib_config3.py 461): INFO block 7 (layers [15, 16, 17]) iter 10 loss:0.04642520844936371 norm:0.00018734956393018365 max memory_allocated 62697.76806640625 
+[2025-03-16 11:44:38 root] (abq_llm_calib_config3.py 461): INFO block 7 (layers [15, 16, 17]) iter 11 loss:0.046167053282260895 norm:0.0001829424872994423 max memory_allocated 62697.76806640625 
+[2025-03-16 11:46:46 root] (abq_llm_calib_config3.py 461): INFO block 7 (layers [15, 16, 17]) iter 12 loss:0.045913852751255035 norm:0.00017793031292967498 max memory_allocated 62697.76806640625 
+[2025-03-16 11:48:53 root] (abq_llm_calib_config3.py 461): INFO block 7 (layers [15, 16, 17]) iter 13 loss:0.045704085379838943 norm:0.00017334389849565923 max memory_allocated 62697.76806640625 
+[2025-03-16 11:51:00 root] (abq_llm_calib_config3.py 461): INFO block 7 (layers [15, 16, 17]) iter 14 loss:0.04554605856537819 norm:0.00016857014270499349 max memory_allocated 62697.76806640625 
+[2025-03-16 11:53:07 root] (abq_llm_calib_config3.py 461): INFO block 7 (layers [15, 16, 17]) iter 15 loss:0.04542022943496704 norm:0.000164232769748196 max memory_allocated 62697.76806640625 
+[2025-03-16 11:55:15 root] (abq_llm_calib_config3.py 461): INFO block 7 (layers [15, 16, 17]) iter 16 loss:0.045340266078710556 norm:0.00016272463835775852 max memory_allocated 62697.76806640625 
+[2025-03-16 11:57:22 root] (abq_llm_calib_config3.py 461): INFO block 7 (layers [15, 16, 17]) iter 17 loss:0.04524793475866318 norm:0.00015988023369573057 max memory_allocated 62697.76806640625 
+[2025-03-16 11:59:29 root] (abq_llm_calib_config3.py 461): INFO block 7 (layers [15, 16, 17]) iter 18 loss:0.045160580426454544 norm:0.00015871512005105615 max memory_allocated 62697.76806640625 
+[2025-03-16 12:01:37 root] (abq_llm_calib_config3.py 461): INFO block 7 (layers [15, 16, 17]) iter 19 loss:0.04508962482213974 norm:0.0001562205725349486 max memory_allocated 62697.76806640625 
+[2025-03-16 12:04:38 root] (abq_llm_calib_config3.py 257): INFO === Start quantize block 8 with layers [18, 19, 20] ===
+[2025-03-16 12:07:04 root] (abq_llm_calib_config3.py 461): INFO block 8 (layers [18, 19, 20]) iter 0 loss:0.08835300803184509 norm:0.0008636008715257049 max memory_allocated 62697.76806640625 
+[2025-03-16 12:09:11 root] (abq_llm_calib_config3.py 461): INFO block 8 (layers [18, 19, 20]) iter 1 loss:0.07342619448900223 norm:0.0004064883978571743 max memory_allocated 62697.76806640625 
+[2025-03-16 12:11:19 root] (abq_llm_calib_config3.py 461): INFO block 8 (layers [18, 19, 20]) iter 2 loss:0.06193142011761665 norm:0.00027898390544578433 max memory_allocated 62697.76806640625 
+[2025-03-16 12:13:26 root] (abq_llm_calib_config3.py 461): INFO block 8 (layers [18, 19, 20]) iter 3 loss:0.05778908357024193 norm:0.00022448158415500075 max memory_allocated 62697.76806640625 
+[2025-03-16 12:15:33 root] (abq_llm_calib_config3.py 461): INFO block 8 (layers [18, 19, 20]) iter 4 loss:0.05532680079340935 norm:0.0001967257121577859 max memory_allocated 62697.76806640625 
+[2025-03-16 12:17:41 root] (abq_llm_calib_config3.py 461): INFO block 8 (layers [18, 19, 20]) iter 5 loss:0.053565945476293564 norm:0.00018440326675772667 max memory_allocated 62697.76806640625 
+[2025-03-16 12:19:48 root] (abq_llm_calib_config3.py 461): INFO block 8 (layers [18, 19, 20]) iter 6 loss:0.052265096455812454 norm:0.0001693538943072781 max memory_allocated 62697.76806640625 
+[2025-03-16 12:21:55 root] (abq_llm_calib_config3.py 461): INFO block 8 (layers [18, 19, 20]) iter 7 loss:0.05146009474992752 norm:0.00016340486763510853 max memory_allocated 62697.76806640625 
+[2025-03-16 12:24:03 root] (abq_llm_calib_config3.py 461): INFO block 8 (layers [18, 19, 20]) iter 8 loss:0.050902895629405975 norm:0.00015585536311846226 max memory_allocated 62697.76806640625 
+[2025-03-16 12:26:10 root] (abq_llm_calib_config3.py 461): INFO block 8 (layers [18, 19, 20]) iter 9 loss:0.0505417101085186 norm:0.00014909455785527825 max memory_allocated 62697.76806640625 
+[2025-03-16 12:28:17 root] (abq_llm_calib_config3.py 461): INFO block 8 (layers [18, 19, 20]) iter 10 loss:0.05026738718152046 norm:0.00014576429384760559 max memory_allocated 62697.76806640625 
+[2025-03-16 12:30:24 root] (abq_llm_calib_config3.py 461): INFO block 8 (layers [18, 19, 20]) iter 11 loss:0.05004940181970596 norm:0.00014002242824062705 max memory_allocated 62697.76806640625 
+[2025-03-16 12:32:32 root] (abq_llm_calib_config3.py 461): INFO block 8 (layers [18, 19, 20]) iter 12 loss:0.049891166388988495 norm:0.00013721288996748626 max memory_allocated 62697.76806640625 
+[2025-03-16 12:34:39 root] (abq_llm_calib_config3.py 461): INFO block 8 (layers [18, 19, 20]) iter 13 loss:0.04973467066884041 norm:0.00013578234938904643 max memory_allocated 62697.76806640625 
+[2025-03-16 12:36:46 root] (abq_llm_calib_config3.py 461): INFO block 8 (layers [18, 19, 20]) iter 14 loss:0.04961434006690979 norm:0.0001334686967311427 max memory_allocated 62697.76806640625 
+[2025-03-16 12:38:53 root] (abq_llm_calib_config3.py 461): INFO block 8 (layers [18, 19, 20]) iter 15 loss:0.04948534443974495 norm:0.0001301314914599061 max memory_allocated 62697.76806640625 
+[2025-03-16 12:41:01 root] (abq_llm_calib_config3.py 461): INFO block 8 (layers [18, 19, 20]) iter 16 loss:0.049425363540649414 norm:0.00012980998144485056 max memory_allocated 62697.76806640625 
+[2025-03-16 12:43:08 root] (abq_llm_calib_config3.py 461): INFO block 8 (layers [18, 19, 20]) iter 17 loss:0.04933308809995651 norm:0.00012620384222827852 max memory_allocated 62697.76806640625 
+[2025-03-16 12:45:15 root] (abq_llm_calib_config3.py 461): INFO block 8 (layers [18, 19, 20]) iter 18 loss:0.049239981919527054 norm:0.0001243448641616851 max memory_allocated 62697.76806640625 
+[2025-03-16 12:47:23 root] (abq_llm_calib_config3.py 461): INFO block 8 (layers [18, 19, 20]) iter 19 loss:0.049177080392837524 norm:0.00012306967983022332 max memory_allocated 62697.76806640625 
+[2025-03-16 12:50:19 root] (abq_llm_calib_config3.py 257): INFO === Start quantize block 9 with layers [21, 22, 23] ===
+[2025-03-16 12:52:41 root] (abq_llm_calib_config3.py 461): INFO block 9 (layers [21, 22, 23]) iter 0 loss:0.10747262090444565 norm:0.0008669734816066921 max memory_allocated 62697.76806640625 
+[2025-03-16 12:54:49 root] (abq_llm_calib_config3.py 461): INFO block 9 (layers [21, 22, 23]) iter 1 loss:0.09059753268957138 norm:0.000452948035672307 max memory_allocated 62697.76806640625 
+[2025-03-16 12:56:57 root] (abq_llm_calib_config3.py 461): INFO block 9 (layers [21, 22, 23]) iter 2 loss:0.07633941620588303 norm:0.0003029883955605328 max memory_allocated 62697.76806640625 
+[2025-03-16 12:59:04 root] (abq_llm_calib_config3.py 461): INFO block 9 (layers [21, 22, 23]) iter 3 loss:0.07191489636898041 norm:0.0002491088816896081 max memory_allocated 62697.76806640625 
+[2025-03-16 13:01:11 root] (abq_llm_calib_config3.py 461): INFO block 9 (layers [21, 22, 23]) iter 4 loss:0.06921473145484924 norm:0.00022855155111756176 max memory_allocated 62697.76806640625 
+[2025-03-16 13:03:19 root] (abq_llm_calib_config3.py 461): INFO block 9 (layers [21, 22, 23]) iter 5 loss:0.06705810129642487 norm:0.00022037539747543633 max memory_allocated 62697.76806640625 
+[2025-03-16 13:05:26 root] (abq_llm_calib_config3.py 461): INFO block 9 (layers [21, 22, 23]) iter 6 loss:0.0657062903046608 norm:0.00021345980348996818 max memory_allocated 62697.76806640625 
+[2025-03-16 13:07:33 root] (abq_llm_calib_config3.py 461): INFO block 9 (layers [21, 22, 23]) iter 7 loss:0.06485540419816971 norm:0.00020784711523447186 max memory_allocated 62697.76806640625 
+[2025-03-16 13:09:40 root] (abq_llm_calib_config3.py 461): INFO block 9 (layers [21, 22, 23]) iter 8 loss:0.06432324647903442 norm:0.00020281833712942898 max memory_allocated 62697.76806640625 
+[2025-03-16 13:11:48 root] (abq_llm_calib_config3.py 461): INFO block 9 (layers [21, 22, 23]) iter 9 loss:0.0639428049325943 norm:0.00020074890926480293 max memory_allocated 62697.76806640625 
+[2025-03-16 13:13:55 root] (abq_llm_calib_config3.py 461): INFO block 9 (layers [21, 22, 23]) iter 10 loss:0.06361600756645203 norm:0.0002008422598009929 max memory_allocated 62697.76806640625 
+[2025-03-16 13:16:02 root] (abq_llm_calib_config3.py 461): INFO block 9 (layers [21, 22, 23]) iter 11 loss:0.06336969882249832 norm:0.00019947701366618276 max memory_allocated 62697.76806640625 
+[2025-03-16 13:18:10 root] (abq_llm_calib_config3.py 461): INFO block 9 (layers [21, 22, 23]) iter 12 loss:0.06315500289201736 norm:0.0001943465758813545 max memory_allocated 62697.76806640625 
+[2025-03-16 13:20:17 root] (abq_llm_calib_config3.py 461): INFO block 9 (layers [21, 22, 23]) iter 13 loss:0.0629570335149765 norm:0.00017220749577973038 max memory_allocated 62697.76806640625 
+[2025-03-16 13:22:24 root] (abq_llm_calib_config3.py 461): INFO block 9 (layers [21, 22, 23]) iter 14 loss:0.06277354061603546 norm:0.00017498662055004388 max memory_allocated 62697.76806640625 
+[2025-03-16 13:24:32 root] (abq_llm_calib_config3.py 461): INFO block 9 (layers [21, 22, 23]) iter 15 loss:0.06261194497346878 norm:0.00015309064474422485 max memory_allocated 62697.76806640625 
+[2025-03-16 13:26:39 root] (abq_llm_calib_config3.py 461): INFO block 9 (layers [21, 22, 23]) iter 16 loss:0.062477901577949524 norm:0.00016769935609772801 max memory_allocated 62697.76806640625 
+[2025-03-16 13:28:46 root] (abq_llm_calib_config3.py 461): INFO block 9 (layers [21, 22, 23]) iter 17 loss:0.0623636394739151 norm:0.0001526009727967903 max memory_allocated 62697.76806640625 
+[2025-03-16 13:30:53 root] (abq_llm_calib_config3.py 461): INFO block 9 (layers [21, 22, 23]) iter 18 loss:0.06226092576980591 norm:0.00017054332420229912 max memory_allocated 62697.76806640625 
+[2025-03-16 13:33:01 root] (abq_llm_calib_config3.py 461): INFO block 9 (layers [21, 22, 23]) iter 19 loss:0.06213971599936485 norm:0.00017954831128008664 max memory_allocated 62697.76806640625 
+[2025-03-16 13:35:57 root] (abq_llm_calib_config3.py 257): INFO === Start quantize block 10 with layers [24, 25, 26] ===
+[2025-03-16 13:38:21 root] (abq_llm_calib_config3.py 461): INFO block 10 (layers [24, 25, 26]) iter 0 loss:0.12861639261245728 norm:0.0008018171647563577 max memory_allocated 62697.76806640625 
+[2025-03-16 13:40:28 root] (abq_llm_calib_config3.py 461): INFO block 10 (layers [24, 25, 26]) iter 1 loss:0.11116567254066467 norm:0.00040300461114384234 max memory_allocated 62697.76806640625 
+[2025-03-16 13:42:36 root] (abq_llm_calib_config3.py 461): INFO block 10 (layers [24, 25, 26]) iter 2 loss:0.09495040774345398 norm:0.0002740923664532602 max memory_allocated 62697.76806640625 
+[2025-03-16 13:44:43 root] (abq_llm_calib_config3.py 461): INFO block 10 (layers [24, 25, 26]) iter 3 loss:0.09069983661174774 norm:0.00024095048138406128 max memory_allocated 62697.76806640625 
+[2025-03-16 13:46:50 root] (abq_llm_calib_config3.py 461): INFO block 10 (layers [24, 25, 26]) iter 4 loss:0.08771317452192307 norm:0.00022016660659573972 max memory_allocated 62697.76806640625 
+[2025-03-16 13:48:58 root] (abq_llm_calib_config3.py 461): INFO block 10 (layers [24, 25, 26]) iter 5 loss:0.08534611016511917 norm:0.00020666609634645283 max memory_allocated 62697.76806640625 
+[2025-03-16 13:51:05 root] (abq_llm_calib_config3.py 461): INFO block 10 (layers [24, 25, 26]) iter 6 loss:0.08403567224740982 norm:0.0002010616153711453 max memory_allocated 62697.76806640625 
+[2025-03-16 13:53:12 root] (abq_llm_calib_config3.py 461): INFO block 10 (layers [24, 25, 26]) iter 7 loss:0.08332496136426926 norm:0.00018934719264507294 max memory_allocated 62697.76806640625 
+[2025-03-16 13:55:19 root] (abq_llm_calib_config3.py 461): INFO block 10 (layers [24, 25, 26]) iter 8 loss:0.08286444842815399 norm:0.00018071441445499659 max memory_allocated 62697.76806640625 
+[2025-03-16 13:57:26 root] (abq_llm_calib_config3.py 461): INFO block 10 (layers [24, 25, 26]) iter 9 loss:0.08247112482786179 norm:0.0001758741564117372 max memory_allocated 62697.76806640625 
+[2025-03-16 13:59:34 root] (abq_llm_calib_config3.py 461): INFO block 10 (layers [24, 25, 26]) iter 10 loss:0.0821523666381836 norm:0.00017243192996829748 max memory_allocated 62697.76806640625 
+[2025-03-16 14:01:41 root] (abq_llm_calib_config3.py 461): INFO block 10 (layers [24, 25, 26]) iter 11 loss:0.08186929672956467 norm:0.00016928583499975502 max memory_allocated 62697.76806640625 
+[2025-03-16 14:03:48 root] (abq_llm_calib_config3.py 461): INFO block 10 (layers [24, 25, 26]) iter 12 loss:0.08163712918758392 norm:0.00016555676120333374 max memory_allocated 62697.76806640625 
+[2025-03-16 14:05:56 root] (abq_llm_calib_config3.py 461): INFO block 10 (layers [24, 25, 26]) iter 13 loss:0.08142004907131195 norm:0.0001611292245797813 max memory_allocated 62697.76806640625 
+[2025-03-16 14:08:03 root] (abq_llm_calib_config3.py 461): INFO block 10 (layers [24, 25, 26]) iter 14 loss:0.08123023062944412 norm:0.0001600783143658191 max memory_allocated 62697.76806640625 
+[2025-03-16 14:10:10 root] (abq_llm_calib_config3.py 461): INFO block 10 (layers [24, 25, 26]) iter 15 loss:0.08105045557022095 norm:0.0001631098857615143 max memory_allocated 62697.76806640625 
+[2025-03-16 14:12:17 root] (abq_llm_calib_config3.py 461): INFO block 10 (layers [24, 25, 26]) iter 16 loss:0.08088888227939606 norm:0.00015425385208800435 max memory_allocated 62697.76806640625 
+[2025-03-16 14:14:25 root] (abq_llm_calib_config3.py 461): INFO block 10 (layers [24, 25, 26]) iter 17 loss:0.08073101937770844 norm:0.00014960438420530409 max memory_allocated 62697.76806640625 
+[2025-03-16 14:16:32 root] (abq_llm_calib_config3.py 461): INFO block 10 (layers [24, 25, 26]) iter 18 loss:0.08060161769390106 norm:0.00014940281107556075 max memory_allocated 62697.76806640625 
+[2025-03-16 14:18:39 root] (abq_llm_calib_config3.py 461): INFO block 10 (layers [24, 25, 26]) iter 19 loss:0.08048646152019501 norm:0.0001494193566031754 max memory_allocated 62697.76806640625 
+[2025-03-16 14:21:35 root] (abq_llm_calib_config3.py 257): INFO === Start quantize block 11 with layers [27, 28, 29] ===
+[2025-03-16 14:23:58 root] (abq_llm_calib_config3.py 461): INFO block 11 (layers [27, 28, 29]) iter 0 loss:0.15901291370391846 norm:0.0005663554184138775 max memory_allocated 62697.76806640625 
+[2025-03-16 14:26:06 root] (abq_llm_calib_config3.py 461): INFO block 11 (layers [27, 28, 29]) iter 1 loss:0.14000660181045532 norm:0.00037686608266085386 max memory_allocated 62697.76806640625 
+[2025-03-16 14:28:13 root] (abq_llm_calib_config3.py 461): INFO block 11 (layers [27, 28, 29]) iter 2 loss:0.12143578380346298 norm:0.0002798747445922345 max memory_allocated 62697.76806640625 
+[2025-03-16 14:30:21 root] (abq_llm_calib_config3.py 461): INFO block 11 (layers [27, 28, 29]) iter 3 loss:0.11652916669845581 norm:0.00024473347002640367 max memory_allocated 62697.76806640625 
+[2025-03-16 14:32:28 root] (abq_llm_calib_config3.py 461): INFO block 11 (layers [27, 28, 29]) iter 4 loss:0.1130051463842392 norm:0.0002219854504801333 max memory_allocated 62697.76806640625 
+[2025-03-16 14:34:35 root] (abq_llm_calib_config3.py 461): INFO block 11 (layers [27, 28, 29]) iter 5 loss:0.11063770204782486 norm:0.00021443128935061395 max memory_allocated 62697.76806640625 
+[2025-03-16 14:36:42 root] (abq_llm_calib_config3.py 461): INFO block 11 (layers [27, 28, 29]) iter 6 loss:0.10954175889492035 norm:0.0002039269165834412 max memory_allocated 62697.76806640625 
+[2025-03-16 14:38:50 root] (abq_llm_calib_config3.py 461): INFO block 11 (layers [27, 28, 29]) iter 7 loss:0.10889554023742676 norm:0.00019783584866672754 max memory_allocated 62697.76806640625 
+[2025-03-16 14:40:57 root] (abq_llm_calib_config3.py 461): INFO block 11 (layers [27, 28, 29]) iter 8 loss:0.10840903967618942 norm:0.00019409247033763677 max memory_allocated 62697.76806640625 
+[2025-03-16 14:43:04 root] (abq_llm_calib_config3.py 461): INFO block 11 (layers [27, 28, 29]) iter 9 loss:0.10797550529241562 norm:0.00018951842503156513 max memory_allocated 62697.76806640625 
+[2025-03-16 14:45:12 root] (abq_llm_calib_config3.py 461): INFO block 11 (layers [27, 28, 29]) iter 10 loss:0.10760947316884995 norm:0.00017959211254492402 max memory_allocated 62697.76806640625 
+[2025-03-16 14:47:19 root] (abq_llm_calib_config3.py 461): INFO block 11 (layers [27, 28, 29]) iter 11 loss:0.10731498897075653 norm:0.00018128125520888716 max memory_allocated 62697.76806640625 
+[2025-03-16 14:49:26 root] (abq_llm_calib_config3.py 461): INFO block 11 (layers [27, 28, 29]) iter 12 loss:0.10703789442777634 norm:0.00017628986097406596 max memory_allocated 62697.76806640625 
+[2025-03-16 14:51:34 root] (abq_llm_calib_config3.py 461): INFO block 11 (layers [27, 28, 29]) iter 13 loss:0.10680454969406128 norm:0.000186877281521447 max memory_allocated 62697.76806640625 
+[2025-03-16 14:53:41 root] (abq_llm_calib_config3.py 461): INFO block 11 (layers [27, 28, 29]) iter 14 loss:0.10656090080738068 norm:0.00016835849964991212 max memory_allocated 62697.76806640625 
+[2025-03-16 14:55:49 root] (abq_llm_calib_config3.py 461): INFO block 11 (layers [27, 28, 29]) iter 15 loss:0.10633568465709686 norm:0.00016894747386686504 max memory_allocated 62697.76806640625 
+[2025-03-16 14:57:56 root] (abq_llm_calib_config3.py 461): INFO block 11 (layers [27, 28, 29]) iter 16 loss:0.10614828020334244 norm:0.00015808254829607904 max memory_allocated 62697.76806640625 
+[2025-03-16 15:00:04 root] (abq_llm_calib_config3.py 461): INFO block 11 (layers [27, 28, 29]) iter 17 loss:0.10595734417438507 norm:0.00015150959370657802 max memory_allocated 62697.76806640625 
+[2025-03-16 15:02:11 root] (abq_llm_calib_config3.py 461): INFO block 11 (layers [27, 28, 29]) iter 18 loss:0.10583092272281647 norm:0.000142557400977239 max memory_allocated 62697.76806640625 
+[2025-03-16 15:04:19 root] (abq_llm_calib_config3.py 461): INFO block 11 (layers [27, 28, 29]) iter 19 loss:0.10570047050714493 norm:0.00017476925859227777 max memory_allocated 62697.76806640625 
+[2025-03-16 15:07:14 root] (abq_llm_calib_config3.py 257): INFO === Start quantize block 12 with layers [30, 31, 32] ===
+[2025-03-16 15:09:36 root] (abq_llm_calib_config3.py 461): INFO block 12 (layers [30, 31, 32]) iter 0 loss:0.208415225148201 norm:0.0007568264845758677 max memory_allocated 62697.76806640625 
+[2025-03-16 15:11:43 root] (abq_llm_calib_config3.py 461): INFO block 12 (layers [30, 31, 32]) iter 1 loss:0.18324178457260132 norm:0.0004295754188206047 max memory_allocated 62697.76806640625 
+[2025-03-16 15:13:50 root] (abq_llm_calib_config3.py 461): INFO block 12 (layers [30, 31, 32]) iter 2 loss:0.15883302688598633 norm:0.00026583371800370514 max memory_allocated 62697.76806640625 
+[2025-03-16 15:15:57 root] (abq_llm_calib_config3.py 461): INFO block 12 (layers [30, 31, 32]) iter 3 loss:0.1520465463399887 norm:0.00022411542886402458 max memory_allocated 62697.76806640625 
+[2025-03-16 15:18:05 root] (abq_llm_calib_config3.py 461): INFO block 12 (layers [30, 31, 32]) iter 4 loss:0.1477975696325302 norm:0.00020763349311891943 max memory_allocated 62697.76806640625 
+[2025-03-16 15:20:12 root] (abq_llm_calib_config3.py 461): INFO block 12 (layers [30, 31, 32]) iter 5 loss:0.14578114449977875 norm:0.00019452009291853756 max memory_allocated 62697.76806640625 
+[2025-03-16 15:22:20 root] (abq_llm_calib_config3.py 461): INFO block 12 (layers [30, 31, 32]) iter 6 loss:0.1449018269777298 norm:0.0001863491052063182 max memory_allocated 62697.76806640625 
+[2025-03-16 15:24:27 root] (abq_llm_calib_config3.py 461): INFO block 12 (layers [30, 31, 32]) iter 7 loss:0.1442316174507141 norm:0.00017629662761464715 max memory_allocated 62697.76806640625 
+[2025-03-16 15:26:35 root] (abq_llm_calib_config3.py 461): INFO block 12 (layers [30, 31, 32]) iter 8 loss:0.14370037615299225 norm:0.0001693416415946558 max memory_allocated 62697.76806640625 
+[2025-03-16 15:28:43 root] (abq_llm_calib_config3.py 461): INFO block 12 (layers [30, 31, 32]) iter 9 loss:0.14327029883861542 norm:0.0001678659173194319 max memory_allocated 62697.76806640625 
+[2025-03-16 15:30:51 root] (abq_llm_calib_config3.py 461): INFO block 12 (layers [30, 31, 32]) iter 10 loss:0.14286579191684723 norm:0.00016057667380664498 max memory_allocated 62697.76806640625 
+[2025-03-16 15:32:58 root] (abq_llm_calib_config3.py 461): INFO block 12 (layers [30, 31, 32]) iter 11 loss:0.14249838888645172 norm:0.00015738708316348493 max memory_allocated 62697.76806640625 
+[2025-03-16 15:35:06 root] (abq_llm_calib_config3.py 461): INFO block 12 (layers [30, 31, 32]) iter 12 loss:0.14217421412467957 norm:0.00015162954514380544 max memory_allocated 62697.76806640625 
+[2025-03-16 15:37:13 root] (abq_llm_calib_config3.py 461): INFO block 12 (layers [30, 31, 32]) iter 13 loss:0.14189718663692474 norm:0.00015041223377920687 max memory_allocated 62697.76806640625 
+[2025-03-16 15:39:21 root] (abq_llm_calib_config3.py 461): INFO block 12 (layers [30, 31, 32]) iter 14 loss:0.1416396051645279 norm:0.00014656255370937288 max memory_allocated 62697.76806640625 
+[2025-03-16 15:41:28 root] (abq_llm_calib_config3.py 461): INFO block 12 (layers [30, 31, 32]) iter 15 loss:0.1414186656475067 norm:0.0001461048232158646 max memory_allocated 62697.76806640625 
+[2025-03-16 15:43:36 root] (abq_llm_calib_config3.py 461): INFO block 12 (layers [30, 31, 32]) iter 16 loss:0.14118793606758118 norm:0.00014225665654521435 max memory_allocated 62697.76806640625 
+[2025-03-16 15:45:44 root] (abq_llm_calib_config3.py 461): INFO block 12 (layers [30, 31, 32]) iter 17 loss:0.14097610116004944 norm:0.00014152417134027928 max memory_allocated 62697.76806640625 
+[2025-03-16 15:47:51 root] (abq_llm_calib_config3.py 461): INFO block 12 (layers [30, 31, 32]) iter 18 loss:0.14079549908638 norm:0.0001385002105962485 max memory_allocated 62697.76806640625 
+[2025-03-16 15:49:59 root] (abq_llm_calib_config3.py 461): INFO block 12 (layers [30, 31, 32]) iter 19 loss:0.14063450694084167 norm:0.00013746628246735781 max memory_allocated 62697.76806640625 
+[2025-03-16 15:52:51 root] (abq_llm_calib_config3.py 257): INFO === Start quantize block 13 with layers [33, 34, 35] ===
+[2025-03-16 15:55:13 root] (abq_llm_calib_config3.py 461): INFO block 13 (layers [33, 34, 35]) iter 0 loss:0.2690563201904297 norm:0.0006868691998533905 max memory_allocated 62697.76806640625 
+[2025-03-16 15:57:20 root] (abq_llm_calib_config3.py 461): INFO block 13 (layers [33, 34, 35]) iter 1 loss:0.23826058208942413 norm:0.0004256840329617262 max memory_allocated 62697.76806640625 
+[2025-03-16 15:59:28 root] (abq_llm_calib_config3.py 461): INFO block 13 (layers [33, 34, 35]) iter 2 loss:0.20991745591163635 norm:0.0002860774693544954 max memory_allocated 62697.76806640625 
+[2025-03-16 16:01:36 root] (abq_llm_calib_config3.py 461): INFO block 13 (layers [33, 34, 35]) iter 3 loss:0.20143654942512512 norm:0.0002494952059350908 max memory_allocated 62697.76806640625 
+[2025-03-16 16:03:43 root] (abq_llm_calib_config3.py 461): INFO block 13 (layers [33, 34, 35]) iter 4 loss:0.19685758650302887 norm:0.0002323244552826509 max memory_allocated 62697.76806640625 
+[2025-03-16 16:05:51 root] (abq_llm_calib_config3.py 461): INFO block 13 (layers [33, 34, 35]) iter 5 loss:0.19502848386764526 norm:0.00021841074340045452 max memory_allocated 62697.76806640625 
+[2025-03-16 16:07:58 root] (abq_llm_calib_config3.py 461): INFO block 13 (layers [33, 34, 35]) iter 6 loss:0.19397470355033875 norm:0.00021200193441472948 max memory_allocated 62697.76806640625 
+[2025-03-16 16:10:06 root] (abq_llm_calib_config3.py 461): INFO block 13 (layers [33, 34, 35]) iter 7 loss:0.19316917657852173 norm:0.00020337192108854651 max memory_allocated 62697.76806640625 
+[2025-03-16 16:12:14 root] (abq_llm_calib_config3.py 461): INFO block 13 (layers [33, 34, 35]) iter 8 loss:0.1924629509449005 norm:0.00019677533418871462 max memory_allocated 62697.76806640625 
+[2025-03-16 16:14:21 root] (abq_llm_calib_config3.py 461): INFO block 13 (layers [33, 34, 35]) iter 9 loss:0.19186925888061523 norm:0.0001898543705465272 max memory_allocated 62697.76806640625 
+[2025-03-16 16:16:29 root] (abq_llm_calib_config3.py 461): INFO block 13 (layers [33, 34, 35]) iter 10 loss:0.1912510246038437 norm:0.0001829797402024269 max memory_allocated 62697.76806640625 
+[2025-03-16 16:18:36 root] (abq_llm_calib_config3.py 461): INFO block 13 (layers [33, 34, 35]) iter 11 loss:0.19074907898902893 norm:0.00017813766316976398 max memory_allocated 62697.76806640625 
+[2025-03-16 16:20:44 root] (abq_llm_calib_config3.py 461): INFO block 13 (layers [33, 34, 35]) iter 12 loss:0.1903233528137207 norm:0.00017333801952190697 max memory_allocated 62697.76806640625 
+[2025-03-16 16:22:52 root] (abq_llm_calib_config3.py 461): INFO block 13 (layers [33, 34, 35]) iter 13 loss:0.18992979824543 norm:0.00016948662232607603 max memory_allocated 62697.76806640625 
+[2025-03-16 16:24:59 root] (abq_llm_calib_config3.py 461): INFO block 13 (layers [33, 34, 35]) iter 14 loss:0.1895797699689865 norm:0.00016885745571926236 max memory_allocated 62697.76806640625 
+[2025-03-16 16:27:07 root] (abq_llm_calib_config3.py 461): INFO block 13 (layers [33, 34, 35]) iter 15 loss:0.1892523169517517 norm:0.00016485771629959345 max memory_allocated 62697.76806640625 
+[2025-03-16 16:29:15 root] (abq_llm_calib_config3.py 461): INFO block 13 (layers [33, 34, 35]) iter 16 loss:0.188931405544281 norm:0.00016296627291012555 max memory_allocated 62697.76806640625 
+[2025-03-16 16:31:23 root] (abq_llm_calib_config3.py 461): INFO block 13 (layers [33, 34, 35]) iter 17 loss:0.18868690729141235 norm:0.00016197602963075042 max memory_allocated 62697.76806640625 
+[2025-03-16 16:33:30 root] (abq_llm_calib_config3.py 461): INFO block 13 (layers [33, 34, 35]) iter 18 loss:0.1884494423866272 norm:0.00016084779053926468 max memory_allocated 62697.76806640625 
+[2025-03-16 16:35:38 root] (abq_llm_calib_config3.py 461): INFO block 13 (layers [33, 34, 35]) iter 19 loss:0.18823564052581787 norm:0.0001605232828296721 max memory_allocated 62697.76806640625 
+[2025-03-16 16:38:32 root] (abq_llm_calib_config3.py 257): INFO === Start quantize block 14 with layers [36] ===
+[2025-03-16 16:38:34 root] (abq_llm_calib_config3.py 309): INFO use compensation vector
+[2025-03-16 16:39:20 root] (abq_llm_calib_config3.py 461): INFO block 14 (layers [36]) iter 0 loss:0.23199670016765594 norm:0.009000210091471672 max memory_allocated 62697.76806640625 
+[2025-03-16 16:40:03 root] (abq_llm_calib_config3.py 461): INFO block 14 (layers [36]) iter 1 loss:0.21806809306144714 norm:0.0066352104768157005 max memory_allocated 62697.76806640625 
+[2025-03-16 16:40:46 root] (abq_llm_calib_config3.py 461): INFO block 14 (layers [36]) iter 2 loss:0.20662857592105865 norm:0.004749399609863758 max memory_allocated 62697.76806640625 
+[2025-03-16 16:41:29 root] (abq_llm_calib_config3.py 461): INFO block 14 (layers [36]) iter 3 loss:0.20298737287521362 norm:0.0038671575020998716 max memory_allocated 62697.76806640625 
+[2025-03-16 16:42:12 root] (abq_llm_calib_config3.py 461): INFO block 14 (layers [36]) iter 4 loss:0.20146624743938446 norm:0.0031762991566210985 max memory_allocated 62697.76806640625 
+[2025-03-16 16:42:55 root] (abq_llm_calib_config3.py 461): INFO block 14 (layers [36]) iter 5 loss:0.2008076310157776 norm:0.00261327950283885 max memory_allocated 62697.76806640625 
+[2025-03-16 16:43:39 root] (abq_llm_calib_config3.py 461): INFO block 14 (layers [36]) iter 6 loss:0.2002919614315033 norm:0.0022008579690009356 max memory_allocated 62697.76806640625 
+[2025-03-16 16:44:22 root] (abq_llm_calib_config3.py 461): INFO block 14 (layers [36]) iter 7 loss:0.19992339611053467 norm:0.0020555960945785046 max memory_allocated 62697.76806640625 
+[2025-03-16 16:45:05 root] (abq_llm_calib_config3.py 461): INFO block 14 (layers [36]) iter 8 loss:0.19970542192459106 norm:0.002057915786281228 max memory_allocated 62697.76806640625 
+[2025-03-16 16:45:49 root] (abq_llm_calib_config3.py 461): INFO block 14 (layers [36]) iter 9 loss:0.19944660365581512 norm:0.001983936643227935 max memory_allocated 62697.76806640625 
+[2025-03-16 16:46:32 root] (abq_llm_calib_config3.py 461): INFO block 14 (layers [36]) iter 10 loss:0.19918479025363922 norm:0.0019105918472632766 max memory_allocated 62697.76806640625 
+[2025-03-16 16:47:15 root] (abq_llm_calib_config3.py 461): INFO block 14 (layers [36]) iter 11 loss:0.198948934674263 norm:0.001762688858434558 max memory_allocated 62697.76806640625 
+[2025-03-16 16:47:59 root] (abq_llm_calib_config3.py 461): INFO block 14 (layers [36]) iter 12 loss:0.198748379945755 norm:0.001739110448397696 max memory_allocated 62697.76806640625 
+[2025-03-16 16:48:42 root] (abq_llm_calib_config3.py 461): INFO block 14 (layers [36]) iter 13 loss:0.19866138696670532 norm:0.0017454716144129634 max memory_allocated 62697.76806640625 
+[2025-03-16 16:49:25 root] (abq_llm_calib_config3.py 461): INFO block 14 (layers [36]) iter 14 loss:0.1984906643629074 norm:0.0017782078357413411 max memory_allocated 62697.76806640625 
+[2025-03-16 16:50:09 root] (abq_llm_calib_config3.py 461): INFO block 14 (layers [36]) iter 15 loss:0.1983487904071808 norm:0.0016476695891469717 max memory_allocated 62697.76806640625 
+[2025-03-16 16:50:52 root] (abq_llm_calib_config3.py 461): INFO block 14 (layers [36]) iter 16 loss:0.19817094504833221 norm:0.0016090561402961612 max memory_allocated 62697.76806640625 
+[2025-03-16 16:51:35 root] (abq_llm_calib_config3.py 461): INFO block 14 (layers [36]) iter 17 loss:0.19806014001369476 norm:0.001562905148603022 max memory_allocated 62697.76806640625 
+[2025-03-16 16:52:18 root] (abq_llm_calib_config3.py 461): INFO block 14 (layers [36]) iter 18 loss:0.1979416161775589 norm:0.0015505027258768678 max memory_allocated 62697.76806640625 
+[2025-03-16 16:53:02 root] (abq_llm_calib_config3.py 461): INFO block 14 (layers [36]) iter 19 loss:0.19787219166755676 norm:0.0015271143056452274 max memory_allocated 62697.76806640625 
+[2025-03-16 16:53:59 root] (abq_llm_calib_config3.py 257): INFO === Start quantize block 15 with layers [37] ===
+[2025-03-16 16:54:02 root] (abq_llm_calib_config3.py 309): INFO use compensation vector
+[2025-03-16 16:54:48 root] (abq_llm_calib_config3.py 461): INFO block 15 (layers [37]) iter 0 loss:0.2570948600769043 norm:0.009887177497148514 max memory_allocated 62697.76806640625 
+[2025-03-16 16:55:31 root] (abq_llm_calib_config3.py 461): INFO block 15 (layers [37]) iter 1 loss:0.24259823560714722 norm:0.007310173008590937 max memory_allocated 62697.76806640625 
+[2025-03-16 16:56:14 root] (abq_llm_calib_config3.py 461): INFO block 15 (layers [37]) iter 2 loss:0.23010607063770294 norm:0.005113824270665646 max memory_allocated 62697.76806640625 
+[2025-03-16 16:56:57 root] (abq_llm_calib_config3.py 461): INFO block 15 (layers [37]) iter 3 loss:0.2260824739933014 norm:0.004156988114118576 max memory_allocated 62697.76806640625 
+[2025-03-16 16:57:40 root] (abq_llm_calib_config3.py 461): INFO block 15 (layers [37]) iter 4 loss:0.22455674409866333 norm:0.003426078474149108 max memory_allocated 62697.76806640625 
+[2025-03-16 16:58:24 root] (abq_llm_calib_config3.py 461): INFO block 15 (layers [37]) iter 5 loss:0.22391372919082642 norm:0.0029017936903983355 max memory_allocated 62697.76806640625 
+[2025-03-16 16:59:07 root] (abq_llm_calib_config3.py 461): INFO block 15 (layers [37]) iter 6 loss:0.2234029918909073 norm:0.0025022816844284534 max memory_allocated 62697.76806640625 
+[2025-03-16 16:59:50 root] (abq_llm_calib_config3.py 461): INFO block 15 (layers [37]) iter 7 loss:0.22314058244228363 norm:0.0025140789803117514 max memory_allocated 62697.76806640625 
+[2025-03-16 17:00:34 root] (abq_llm_calib_config3.py 461): INFO block 15 (layers [37]) iter 8 loss:0.22284014523029327 norm:0.002391196321696043 max memory_allocated 62697.76806640625 
+[2025-03-16 17:01:17 root] (abq_llm_calib_config3.py 461): INFO block 15 (layers [37]) iter 9 loss:0.22258402407169342 norm:0.002240093657746911 max memory_allocated 62697.76806640625 
+[2025-03-16 17:02:00 root] (abq_llm_calib_config3.py 461): INFO block 15 (layers [37]) iter 10 loss:0.22231364250183105 norm:0.0021259859204292297 max memory_allocated 62697.76806640625 
+[2025-03-16 17:02:44 root] (abq_llm_calib_config3.py 461): INFO block 15 (layers [37]) iter 11 loss:0.2221115082502365 norm:0.002030572621151805 max memory_allocated 62697.76806640625 
+[2025-03-16 17:03:27 root] (abq_llm_calib_config3.py 461): INFO block 15 (layers [37]) iter 12 loss:0.22192172706127167 norm:0.0020245008636265993 max memory_allocated 62697.76806640625 
+[2025-03-16 17:04:10 root] (abq_llm_calib_config3.py 461): INFO block 15 (layers [37]) iter 13 loss:0.22179453074932098 norm:0.001986302901059389 max memory_allocated 62697.76806640625 
+[2025-03-16 17:04:54 root] (abq_llm_calib_config3.py 461): INFO block 15 (layers [37]) iter 14 loss:0.2215874195098877 norm:0.0018743036780506372 max memory_allocated 62697.76806640625 
+[2025-03-16 17:05:37 root] (abq_llm_calib_config3.py 461): INFO block 15 (layers [37]) iter 15 loss:0.22149747610092163 norm:0.0018390404293313622 max memory_allocated 62697.76806640625 
+[2025-03-16 17:06:20 root] (abq_llm_calib_config3.py 461): INFO block 15 (layers [37]) iter 16 loss:0.22139914333820343 norm:0.0018575822468847036 max memory_allocated 62697.76806640625 
+[2025-03-16 17:07:04 root] (abq_llm_calib_config3.py 461): INFO block 15 (layers [37]) iter 17 loss:0.22129207849502563 norm:0.0017793995793908834 max memory_allocated 62697.76806640625 
+[2025-03-16 17:07:47 root] (abq_llm_calib_config3.py 461): INFO block 15 (layers [37]) iter 18 loss:0.22120563685894012 norm:0.0017270661192014813 max memory_allocated 62697.76806640625 
+[2025-03-16 17:08:30 root] (abq_llm_calib_config3.py 461): INFO block 15 (layers [37]) iter 19 loss:0.22117960453033447 norm:0.001819766592234373 max memory_allocated 62697.76806640625 
+[2025-03-16 17:09:27 root] (abq_llm_calib_config3.py 257): INFO === Start quantize block 16 with layers [38] ===
+[2025-03-16 17:09:32 root] (abq_llm_calib_config3.py 309): INFO use compensation vector
+[2025-03-16 17:10:18 root] (abq_llm_calib_config3.py 461): INFO block 16 (layers [38]) iter 0 loss:0.3015512526035309 norm:0.015080064535140991 max memory_allocated 62697.76806640625 
+[2025-03-16 17:11:01 root] (abq_llm_calib_config3.py 461): INFO block 16 (layers [38]) iter 1 loss:0.2822883129119873 norm:0.010665424168109894 max memory_allocated 62697.76806640625 
+[2025-03-16 17:11:44 root] (abq_llm_calib_config3.py 461): INFO block 16 (layers [38]) iter 2 loss:0.2676391899585724 norm:0.007243683561682701 max memory_allocated 62697.76806640625 
+[2025-03-16 17:12:27 root] (abq_llm_calib_config3.py 461): INFO block 16 (layers [38]) iter 3 loss:0.2630805969238281 norm:0.005955988075584173 max memory_allocated 62697.76806640625 
+[2025-03-16 17:13:10 root] (abq_llm_calib_config3.py 461): INFO block 16 (layers [38]) iter 4 loss:0.26142966747283936 norm:0.005143629852682352 max memory_allocated 62697.76806640625 
+[2025-03-16 17:13:54 root] (abq_llm_calib_config3.py 461): INFO block 16 (layers [38]) iter 5 loss:0.26055049896240234 norm:0.00453736400231719 max memory_allocated 62697.76806640625 
+[2025-03-16 17:14:37 root] (abq_llm_calib_config3.py 461): INFO block 16 (layers [38]) iter 6 loss:0.2599638104438782 norm:0.004042941611260176 max memory_allocated 62697.76806640625 
+[2025-03-16 17:15:20 root] (abq_llm_calib_config3.py 461): INFO block 16 (layers [38]) iter 7 loss:0.259459912776947 norm:0.0037017716094851494 max memory_allocated 62697.76806640625 
+[2025-03-16 17:16:04 root] (abq_llm_calib_config3.py 461): INFO block 16 (layers [38]) iter 8 loss:0.2590949535369873 norm:0.0036092144437134266 max memory_allocated 62697.76806640625 
+[2025-03-16 17:16:47 root] (abq_llm_calib_config3.py 461): INFO block 16 (layers [38]) iter 9 loss:0.2588733732700348 norm:0.003557732794433832 max memory_allocated 62697.76806640625 
+[2025-03-16 17:17:30 root] (abq_llm_calib_config3.py 461): INFO block 16 (layers [38]) iter 10 loss:0.2586001455783844 norm:0.003399309702217579 max memory_allocated 62697.76806640625 
+[2025-03-16 17:18:14 root] (abq_llm_calib_config3.py 461): INFO block 16 (layers [38]) iter 11 loss:0.2584207057952881 norm:0.003379144473001361 max memory_allocated 62697.76806640625 
+[2025-03-16 17:18:57 root] (abq_llm_calib_config3.py 461): INFO block 16 (layers [38]) iter 12 loss:0.2582712769508362 norm:0.0033508690539747477 max memory_allocated 62697.76806640625 
+[2025-03-16 17:19:40 root] (abq_llm_calib_config3.py 461): INFO block 16 (layers [38]) iter 13 loss:0.25805604457855225 norm:0.003159272251650691 max memory_allocated 62697.76806640625 
+[2025-03-16 17:20:24 root] (abq_llm_calib_config3.py 461): INFO block 16 (layers [38]) iter 14 loss:0.2577737867832184 norm:0.0029827950056642294 max memory_allocated 62697.76806640625 
+[2025-03-16 17:21:07 root] (abq_llm_calib_config3.py 461): INFO block 16 (layers [38]) iter 15 loss:0.2575702965259552 norm:0.0026782196946442127 max memory_allocated 62697.76806640625 
+[2025-03-16 17:21:50 root] (abq_llm_calib_config3.py 461): INFO block 16 (layers [38]) iter 16 loss:0.2574729919433594 norm:0.002610760275274515 max memory_allocated 62697.76806640625 
+[2025-03-16 17:22:34 root] (abq_llm_calib_config3.py 461): INFO block 16 (layers [38]) iter 17 loss:0.2574402689933777 norm:0.0027557399589568377 max memory_allocated 62697.76806640625 
+[2025-03-16 17:23:17 root] (abq_llm_calib_config3.py 461): INFO block 16 (layers [38]) iter 18 loss:0.25744470953941345 norm:0.0028931356500834227 max memory_allocated 62697.76806640625 
+[2025-03-16 17:24:00 root] (abq_llm_calib_config3.py 461): INFO block 16 (layers [38]) iter 19 loss:0.2573074400424957 norm:0.0028039778117090464 max memory_allocated 62697.76806640625 
+[2025-03-16 17:24:58 root] (abq_llm_calib_config3.py 257): INFO === Start quantize block 17 with layers [39] ===
+[2025-03-16 17:25:01 root] (abq_llm_calib_config3.py 309): INFO use compensation vector
+[2025-03-16 17:25:47 root] (abq_llm_calib_config3.py 461): INFO block 17 (layers [39]) iter 0 loss:0.43259763717651367 norm:0.04110930860042572 max memory_allocated 62697.76806640625 
+[2025-03-16 17:26:30 root] (abq_llm_calib_config3.py 461): INFO block 17 (layers [39]) iter 1 loss:0.3886497914791107 norm:0.026695046573877335 max memory_allocated 62697.76806640625 
+[2025-03-16 17:27:13 root] (abq_llm_calib_config3.py 461): INFO block 17 (layers [39]) iter 2 loss:0.3571966290473938 norm:0.0175072830170393 max memory_allocated 62697.76806640625 
+[2025-03-16 17:27:56 root] (abq_llm_calib_config3.py 461): INFO block 17 (layers [39]) iter 3 loss:0.34778353571891785 norm:0.014273473061621189 max memory_allocated 62697.76806640625 
+[2025-03-16 17:28:39 root] (abq_llm_calib_config3.py 461): INFO block 17 (layers [39]) iter 4 loss:0.343659907579422 norm:0.012580158188939095 max memory_allocated 62697.76806640625 
+[2025-03-16 17:29:23 root] (abq_llm_calib_config3.py 461): INFO block 17 (layers [39]) iter 5 loss:0.3411390781402588 norm:0.01125161163508892 max memory_allocated 62697.76806640625 
+[2025-03-16 17:30:06 root] (abq_llm_calib_config3.py 461): INFO block 17 (layers [39]) iter 6 loss:0.3395708501338959 norm:0.010167957283556461 max memory_allocated 62697.76806640625 
+[2025-03-16 17:30:50 root] (abq_llm_calib_config3.py 461): INFO block 17 (layers [39]) iter 7 loss:0.33811452984809875 norm:0.00946891587227583 max memory_allocated 62697.76806640625 
+[2025-03-16 17:31:33 root] (abq_llm_calib_config3.py 461): INFO block 17 (layers [39]) iter 8 loss:0.33701205253601074 norm:0.009100034832954407 max memory_allocated 62697.76806640625 
+[2025-03-16 17:32:16 root] (abq_llm_calib_config3.py 461): INFO block 17 (layers [39]) iter 9 loss:0.3362892270088196 norm:0.008316829800605774 max memory_allocated 62697.76806640625 
+[2025-03-16 17:33:00 root] (abq_llm_calib_config3.py 461): INFO block 17 (layers [39]) iter 10 loss:0.3354337513446808 norm:0.007864237762987614 max memory_allocated 62697.76806640625 
+[2025-03-16 17:33:43 root] (abq_llm_calib_config3.py 461): INFO block 17 (layers [39]) iter 11 loss:0.334514319896698 norm:0.007400249131023884 max memory_allocated 62697.76806640625 
+[2025-03-16 17:34:27 root] (abq_llm_calib_config3.py 461): INFO block 17 (layers [39]) iter 12 loss:0.3340180516242981 norm:0.0071712154895067215 max memory_allocated 62697.76806640625 
+[2025-03-16 17:35:10 root] (abq_llm_calib_config3.py 461): INFO block 17 (layers [39]) iter 13 loss:0.33346641063690186 norm:0.007080100476741791 max memory_allocated 62697.76806640625 
+[2025-03-16 17:35:53 root] (abq_llm_calib_config3.py 461): INFO block 17 (layers [39]) iter 14 loss:0.3334340751171112 norm:0.007441908586770296 max memory_allocated 62697.76806640625 
+[2025-03-16 17:36:37 root] (abq_llm_calib_config3.py 461): INFO block 17 (layers [39]) iter 15 loss:0.33376163244247437 norm:0.007260672748088837 max memory_allocated 62697.76806640625 
+[2025-03-16 17:37:20 root] (abq_llm_calib_config3.py 461): INFO block 17 (layers [39]) iter 16 loss:0.33333757519721985 norm:0.007084645796567202 max memory_allocated 62697.76806640625 
+[2025-03-16 17:38:03 root] (abq_llm_calib_config3.py 461): INFO block 17 (layers [39]) iter 17 loss:0.33277326822280884 norm:0.0061598108150064945 max memory_allocated 62697.76806640625 
+[2025-03-16 17:38:47 root] (abq_llm_calib_config3.py 461): INFO block 17 (layers [39]) iter 18 loss:0.3322088122367859 norm:0.006117101293057203 max memory_allocated 62697.76806640625 
+[2025-03-16 17:39:30 root] (abq_llm_calib_config3.py 461): INFO block 17 (layers [39]) iter 19 loss:0.3318313658237457 norm:0.00596970459446311 max memory_allocated 62697.76806640625 
+[2025-03-16 17:40:31 root] (main_calib_config3.py 379): INFO 36710.645723342896
+[2025-03-16 17:41:03 root] (main_calib_config3.py 117): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache

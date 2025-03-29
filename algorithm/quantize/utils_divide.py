@@ -189,124 +189,93 @@ def compute_quant_error(layer, dataloader, dev):
     return normalized_error
 
 def compute_layer_similarity(layer1, layer2, bin_num=256):
-    """计算两层之间的分布相似度
-    
-    通过比较两层中对应linear层的权重分布相似度来衡量层间相似度。
-    使用KL散度来度量分布的相似程度。
-    
-    Args:
-        layer1: 第一个decoder layer
-        layer2: 第二个decoder layer
-        bin_num: 直方图的bin数量
-        
-    Returns:
-        float: 两层的相似度分数(0-1之间,1表示完全相似)
-    """
     similarities = []
     
-    # 获取所有linear层的权重
-    linear_weights1 = []
-    linear_weights2 = []
+    modules1 = [(n,m) for n,m in layer1.named_modules() 
+               if isinstance(m, (nn.Linear, QuantLinear))]
+    modules2 = [(n,m) for n,m in layer2.named_modules() 
+               if isinstance(m, (nn.Linear, QuantLinear))]
     
-    for name1, module1 in layer1.named_modules():
-        if isinstance(module1, (nn.Linear, QuantLinear)):
-            linear_weights1.append(module1.weight.data.float())
-            
-    for name2, module2 in layer2.named_modules():
-        if isinstance(module2, (nn.Linear, QuantLinear)):
-            linear_weights2.append(module2.weight.data.float())
-            
-    # 确保两层有相同数量的linear层
-    assert len(linear_weights1) == len(linear_weights2)
+    assert len(modules1) == len(modules2)
     
-    # 计算每对对应linear层之间的相似度
-    for w1, w2 in zip(linear_weights1, linear_weights2):
-        # 将权重展平并移到CPU
-        w1_flat = w1.flatten().cpu()
-        w2_flat = w2.flatten().cpu()
+    for (_, m1), (_, m2) in zip(modules1, modules2):
+        # 一次只处理一对权重
+        w1 = m1.weight.data.float().cpu()
+        w2 = m2.weight.data.float().cpu()
         
-        # 计算数值范围以确定bin边界
+        # 计算直方图
+        w1_flat = w1.flatten()
+        w2_flat = w2.flatten()
+        
         min_val = min(w1_flat.min().item(), w2_flat.min().item())
         max_val = max(w1_flat.max().item(), w2_flat.max().item())
         bins = torch.linspace(min_val, max_val, bin_num+1)
         
-        # 计算直方图
         hist1 = torch.histogram(w1_flat, bins=bins, density=True)[0]
         hist2 = torch.histogram(w2_flat, bins=bins, density=True)[0]
         
-        # 添加平滑项避免log(0)
-        eps = 1e-10
-        hist1 = hist1 + eps
-        hist2 = hist2 + eps
+        # 释放不需要的tensor
+        del w1, w2, w1_flat, w2_flat
+        torch.cuda.empty_cache()
         
-        # 归一化
-        hist1 = hist1 / hist1.sum()
-        hist2 = hist2 / hist2.sum()
+        # 添加平滑项并归一化
+        eps = 1e-10
+        hist1 = (hist1 + eps) / (hist1.sum() + eps * bin_num)
+        hist2 = (hist2 + eps) / (hist2.sum() + eps * bin_num)
         
         # 计算KL散度
         kl_div = torch.sum(hist1 * torch.log(hist1 / hist2))
-        
-        # 将KL散度转换为相似度分数(0-1)
         similarity = torch.exp(-kl_div).item()
         similarities.append(similarity)
-    
-    # 返回所有linear层相似度的平均值
-    mean_similarity = sum(similarities) / len(similarities) if similarities else 0.0
+        
+        del hist1, hist2
+        
+    mean_similarity = sum(similarities) / len(similarities)
     logger.info(f"Layer similarity: {mean_similarity}")
     return mean_similarity
 
 def compute_hessian_sensitivity(layer, num_samples=10):
     """计算层的Hessian敏感度
-    
-    使用Hutchinson估计器来近似计算Hessian矩阵的迹，
+    使用Hutchinson估计器来近似计算 Hessian 矩阵的迹，
     用来评估该层对量化的敏感程度。
-    
-    Args:
-        layer: decoder layer
-        num_samples (int): 随机向量采样数
-        
-    Returns:
-        float: 该层的Hessian敏感度分数
     """
     def compute_trace_estimate(weight, num_samples):
-        """计算Hessian迹估计的平均值
-        
-        Args:
-            weight: shape [out_features, in_features] 的权重矩阵
-            num_samples: 随机采样数量
+        """计算 Hessian 迹估计的平均值
+        对于线性层，假设 Hessian 近似为 W^T W，则 trace(H) = trace(W^T W)。
+        根据 Hutchinson 估计器，trace(W^T W) = E[v^T (W^T W) v]
+        这里 v 的维度应与 W^T W 的列数（即 in_features）匹配。
         """
         trace_estimates = []
+        # v 的形状应为 [in_features]，这里 in_features 是 weight 的第二个维度
+        in_features = weight.shape[1]
         for _ in range(num_samples):
-            # 生成与权重同形状的随机向量
-            v = torch.randn_like(weight, device=weight.device)
+            v = torch.randn(in_features, device=weight.device)
+            # 归一化随机向量 v
             v = v / torch.norm(v)
             
-            # 计算 Hv：对于线性层 W ∈ R^{m×n}，Hessian近似为 W^T W ∈ R^{n×n}
-            # 1. 先计算 Wv: [m×n] × [m×n] -> [m×n]
-            Wv = weight * v  # 逐元素相乘
-            # 2. 再计算 W^T(Wv): [m×n] × [m×n] -> [m×n]
-            Hv = weight * Wv  # 逐元素相乘
+            # 计算 W^T W v 的过程
+            Wv = torch.matmul(weight, v)          # shape: [out_features]
+            WTWv = torch.matmul(weight.t(), Wv)     # shape: [in_features]
             
-            # 计算迹：tr(H) = tr(W^T W) ≈ v^T Hv
-            trace_estimate = torch.sum(v * Hv).item()
+            trace_estimate = torch.dot(v, WTWv).item()
             trace_estimates.append(trace_estimate)
             
         return sum(trace_estimates) / num_samples
 
     sensitivities = []
     for name, module in layer.named_modules():
-        if isinstance(module, (nn.Linear, QuantLinear)) and hasattr(module, "weight"):
+        if isinstance(module, (nn.Linear,)) and hasattr(module, "weight"):
             weight = module.weight.data.float()
             sensitivity = compute_trace_estimate(weight, num_samples)
             sensitivities.append(sensitivity)
 
     if sensitivities:
         avg_sensitivity = sum(sensitivities) / len(sensitivities)
-        normalized_sensitivity = 1.0 / (1.0 + math.exp(-avg_sensitivity))  # Sigmoid归一化
-        logger.info(f"Hessian sensitivity: {normalized_sensitivity}")
-        return normalized_sensitivity
+        # normalized_sensitivity = 1.0 / (1.0 + math.exp(-avg_sensitivity))  # Sigmoid归一化
+        logger.info(f"Hessian sensitivity: {avg_sensitivity}")
+        return avg_sensitivity
     else:
-        logger.info("No linear layers found in the layer.")
+        print("No linear layers found in the layer.")
         return 0.0
 
 def visualize_layer_metrics(quant_errors, layer_similarities, sensitivities, save_path):
@@ -427,6 +396,8 @@ def smooth_and_quant_temporary(model, args, isllama):
                 if "smooth_scale" in name:
                     module.data = truncate_number(module)
         if isllama:
+            # 对activation的缩放融入到上一层的layernorm中
+            # 对weight直接缩放
             smooth_ln_fcs_temporary(model.input_layernorm,[model.self_attn.q_proj, model.self_attn.k_proj, model.self_attn.v_proj],
                                     model.qkv_smooth_scale,model.qkv_smooth_shift)
             smooth_ln_fcs_temporary(model.post_attention_layernorm,[model.mlp.up_proj,model.mlp.gate_proj],

@@ -12,6 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+
+
+# def compute_layer_similarity用来计算层相似度，原只计算了两层之间线性模块的权重相似度并平均，现先也需统计激活值相似度，和权重相似度一起综合考虑。
+# 涉及激活值的话就需要forward过程了，可以参考我计算量化误差的部分代码，在forward时使用钩子函数记录各线性模块的hist，之后统一计算相似度
+
 import torch
 import torch.nn as nn
 from models.int_llama_layer_nomatquant import QuantLlamaDecoderLayer, QuantLlamaAttention
@@ -252,7 +257,7 @@ def abqllm_divide_blocks(
         # init smooth parameters
         # 在smooth_and_quant_temporary和smooth_and_quant_inplace里会量化weight
         # 但这里不调smooth_and_quant_temporary了，直接设置weight_quant=True
-        set_quant_state(qlayer, weight_quant=False, act_quant=True)  # weight will be manually quantized before forward
+        set_quant_state(qlayer, weight_quant=True, act_quant=True)  # weight will be manually quantized before forward
         qlayer.let = args.let
         use_shift = True 
         if is_llama or args.abits == 16:

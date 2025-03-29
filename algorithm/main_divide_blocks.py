@@ -35,6 +35,7 @@ from models.int_opt_layer import QuantOPTDecoderLayer
 from quantize.int_linear import QuantLinear
 import pickle
 
+from quantize.utils_divide import determine_blocks
 import pdb
 
 
@@ -246,14 +247,18 @@ def main():
     parser.add_argument("--net", type=str, default=None, choices=net_choices)
     parser.add_argument("--act-scales", type=str, default=None)
     parser.add_argument("--act-shifts", type=str, default=None)
-    parser.add_argument("--error_threshold", type=float, default=0.2,
+    parser.add_argument("--error_threshold", type=float, default=0.3,
                       help="Threshold for accumulated quantization error")
     parser.add_argument("--similarity_threshold", type=float, default=0.999,
                       help="Threshold for layer distribution similarity")
-    parser.add_argument("--sensitivity_threshold", type=float, default=0.01,
+    parser.add_argument("--sensitivity_threshold", type=float, default=0.1,
                       help="Threshold for Hessian sensitivity difference")
     parser.add_argument("--max_block_size", type=int, default=3,
                       help="Maximum number of layers in a block")
+    parser.add_argument("--reload", action="store_true", help="skip re-calculation of divide metrics")
+
+    ## Llama --error_threshold 0.2 --similarity_threshold 0.999 --sensitivity_threshold 0.1 --max_block_size 3
+    ## llama --error_threshold 0.3 --similarity_threshold 0.999 --sensitivity_threshold 0.1 --max_block_size 3
 
     args = parser.parse_args()
     random.seed(args.seed)
@@ -278,6 +283,19 @@ def main():
         args.net = args.model.split('/')[-1]
     # assert args.net in net_choices
     args.model_family = args.net.split('-')[0]
+
+    if args.reload:
+        with open(f'{args.output_dir}/{args.net}_divide_metics.pkl', 'rb') as f:
+            [quant_errors, layer_similarities, sensitivities] = pickle.load(f)
+        blocks = determine_blocks(args, quant_errors, layer_similarities, sensitivities)
+        
+        if blocks is not None:
+            with open(f'{args.output_dir}/{args.net}_blocks.pkl', 'wb') as f:
+                pickle.dump(blocks, f)
+
+        logger.info(f"blocks: {blocks}")
+        return
+
     lm = LMClass(args)
     lm.seqlen = 2048
     lm.model.eval()

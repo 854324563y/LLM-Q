@@ -73,6 +73,6 @@ class AbqLlamaRMSNorm(nn.Module):
         else:
             weight = self.weight
             bias = self.bias if hasattr(self, 'bias') else None
-
+        #print('weight.device:',weight.device, 'hidden_states.device:',hidden_states.device,'bias.device:',bias.device if bias is not None else 'None')
         return (weight * hidden_states+bias).to(input_dtype) if bias is not None else (weight * hidden_states).to(input_dtype)
 

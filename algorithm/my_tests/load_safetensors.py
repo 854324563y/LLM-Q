@@ -115,4 +115,22 @@ def quant2():
     print("\n方案2量化后的权重前5个值:")
     print(dequantized_weight_uaq[0, :5])
 
-quant1()
+
+
+
+
+def load_safetensors():
+    
+
+    model_path = './log-calibration-compensation/quant/Llama-2-7b-hf-w8a8/model-00001-of-00003.safetensors'
+    model = safetensors.torch.load_file(model_path)
+    weight = model['model.layers.0.self_attn.q_proj.weight']
+    print(weight)
+
+    model_path = './log-calibration-compensation-lwc/quant/Llama-2-7b-hf-w8a8/model-00001-of-00003.safetensors'
+    model = safetensors.torch.load_file(model_path)
+    weight = model['model.layers.0.self_attn.q_proj.weight']
+    print(weight)
+
+# quant1()
+load_safetensors()
