@@ -1,0 +1,8 @@
+[2024-12-30 08:37:05 root] (main_test_single_module_quant.py 270): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-chat-hf', cache_dir='./cache', output_dir='./log/Llama-2-7b-chat-hf-w4a4', sensitivity_test='layer_sensitivity_results.pt', quant_module='down_proj', save_dir=None, resume='./log/Llama-2-7b-chat-hf-w4a4/abq_parameters.pth', real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='', eval_ppl=True, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=0, let=True, lwc=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, target_layer=None)
+[2024-12-30 08:38:31 root] (main_test_single_module_quant.py 395): INFO === Evaluating sensitivity of each layer ===
+[2024-12-30 08:38:32 root] (main_test_single_module_quant.py 404): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2024-12-30 08:38:33 root] (main_test_single_module_quant.py 429): INFO 
+=== Testing layer 0/31 ===
+[2024-12-30 08:38:33 root] (abq_llm_test_single_module_quant.py 62): INFO Starting ...
+[2024-12-30 08:38:34 root] (abq_llm_test_single_module_quant.py 212): INFO === Start quantize layer 0 ===
+[2024-12-30 08:38:34 root] (abq_llm_test_single_module_quant.py 271): INFO use compensation vector

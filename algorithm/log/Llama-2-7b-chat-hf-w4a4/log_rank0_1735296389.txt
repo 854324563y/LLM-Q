@@ -1,0 +1,62 @@
+[2024-12-27 10:46:29 root] (main_test_single_layer_quant.py 269): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-chat-hf', cache_dir='./cache', output_dir='./log/Llama-2-7b-chat-hf-w4a4', sensitivity_test='layer_sensitivity_results_nolwclet_acc.pt', save_dir=None, resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='hellaswag,winogrande', eval_ppl=True, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=0, let=False, lwc=False, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, target_layer=None)
+[2024-12-27 10:46:35 root] (main_test_single_layer_quant.py 394): INFO === Evaluating sensitivity of each layer ===
+[2024-12-27 10:46:35 root] (main_test_single_layer_quant.py 403): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2024-12-27 10:46:36 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 0/31 ===
+[2024-12-27 10:46:36 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 10:46:38 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 0 ===
+[2024-12-27 10:46:46 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 10:47:35 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 16.275619506835938
+[2024-12-27 10:47:35 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 10:48:50 root] (main_test_single_layer_quant.py 159): INFO c4 : 13.360650062561035
+[2024-12-27 10:51:22 datasets.builder] (builder.py 947): WARNING HF google storage unreachable. Downloading and preparing it from source
+[2024-12-27 11:20:45 root] (main_test_single_layer_quant.py 170): INFO {'wikitext2': 16.275619506835938, 'c4': 13.360650062561035, 'results': {'winogrande': {'acc': 0.6345698500394633, 'acc_stderr': 0.013533965097638786}, 'hellaswag': {'acc': 0.5482971519617607, 'acc_stderr': 0.004966448380104206, 'acc_norm': 0.7118103963353913, 'acc_norm_stderr': 0.004519941716508346}}, 'versions': {'winogrande': 0, 'hellaswag': 0}, 'config': {'model': <models.LMClass.LMClass object at 0x7f9ab484e9e0>, 'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2024-12-27 11:20:46 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 1/31 ===
+[2024-12-27 11:20:46 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 11:20:47 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 1 ===
+[2024-12-27 11:20:51 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 11:21:39 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 9.014781951904297
+[2024-12-27 11:21:39 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 11:22:55 root] (main_test_single_layer_quant.py 159): INFO c4 : 11.5205659866333
+[2024-12-27 11:52:20 root] (main_test_single_layer_quant.py 170): INFO {'wikitext2': 9.014781951904297, 'c4': 11.5205659866333, 'results': {'winogrande': {'acc': 0.6282557221783741, 'acc_stderr': 0.013582306284992865}, 'hellaswag': {'acc': 0.541027683728341, 'acc_stderr': 0.004972954732733361, 'acc_norm': 0.7033459470225055, 'acc_norm_stderr': 0.004558491550673685}}, 'versions': {'winogrande': 0, 'hellaswag': 0}, 'config': {'model': <models.LMClass.LMClass object at 0x7f9a8ddf62c0>, 'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2024-12-27 11:52:21 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 2/31 ===
+[2024-12-27 11:52:21 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 11:52:22 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 2 ===
+[2024-12-27 11:52:27 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 11:53:16 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.93411111831665
+[2024-12-27 11:53:16 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 11:54:32 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.495203018188477
+[2024-12-27 11:54:42 datasets.load] (load.py 1272): WARNING Using the latest cached version of the module from /root/.cache/huggingface/modules/datasets_modules/datasets/winogrande/a826c3d3506aefe0e9e9390dcb53271070536586bab95849876b2c1743df56e2 (last modified on Fri Dec 27 10:49:08 2024) since it couldn't be found locally at winogrande., or remotely on the Hugging Face Hub.
+[2024-12-27 12:24:10 root] (main_test_single_layer_quant.py 170): INFO {'wikitext2': 7.93411111831665, 'c4': 9.495203018188477, 'results': {'winogrande': {'acc': 0.6448303078137332, 'acc_stderr': 0.013450047479569257}, 'hellaswag': {'acc': 0.5675164309898426, 'acc_stderr': 0.00494408060504877, 'acc_norm': 0.7317267476598287, 'acc_norm_stderr': 0.004421551307678475}}, 'versions': {'winogrande': 0, 'hellaswag': 0}, 'config': {'model': <models.LMClass.LMClass object at 0x7f9a8de952d0>, 'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2024-12-27 12:24:12 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 3/31 ===
+[2024-12-27 12:24:12 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 12:24:13 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 3 ===
+[2024-12-27 12:24:16 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 12:25:05 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.325647830963135
+[2024-12-27 12:25:05 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 12:26:21 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.079584121704102
+[2024-12-27 12:55:49 root] (main_test_single_layer_quant.py 170): INFO {'wikitext2': 7.325647830963135, 'c4': 9.079584121704102, 'results': {'winogrande': {'acc': 0.6464088397790055, 'acc_stderr': 0.013436541262599954}, 'hellaswag': {'acc': 0.5685122485560645, 'acc_stderr': 0.004942716091996077, 'acc_norm': 0.7333200557657837, 'acc_norm_stderr': 0.004413198640053983}}, 'versions': {'winogrande': 0, 'hellaswag': 0}, 'config': {'model': <models.LMClass.LMClass object at 0x7f9c276655d0>, 'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2024-12-27 12:55:49 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 4/31 ===
+[2024-12-27 12:55:49 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 12:55:50 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 4 ===
+[2024-12-27 12:55:54 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 12:56:43 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.223751068115234
+[2024-12-27 12:56:43 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 12:57:59 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.07546329498291
+[2024-12-27 13:23:56 root] (main_test_single_layer_quant.py 170): INFO {'wikitext2': 7.223751068115234, 'c4': 9.07546329498291, 'results': {'winogrande': {'acc': 0.6740331491712708, 'acc_stderr': 0.01317378263692219}, 'hellaswag': {'acc': 0.5710017924716192, 'acc_stderr': 0.004939215682191771, 'acc_norm': 0.7321250746863175, 'acc_norm_stderr': 0.00441946998393918}}, 'versions': {'winogrande': 0, 'hellaswag': 0}, 'config': {'model': <models.LMClass.LMClass object at 0x7f9ab484df90>, 'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2024-12-27 13:23:57 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 5/31 ===
+[2024-12-27 13:23:57 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 13:23:57 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 5 ===
+[2024-12-27 13:24:01 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 13:24:52 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.241067409515381
+[2024-12-27 13:24:52 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 13:26:08 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.096936225891113
+[2024-12-27 13:52:13 root] (main_test_single_layer_quant.py 170): INFO {'wikitext2': 7.241067409515381, 'c4': 9.096936225891113, 'results': {'winogrande': {'acc': 0.6614048934490924, 'acc_stderr': 0.013300169865842417}, 'hellaswag': {'acc': 0.5697072296355308, 'acc_stderr': 0.004941051795214796, 'acc_norm': 0.7290380402310297, 'acc_norm_stderr': 0.0044354815159093975}}, 'versions': {'winogrande': 0, 'hellaswag': 0}, 'config': {'model': <models.LMClass.LMClass object at 0x7f9a8d9f7bb0>, 'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2024-12-27 13:52:13 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 6/31 ===
+[2024-12-27 13:52:13 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...

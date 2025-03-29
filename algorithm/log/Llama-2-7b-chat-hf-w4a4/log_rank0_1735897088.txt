@@ -1,0 +1,59 @@
+[2025-01-03 09:38:08 root] (main_divide_blocks.py 274): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-chat-hf', cache_dir='./cache', output_dir='./log/Llama-2-7b-chat-hf-w4a4', save_dir='./quant/Llama-2-7b-chat-hf-w4a4', resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='', eval_ppl=False, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=10, let=False, lwc=False, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, error_threshold=0.1, similarity_threshold=0.8, sensitivity_threshold=0.5, max_block_size=3)
+[2025-01-03 09:38:10 root] (main_divide_blocks.py 342): INFO === start quantization ===
+[2025-01-03 09:38:10 root] (main_divide_blocks.py 348): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2025-01-03 09:38:10 root] (abq_llm_divide_blocks.py 61): INFO Starting ...
+[2025-01-03 09:38:14 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 0 ===
+[2025-01-03 09:38:27 root] (abq_llm_divide_blocks.py 278): INFO layer 0 loss_mean: 0.00022863886260893196
+[2025-01-03 09:38:27 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 1 ===
+[2025-01-03 09:38:37 root] (abq_llm_divide_blocks.py 278): INFO layer 1 loss_mean: 0.028571682050824165
+[2025-01-03 09:38:37 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 2 ===
+[2025-01-03 09:38:48 root] (abq_llm_divide_blocks.py 278): INFO layer 2 loss_mean: 0.002505195327103138
+[2025-01-03 09:38:48 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 3 ===
+[2025-01-03 09:38:59 root] (abq_llm_divide_blocks.py 278): INFO layer 3 loss_mean: 0.0019114165334030986
+[2025-01-03 09:38:59 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 4 ===
+[2025-01-03 09:39:10 root] (abq_llm_divide_blocks.py 278): INFO layer 4 loss_mean: 0.0011111360508948565
+[2025-01-03 09:39:10 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 5 ===
+[2025-01-03 09:39:21 root] (abq_llm_divide_blocks.py 278): INFO layer 5 loss_mean: 0.0015577609883621335
+[2025-01-03 09:39:21 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 6 ===
+[2025-01-03 09:39:32 root] (abq_llm_divide_blocks.py 278): INFO layer 6 loss_mean: 0.0052434587851166725
+[2025-01-03 09:39:32 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 7 ===
+[2025-01-03 09:39:43 root] (abq_llm_divide_blocks.py 278): INFO layer 7 loss_mean: 0.005836475640535355
+[2025-01-03 09:39:43 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 8 ===
+[2025-01-03 09:39:54 root] (abq_llm_divide_blocks.py 278): INFO layer 8 loss_mean: 0.006808248348534107
+[2025-01-03 09:39:54 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 9 ===
+[2025-01-03 09:40:05 root] (abq_llm_divide_blocks.py 278): INFO layer 9 loss_mean: 0.00669066933915019
+[2025-01-03 09:40:05 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 10 ===
+[2025-01-03 09:40:16 root] (abq_llm_divide_blocks.py 278): INFO layer 10 loss_mean: 0.007493246346712112
+[2025-01-03 09:40:16 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 11 ===
+[2025-01-03 09:40:27 root] (abq_llm_divide_blocks.py 278): INFO layer 11 loss_mean: 0.0072413282468914986
+[2025-01-03 09:40:27 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 12 ===
+[2025-01-03 09:40:38 root] (abq_llm_divide_blocks.py 278): INFO layer 12 loss_mean: 0.007276169955730438
+[2025-01-03 09:40:38 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 13 ===
+[2025-01-03 09:40:49 root] (abq_llm_divide_blocks.py 278): INFO layer 13 loss_mean: 0.009749066084623337
+[2025-01-03 09:40:49 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 14 ===
+[2025-01-03 09:41:00 root] (abq_llm_divide_blocks.py 278): INFO layer 14 loss_mean: 0.010395384393632412
+[2025-01-03 09:41:00 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 15 ===
+[2025-01-03 09:41:11 root] (abq_llm_divide_blocks.py 278): INFO layer 15 loss_mean: 0.016192426905035973
+[2025-01-03 09:41:11 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 16 ===
+[2025-01-03 09:41:22 root] (abq_llm_divide_blocks.py 278): INFO layer 16 loss_mean: 0.016168339177966118
+[2025-01-03 09:41:22 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 17 ===
+[2025-01-03 09:41:32 root] (abq_llm_divide_blocks.py 278): INFO layer 17 loss_mean: 0.016835102811455727
+[2025-01-03 09:41:32 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 18 ===
+[2025-01-03 09:41:43 root] (abq_llm_divide_blocks.py 278): INFO layer 18 loss_mean: 0.020924797281622887
+[2025-01-03 09:41:44 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 19 ===
+[2025-01-03 09:41:55 root] (abq_llm_divide_blocks.py 278): INFO layer 19 loss_mean: 0.018699804320931435
+[2025-01-03 09:41:55 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 20 ===
+[2025-01-03 09:42:06 root] (abq_llm_divide_blocks.py 278): INFO layer 20 loss_mean: 0.019195670261979103
+[2025-01-03 09:42:06 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 21 ===
+[2025-01-03 09:42:17 root] (abq_llm_divide_blocks.py 278): INFO layer 21 loss_mean: 0.020328950136899948
+[2025-01-03 09:42:17 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 22 ===
+[2025-01-03 09:42:28 root] (abq_llm_divide_blocks.py 278): INFO layer 22 loss_mean: 0.026913652196526527
+[2025-01-03 09:42:28 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 23 ===
+[2025-01-03 09:42:39 root] (abq_llm_divide_blocks.py 278): INFO layer 23 loss_mean: 0.023367004469037056
+[2025-01-03 09:42:39 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 24 ===
+[2025-01-03 09:42:50 root] (abq_llm_divide_blocks.py 278): INFO layer 24 loss_mean: 0.02865133062005043
+[2025-01-03 09:42:50 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 25 ===
+[2025-01-03 09:43:01 root] (abq_llm_divide_blocks.py 278): INFO layer 25 loss_mean: 0.035225462168455124
+[2025-01-03 09:43:01 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 26 ===
+[2025-01-03 09:43:12 root] (abq_llm_divide_blocks.py 278): INFO layer 26 loss_mean: 0.0428847037255764
+[2025-01-03 09:43:12 root] (abq_llm_divide_blocks.py 232): INFO === Start quantize layer 27 ===

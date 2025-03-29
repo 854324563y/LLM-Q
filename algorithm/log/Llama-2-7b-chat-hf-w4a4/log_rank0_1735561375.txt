@@ -1,0 +1,41 @@
+[2024-12-30 12:22:55 root] (main_test_single_module_quant.py 267): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-chat-hf', cache_dir='./cache', output_dir='./log/Llama-2-7b-chat-hf-w4a4', sensitivity_test='layer_sensitivity_results.pt', quant_module='down_proj', save_dir=None, resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='', eval_ppl=True, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=0, let=False, lwc=False, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None)
+[2024-12-30 12:22:57 root] (main_test_single_module_quant.py 333): INFO === start quantization ===
+[2024-12-30 12:22:57 root] (main_test_single_module_quant.py 339): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2024-12-30 12:22:57 root] (abq_llm_test_single_module_quant.py 62): INFO Starting ...
+[2024-12-30 12:22:59 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 0 ===
+[2024-12-30 12:22:59 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 1 ===
+[2024-12-30 12:23:00 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 2 ===
+[2024-12-30 12:23:00 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 3 ===
+[2024-12-30 12:23:00 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 4 ===
+[2024-12-30 12:23:01 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 5 ===
+[2024-12-30 12:23:01 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 6 ===
+[2024-12-30 12:23:01 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 7 ===
+[2024-12-30 12:23:02 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 8 ===
+[2024-12-30 12:23:02 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 9 ===
+[2024-12-30 12:23:02 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 10 ===
+[2024-12-30 12:23:02 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 11 ===
+[2024-12-30 12:23:03 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 12 ===
+[2024-12-30 12:23:03 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 13 ===
+[2024-12-30 12:23:03 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 14 ===
+[2024-12-30 12:23:04 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 15 ===
+[2024-12-30 12:23:04 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 16 ===
+[2024-12-30 12:23:04 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 17 ===
+[2024-12-30 12:23:05 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 18 ===
+[2024-12-30 12:23:05 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 19 ===
+[2024-12-30 12:23:05 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 20 ===
+[2024-12-30 12:23:05 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 21 ===
+[2024-12-30 12:23:06 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 22 ===
+[2024-12-30 12:23:06 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 23 ===
+[2024-12-30 12:23:06 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 24 ===
+[2024-12-30 12:23:07 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 25 ===
+[2024-12-30 12:23:07 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 26 ===
+[2024-12-30 12:23:07 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 27 ===
+[2024-12-30 12:23:08 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 28 ===
+[2024-12-30 12:23:08 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 29 ===
+[2024-12-30 12:23:08 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 30 ===
+[2024-12-30 12:23:09 root] (abq_llm_test_single_module_quant.py 208): INFO === Start quantize layer 31 ===
+[2024-12-30 12:23:09 root] (main_test_single_module_quant.py 362): INFO 11.937721014022827
+[2024-12-30 12:23:11 root] (main_test_single_module_quant.py 114): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-30 12:24:05 root] (main_test_single_module_quant.py 158): INFO wikitext2 : 11.145137786865234
+[2024-12-30 12:24:05 root] (main_test_single_module_quant.py 114): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-30 12:25:27 root] (main_test_single_module_quant.py 158): INFO c4 : 13.673053741455078

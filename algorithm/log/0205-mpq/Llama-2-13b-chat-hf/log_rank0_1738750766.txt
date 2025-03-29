@@ -1,0 +1,12 @@
+[2025-02-05 10:19:26 root] (main_quant_config.py 114): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-13b-chat-hf', cache_dir='./cache', output_dir='./log/0205-mpq/Llama-2-13b-chat-hf', blocks_pkl='log/0205-divide/Llama-2-13b-chat-hf-w4a4/Llama-2-13b-chat-hf_blocks.pkl', calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, reload=False, parallel=True, size_bound_factor=0.7, weight_quant_params={'per_channel_axes': [0], 'symmetric': False, 'dynamic_method': 'per_channel', 'group_size': None, 'lwc': False, 'disable_zero_point': False}, act_quant_params={'per_channel_axes': [], 'symmetric': False, 'dynamic_method': 'per_token'})
+[2025-02-05 10:19:30 root] (main_quant_config.py 132): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2025-02-05 10:19:30 root] (main_quant_config.py 143): INFO [(0, 1), (1, 2), (2, 3), (3, 6), (6, 9), (9, 12), (12, 15), (15, 18), (18, 21), (21, 24), (24, 27), (27, 30), (30, 33), (33, 35), (35, 36), (36, 37), (37, 38), (38, 39), (39, 40)]
+[2025-02-05 10:19:31 root] (block_wise_quant_config_search_parallel.py 468): INFO Using 2 GPUs for parallel search
+[2025-02-05 10:19:31 root] (block_wise_quant_config_search_parallel.py 482): INFO Starting new batch: blocks 0 to 1
+[2025-02-05 10:19:31 root] (block_wise_quant_config_search_parallel.py 483): INFO Available GPUs: 2
+[2025-02-05 10:19:31 root] (block_wise_quant_config_search_parallel.py 496): INFO Got input for block 0
+[2025-02-05 10:19:36 root] (block_wise_quant_config_search_parallel.py 496): INFO Got input for block 1
+[2025-02-05 10:19:36 root] (block_wise_quant_config_search_parallel.py 507): INFO Preparing to assign block 0 to cuda:0
+[2025-02-05 10:19:36 root] (block_wise_quant_config_search_parallel.py 516): INFO Successfully queued block 0 for processing on cuda:0
+[2025-02-05 10:19:36 root] (block_wise_quant_config_search_parallel.py 507): INFO Preparing to assign block 1 to cuda:1
+[2025-02-05 10:19:36 root] (block_wise_quant_config_search_parallel.py 516): INFO Successfully queued block 1 for processing on cuda:1

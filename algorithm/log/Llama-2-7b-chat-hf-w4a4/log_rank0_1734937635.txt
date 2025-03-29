@@ -1,0 +1,49 @@
+[2024-12-23 07:07:15 root] (main.py 265): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-chat-hf', cache_dir='./cache', output_dir='./log/Llama-2-7b-chat-hf-w4a4', save_dir=None, resume='./log/Llama-2-7b-chat-hf-w4a4/abq_parameters.pth', real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='hellaswag,winogrande', eval_ppl=True, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=0, let=True, lwc=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None)
+[2024-12-23 07:07:16 root] (main.py 331): INFO === start quantization ===
+[2024-12-23 07:07:16 root] (main.py 337): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2024-12-23 07:07:16 root] (abq_llm.py 62): INFO Starting ...
+[2024-12-23 07:07:18 root] (abq_llm.py 208): INFO === Start quantize layer 0 ===
+[2024-12-23 07:07:18 root] (abq_llm.py 262): INFO use compensation vector
+[2024-12-23 07:07:18 root] (abq_llm.py 208): INFO === Start quantize layer 1 ===
+[2024-12-23 07:07:23 root] (abq_llm.py 262): INFO use compensation vector
+[2024-12-23 07:07:23 root] (abq_llm.py 208): INFO === Start quantize layer 2 ===
+[2024-12-23 07:07:30 root] (abq_llm.py 262): INFO use compensation vector
+[2024-12-23 07:07:30 root] (abq_llm.py 208): INFO === Start quantize layer 3 ===
+[2024-12-23 07:07:35 root] (abq_llm.py 208): INFO === Start quantize layer 4 ===
+[2024-12-23 07:07:39 root] (abq_llm.py 208): INFO === Start quantize layer 5 ===
+[2024-12-23 07:07:45 root] (abq_llm.py 208): INFO === Start quantize layer 6 ===
+[2024-12-23 07:07:49 root] (abq_llm.py 208): INFO === Start quantize layer 7 ===
+[2024-12-23 07:07:52 root] (abq_llm.py 208): INFO === Start quantize layer 8 ===
+[2024-12-23 07:07:56 root] (abq_llm.py 208): INFO === Start quantize layer 9 ===
+[2024-12-23 07:08:02 root] (abq_llm.py 208): INFO === Start quantize layer 10 ===
+[2024-12-23 07:08:06 root] (abq_llm.py 208): INFO === Start quantize layer 11 ===
+[2024-12-23 07:08:08 root] (abq_llm.py 208): INFO === Start quantize layer 12 ===
+[2024-12-23 07:08:10 root] (abq_llm.py 208): INFO === Start quantize layer 13 ===
+[2024-12-23 07:08:12 root] (abq_llm.py 208): INFO === Start quantize layer 14 ===
+[2024-12-23 07:08:14 root] (abq_llm.py 208): INFO === Start quantize layer 15 ===
+[2024-12-23 07:08:17 root] (abq_llm.py 208): INFO === Start quantize layer 16 ===
+[2024-12-23 07:08:19 root] (abq_llm.py 208): INFO === Start quantize layer 17 ===
+[2024-12-23 07:08:21 root] (abq_llm.py 208): INFO === Start quantize layer 18 ===
+[2024-12-23 07:08:24 root] (abq_llm.py 208): INFO === Start quantize layer 19 ===
+[2024-12-23 07:08:26 root] (abq_llm.py 208): INFO === Start quantize layer 20 ===
+[2024-12-23 07:08:30 root] (abq_llm.py 208): INFO === Start quantize layer 21 ===
+[2024-12-23 07:08:33 root] (abq_llm.py 208): INFO === Start quantize layer 22 ===
+[2024-12-23 07:08:37 root] (abq_llm.py 208): INFO === Start quantize layer 23 ===
+[2024-12-23 07:08:42 root] (abq_llm.py 208): INFO === Start quantize layer 24 ===
+[2024-12-23 07:08:45 root] (abq_llm.py 208): INFO === Start quantize layer 25 ===
+[2024-12-23 07:08:50 root] (abq_llm.py 208): INFO === Start quantize layer 26 ===
+[2024-12-23 07:08:59 root] (abq_llm.py 208): INFO === Start quantize layer 27 ===
+[2024-12-23 07:09:13 root] (abq_llm.py 208): INFO === Start quantize layer 28 ===
+[2024-12-23 07:09:16 root] (abq_llm.py 262): INFO use compensation vector
+[2024-12-23 07:09:16 root] (abq_llm.py 208): INFO === Start quantize layer 29 ===
+[2024-12-23 07:09:20 root] (abq_llm.py 262): INFO use compensation vector
+[2024-12-23 07:09:20 root] (abq_llm.py 208): INFO === Start quantize layer 30 ===
+[2024-12-23 07:09:23 root] (abq_llm.py 262): INFO use compensation vector
+[2024-12-23 07:09:24 root] (abq_llm.py 208): INFO === Start quantize layer 31 ===
+[2024-12-23 07:09:26 root] (abq_llm.py 262): INFO use compensation vector
+[2024-12-23 07:09:27 root] (main.py 360): INFO 130.93839859962463
+[2024-12-23 07:09:34 root] (main.py 114): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-23 07:10:40 root] (main.py 158): INFO wikitext2 : 12.908369064331055
+[2024-12-23 07:10:40 root] (main.py 114): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-23 07:12:21 root] (main.py 158): INFO c4 : 17.00827980041504
+[2024-12-23 08:11:59 root] (main.py 169): INFO {'wikitext2': 12.908369064331055, 'c4': 17.00827980041504, 'results': {'hellaswag': {'acc': 0.42630950009958174, 'acc_stderr': 0.004935291975579177, 'acc_norm': 0.5480979884485162, 'acc_norm_stderr': 0.0049666408680838605}, 'winogrande': {'acc': 0.5524861878453039, 'acc_stderr': 0.013974847640536204}}, 'versions': {'hellaswag': 0, 'winogrande': 0}, 'config': {'model': <models.LMClass.LMClass object at 0x7f77166d5e10>, 'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}

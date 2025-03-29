@@ -1,0 +1,14 @@
+[2024-12-31 06:51:30 root] (main_test_single_layer_quant.py 269): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-chat-hf', cache_dir='./cache', output_dir='./log/Llama-2-7b-chat-hf-w4a4', sensitivity_test='layer_sensitivity_results_lwtlet_acc.pt', save_dir=None, resume='./log/Llama-2-7b-chat-hf-w4a4/abq_parameters.pth', real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='hellaswag,winogrande', eval_ppl=False, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=0, let=True, lwc=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, target_layer=None)
+[2024-12-31 06:51:36 root] (main_test_single_layer_quant.py 394): INFO === Evaluating sensitivity of each layer ===
+[2024-12-31 06:51:36 root] (main_test_single_layer_quant.py 403): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2024-12-31 06:51:36 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 0/31 ===
+[2024-12-31 06:51:36 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-31 06:51:38 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 0 ===
+[2024-12-31 06:51:39 root] (abq_llm_test_single_layer_quant.py 266): INFO use compensation vector
+[2024-12-31 07:17:03 root] (main_test_single_layer_quant.py 170): INFO {'results': {'winogrande': {'acc': 0.6566692975532754, 'acc_stderr': 0.013344823185358016}, 'hellaswag': {'acc': 0.5684126667994424, 'acc_stderr': 0.004942853459371547, 'acc_norm': 0.7266480780720972, 'acc_norm_stderr': 0.004447691405592719}}, 'versions': {'winogrande': 0, 'hellaswag': 0}, 'config': {'model': <models.LMClass.LMClass object at 0x7f1e99c4aef0>, 'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2024-12-31 07:17:04 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 1/31 ===
+[2024-12-31 07:17:04 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-31 07:17:05 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 1 ===
+[2024-12-31 07:17:05 root] (abq_llm_test_single_layer_quant.py 266): INFO use compensation vector

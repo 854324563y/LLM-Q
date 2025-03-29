@@ -1,0 +1,7 @@
+[2025-01-16 14:31:49 root] (main_calib_config.py 270): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-chat-hf', cache_dir='./cache', output_dir='./log/Llama-2-7b-chat-hf-w4a4-117', save_dir='./quant/Llama-2-7b-chat-hf-w4a4-117/save_dir', resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='hellaswag,winogrande', eval_ppl=True, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=20, let=True, lwc=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, quant_map='./log/Llama-2-7b-chat-hf-116/quant_result_Llama-2-7b-chat-hf_0.7.pkl')
+[2025-01-16 14:31:51 root] (main_calib_config.py 336): INFO === start quantization ===
+[2025-01-16 14:31:51 root] (main_calib_config.py 342): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2025-01-16 14:31:51 root] (abq_llm_calib_config.py 82): INFO Starting ...
+[2025-01-16 14:31:51 root] (abq_llm_calib_config.py 89): INFO Loaded quant_map from ./log/Llama-2-7b-chat-hf-116/quant_result_Llama-2-7b-chat-hf_0.7.pkl
+[2025-01-16 14:31:53 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 0 ===
+[2025-01-16 14:31:58 root] (abq_llm_calib_config.py 300): INFO use compensation vector

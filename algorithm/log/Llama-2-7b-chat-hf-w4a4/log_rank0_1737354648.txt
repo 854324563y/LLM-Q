@@ -1,0 +1,13 @@
+[2025-01-20 06:30:48 root] (main.py 265): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-chat-hf', cache_dir='./cache', output_dir='./log/Llama-2-7b-chat-hf-w4a4', save_dir='./quant/Llama-2-7b-chat-hf-w4a4', resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='piqa,arc_easy,arc_challenge,boolq,hellaswag,winogrande', eval_ppl=True, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=20, let=True, lwc=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None)
+[2025-01-20 06:30:49 root] (main.py 332): INFO === start quantization ===
+[2025-01-20 06:30:49 root] (main.py 338): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2025-01-20 06:30:49 root] (abq_llm.py 62): INFO Starting ...
+[2025-01-20 06:30:51 root] (abq_llm.py 212): INFO === Start quantize layer 0 ===
+[2025-01-20 06:30:54 root] (abq_llm.py 268): INFO use compensation vector
+[2025-01-20 06:31:29 root] (abq_llm.py 328): INFO layer 0 iter 0 loss:0.06102924048900604 norm:0.03738400340080261 max memory_allocated 22886.16943359375 
+[2025-01-20 06:32:04 root] (abq_llm.py 328): INFO layer 0 iter 1 loss:0.03717965632677078 norm:0.022742262110114098 max memory_allocated 22886.16943359375 
+[2025-01-20 06:32:39 root] (abq_llm.py 328): INFO layer 0 iter 2 loss:0.02959926426410675 norm:0.018674591556191444 max memory_allocated 22886.16943359375 
+[2025-01-20 06:33:15 root] (abq_llm.py 328): INFO layer 0 iter 3 loss:0.02623472735285759 norm:0.015616677701473236 max memory_allocated 22886.16943359375 
+[2025-01-20 06:33:50 root] (abq_llm.py 328): INFO layer 0 iter 4 loss:0.024533074349164963 norm:0.012646907940506935 max memory_allocated 22886.16943359375 
+[2025-01-20 06:34:26 root] (abq_llm.py 328): INFO layer 0 iter 5 loss:0.02376299351453781 norm:0.011132760904729366 max memory_allocated 22886.16943359375 
+[2025-01-20 06:35:01 root] (abq_llm.py 328): INFO layer 0 iter 6 loss:0.023052604869008064 norm:0.009796020574867725 max memory_allocated 22886.16943359375 

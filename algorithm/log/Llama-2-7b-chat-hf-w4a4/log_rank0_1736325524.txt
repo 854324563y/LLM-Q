@@ -1,0 +1,107 @@
+[2025-01-08 08:38:44 root] (main_quant_config.py 111): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-chat-hf', cache_dir='./cache', output_dir='./log/Llama-2-7b-chat-hf-w4a4', blocks_pkl='log/Llama-2-7b-chat-hf-w4a4/Llama-2-7b-chat-hf_blocks_temp.pkl', calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, reload=True, weight_quant_params={'per_channel_axes': [0], 'symmetric': False, 'dynamic_method': 'per_channel', 'disable_zero_point': False}, act_quant_params={'per_channel_axes': [], 'symmetric': False, 'dynamic_method': 'per_token'})
+[2025-01-08 08:38:46 root] (main_quant_config.py 129): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 150): INFO Restricted license - for non-production use only - expires 2026-11-23
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 153): INFO Set parameter OutputFlag to value 1
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 199): INFO Set parameter QCPDual to value 1
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Gurobi Optimizer version 12.0.0 build v12.0.0rc1 (linux64 - "Ubuntu 22.04.3 LTS")
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO CPU model: AMD EPYC 7742 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Thread count: 128 physical cores, 256 logical processors, using up to 32 threads
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Non-default parameters:
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO QCPDual  1
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Optimize a model with 7 rows, 18 columns and 36 nonzeros
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Model fingerprint: 0x88d84e05
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Model has 171 quadratic objective terms
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Variable types: 0 continuous, 18 integer (18 binary)
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Coefficient statistics:
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO   Matrix range     [3e-01, 3e+00]
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO   Objective range  [0e+00, 0e+00]
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO   QObjective range [7e-11, 3e-04]
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO   Bounds range     [1e+00, 1e+00]
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO   RHS range        [1e+00, 1e+100]
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Warning: Model contains large rhs
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO          Consider reformulating model or setting NumericFocus parameter
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO          to avoid numerical issues.
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO No start values specified in MIP start
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Found heuristic solution: objective 0.0001401
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Presolve removed 1 rows and 0 columns
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Presolve time: 0.00s
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Presolved: 6 rows, 18 columns, 18 nonzeros
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Presolved model has 171 quadratic objective terms
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Variable types: 0 continuous, 18 integer (18 binary)
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Root relaxation: objective -1.859241e-06, 18 iterations, 0.00 seconds (0.00 work units)
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO     Nodes    |    Current Node    |     Objective Bounds      |     Work
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO  Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO      0     0   -0.00000    0    8    0.00014   -0.00000   101%     -    0s
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO H    0     0                       0.0000052   -0.00000   136%     -    0s
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO      0     0    0.00000    0    8    0.00001    0.00000  32.6%     -    0s
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO      0     0    0.00000    0    8    0.00001    0.00000  32.6%     -    0s
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO      0     2    0.00000    0    8    0.00001    0.00000  32.6%     -    0s
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Explored 6 nodes (31 simplex iterations) in 0.01 seconds (0.00 work units)
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Thread count was 32 (of 256 available processors)
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Solution count 2: 5.19893e-06 0.000140087 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Optimal solution found (tolerance 1.00e-04)
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Best objective 5.198930720740e-06, best bound 5.198930720740e-06, gap 0.0000%
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 153): INFO Set parameter OutputFlag to value 1
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 199): INFO Set parameter QCPDual to value 1
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Gurobi Optimizer version 12.0.0 build v12.0.0rc1 (linux64 - "Ubuntu 22.04.3 LTS")
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO CPU model: AMD EPYC 7742 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Thread count: 128 physical cores, 256 logical processors, using up to 32 threads
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Non-default parameters:
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO QCPDual  1
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Optimize a model with 7 rows, 18 columns and 36 nonzeros
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Model fingerprint: 0x0fb9dc1d
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Model has 171 quadratic objective terms
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Variable types: 0 continuous, 18 integer (18 binary)
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Coefficient statistics:
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO   Matrix range     [3e-01, 3e+00]
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO   Objective range  [0e+00, 0e+00]
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO   QObjective range [1e-07, 7e-02]
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO   Bounds range     [1e+00, 1e+00]
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO   RHS range        [1e+00, 1e+100]
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Warning: Model contains large rhs
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO          Consider reformulating model or setting NumericFocus parameter
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO          to avoid numerical issues.
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO No start values specified in MIP start
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Found heuristic solution: objective 0.0104645
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Presolve removed 1 rows and 0 columns
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Presolve time: 0.00s
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Presolved: 6 rows, 18 columns, 18 nonzeros
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Presolved model has 171 quadratic objective terms
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Variable types: 0 continuous, 18 integer (18 binary)
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Root relaxation: objective -3.707593e-03, 22 iterations, 0.00 seconds (0.00 work units)
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO     Nodes    |    Current Node    |     Objective Bounds      |     Work
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO  Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO      0     0   -0.00371    0   14    0.01046   -0.00371   135%     -    0s
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO H    0     0                       0.0014257   -0.00371   360%     -    0s
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO H    0     0                       0.0014009   -0.00371   365%     -    0s
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO H    0     0                       0.0009205   -0.00371   503%     -    0s
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO H    0     0                       0.0001610   -0.00371  2403%     -    0s
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO      0     0   -0.00134    0   14    0.00016   -0.00134   930%     -    0s
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO      0     2   -0.00134    0   14    0.00016   -0.00134   930%     -    0s
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Explored 18 nodes (56 simplex iterations) in 0.01 seconds (0.00 work units)
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Thread count was 32 (of 256 available processors)
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Solution count 5: 0.000160997 0.000920451 0.0014009 ... 0.0104645
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO 
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Optimal solution found (tolerance 1.00e-04)
+[2025-01-08 08:38:46 gurobipy] (gurobi_qpif.py 212): INFO Best objective 1.609969170507e-04, best bound 1.609969170507e-04, gap 0.0000%

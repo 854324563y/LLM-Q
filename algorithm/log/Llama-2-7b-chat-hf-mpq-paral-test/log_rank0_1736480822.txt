@@ -1,0 +1,72 @@
+[2025-01-10 03:47:02 root] (main_quant_config.py 113): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-chat-hf', cache_dir='./cache', output_dir='./log/Llama-2-7b-chat-hf-mpq-paral-test', blocks_pkl='log/Llama-2-7b-chat-hf-w4a4/Llama-2-7b-chat-hf_blocks.pkl', calib_dataset='wikitext2', nsamples=1, batch_size=1, seed=2, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, reload=False, parallel=True, weight_quant_params={'per_channel_axes': [0], 'symmetric': False, 'dynamic_method': 'per_channel', 'group_size': None, 'lwc': False, 'disable_zero_point': False}, act_quant_params={'per_channel_axes': [], 'symmetric': False, 'dynamic_method': 'per_token'})
+[2025-01-10 03:47:04 root] (main_quant_config.py 131): INFO load calibration from ./cache/dataloader_Llama_wikitext2_1.cache
+[2025-01-10 03:47:04 root] (main_quant_config.py 142): INFO [(0, 1), (1, 2), (2, 3), (3, 6), (6, 9), (9, 11), (11, 14), (14, 17), (17, 20), (20, 23), (23, 26), (26, 29), (29, 30), (30, 31), (31, 32)]
+[2025-01-10 03:47:05 root] (block_wise_quant_config_search_parallel.py 462): INFO Using 2 GPUs for parallel search
+[2025-01-10 03:47:05 root] (block_wise_quant_config_search_parallel.py 477): INFO Starting new batch: blocks 0 to 1
+[2025-01-10 03:47:05 root] (block_wise_quant_config_search_parallel.py 478): INFO Available GPUs: 2
+[2025-01-10 03:47:05 root] (block_wise_quant_config_search_parallel.py 491): INFO Got input for block 0
+[2025-01-10 03:47:05 root] (block_wise_quant_config_search_parallel.py 491): INFO Got input for block 1
+[2025-01-10 03:47:05 root] (block_wise_quant_config_search_parallel.py 502): INFO Preparing to assign block 0 to cuda:0
+[2025-01-10 03:47:05 root] (block_wise_quant_config_search_parallel.py 511): INFO Successfully queued block 0 for processing on cuda:0
+[2025-01-10 03:47:05 root] (block_wise_quant_config_search_parallel.py 502): INFO Preparing to assign block 1 to cuda:1
+[2025-01-10 03:47:05 root] (block_wise_quant_config_search_parallel.py 511): INFO Successfully queued block 1 for processing on cuda:1
+[2025-01-10 03:47:13 root] (block_wise_quant_config_search_parallel.py 517): INFO Successfully processed block 0
+[2025-01-10 03:47:13 root] (block_wise_quant_config_search_parallel.py 517): INFO Successfully processed block 1
+[2025-01-10 03:47:14 root] (block_wise_quant_config_search_parallel.py 477): INFO Starting new batch: blocks 2 to 3
+[2025-01-10 03:47:14 root] (block_wise_quant_config_search_parallel.py 478): INFO Available GPUs: 2
+[2025-01-10 03:47:14 root] (block_wise_quant_config_search_parallel.py 491): INFO Got input for block 2
+[2025-01-10 03:47:15 root] (block_wise_quant_config_search_parallel.py 491): INFO Got input for block 3
+[2025-01-10 03:47:15 root] (block_wise_quant_config_search_parallel.py 502): INFO Preparing to assign block 2 to cuda:0
+[2025-01-10 03:47:15 root] (block_wise_quant_config_search_parallel.py 511): INFO Successfully queued block 2 for processing on cuda:0
+[2025-01-10 03:47:15 root] (block_wise_quant_config_search_parallel.py 502): INFO Preparing to assign block 3 to cuda:1
+[2025-01-10 03:47:15 root] (block_wise_quant_config_search_parallel.py 511): INFO Successfully queued block 3 for processing on cuda:1
+[2025-01-10 03:47:22 root] (block_wise_quant_config_search_parallel.py 517): INFO Successfully processed block 2
+[2025-01-10 03:47:22 root] (block_wise_quant_config_search_parallel.py 517): INFO Successfully processed block 3
+[2025-01-10 03:47:23 root] (block_wise_quant_config_search_parallel.py 477): INFO Starting new batch: blocks 4 to 5
+[2025-01-10 03:47:23 root] (block_wise_quant_config_search_parallel.py 478): INFO Available GPUs: 2
+[2025-01-10 03:47:23 root] (block_wise_quant_config_search_parallel.py 491): INFO Got input for block 4
+[2025-01-10 03:47:24 root] (block_wise_quant_config_search_parallel.py 491): INFO Got input for block 5
+[2025-01-10 03:47:24 root] (block_wise_quant_config_search_parallel.py 502): INFO Preparing to assign block 4 to cuda:0
+[2025-01-10 03:47:24 root] (block_wise_quant_config_search_parallel.py 511): INFO Successfully queued block 4 for processing on cuda:0
+[2025-01-10 03:47:24 root] (block_wise_quant_config_search_parallel.py 502): INFO Preparing to assign block 5 to cuda:1
+[2025-01-10 03:47:24 root] (block_wise_quant_config_search_parallel.py 511): INFO Successfully queued block 5 for processing on cuda:1
+[2025-01-10 03:47:31 root] (block_wise_quant_config_search_parallel.py 517): INFO Successfully processed block 4
+[2025-01-10 03:47:31 root] (block_wise_quant_config_search_parallel.py 517): INFO Successfully processed block 5
+[2025-01-10 03:47:32 root] (block_wise_quant_config_search_parallel.py 477): INFO Starting new batch: blocks 6 to 7
+[2025-01-10 03:47:32 root] (block_wise_quant_config_search_parallel.py 478): INFO Available GPUs: 2
+[2025-01-10 03:47:32 root] (block_wise_quant_config_search_parallel.py 491): INFO Got input for block 6
+[2025-01-10 03:47:32 root] (block_wise_quant_config_search_parallel.py 491): INFO Got input for block 7
+[2025-01-10 03:47:32 root] (block_wise_quant_config_search_parallel.py 502): INFO Preparing to assign block 6 to cuda:0
+[2025-01-10 03:47:32 root] (block_wise_quant_config_search_parallel.py 511): INFO Successfully queued block 6 for processing on cuda:0
+[2025-01-10 03:47:32 root] (block_wise_quant_config_search_parallel.py 502): INFO Preparing to assign block 7 to cuda:1
+[2025-01-10 03:47:32 root] (block_wise_quant_config_search_parallel.py 511): INFO Successfully queued block 7 for processing on cuda:1
+[2025-01-10 03:47:40 root] (block_wise_quant_config_search_parallel.py 517): INFO Successfully processed block 6
+[2025-01-10 03:47:40 root] (block_wise_quant_config_search_parallel.py 517): INFO Successfully processed block 7
+[2025-01-10 03:47:41 root] (block_wise_quant_config_search_parallel.py 477): INFO Starting new batch: blocks 8 to 9
+[2025-01-10 03:47:41 root] (block_wise_quant_config_search_parallel.py 478): INFO Available GPUs: 2
+[2025-01-10 03:47:41 root] (block_wise_quant_config_search_parallel.py 491): INFO Got input for block 8
+[2025-01-10 03:47:41 root] (block_wise_quant_config_search_parallel.py 491): INFO Got input for block 9
+[2025-01-10 03:47:41 root] (block_wise_quant_config_search_parallel.py 502): INFO Preparing to assign block 8 to cuda:0
+[2025-01-10 03:47:41 root] (block_wise_quant_config_search_parallel.py 511): INFO Successfully queued block 8 for processing on cuda:0
+[2025-01-10 03:47:41 root] (block_wise_quant_config_search_parallel.py 502): INFO Preparing to assign block 9 to cuda:1
+[2025-01-10 03:47:41 root] (block_wise_quant_config_search_parallel.py 511): INFO Successfully queued block 9 for processing on cuda:1
+[2025-01-10 03:47:48 root] (block_wise_quant_config_search_parallel.py 517): INFO Successfully processed block 8
+[2025-01-10 03:47:48 root] (block_wise_quant_config_search_parallel.py 517): INFO Successfully processed block 9
+[2025-01-10 03:47:50 root] (block_wise_quant_config_search_parallel.py 477): INFO Starting new batch: blocks 10 to 11
+[2025-01-10 03:47:50 root] (block_wise_quant_config_search_parallel.py 478): INFO Available GPUs: 2
+[2025-01-10 03:47:50 root] (block_wise_quant_config_search_parallel.py 491): INFO Got input for block 10
+[2025-01-10 03:47:50 root] (block_wise_quant_config_search_parallel.py 491): INFO Got input for block 11
+[2025-01-10 03:47:50 root] (block_wise_quant_config_search_parallel.py 502): INFO Preparing to assign block 10 to cuda:0
+[2025-01-10 03:47:50 root] (block_wise_quant_config_search_parallel.py 511): INFO Successfully queued block 10 for processing on cuda:0
+[2025-01-10 03:47:50 root] (block_wise_quant_config_search_parallel.py 502): INFO Preparing to assign block 11 to cuda:1
+[2025-01-10 03:47:50 root] (block_wise_quant_config_search_parallel.py 511): INFO Successfully queued block 11 for processing on cuda:1
+[2025-01-10 03:47:57 root] (block_wise_quant_config_search_parallel.py 517): INFO Successfully processed block 10
+[2025-01-10 03:47:57 root] (block_wise_quant_config_search_parallel.py 517): INFO Successfully processed block 11
+[2025-01-10 03:47:58 root] (block_wise_quant_config_search_parallel.py 477): INFO Starting new batch: blocks 12 to 13
+[2025-01-10 03:47:58 root] (block_wise_quant_config_search_parallel.py 478): INFO Available GPUs: 2
+[2025-01-10 03:47:58 root] (block_wise_quant_config_search_parallel.py 491): INFO Got input for block 12
+[2025-01-10 03:47:59 root] (block_wise_quant_config_search_parallel.py 491): INFO Got input for block 13
+[2025-01-10 03:47:59 root] (block_wise_quant_config_search_parallel.py 502): INFO Preparing to assign block 12 to cuda:0
+[2025-01-10 03:47:59 root] (block_wise_quant_config_search_parallel.py 511): INFO Successfully queued block 12 for processing on cuda:0
+[2025-01-10 03:47:59 root] (block_wise_quant_config_search_parallel.py 502): INFO Preparing to assign block 13 to cuda:1
+[2025-01-10 03:47:59 root] (block_wise_quant_config_search_parallel.py 511): INFO Successfully queued block 13 for processing on cuda:1

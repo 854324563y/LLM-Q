@@ -1,0 +1,46 @@
+[2025-01-18 09:54:59 root] (main_calib_config.py 270): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-chat-hf', cache_dir='./cache', output_dir='./log/Llama-2-7b-chat-hf-w4a4-117-symmetrci', save_dir=None, resume='./log/Llama-2-7b-chat-hf-w4a4-117-symmetrci/abq_parameters.pth', real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='hellaswag,winogrande', eval_ppl=False, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=0, let=True, lwc=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, quant_map='./log/Llama-2-7b-chat-hf-116/quant_map_Llama-2-7b-chat-hf.pkl')
+[2025-01-18 09:55:07 root] (main_calib_config.py 337): INFO === start quantization ===
+[2025-01-18 09:55:08 root] (main_calib_config.py 343): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2025-01-18 09:55:08 root] (abq_llm_calib_config.py 82): INFO Starting ...
+[2025-01-18 09:55:08 root] (abq_llm_calib_config.py 89): INFO Loaded quant_map from ./log/Llama-2-7b-chat-hf-116/quant_map_Llama-2-7b-chat-hf.pkl
+[2025-01-18 09:55:16 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 0 ===
+[2025-01-18 09:55:16 root] (abq_llm_calib_config.py 308): INFO use compensation vector
+[2025-01-18 09:55:18 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 1 ===
+[2025-01-18 09:55:21 root] (abq_llm_calib_config.py 308): INFO use compensation vector
+[2025-01-18 09:55:21 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 2 ===
+[2025-01-18 09:55:25 root] (abq_llm_calib_config.py 308): INFO use compensation vector
+[2025-01-18 09:55:25 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 3 ===
+[2025-01-18 09:55:28 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 4 ===
+[2025-01-18 09:55:30 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 5 ===
+[2025-01-18 09:55:33 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 6 ===
+[2025-01-18 09:55:35 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 7 ===
+[2025-01-18 09:55:38 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 8 ===
+[2025-01-18 09:55:40 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 9 ===
+[2025-01-18 09:55:43 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 10 ===
+[2025-01-18 09:55:48 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 11 ===
+[2025-01-18 09:55:50 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 12 ===
+[2025-01-18 09:55:54 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 13 ===
+[2025-01-18 09:55:58 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 14 ===
+[2025-01-18 09:56:01 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 15 ===
+[2025-01-18 09:56:04 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 16 ===
+[2025-01-18 09:56:06 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 17 ===
+[2025-01-18 09:56:09 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 18 ===
+[2025-01-18 09:56:12 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 19 ===
+[2025-01-18 09:56:16 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 20 ===
+[2025-01-18 09:56:19 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 21 ===
+[2025-01-18 09:56:21 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 22 ===
+[2025-01-18 09:56:24 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 23 ===
+[2025-01-18 09:56:28 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 24 ===
+[2025-01-18 09:56:30 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 25 ===
+[2025-01-18 09:56:34 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 26 ===
+[2025-01-18 09:56:37 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 27 ===
+[2025-01-18 09:56:39 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 28 ===
+[2025-01-18 09:56:42 root] (abq_llm_calib_config.py 308): INFO use compensation vector
+[2025-01-18 09:56:42 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 29 ===
+[2025-01-18 09:56:44 root] (abq_llm_calib_config.py 308): INFO use compensation vector
+[2025-01-18 09:56:44 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 30 ===
+[2025-01-18 09:56:48 root] (abq_llm_calib_config.py 308): INFO use compensation vector
+[2025-01-18 09:56:48 root] (abq_llm_calib_config.py 235): INFO === Start quantize layer 31 ===
+[2025-01-18 09:56:50 root] (abq_llm_calib_config.py 308): INFO use compensation vector
+[2025-01-18 09:56:50 root] (main_calib_config.py 366): INFO 102.84425282478333
+[2025-01-18 11:12:43 root] (main_calib_config.py 170): INFO {'results': {'winogrande': {'acc': 0.648776637726914, 'acc_stderr': 0.013415981370545137}, 'hellaswag': {'acc': 0.5496912965544712, 'acc_stderr': 0.0049650784774355845, 'acc_norm': 0.7104162517426807, 'acc_norm_stderr': 0.004526422125860682}}, 'versions': {'winogrande': 0, 'hellaswag': 0}, 'config': {'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}

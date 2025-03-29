@@ -1,0 +1,300 @@
+[2024-12-27 08:42:30 root] (main_test_single_layer_quant.py 268): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-chat-hf', cache_dir='./cache', output_dir='./log/Llama-2-7b-chat-hf-w4a4', save_dir=None, resume='./log/Llama-2-7b-chat-hf-w4a4/abq_parameters.pth', real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='', eval_ppl=True, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=0, let=True, lwc=True, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, target_layer=None)
+[2024-12-27 08:42:37 root] (main_test_single_layer_quant.py 393): INFO === Evaluating sensitivity of each layer ===
+[2024-12-27 08:42:37 root] (main_test_single_layer_quant.py 402): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2024-12-27 08:42:39 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 0/31 ===
+[2024-12-27 08:42:39 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 08:42:52 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 0 ===
+[2024-12-27 08:42:52 root] (abq_llm_test_single_layer_quant.py 266): INFO use compensation vector
+[2024-12-27 08:45:26 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 08:46:13 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.105400085449219
+[2024-12-27 08:46:14 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 08:47:29 root] (main_test_single_layer_quant.py 159): INFO c4 : 8.969385147094727
+[2024-12-27 08:47:30 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 1/31 ===
+[2024-12-27 08:47:30 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 08:47:31 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 1 ===
+[2024-12-27 08:47:31 root] (abq_llm_test_single_layer_quant.py 266): INFO use compensation vector
+[2024-12-27 08:47:34 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 08:48:23 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.196942329406738
+[2024-12-27 08:48:23 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 08:49:39 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.024378776550293
+[2024-12-27 08:49:40 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 2/31 ===
+[2024-12-27 08:49:40 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 08:49:41 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 2 ===
+[2024-12-27 08:49:41 root] (abq_llm_test_single_layer_quant.py 266): INFO use compensation vector
+[2024-12-27 08:49:44 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 08:50:33 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.162940979003906
+[2024-12-27 08:50:33 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 08:51:49 root] (main_test_single_layer_quant.py 159): INFO c4 : 8.995173454284668
+[2024-12-27 08:51:50 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 3/31 ===
+[2024-12-27 08:51:50 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 08:51:51 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 3 ===
+[2024-12-27 08:51:54 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 08:52:43 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.1674089431762695
+[2024-12-27 08:52:43 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 08:53:59 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.010855674743652
+[2024-12-27 08:53:59 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 4/31 ===
+[2024-12-27 08:53:59 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 08:54:00 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 4 ===
+[2024-12-27 08:54:03 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 08:54:52 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.1625189781188965
+[2024-12-27 08:54:52 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 08:56:08 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.036237716674805
+[2024-12-27 08:56:09 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 5/31 ===
+[2024-12-27 08:56:09 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 08:56:10 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 5 ===
+[2024-12-27 08:56:12 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 08:57:02 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.187802791595459
+[2024-12-27 08:57:02 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 08:58:17 root] (main_test_single_layer_quant.py 159): INFO c4 : 8.996889114379883
+[2024-12-27 08:58:18 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 6/31 ===
+[2024-12-27 08:58:18 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 08:58:19 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 6 ===
+[2024-12-27 08:58:22 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 08:59:11 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.139675140380859
+[2024-12-27 08:59:11 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:00:27 root] (main_test_single_layer_quant.py 159): INFO c4 : 8.999168395996094
+[2024-12-27 09:00:28 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 7/31 ===
+[2024-12-27 09:00:28 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:00:29 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 7 ===
+[2024-12-27 09:00:32 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:01:21 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.144465446472168
+[2024-12-27 09:01:21 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:02:37 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.003056526184082
+[2024-12-27 09:02:38 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 8/31 ===
+[2024-12-27 09:02:38 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:02:39 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 8 ===
+[2024-12-27 09:02:42 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:03:31 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.146315097808838
+[2024-12-27 09:03:31 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:04:47 root] (main_test_single_layer_quant.py 159): INFO c4 : 8.987653732299805
+[2024-12-27 09:04:48 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 9/31 ===
+[2024-12-27 09:04:48 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:04:49 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 9 ===
+[2024-12-27 09:04:51 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:05:41 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.134007453918457
+[2024-12-27 09:05:41 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:06:56 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.000052452087402
+[2024-12-27 09:06:57 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 10/31 ===
+[2024-12-27 09:06:57 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:06:58 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 10 ===
+[2024-12-27 09:07:01 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:07:50 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.151614189147949
+[2024-12-27 09:07:50 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:09:06 root] (main_test_single_layer_quant.py 159): INFO c4 : 8.98398208618164
+[2024-12-27 09:09:07 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 11/31 ===
+[2024-12-27 09:09:07 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:09:08 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 11 ===
+[2024-12-27 09:09:10 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:09:59 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.123523235321045
+[2024-12-27 09:09:59 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:11:15 root] (main_test_single_layer_quant.py 159): INFO c4 : 8.928765296936035
+[2024-12-27 09:11:16 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 12/31 ===
+[2024-12-27 09:11:16 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:11:17 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 12 ===
+[2024-12-27 09:11:20 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:12:09 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.129518508911133
+[2024-12-27 09:12:09 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:13:25 root] (main_test_single_layer_quant.py 159): INFO c4 : 8.990885734558105
+[2024-12-27 09:13:26 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 13/31 ===
+[2024-12-27 09:13:26 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:13:27 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 13 ===
+[2024-12-27 09:13:30 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:14:19 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.097921848297119
+[2024-12-27 09:14:19 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:15:35 root] (main_test_single_layer_quant.py 159): INFO c4 : 8.97278118133545
+[2024-12-27 09:15:36 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 14/31 ===
+[2024-12-27 09:15:36 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:15:37 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 14 ===
+[2024-12-27 09:15:39 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:16:28 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.095500469207764
+[2024-12-27 09:16:28 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:17:44 root] (main_test_single_layer_quant.py 159): INFO c4 : 8.952131271362305
+[2024-12-27 09:17:45 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 15/31 ===
+[2024-12-27 09:17:45 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:17:46 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 15 ===
+[2024-12-27 09:17:49 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:18:38 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.179013252258301
+[2024-12-27 09:18:38 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:19:54 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.110011100769043
+[2024-12-27 09:19:58 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 16/31 ===
+[2024-12-27 09:19:58 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:19:59 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 16 ===
+[2024-12-27 09:20:02 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:20:51 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.187253952026367
+[2024-12-27 09:20:51 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:22:07 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.136905670166016
+[2024-12-27 09:22:08 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 17/31 ===
+[2024-12-27 09:22:08 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:22:09 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 17 ===
+[2024-12-27 09:22:12 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:23:01 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.198848724365234
+[2024-12-27 09:23:01 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:24:17 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.132527351379395
+[2024-12-27 09:24:18 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 18/31 ===
+[2024-12-27 09:24:18 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:24:19 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 18 ===
+[2024-12-27 09:24:21 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:25:10 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.18928337097168
+[2024-12-27 09:25:10 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:26:26 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.111101150512695
+[2024-12-27 09:26:27 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 19/31 ===
+[2024-12-27 09:26:27 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:26:28 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 19 ===
+[2024-12-27 09:26:31 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:27:20 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.228724002838135
+[2024-12-27 09:27:20 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:28:36 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.137127876281738
+[2024-12-27 09:28:37 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 20/31 ===
+[2024-12-27 09:28:37 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:28:37 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 20 ===
+[2024-12-27 09:28:40 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:29:29 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.163699150085449
+[2024-12-27 09:29:29 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:30:45 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.060035705566406
+[2024-12-27 09:30:46 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 21/31 ===
+[2024-12-27 09:30:46 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:30:47 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 21 ===
+[2024-12-27 09:30:50 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:31:39 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.173398494720459
+[2024-12-27 09:31:39 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:32:55 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.061527252197266
+[2024-12-27 09:32:56 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 22/31 ===
+[2024-12-27 09:32:56 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:32:56 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 22 ===
+[2024-12-27 09:32:59 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:33:48 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.141061782836914
+[2024-12-27 09:33:48 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:35:04 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.033713340759277
+[2024-12-27 09:35:05 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 23/31 ===
+[2024-12-27 09:35:05 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:35:06 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 23 ===
+[2024-12-27 09:35:09 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:35:58 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.124696731567383
+[2024-12-27 09:35:58 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:37:14 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.0070161819458
+[2024-12-27 09:37:15 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 24/31 ===
+[2024-12-27 09:37:15 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:37:16 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 24 ===
+[2024-12-27 09:37:19 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:38:08 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.145727157592773
+[2024-12-27 09:38:08 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:39:24 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.007862091064453
+[2024-12-27 09:39:25 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 25/31 ===
+[2024-12-27 09:39:25 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:39:26 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 25 ===
+[2024-12-27 09:39:29 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:40:18 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.146146774291992
+[2024-12-27 09:40:18 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:41:34 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.039935111999512
+[2024-12-27 09:41:35 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 26/31 ===
+[2024-12-27 09:41:35 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:41:36 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 26 ===
+[2024-12-27 09:41:46 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:42:35 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.057408809661865
+[2024-12-27 09:42:35 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:43:51 root] (main_test_single_layer_quant.py 159): INFO c4 : 8.892598152160645
+[2024-12-27 09:43:52 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 27/31 ===
+[2024-12-27 09:43:52 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:43:53 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 27 ===
+[2024-12-27 09:43:57 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:44:46 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.245157718658447
+[2024-12-27 09:44:46 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:46:02 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.161956787109375
+[2024-12-27 09:46:03 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 28/31 ===
+[2024-12-27 09:46:03 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:46:04 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 28 ===
+[2024-12-27 09:46:04 root] (abq_llm_test_single_layer_quant.py 266): INFO use compensation vector
+[2024-12-27 09:46:07 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:46:56 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.1807451248168945
+[2024-12-27 09:46:56 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:48:12 root] (main_test_single_layer_quant.py 159): INFO c4 : 8.982610702514648
+[2024-12-27 09:48:13 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 29/31 ===
+[2024-12-27 09:48:13 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:48:14 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 29 ===
+[2024-12-27 09:48:14 root] (abq_llm_test_single_layer_quant.py 266): INFO use compensation vector
+[2024-12-27 09:48:18 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:49:07 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.358083724975586
+[2024-12-27 09:49:07 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:50:23 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.337230682373047
+[2024-12-27 09:50:24 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 30/31 ===
+[2024-12-27 09:50:24 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:50:25 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 30 ===
+[2024-12-27 09:50:25 root] (abq_llm_test_single_layer_quant.py 266): INFO use compensation vector
+[2024-12-27 09:50:28 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:51:17 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.375331878662109
+[2024-12-27 09:51:17 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:52:33 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.28809642791748
+[2024-12-27 09:52:34 root] (main_test_single_layer_quant.py 427): INFO 
+=== Testing layer 31/31 ===
+[2024-12-27 09:52:34 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-27 09:52:35 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 31 ===
+[2024-12-27 09:52:35 root] (abq_llm_test_single_layer_quant.py 266): INFO use compensation vector
+[2024-12-27 09:52:38 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_wikitext2_all.cache
+[2024-12-27 09:53:27 root] (main_test_single_layer_quant.py 159): INFO wikitext2 : 7.468286991119385
+[2024-12-27 09:53:27 root] (main_test_single_layer_quant.py 115): INFO load calibration from ./cache/testloader_Llama_c4_all.cache
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 159): INFO c4 : 9.465601921081543
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 445): INFO 
+=== Layer Sensitivity Summary ===
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 0: {'wikitext2': 7.105400085449219, 'c4': 8.969385147094727}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 1: {'wikitext2': 7.196942329406738, 'c4': 9.024378776550293}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 2: {'wikitext2': 7.162940979003906, 'c4': 8.995173454284668}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 3: {'wikitext2': 7.1674089431762695, 'c4': 9.010855674743652}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 4: {'wikitext2': 7.1625189781188965, 'c4': 9.036237716674805}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 5: {'wikitext2': 7.187802791595459, 'c4': 8.996889114379883}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 6: {'wikitext2': 7.139675140380859, 'c4': 8.999168395996094}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 7: {'wikitext2': 7.144465446472168, 'c4': 9.003056526184082}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 8: {'wikitext2': 7.146315097808838, 'c4': 8.987653732299805}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 9: {'wikitext2': 7.134007453918457, 'c4': 9.000052452087402}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 10: {'wikitext2': 7.151614189147949, 'c4': 8.98398208618164}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 11: {'wikitext2': 7.123523235321045, 'c4': 8.928765296936035}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 12: {'wikitext2': 7.129518508911133, 'c4': 8.990885734558105}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 13: {'wikitext2': 7.097921848297119, 'c4': 8.97278118133545}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 14: {'wikitext2': 7.095500469207764, 'c4': 8.952131271362305}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 15: {'wikitext2': 7.179013252258301, 'c4': 9.110011100769043}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 16: {'wikitext2': 7.187253952026367, 'c4': 9.136905670166016}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 17: {'wikitext2': 7.198848724365234, 'c4': 9.132527351379395}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 18: {'wikitext2': 7.18928337097168, 'c4': 9.111101150512695}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 19: {'wikitext2': 7.228724002838135, 'c4': 9.137127876281738}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 20: {'wikitext2': 7.163699150085449, 'c4': 9.060035705566406}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 21: {'wikitext2': 7.173398494720459, 'c4': 9.061527252197266}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 22: {'wikitext2': 7.141061782836914, 'c4': 9.033713340759277}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 23: {'wikitext2': 7.124696731567383, 'c4': 9.0070161819458}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 24: {'wikitext2': 7.145727157592773, 'c4': 9.007862091064453}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 25: {'wikitext2': 7.146146774291992, 'c4': 9.039935111999512}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 26: {'wikitext2': 7.057408809661865, 'c4': 8.892598152160645}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 27: {'wikitext2': 7.245157718658447, 'c4': 9.161956787109375}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 28: {'wikitext2': 7.1807451248168945, 'c4': 8.982610702514648}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 29: {'wikitext2': 7.358083724975586, 'c4': 9.337230682373047}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 30: {'wikitext2': 7.375331878662109, 'c4': 9.28809642791748}
+[2024-12-27 09:54:43 root] (main_test_single_layer_quant.py 447): INFO Layer 31: {'wikitext2': 7.468286991119385, 'c4': 9.465601921081543}

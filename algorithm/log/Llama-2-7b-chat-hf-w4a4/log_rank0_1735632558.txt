@@ -1,0 +1,85 @@
+[2024-12-31 08:09:18 root] (main_test_single_layer_quant.py 269): INFO Namespace(model='/workspace/volume/inference-soft-data/AE/llm/models/Llama-2-7b-chat-hf', cache_dir='./cache', output_dir='./log/Llama-2-7b-chat-hf-w4a4', sensitivity_test='layer_sensitivity_results_nolwclet_acc.pt', save_dir=None, resume=None, real_quant=False, calib_dataset='wikitext2', nsamples=128, batch_size=1, seed=2, tasks='hellaswag,winogrande', eval_ppl=False, num_fewshot=0, wbits=4, abits=4, group_size=None, alpha=0.5, let_lr=0.005, lwc_lr=0.01, wd=0, epochs=0, let=False, lwc=False, symmetric=False, disable_zero_point=False, a_dynamic_method='per_token', w_dynamic_method='per_channel', limit=-1, multigpu=False, deactive_amp=True, attn_implementation='eager', net=None, act_scales=None, act_shifts=None, target_layer=None)
+[2024-12-31 08:09:24 root] (main_test_single_layer_quant.py 394): INFO === Evaluating sensitivity of each layer ===
+[2024-12-31 08:09:24 root] (main_test_single_layer_quant.py 403): INFO load calibration from ./cache/dataloader_Llama_wikitext2_128.cache
+[2024-12-31 08:09:25 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 0/31 ===
+[2024-12-31 08:09:25 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-31 08:09:26 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 0 ===
+[2024-12-31 08:45:02 root] (main_test_single_layer_quant.py 170): INFO {'results': {'hellaswag': {'acc': 0.5482971519617607, 'acc_stderr': 0.004966448380104206, 'acc_norm': 0.7118103963353913, 'acc_norm_stderr': 0.004519941716508346}, 'winogrande': {'acc': 0.6345698500394633, 'acc_stderr': 0.013533965097638786}}, 'versions': {'hellaswag': 0, 'winogrande': 0}, 'config': {'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2024-12-31 08:45:04 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 1/31 ===
+[2024-12-31 08:45:04 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-31 08:45:05 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 1 ===
+[2024-12-31 08:45:18 datasets.load] (load.py 1272): WARNING Using the latest cached version of the module from /root/.cache/huggingface/modules/datasets_modules/datasets/hellaswag/512a66dd8b1b1643ab4a48aa4f150d04c91680da6a4096498a5e5f799623d5ae (last modified on Tue Dec 31 03:39:04 2024) since it couldn't be found locally at hellaswag., or remotely on the Hugging Face Hub.
+[2024-12-31 09:20:36 root] (main_test_single_layer_quant.py 170): INFO {'results': {'hellaswag': {'acc': 0.541027683728341, 'acc_stderr': 0.004972954732733361, 'acc_norm': 0.7033459470225055, 'acc_norm_stderr': 0.004558491550673685}, 'winogrande': {'acc': 0.6282557221783741, 'acc_stderr': 0.013582306284992865}}, 'versions': {'hellaswag': 0, 'winogrande': 0}, 'config': {'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2024-12-31 09:20:37 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 2/31 ===
+[2024-12-31 09:20:37 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-31 09:20:38 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 2 ===
+[2024-12-31 09:54:32 root] (main_test_single_layer_quant.py 170): INFO {'results': {'hellaswag': {'acc': 0.5675164309898426, 'acc_stderr': 0.00494408060504877, 'acc_norm': 0.7317267476598287, 'acc_norm_stderr': 0.004421551307678475}, 'winogrande': {'acc': 0.6448303078137332, 'acc_stderr': 0.013450047479569257}}, 'versions': {'hellaswag': 0, 'winogrande': 0}, 'config': {'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2024-12-31 09:54:33 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 3/31 ===
+[2024-12-31 09:54:33 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-31 09:54:34 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 3 ===
+[2024-12-31 10:29:31 root] (main_test_single_layer_quant.py 170): INFO {'results': {'hellaswag': {'acc': 0.5685122485560645, 'acc_stderr': 0.004942716091996077, 'acc_norm': 0.7333200557657837, 'acc_norm_stderr': 0.004413198640053983}, 'winogrande': {'acc': 0.6464088397790055, 'acc_stderr': 0.013436541262599954}}, 'versions': {'hellaswag': 0, 'winogrande': 0}, 'config': {'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2024-12-31 10:29:32 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 4/31 ===
+[2024-12-31 10:29:32 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-31 10:29:33 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 4 ===
+[2024-12-31 11:05:02 root] (main_test_single_layer_quant.py 170): INFO {'results': {'hellaswag': {'acc': 0.5710017924716192, 'acc_stderr': 0.004939215682191771, 'acc_norm': 0.7321250746863175, 'acc_norm_stderr': 0.00441946998393918}, 'winogrande': {'acc': 0.6740331491712708, 'acc_stderr': 0.01317378263692219}}, 'versions': {'hellaswag': 0, 'winogrande': 0}, 'config': {'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2024-12-31 11:05:03 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 5/31 ===
+[2024-12-31 11:05:03 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-31 11:05:04 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 5 ===
+[2024-12-31 11:39:59 root] (main_test_single_layer_quant.py 170): INFO {'results': {'hellaswag': {'acc': 0.5697072296355308, 'acc_stderr': 0.004941051795214796, 'acc_norm': 0.7290380402310297, 'acc_norm_stderr': 0.0044354815159093975}, 'winogrande': {'acc': 0.6614048934490924, 'acc_stderr': 0.013300169865842417}}, 'versions': {'hellaswag': 0, 'winogrande': 0}, 'config': {'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2024-12-31 11:40:00 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 6/31 ===
+[2024-12-31 11:40:00 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-31 11:40:01 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 6 ===
+[2024-12-31 11:40:15 datasets.load] (load.py 1272): WARNING Using the latest cached version of the module from /root/.cache/huggingface/modules/datasets_modules/datasets/hellaswag/512a66dd8b1b1643ab4a48aa4f150d04c91680da6a4096498a5e5f799623d5ae (last modified on Tue Dec 31 03:39:04 2024) since it couldn't be found locally at hellaswag., or remotely on the Hugging Face Hub.
+[2024-12-31 12:15:07 root] (main_test_single_layer_quant.py 170): INFO {'results': {'hellaswag': {'acc': 0.5646285600477993, 'acc_stderr': 0.004947922692688835, 'acc_norm': 0.7263493328022307, 'acc_norm_stderr': 0.004449206295922402}, 'winogrande': {'acc': 0.6511444356748224, 'acc_stderr': 0.013395059320137327}}, 'versions': {'hellaswag': 0, 'winogrande': 0}, 'config': {'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2024-12-31 12:15:08 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 7/31 ===
+[2024-12-31 12:15:08 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-31 12:15:09 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 7 ===
+[2024-12-31 12:49:16 root] (main_test_single_layer_quant.py 170): INFO {'results': {'hellaswag': {'acc': 0.5612427803226449, 'acc_stderr': 0.004952209831856579, 'acc_norm': 0.7236606253734316, 'acc_norm_stderr': 0.004462727543055891}, 'winogrande': {'acc': 0.6621941594317285, 'acc_stderr': 0.013292583502910887}}, 'versions': {'hellaswag': 0, 'winogrande': 0}, 'config': {'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2024-12-31 12:49:17 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 8/31 ===
+[2024-12-31 12:49:17 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-31 12:49:18 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 8 ===
+[2024-12-31 13:26:22 root] (main_test_single_layer_quant.py 170): INFO {'results': {'hellaswag': {'acc': 0.5594503087034455, 'acc_stderr': 0.004954384702021654, 'acc_norm': 0.7225652260505875, 'acc_norm_stderr': 0.004468178273665661}, 'winogrande': {'acc': 0.6511444356748224, 'acc_stderr': 0.013395059320137327}}, 'versions': {'hellaswag': 0, 'winogrande': 0}, 'config': {'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2024-12-31 13:26:23 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 9/31 ===
+[2024-12-31 13:26:23 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-31 13:26:24 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 9 ===
+[2024-12-31 13:26:37 datasets.load] (load.py 1272): WARNING Using the latest cached version of the module from /root/.cache/huggingface/modules/datasets_modules/datasets/hellaswag/512a66dd8b1b1643ab4a48aa4f150d04c91680da6a4096498a5e5f799623d5ae (last modified on Tue Dec 31 03:39:04 2024) since it couldn't be found locally at hellaswag., or remotely on the Hugging Face Hub.
+[2024-12-31 14:01:13 root] (main_test_single_layer_quant.py 170): INFO {'results': {'hellaswag': {'acc': 0.5545708026289584, 'acc_stderr': 0.0049599735147725105, 'acc_norm': 0.7162915753833897, 'acc_norm_stderr': 0.004498757194493412}, 'winogrande': {'acc': 0.6527229676400947, 'acc_stderr': 0.013380909249751242}}, 'versions': {'hellaswag': 0, 'winogrande': 0}, 'config': {'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2024-12-31 14:01:14 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 10/31 ===
+[2024-12-31 14:01:14 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-31 14:01:15 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 10 ===
+[2024-12-31 14:36:12 root] (main_test_single_layer_quant.py 170): INFO {'results': {'hellaswag': {'acc': 0.560246962756423, 'acc_stderr': 0.004953426186069833, 'acc_norm': 0.7240589523999204, 'acc_norm_stderr': 0.004460737165882791}, 'winogrande': {'acc': 0.648776637726914, 'acc_stderr': 0.013415981370545131}}, 'versions': {'hellaswag': 0, 'winogrande': 0}, 'config': {'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2024-12-31 14:36:13 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 11/31 ===
+[2024-12-31 14:36:13 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-31 14:36:14 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 11 ===
+[2024-12-31 15:11:02 root] (main_test_single_layer_quant.py 170): INFO {'results': {'hellaswag': {'acc': 0.5600477992431786, 'acc_stderr': 0.004953667028654384, 'acc_norm': 0.7240589523999204, 'acc_norm_stderr': 0.004460737165882788}, 'winogrande': {'acc': 0.6471981057616417, 'acc_stderr': 0.013429728101788952}}, 'versions': {'hellaswag': 0, 'winogrande': 0}, 'config': {'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2024-12-31 15:11:03 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 12/31 ===
+[2024-12-31 15:11:03 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-31 15:11:04 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 12 ===
+[2024-12-31 15:45:48 root] (main_test_single_layer_quant.py 170): INFO {'results': {'hellaswag': {'acc': 0.5611431985660227, 'acc_stderr': 0.0049523323781203304, 'acc_norm': 0.7224656442939653, 'acc_norm_stderr': 0.004468672138910926}, 'winogrande': {'acc': 0.6511444356748224, 'acc_stderr': 0.01339505932013733}}, 'versions': {'hellaswag': 0, 'winogrande': 0}, 'config': {'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2024-12-31 15:45:49 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 13/31 ===
+[2024-12-31 15:45:49 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-31 15:45:50 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 13 ===
+[2024-12-31 16:19:51 root] (main_test_single_layer_quant.py 170): INFO {'results': {'hellaswag': {'acc': 0.560246962756423, 'acc_stderr': 0.00495342618606983, 'acc_norm': 0.7220673172674766, 'acc_norm_stderr': 0.004470644845242896}, 'winogrande': {'acc': 0.6471981057616417, 'acc_stderr': 0.013429728101788963}}, 'versions': {'hellaswag': 0, 'winogrande': 0}, 'config': {'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2024-12-31 16:19:51 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 14/31 ===
+[2024-12-31 16:19:51 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-31 16:19:53 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 14 ===
+[2024-12-31 16:54:22 root] (main_test_single_layer_quant.py 170): INFO {'results': {'hellaswag': {'acc': 0.5640310695080661, 'acc_stderr': 0.004948696280312425, 'acc_norm': 0.7256522605058753, 'acc_norm_stderr': 0.004452731272840524}, 'winogrande': {'acc': 0.6535122336227308, 'acc_stderr': 0.013373773411685653}}, 'versions': {'hellaswag': 0, 'winogrande': 0}, 'config': {'model_args': None, 'num_fewshot': 0, 'limit': None, 'bootstrap_iters': 100000, 'description_dict': None}}
+[2024-12-31 16:54:23 root] (main_test_single_layer_quant.py 428): INFO 
+=== Testing layer 15/31 ===
+[2024-12-31 16:54:23 root] (abq_llm_test_single_layer_quant.py 62): INFO Starting ...
+[2024-12-31 16:54:24 root] (abq_llm_test_single_layer_quant.py 212): INFO === Start quantize layer 15 ===
